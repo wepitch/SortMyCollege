@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
       child: Container(
         // homepageU2d (437:121)
         width: double.infinity,
-        decoration: BoxDecoration (
+        decoration: const BoxDecoration (
           color: Color(0xffffffff),
         ),
         child: Column(
