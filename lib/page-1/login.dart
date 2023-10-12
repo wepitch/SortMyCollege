@@ -1,0 +1,343 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/gestures.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'dart:ui';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/utils.dart';
+
+import '../other/constants.dart';
+import 'homepage.dart';
+
+class Login extends StatefulWidget {
+  @override
+  _Login createState() => _Login();
+}
+
+class _Login extends State<Login> {
+  final _nameController = TextEditingController();
+  final phonecontroller = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    configLoading();
+  }
+
+
+  @override
+  Widget build(BuildContext context) {
+    double baseWidth = 430;
+    double fem = MediaQuery.of(context).size.width / baseWidth;
+    double ffem = fem * 0.97;
+    return Material(
+      type: MaterialType.transparency,
+      child: Container(
+        // logindSh (437:98)
+        width: double.infinity,
+        decoration: BoxDecoration (
+          color: Color(0xffffffff),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              // autogroupbax3xUy (AXyDhFDYztWoAJJL4EbaX3)
+              margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 50*fem),
+              padding: EdgeInsets.fromLTRB(60*fem, 142*fem, 76*fem, 85*fem),
+              width: double.infinity,
+              decoration: BoxDecoration (
+                color: Color(0xffffffff),
+                borderRadius: BorderRadius.only (
+                  topLeft: Radius.circular(50*fem),
+                  topRight: Radius.circular(50*fem),
+                ),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    // sortmycollegelogo1qHs (1061:7)
+                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 24*fem),
+                    width: 294*fem,
+                    height: 80*fem,
+                    child: Image.asset(
+                      'assets/page-1/images/sortmycollege-logo-1-b8D.png',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  Container(
+                    // sortyourentirecollegejourneykf (1061:9)
+                    margin: EdgeInsets.fromLTRB(22*fem, 0*fem, 0*fem, 0*fem),
+                    child: Text(
+                      'Sort Your Entire College Journey!',
+                      textAlign: TextAlign.center,
+                      style: SafeGoogleFont (
+                        'Roboto',
+                        fontSize: 16*ffem,
+                        fontWeight: FontWeight.w700,
+                        height: 1.1725*ffem/fem,
+                        color: Color(0xff1f0a68),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              // welcomeback4RX (437:112)
+              margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 1*fem, 12*fem),
+              child: Text(
+                'Welcome Back!',
+                textAlign: TextAlign.center,
+                style: SafeGoogleFont (
+                  'Roboto',
+                  fontSize: 22*ffem,
+                  fontWeight: FontWeight.w600,
+                  height: 1.1725*ffem/fem,
+                  decoration: TextDecoration.underline,
+                  color: Color(0xff000000),
+                  decorationColor: Color(0xff000000),
+                ),
+              ),
+            ),
+            Text(
+              // pleaselogintoyourexistingaccou (437:111)
+              'Please Log into your existing account',
+              textAlign: TextAlign.center,
+              style: SafeGoogleFont (
+                'Roboto',
+                fontSize: 15*ffem,
+                fontWeight: FontWeight.w400,
+                height: 1.1725*ffem/fem,
+                color: Color(0xff000000),
+              ),
+            ),
+            Container(
+              // autogroupy8wsuS9 (AXyE5uEUBhrUYbR5AEY8ws)
+              padding: EdgeInsets.fromLTRB(60*fem, 37*fem, 60*fem, 91*fem),
+              width: double.infinity,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    // autogroups3swDQd (AXy84jvvc4rqKvoPDJs3sw)
+                    margin: EdgeInsets.fromLTRB(
+                        0 * fem, 0 * fem, 0 * fem, 20 * fem),
+                    padding: EdgeInsets.fromLTRB(
+                        15 * fem, 15 * fem, 15 * fem, 13 * fem),
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Color(0xff000000)),
+                      color: Color(0xfffffcfc),
+                      borderRadius: BorderRadius.circular(5 * fem),
+                    ),
+                    child: SizedBox(
+                      height: 30,
+                      child: TextFormField(
+                        cursorColor: Colors.black,
+                        controller: _nameController,
+                        inputFormatters: [
+                          LengthLimitingTextInputFormatter(40),
+                        ],
+                        decoration: const InputDecoration(
+                          hintStyle: TextStyle(color: Colors.black, fontSize: 15.0),
+                          hintText: "Enter Your Name",
+                          border: InputBorder.none,
+                          focusedBorder: InputBorder.none,
+                        ),
+
+                        style: SafeGoogleFont(
+                          'Roboto',
+                          fontSize: 18 * ffem,
+                          fontWeight: FontWeight.w400,
+                          height: 1.1810 * ffem / fem,
+                          color: Color(0xff000000),
+                        ),
+
+                      ),
+                    ),
+                  ),
+                  Container(
+                    // autogrouprbz9U5f (AXy8AQS9uGhFg15ZzJrBz9)
+                    margin: EdgeInsets.fromLTRB(
+                        0 * fem, 0 * fem, 0 * fem, 20 * fem),
+                    padding: EdgeInsets.fromLTRB(
+                        15 * fem, 15 * fem, 15 * fem, 13 * fem),
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Color(0xff000000)),
+                      color: Color(0xfffffcfc),
+                      borderRadius: BorderRadius.circular(10 * fem),
+                    ),
+                    child: SizedBox(
+                      height: 30,
+                      child: TextFormField(
+                        cursorColor: Colors.black,
+                        controller: phonecontroller,
+                        keyboardType: TextInputType.phone,
+                        inputFormatters: [
+                          LengthLimitingTextInputFormatter(10),
+                        ],
+                        decoration: const InputDecoration(
+                          hintStyle: TextStyle(color: Colors.black, fontSize: 15.0),
+                          hintText: "Enter your Phone Number",
+                          border: InputBorder.none,
+                          focusedBorder: InputBorder.none,
+                        ),
+
+                        style: SafeGoogleFont(
+                          'Roboto',
+                          fontSize: 18 * ffem,
+                          fontWeight: FontWeight.w400,
+                          height: 1.1525 * ffem / fem,
+                          color: const Color(0xff000000),
+                        ),
+
+                      ),
+                    ),
+                  ),
+
+
+
+                  Container(
+                    // autogroupb1cmwGM (AXyDxzGKdcnpJKxVY5B1cM)
+                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 39*fem),
+                    width: double.infinity,
+                    height: 45*fem,
+                    decoration: BoxDecoration (
+                      color: Color(0xff1f0a68),
+                      borderRadius: BorderRadius.circular(10*fem),
+                    ),
+                    child: Center(
+                      child: GestureDetector(
+                        onTap: () {
+                          if (check_val())
+                          {
+                            onTapGettingstarted(context);
+                          }
+                          },
+
+
+                        child: Text(
+                          'Log in',
+                          textAlign: TextAlign.center,
+                          style: SafeGoogleFont (
+                            'Roboto',
+                            fontSize: 20*ffem,
+                            fontWeight: FontWeight.w400,
+                            height: 1.1725*ffem/fem,
+                            color: Color(0xffffffff),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    // rectangle64brh (437:119)
+                    margin: EdgeInsets.fromLTRB(80*fem, 0*fem, 80*fem, 37*fem),
+                    width: double.infinity,
+                    height: 1*fem,
+                    decoration: BoxDecoration (
+                      borderRadius: BorderRadius.circular(10*fem),
+                      color: Color(0xff000000),
+                    ),
+                  ),
+                  RichText(
+                    // donthaveanaccountsignupigR (437:120)
+                    textAlign: TextAlign.center,
+                    text: TextSpan(
+                      style: SafeGoogleFont (
+                        'Inter',
+                        fontSize: 15*ffem,
+                        fontWeight: FontWeight.w400,
+                        height: 1.5303726196*ffem/fem,
+                        color: Color(0xff000000),
+                      ),
+                      children: [
+                        TextSpan(
+                          text: 'Don’t have an account? ',
+                          style: SafeGoogleFont (
+                            'Roboto',
+                            fontSize: 15*ffem,
+                            fontWeight: FontWeight.w400,
+                            height: 1.4826653059*ffem/fem,
+                            color: Color(0xff000000),
+                          ),
+                        ),
+                        TextSpan(
+                          text: 'Sign up',
+                          style: SafeGoogleFont (
+                            'Roboto',
+                            fontSize: 17*ffem,
+                            fontWeight: FontWeight.w700,
+                            height: 1.4826653059*ffem/fem,
+                            color: Color(0xff000000),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+          );
+  }
+
+  void onTapGettingstarted(BuildContext context) {
+    Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => HomePage()),(route) => false);
+  }
+
+
+  bool validateMobile(String value) {
+    String patttern = r'(^(?:[+0]9)?[0-9]{10,12}$)';
+    RegExp regExp = new RegExp(patttern);
+    if (!regExp.hasMatch(value)) {
+      return true;
+    }
+    return false;
+  }
+
+  bool check_val() {
+    bool isvaluevalid = true;
+    if(_nameController.text.toString().trim().isEmpty){
+      EasyLoading.showToast(AppConstants.fullnameerror,
+          toastPosition: EasyLoadingToastPosition.bottom);
+      isvaluevalid = false;
+    }
+    else if (phonecontroller.text.toString().trim().isEmpty) {
+      EasyLoading.showToast(AppConstants.phoneerror,
+          toastPosition: EasyLoadingToastPosition.bottom);
+      isvaluevalid = false;
+    }
+    else if (validateMobile(phonecontroller.text.toString().trim())) {
+      EasyLoading.showToast(AppConstants.phonenotvalid,
+          toastPosition: EasyLoadingToastPosition.bottom);
+      isvaluevalid = false;
+    }
+
+    return isvaluevalid;
+  }
+
+  void configLoading() {
+    EasyLoading.instance
+      ..indicatorType = EasyLoadingIndicatorType.fadingCircle
+      ..displayDuration = const Duration(milliseconds: 1000)
+      ..loadingStyle = EasyLoadingStyle.dark
+      ..indicatorSize = 45.0
+      ..maskType = EasyLoadingMaskType.none
+      ..radius = 10.0
+      ..maskColor = Colors.black.withOpacity(0.5)
+      ..userInteractions = false
+      ..dismissOnTap = false;
+  }
+
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    throw UnimplementedError();
+  }
+}
