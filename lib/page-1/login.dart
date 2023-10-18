@@ -6,8 +6,14 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 
+import '../model/response_model.dart';
+import '../other/api_service.dart';
 import '../other/constants.dart';
 import 'homepage.dart';
+import 'package:http/http.dart' as http;
+import 'package:email_validator/email_validator.dart';
+
+import 'otp.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -17,6 +23,9 @@ class Login extends StatefulWidget {
 class _Login extends State<Login> {
   final _nameController = TextEditingController();
   final phonecontroller = TextEditingController();
+  final emailcontroller = TextEditingController();
+  String _errorMessage = '';
+
 
   @override
   void initState() {
@@ -35,7 +44,7 @@ class _Login extends State<Login> {
       child: Container(
         // logindSh (437:98)
         width: double.infinity,
-        decoration: BoxDecoration (
+        decoration: const BoxDecoration (
           color: Color(0xffffffff),
         ),
         child: Column(
@@ -136,13 +145,14 @@ class _Login extends State<Login> {
                       height: 30,
                       child: TextFormField(
                         cursorColor: Colors.black,
-                        controller: _nameController,
+                        controller: emailcontroller,
+                        keyboardType: TextInputType.emailAddress,
                         inputFormatters: [
                           LengthLimitingTextInputFormatter(40),
                         ],
                         decoration: const InputDecoration(
                           hintStyle: TextStyle(color: Colors.black, fontSize: 15.0),
-                          hintText: "Enter Your Name",
+                          hintText: "Enter Your Email",
                           border: InputBorder.none,
                           focusedBorder: InputBorder.none,
                         ),
@@ -197,9 +207,6 @@ class _Login extends State<Login> {
                       ),
                     ),
                   ),
-
-
-
                   Container(
                     // autogroupb1cmwGM (AXyDxzGKdcnpJKxVY5B1cM)
                     margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 39*fem),
@@ -214,11 +221,19 @@ class _Login extends State<Login> {
                         onTap: () {
                           if (check_val())
                           {
-                            onTapGettingstarted(context);
+                            ApiService().call_otp_2(email: emailcontroller.text.toString().trim()).then((
+                                value) async{
+                              if(value["message"] == "Email sent successfully")
+                              {
+                                onTapGettingstarted(context);
+                              }
+                              else{
+                                EasyLoading.showToast("error",
+                                    toastPosition: EasyLoadingToastPosition.bottom);
+                              }
+                            });
                           }
-                          },
-
-
+                       },
                         child: Text(
                           'Log in',
                           textAlign: TextAlign.center,
@@ -287,8 +302,11 @@ class _Login extends State<Login> {
           );
   }
 
+
+
   void onTapGettingstarted(BuildContext context) {
-    Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => HomePage()),(route) => false);
+    //Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => HomePage()),(route) => false);
+    Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => Otp(emailcontroller.text.toString())),(route) => false);
   }
 
 
@@ -303,16 +321,25 @@ class _Login extends State<Login> {
 
   bool check_val() {
     bool isvaluevalid = true;
-    if(_nameController.text.toString().trim().isEmpty){
+
+   /* if(_nameController.text.toString().trim().isEmpty){
       EasyLoading.showToast(AppConstants.fullnameerror,
           toastPosition: EasyLoadingToastPosition.bottom);
       isvaluevalid = false;
+    }*/
+
+    if (emailcontroller.text.toString().trim().isEmpty) {
+      EasyLoading.showToast(AppConstants.USER_EMAIL,
+          toastPosition: EasyLoadingToastPosition.bottom);
+      isvaluevalid = false;
     }
+
     else if (phonecontroller.text.toString().trim().isEmpty) {
       EasyLoading.showToast(AppConstants.phoneerror,
           toastPosition: EasyLoadingToastPosition.bottom);
       isvaluevalid = false;
     }
+
     else if (validateMobile(phonecontroller.text.toString().trim())) {
       EasyLoading.showToast(AppConstants.phonenotvalid,
           toastPosition: EasyLoadingToastPosition.bottom);
@@ -335,9 +362,34 @@ class _Login extends State<Login> {
       ..dismissOnTap = false;
   }
 
+
+  bool isEmail(String em)
+  {
+    bool isvaluevalid = false;
+    String p = r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+    RegExp regExp = new RegExp(p);
+    if(regExp.hasMatch(em))
+     {
+       isvaluevalid = true;
+     }
+    else{
+      EasyLoading.showToast(AppConstants.valid_email,
+          toastPosition: EasyLoadingToastPosition.bottom);
+      isvaluevalid = false;
+    }
+    return isvaluevalid;
+  }
+
+
+
+
+
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
     throw UnimplementedError();
   }
+
+
+
 }

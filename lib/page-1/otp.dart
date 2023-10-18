@@ -7,17 +7,24 @@ import 'package:myapp/utils.dart';
 import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/otp_text_field.dart';
 
+import '../other/api_service.dart';
 import '../other/constants.dart';
+import 'homepage.dart';
 import 'login.dart';
 
 class Otp extends StatefulWidget {
+  var email;
+  Otp(this.email, {super.key});
+
   @override
   State<Otp> createState() => _OtpState();
+
 }
 
 class _OtpState extends State<Otp> {
   OtpFieldController otpController = OtpFieldController();
   String otp="";
+
 
   @override
   void initState() {
@@ -127,7 +134,7 @@ class _OtpState extends State<Otp> {
                         ),
                         children: [
                           TextSpan(
-                            text: 'Didn’t receive an OTP? ',
+                            text: 'Did’t receive an OTP? ',
                             style: SafeGoogleFont (
                               'Roboto',
                               fontSize: 15*ffem,
@@ -196,6 +203,18 @@ class _OtpState extends State<Otp> {
                                   toastPosition: EasyLoadingToastPosition.bottom);
                             }
                            else{
+
+                             ApiService().verify_otp_2(otp: otp.trim(), email:widget.email).then((
+                                 value) async{
+                               if(value["message"] == "Email sent successfully")
+                               {
+                                 onTapGettingstarted(context);
+                               }
+                               else{
+                                 EasyLoading.showToast("error",
+                                     toastPosition: EasyLoadingToastPosition.bottom);
+                               }
+                             });
                              onTapGettingstarted(context);
                            }
                           },
@@ -223,8 +242,9 @@ class _OtpState extends State<Otp> {
   }
 
   void onTapGettingstarted(BuildContext context) {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
   }
+
   void configLoading() {
     EasyLoading.instance
       ..indicatorType = EasyLoadingIndicatorType.fadingCircle

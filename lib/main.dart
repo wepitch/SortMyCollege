@@ -100,7 +100,7 @@ class MyApp extends StatelessWidget {
 		),
 		home: Scaffold(
 		body: SingleChildScrollView(
-			child: HomePage(),
+			child: SplashScreen(),
 		),
 		),
 		builder: EasyLoading.init()

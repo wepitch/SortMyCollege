@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 class AppConstants {
   static String baseUrl = 'http://13.127.234.0:9000';
   static String usersEndpoint = '/counsellor/6523dca688ac57fd5fb63d46';
+  static String sendotpRequest = '/user/auth/sendOTPEmail';
+  static String verifyotpRequest = '/user/auth/verifyOTPEmail';
 
   static const appName = "sortmycollege";
   static const packageId = "com.sortmycollege";
@@ -154,6 +156,7 @@ class AppConstants {
   static const txt_register_not_available = "Registration Form Unavailable!";
   static const txt_carddata_not_available = "Card Data Unavailable!";
   static const attendance_office_diff = "You are trying to scan card with different office";
+  static const valid_email = "Please enter valid email";
   //static const emailerror= "Please enter email";
   /*static const txt_password = "Password";
   static const txt_passworde = "Enter password";*/

@@ -419,7 +419,7 @@ class _Signup extends State<Signup>
   }
 
   void onTapGettingstarted(BuildContext context) {
-    Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => Otp()), (route) => false);
+    Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => Otp("piyush@gmail.com")), (route) => false);
   }
   void onTapGettingstarted_login(BuildContext context) {
     Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => Login()) , (route) => false);
