@@ -91,7 +91,7 @@ class ExplorerFeed extends StatelessWidget {
             Container(
               // autogroupqosoE3b (AY4X5fXvwS5bbXj9mBQoso)
               width: double.infinity,
-              height: 805.03*fem,
+              height: 730.03*fem,
               child: Stack(
                 children: [
                   Positioned(
@@ -303,17 +303,7 @@ class ExplorerFeed extends StatelessWidget {
                                     ],
                                   ),
                                 ),
-                                Container(
-                                  // group91dSR (510:18)
-                                  margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 133.33*fem, 0*fem),
-                                  width: 80*fem,
-                                  height: 80*fem,
-                                  child: Image.asset(
-                                    'assets/page-1/images/group-91.png',
-                                    width: 80*fem,
-                                    height: 80*fem,
-                                  ),
-                                ),
+
                               ],
                             ),
                           ),
@@ -321,164 +311,7 @@ class ExplorerFeed extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Positioned(
-                    // navbarYpH (492:70)
-                    left: 0*fem,
-                    top: 737.174621582*fem,
-                    child: Container(
-                      padding: EdgeInsets.fromLTRB(40*fem, 17*fem, 36.5*fem, 9*fem),
-                      width: 430*fem,
-                      height: 67*fem,
-                      decoration: BoxDecoration (
-                        color: Color(0xfff2f2f2),
-                      ),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Container(
-                            // autogrouprvssESD (AY4YBYs9bPxBgBktqWrvss)
-                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 15*fem, 1*fem),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  // home1MWq (492:81)
-                                  margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 1*fem),
-                                  width: 26*fem,
-                                  height: 26*fem,
-                                  child: Image.asset(
-                                    'assets/page-1/images/home-1-eS5.png',
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                                Text(
-                                  // homegZ7 (492:72)
-                                  'Home',
-                                  style: SafeGoogleFont (
-                                    'Inter',
-                                    fontSize: 10*ffem,
-                                    fontWeight: FontWeight.w400,
-                                    height: 1.2125*ffem/fem,
-                                    color: Color(0xff4d4d4d),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Container(
-                            // autogrouplrwd1rH (AY4YJdVgiQFD7H78JmLrWd)
-                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 52*fem, 0*fem),
-                            height: double.infinity,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  // onlinevideo11wzq (492:79)
-                                  margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 1*fem),
-                                  child: TextButton(
-                                    onPressed: () {},
-                                    style: TextButton.styleFrom (
-                                      padding: EdgeInsets.zero,
-                                    ),
-                                    child: Container(
-                                      width: 27*fem,
-                                      height: 27*fem,
-                                      child: Image.asset(
-                                        'assets/page-1/images/online-video-1-1-wff.png',
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Text(
-                                  // webinarTCV (492:73)
-                                  'Webinar',
-                                  style: SafeGoogleFont (
-                                    'Inter',
-                                    fontSize: 10*ffem,
-                                    fontWeight: FontWeight.w400,
-                                    height: 1.2125*ffem/fem,
-                                    color: Color(0xff4d4d4d),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Container(
-                            // maskgroupziD (493:57)
-                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 52*fem, 3*fem),
-                            width: 24*fem,
-                            height: 38*fem,
-                            child: Image.asset(
-                              'assets/page-1/images/mask-group-uY5.png',
-                              width: 24*fem,
-                              height: 38*fem,
-                            ),
-                          ),
-                          Container(
-                            // autogrouptpmt729 (AY4YQNq7J4hK3mL91JtPmT)
-                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 48.5*fem, 2*fem),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  // newspaper1F8M (492:78)
-                                  margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 1*fem),
-                                  width: 25*fem,
-                                  height: 25*fem,
-                                  child: Image.asset(
-                                    'assets/page-1/images/newspaper-1-eND.png',
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                                Text(
-                                  // newsZuj (492:75)
-                                  'News',
-                                  style: SafeGoogleFont (
-                                    'Inter',
-                                    fontSize: 10*ffem,
-                                    fontWeight: FontWeight.w400,
-                                    height: 1.2125*ffem/fem,
-                                    color: Color(0xff4d4d4d),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Container(
-                            // autogroupclroiGq (AY4YVnqkjtggcbmr1gCLRo)
-                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 1*fem),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  // user11FGm (492:80)
-                                  margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 3*fem),
-                                  width: 24*fem,
-                                  height: 24*fem,
-                                  child: Image.asset(
-                                    'assets/page-1/images/user-1-1-Cc1.png',
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                                Text(
-                                  // profileBAR (492:76)
-                                  'Profile',
-                                  style: SafeGoogleFont (
-                                    'Inter',
-                                    fontSize: 10*ffem,
-                                    fontWeight: FontWeight.w400,
-                                    height: 1.2125*ffem/fem,
-                                    color: Color(0xff4d4d4d),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+
                 ],
               ),
             ),

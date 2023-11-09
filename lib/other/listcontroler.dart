@@ -22,7 +22,9 @@ class ListController extends GetxController
        cousnellorlist.assignAll(counsellor);
     }
     finally{
-      isLoading(false);
+      //isLoading(false);
+      isLoading(true);
+
     }
 
   }

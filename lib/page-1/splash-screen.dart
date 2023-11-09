@@ -5,6 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/page-1/welcome-screen.dart';
 import 'package:myapp/utils.dart';
 
+import 'homepagecontainer.dart';
+
 class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -17,20 +19,22 @@ class SplashScreen extends StatelessWidget {
         // splashscreen1pV (437:5)
         padding: EdgeInsets.fromLTRB(28.5*fem, 50*fem, 20.5*fem, 100*fem),
         width: double.infinity,
-        decoration: BoxDecoration (
+        decoration: const BoxDecoration (
           color: Color(0xffffffff),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
-              // sortmycollegelogo1WFT (1115:272)
-              margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 16*fem, 24*fem),
-              width: 294*fem,
-              height: 80*fem,
-              child: Image.asset(
-                'assets/page-1/images/sortmycollege-logo-1.png',
-                fit: BoxFit.cover,
+            Expanded(
+              child: Container(
+                // sortmycollegelogo1WFT (1115:272)
+                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 16*fem, 24*fem),
+                width: 294*fem,
+                height: 80*fem,
+                child: Image.asset(
+                  'assets/page-1/images/sortmycollege-logo-1.png',
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
             Container(
@@ -171,7 +175,8 @@ class SplashScreen extends StatelessWidget {
   }
 
   void onTapGettingstarted(BuildContext context) {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => WelcomeScreen()));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => HomePageContainer()));
+    //Navigator.push(context, MaterialPageRoute(builder: (context) => WelcomeScreen()));
 
   }
 }

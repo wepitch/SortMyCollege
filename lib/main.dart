@@ -4,12 +4,14 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:myapp/page-1/homepage.dart';
+import 'package:myapp/page-1/homepagecontainer.dart';
+import 'package:myapp/page-1/flat-enquiry.dart';
 import 'package:myapp/page-1/splash-screen.dart';
 import 'package:myapp/utils.dart';
+import 'package:myapp/page-1/filter_degree.dart';
 import 'package:myapp/page-1/assets.dart';
-// import 'package:myapp/page-1/profile.dart';
-// import 'package:myapp/page-1/student-community.dart';
+ import 'package:myapp/page-1/dashboard-session-group-new.dart';
+ import 'package:myapp/page-1/filter_1.dart';
 // import 'package:myapp/page-1/student-community-NJD.dart';
 // import 'package:myapp/page-1/courses.dart';
 // import 'package:myapp/page-1/detailed-cb.dart';
@@ -28,7 +30,7 @@ import 'package:myapp/page-1/assets.dart';
 // import 'package:myapp/page-1/otp.dart';
 // import 'package:myapp/page-1/dob-new.dart';
 // import 'package:myapp/page-1/login.dart';
-// import 'package:myapp/page-1/homepage.dart';
+// import 'package:myapp/page-1/homepagecontainer.dart';
 // import 'package:myapp/page-1/counsellor-select-new.dart';
 // import 'package:myapp/page-1/ep.dart';
 // import 'package:myapp/page-1/ep-zCq.dart';
@@ -99,9 +101,7 @@ class MyApp extends StatelessWidget {
 		primarySwatch: Colors.grey,
 		),
 		home: Scaffold(
-		body: SingleChildScrollView(
-			child: SplashScreen(),
-		),
+		body: SplashScreen() ,
 		),
 		builder: EasyLoading.init()
 	  );

@@ -9,7 +9,7 @@ import 'package:otp_text_field/otp_text_field.dart';
 
 import '../other/api_service.dart';
 import '../other/constants.dart';
-import 'homepage.dart';
+import 'homepagecontainer.dart';
 import 'login.dart';
 
 class Otp extends StatefulWidget {
@@ -242,7 +242,7 @@ class _OtpState extends State<Otp> {
   }
 
   void onTapGettingstarted(BuildContext context) {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => HomePageContainer()));
   }
 
   void configLoading() {

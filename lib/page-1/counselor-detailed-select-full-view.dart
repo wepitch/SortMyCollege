@@ -7,16 +7,26 @@ import 'package:myapp/utils.dart';
 import 'dashboard-session-group-1.dart';
 import 'dashboard-session-group-2.dart';
 import 'detailed-counsellor.dart';
+import 'explore-first-feed.dart';
 
-class CounsellorDetailView2 extends StatelessWidget {
+class CounsellorBookingList extends StatefulWidget {
+  @override
+  State<CounsellorBookingList> createState() => _CounsellorBookingListState();
+}
+
+class _CounsellorBookingListState extends State<CounsellorBookingList> {
+  bool info_view=true;
+  bool feed_view=false;
+  bool isreadmore=false;
+  var lines ;
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 430;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return Material(
-      type: MaterialType.transparency,
-      child: Container(
+    return Scaffold(
+      body: Container(
         // counselordetailedselectfullvie (733:2)
         width: double.infinity,
         decoration: BoxDecoration (
@@ -303,16 +313,20 @@ class CounsellorDetailView2 extends StatelessWidget {
                             ),
                           ),
                         ),
+
                         Positioned(
                           // rectangle194kZw (733:58)
                           left: 0.5*fem,
                           top: 433.7147216797*fem,
                           child: Align(
                             child: SizedBox(
-                              width: 223.41*fem,
+                              width: 218.41*fem,
                               height: 43*fem,
                               child: Container(
                                 decoration: BoxDecoration (
+                                  border: Border.all(
+                                      color: (info_view==true) ? Colors.black : Colors.white
+                                  ),
                                   color: Color(0xfff6f5f5),
                                 ),
                               ),
@@ -329,13 +343,16 @@ class CounsellorDetailView2 extends StatelessWidget {
                               height: 43*fem,
                               child: Container(
                                 decoration: BoxDecoration (
-                                  border: Border.all(color: Color(0xff000000)),
+                                  border: Border.all(
+                                     color: (feed_view==true) ? Colors.black : Colors.white
+                                  ),
                                   color: Color(0xfff6f5f5),
                                 ),
                               ),
                             ),
                           ),
                         ),
+
                         Positioned(
                           // infoB9T (733:62)
                           left: 91.470703125*fem,
@@ -344,14 +361,23 @@ class CounsellorDetailView2 extends StatelessWidget {
                             child: SizedBox(
                               width: 29*fem,
                               height: 20*fem,
-                              child: Text(
-                                'Info',
-                                style: SafeGoogleFont (
-                                  'Inter',
-                                  fontSize: 16*ffem,
-                                  fontWeight: FontWeight.w400,
-                                  height: 1.2125*ffem/fem,
-                                  color: Color(0xff000000),
+                              child: InkWell(
+                                onTap:(){
+                                  print("hello");
+                                  setState(() {
+                                    info_view=true;
+                                    feed_view=false;
+                                  });
+                                } ,
+                                child: Text(
+                                  'Info',
+                                  style: SafeGoogleFont (
+                                    'Inter',
+                                    fontSize: 16*ffem,
+                                    fontWeight: FontWeight.w400,
+                                    height: 1.2125*ffem/fem,
+                                    color: Color(0xff000000),
+                                  ),
                                 ),
                               ),
                             ),
@@ -363,21 +389,32 @@ class CounsellorDetailView2 extends StatelessWidget {
                           top: 446.2147216797*fem,
                           child: Align(
                             child: SizedBox(
-                              width: 38*fem,
+                              width: 39*fem,
                               height: 20*fem,
-                              child: Text(
-                                'Feed',
-                                style: SafeGoogleFont (
-                                  'Inter',
-                                  fontSize: 16*ffem,
-                                  fontWeight: FontWeight.w400,
-                                  height: 1.2125*ffem/fem,
-                                  color: Color(0xff000000),
+                              child: InkWell(
+                                onTap: () {
+                                  print("hi");
+                                  setState(() {
+                                    info_view=false;
+                                    feed_view=true;
+                                  });
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => const ExplorerFeed()));
+                                },
+                                child: Text(
+                                  'Feed',
+                                  style: SafeGoogleFont (
+                                    'Inter',
+                                    fontSize: 16*ffem,
+                                    fontWeight: FontWeight.w400,
+                                    height: 1.2125*ffem/fem,
+                                    color: Color(0xff000000),
+                                  ),
                                 ),
                               ),
                             ),
                           ),
                         ),
+
                         Positioned(
                           // sgV (733:66)
                           left: 118*fem,
@@ -619,46 +656,18 @@ class CounsellorDetailView2 extends StatelessWidget {
                         Positioned(
                           // loremipsumissimplydummytextoft (733:79)
                           left: 9.9375*fem,
-                          top: 547.4647216797*fem,
-                          child: Align(
-                            child: SizedBox(
-                              width: 376*fem,
-                              height: 132*fem,
-                              child: RichText(
-                                text: TextSpan(
-                                  style: SafeGoogleFont (
-                                    'Inter',
-                                    fontSize: 15*ffem,
-                                    fontWeight: FontWeight.w500,
-                                    height: 1.7550000509*ffem/fem,
-                                    color: Color(0xff8e8989),
-                                  ),
-                                  children: [
-                                    TextSpan(
-                                      text: 'Lorem Ipsum is simply dummy text of the printing \nTypesetting industry. Lorem Ipsum has been the \nIndustry\'s standard dummy text ever since the 1500s\n',
-                                      style: SafeGoogleFont (
-                                        'Inter',
-                                        fontSize: 15*ffem,
-                                        fontWeight: FontWeight.w500,
-                                        height: 1.7550000509*ffem/fem,
-                                        color: Color(0xff8e8989),
-                                      ),
-                                    ),
-                                    TextSpan(
-                                      text: '\n',
-                                    ),
-                                    TextSpan(
-                                      text: '\n',
-                                      style: SafeGoogleFont (
-                                        'Inter',
-                                        fontSize: 15*ffem,
-                                        fontWeight: FontWeight.w500,
-                                        height: 1.7550000509*ffem/fem,
-                                        color: Color(0xfc1f0a68),
-                                      ),
-                                    ),
-                                  ],
-                                ),
+                          top: 530.4647216797*fem,
+                          child: RichText(
+                            maxLines: lines,
+                            softWrap: true,
+                            text:  TextSpan(
+                              text: 'Lorem Ipsum is simply dummy text of the printing \nTypesetting industry. Lorem Ipsum has been the \nIndustry\'s standard dummy text ever since the 1500s\n Lorem Ipsum is simply dummy text of the printing \nTypesetting industry. Lorem Ipsum has been the \nIndustry\'s standard dummy text ever since the 1500s\n',
+                              style: SafeGoogleFont (
+                                'Inter',
+                                fontSize: 13*ffem,
+                                fontWeight: FontWeight.w500,
+                                height: 1.7550000509*ffem/fem,
+                                color: Color(0xff8e8989),
                               ),
                             ),
                           ),
@@ -781,14 +790,29 @@ class CounsellorDetailView2 extends StatelessWidget {
                             child: SizedBox(
                               width: 72*fem,
                               height: 22*fem,
-                              child: Text(
-                                'Read more...',
-                                style: SafeGoogleFont (
-                                  'Inter',
-                                  fontSize: 12*ffem,
-                                  fontWeight: FontWeight.w500,
-                                  height: 1.7549999555*ffem/fem,
-                                  color: Color(0xff040404),
+                              child: GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    isreadmore = !isreadmore;
+                                  });
+                                },
+                                child: GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      isreadmore = !isreadmore;
+                                      lines = isreadmore ? 2 : 5;
+                                    });
+                                  },
+                                  child: Text(
+                                    isreadmore ?  'Read Less': 'Read More',
+                                    style: SafeGoogleFont (
+                                      'Inter',
+                                      fontSize: 12*ffem,
+                                      fontWeight: FontWeight.w500,
+                                      height: 1.7549999555*ffem/fem,
+                                      color: const Color(0xff040404),
+                                    ),
+                                  ),
                                 ),
                               ),
                             ),

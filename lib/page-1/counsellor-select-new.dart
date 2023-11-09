@@ -34,22 +34,7 @@ class _CounsellorListPageState extends State<CounsellorListPage> {
   void initState() {
     super.initState();
     ApiService.getCounsellor_1();
-
   }
-
-
-
-
-  /*Future<void> getCounsellor() async
-  {
-    //var url = Uri.parse("https://jsonplaceholder.typicode.com/posts");
-    var url = Uri.parse("http://13.127.234.0:9000/counsellor/");
-    final response = await http.get(url, headers: {"Content-Type": "application/json"});
-    setState(() {
-      //getData?.addAll(List<Dummymodel>.from(json.decode(response.body).map((x) => Dummymodel.fromJson(x))));
-      getData?.addAll(List<CounsellorModel>.from(json.decode(response.body).map((x) => CounsellorModel.fromJson(x))));
-    });*/
-
 
   @override
   Widget build(BuildContext context) {
@@ -153,7 +138,7 @@ class _CounsellorListPageState extends State<CounsellorListPage> {
                         margin: const EdgeInsets.fromLTRB(0, 70, 0, 40),
                         child: ListView.builder(
                             padding: const EdgeInsets.symmetric(horizontal: 10),
-                            itemCount: listController.cousnellorlist.length,
+                            itemCount: /*listController.cousnellorlist.length*/10,
                             physics: const ScrollPhysics(),
                             shrinkWrap: true,
                             itemBuilder: (context, index) {
@@ -185,7 +170,6 @@ class _CounsellorListPageState extends State<CounsellorListPage> {
                                             Positioned(
                                               // group24uNH (730:15)
                                               left: 10 * fem,
-
                                               child: Container(
                                                 width: 370 * fem,
                                                 height: 320.1 * fem,
@@ -238,7 +222,7 @@ class _CounsellorListPageState extends State<CounsellorListPage> {
                                                                   .w400,
                                                               height: 1.2125 *
                                                                   ffem / fem,
-                                                              color: Color(
+                                                              color: const Color(
                                                                   0xffffffff),
                                                             ),
                                                           ),
@@ -1691,186 +1675,6 @@ class _CounsellorListPageState extends State<CounsellorListPage> {
                           ),
                         ),
                       ),
-                      Positioned(
-                        // navbareWV (730:160)
-                        left: 0 * fem,
-                        top: 794 * fem,
-                        child: Container(
-                          padding: EdgeInsets.fromLTRB(
-                              40 * fem, 12 * fem, 35.5 * fem, 10 * fem),
-                          width: 460 * fem,
-                          height: 67 * fem,
-                          decoration: BoxDecoration(
-                            color: Color(0xfff2f2f2),
-                          ),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Container(
-                                // autogroupjnwbJL9 (5rqCgQEYast3VFuVxajnwb)
-                                margin: EdgeInsets.fromLTRB(
-                                    0 * fem, 0 * fem, 52 * fem, 1 * fem),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      // home1zyf (730:171)
-                                      margin: EdgeInsets.fromLTRB(
-                                          0 * fem, 0 * fem, 0 * fem, 1 * fem),
-                                      width: 26 * fem,
-                                      height: 26 * fem,
-                                      child: Image.asset(
-                                        'assets/page-1/images/home-1-pSd.png',
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                    Text(
-                                      // homei8y (730:162)
-                                      'Home',
-                                      style: SafeGoogleFont(
-                                        'Inter',
-                                        fontSize: 10 * ffem,
-                                        fontWeight: FontWeight.w400,
-                                        height: 1.2125 * ffem / fem,
-                                        color: Color(0xff4d4d4d),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                // autogroupc8em3S9 (5rqCnjPL9kdvadkJ7wC8Em)
-                                margin: EdgeInsets.fromLTRB(
-                                    0 * fem, 0 * fem, 52 * fem, 0 * fem),
-                                height: double.infinity,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      // onlinevideo11krM (730:169)
-                                      margin: EdgeInsets.fromLTRB(
-                                          0 * fem, 0 * fem, 0 * fem, 1 * fem),
-                                      width: 27 * fem,
-                                      height: 27 * fem,
-                                      child: Image.asset(
-                                        'assets/page-1/images/online-video-1-1-HHK.png',
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                    Text(
-                                      // webinarruP (730:163)
-                                      'Webinar',
-                                      style: SafeGoogleFont(
-                                        'Inter',
-                                        fontSize: 10 * ffem,
-                                        fontWeight: FontWeight.w400,
-                                        height: 1.2125 * ffem / fem,
-                                        color: Color(0xff4d4d4d),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                // autogroupjfvbCTT (5rqCtUikjR62X7yJpUjfVb)
-                                margin: EdgeInsets.fromLTRB(
-                                    0 * fem, 0 * fem, 52 * fem, 2 * fem),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      // category1vPT (730:167)
-                                      margin: EdgeInsets.fromLTRB(
-                                          0 * fem, 0 * fem, 0 * fem, 1 * fem),
-                                      width: 24 * fem,
-                                      height: 25 * fem,
-                                      child: Image.asset(
-                                        'assets/page-1/images/category-1-MxV.png',
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                    Text(
-                                      // feedRr1 (730:166)
-                                      'Feed',
-                                      style: SafeGoogleFont(
-                                        'Inter',
-                                        fontSize: 10 * ffem,
-                                        fontWeight: FontWeight.w400,
-                                        height: 1.2125 * ffem / fem,
-                                        color: Color(0xff4d4d4d),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                // autogroupjo61MzZ (5rqCzyXvsD5GoKhkpvJo61)
-                                margin: EdgeInsets.fromLTRB(
-                                    0 * fem, 0 * fem, 48.5 * fem, 2 * fem),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      // newspaper1si1 (730:168)
-                                      margin: EdgeInsets.fromLTRB(
-                                          0 * fem, 0 * fem, 0 * fem, 1 * fem),
-                                      width: 25 * fem,
-                                      height: 25 * fem,
-                                      child: Image.asset(
-                                        'assets/page-1/images/newspaper-1-KW9.png',
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                    Text(
-                                      // newsb8D (730:164)
-                                      'News',
-                                      style: SafeGoogleFont(
-                                        'Inter',
-                                        fontSize: 10 * ffem,
-                                        fontWeight: FontWeight.w400,
-                                        height: 1.2125 * ffem / fem,
-                                        color: Color(0xff4d4d4d),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                // autogroupm8pbL5o (5rqD7JgiS5q9thYYzGm8PB)
-                                margin: EdgeInsets.fromLTRB(
-                                    0 * fem, 0 * fem, 0 * fem, 1 * fem),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      // user11FiZ (730:170)
-                                      margin: EdgeInsets.fromLTRB(
-                                          0 * fem, 0 * fem, 0 * fem, 3 * fem),
-                                      width: 24 * fem,
-                                      height: 24 * fem,
-                                      child: Image.asset(
-                                        'assets/page-1/images/user-1-1-yYu.png',
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                    Text(
-                                      // profileZUM (730:165)
-                                      'Profile',
-                                      style: SafeGoogleFont(
-                                        'Inter',
-                                        fontSize: 10 * ffem,
-                                        fontWeight: FontWeight.w400,
-                                        height: 1.2125 * ffem / fem,
-                                        color: Color(0xff4d4d4d),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
 
                       Positioned(
                         // postunderoDT (730:322)
@@ -2140,7 +1944,8 @@ class _CounsellorListPageState extends State<CounsellorListPage> {
 
 
   void onTapgotocounsellor(BuildContext context) {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => CounsellorDetailView2()));
-
+    Navigator.push(context, MaterialPageRoute(builder: (context) => CounsellorBookingList()));
   }
+
+
 }
