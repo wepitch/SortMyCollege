@@ -150,7 +150,7 @@ class _FlatEnqState extends State<FlatEnq> {
                     left: 16.25 * fem,
                     top: 230 * fem,
                     child: Container(
-                      width: 397 * fem,
+                      width: 390 * fem,
                       height: 75.83 * fem,
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -158,7 +158,7 @@ class _FlatEnqState extends State<FlatEnq> {
                           Container(
                             // group284Kfn (2958:418)
                             margin: EdgeInsets.fromLTRB(
-                                0 * fem, 0 * fem, 80 * fem, 0 * fem),
+                                0 * fem, 0 * fem, 60 * fem, 0 * fem),
                             height: double.infinity,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -188,7 +188,7 @@ class _FlatEnqState extends State<FlatEnq> {
                                       Container(
                                         // group282uP6 (2958:425)
                                         margin: EdgeInsets.fromLTRB(0 * fem,
-                                            0 * fem, 61.91 * fem, 4.58 * fem),
+                                            0 * fem, 55.91 * fem, 4.58 * fem),
                                         width: double.infinity,
                                         child: Row(
                                           crossAxisAlignment:
@@ -242,7 +242,7 @@ class _FlatEnqState extends State<FlatEnq> {
                                               margin: EdgeInsets.fromLTRB(
                                                   0 * fem,
                                                   0 * fem,
-                                                  5.91 * fem,
+                                                  3.91 * fem,
                                                   0.61 * fem),
                                               width: 15 * fem,
                                               height: 15.27 * fem,
@@ -327,7 +327,7 @@ class _FlatEnqState extends State<FlatEnq> {
                                 Container(
                                   // autogrouptdtw6dv (obbCWhEmJ7cxZxekJtdTW)
                                   margin: EdgeInsets.fromLTRB(7.48 * fem,
-                                      0 * fem, 11.02 * fem, 0 * fem),
+                                      0 * fem, 9.02 * fem, 0 * fem),
                                   width: double.infinity,
                                   child: Row(
                                     crossAxisAlignment:
@@ -451,7 +451,7 @@ class _FlatEnqState extends State<FlatEnq> {
                             left: 0 * fem,
                             top: 2.9533691406 * fem,
                             child: Container(
-                              width: 342.25 * fem,
+                              width: 350.25 * fem,
                               height: 32.95 * fem,
                               child: Row(
                                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -459,7 +459,7 @@ class _FlatEnqState extends State<FlatEnq> {
                                   Container(
                                     // group223m9i (2958:450)
                                     margin: EdgeInsets.fromLTRB(0 * fem,
-                                        0 * fem, 46.08 * fem, 0 * fem),
+                                        0 * fem, 43.08 * fem, 0 * fem),
                                     height: double.infinity,
                                     child: Column(
                                       crossAxisAlignment:

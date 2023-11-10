@@ -74,7 +74,7 @@ class _HomePageContainerState extends State<HomePageContainer> {
           BottomNavigationBarItem(
             label: "Feed",
             icon: ImageIcon(
-              AssetImage("assets/page-1/images/category-1-NRF.png"),
+              AssetImage("assets/page-1/images/booking.png"),
             ),
           ),
           BottomNavigationBarItem(

@@ -348,7 +348,7 @@ class Webnar extends StatelessWidget {
                                             ),
                                             Container(
                                               // group32oR3 (481:325)
-                                              margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 263*fem, 8.57*fem),
+                                              margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 260*fem, 8.57*fem),
                                               width: double.infinity,
                                               child: Row(
                                                 crossAxisAlignment: CrossAxisAlignment.center,

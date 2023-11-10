@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:myapp/page-1/homepagecontainer_2.dart';
 import 'package:myapp/utils.dart';
 
 import 'counsellor_select_listview_offline.dart';
@@ -297,226 +298,272 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                     return Container(
                       // group193fip (I2510:2510;2510:2244)
                       margin: EdgeInsets.fromLTRB(10 * fem,10 * fem, 10 * fem, 10 * fem),
-                      padding: EdgeInsets.fromLTRB(18*fem, 10.5*fem, 18*fem, 16*fem),
+                      padding: EdgeInsets.fromLTRB(5*fem, 10.5*fem, 5*fem, 16*fem),
                       width: double.infinity,
-                      decoration: BoxDecoration (
-                        border: Border.all(color: const Color(0xff000000)),
-                        color: const Color(0xffffffff),
-                        borderRadius: BorderRadius.circular(20*fem),
-                        boxShadow: [
-                          BoxShadow(
-                            color: const Color(0x3f000000),
-                            offset: Offset(0*fem, 0*fem),
-                            blurRadius: 2*fem,
-                          ),
-                        ],
-                      ),
+
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            // group80wwE (I2510:2510;2510:2259)
-                            margin: EdgeInsets.fromLTRB(1.01*fem, 0*fem, 0*fem, 3.5*fem),
-                            width: 352.99*fem,
-                            height: 25*fem,
-                            decoration: BoxDecoration (
-                              borderRadius: BorderRadius.circular(99*fem),
-                            ),
-                            child: Container(
-                              // group187GCp (I2510:2510;2510:2260)
-                              width: double.infinity,
-                              height: double.infinity,
-                              decoration: BoxDecoration (
-                                borderRadius: BorderRadius.circular(99*fem),
+                            width: 350,
+                            height: 131,
+                            decoration: ShapeDecoration(
+                              color: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(22),
                               ),
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Container(
-                                    // importanceofcuet1AQ (I2510:2510;2510:2264)
-                                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 111.47*fem, 0*fem),
-                                    child: Text(
-                                      'Importance of CUET',
-                                      style: SafeGoogleFont (
-                                        'Inter',
-                                        fontSize: 20*ffem,
-                                        fontWeight: FontWeight.w600,
-                                        height: 1.2125*ffem/fem,
-                                        color: const Color(0xff1f0a68),
-                                      ),
-                                    ),
-                                  ),
-                                  Container(
-                                    // group185Wsr (I2510:2510;2510:2261)
-                                    margin: EdgeInsets.fromLTRB(0*fem, 3.5*fem, 0*fem, 2.5*fem),
-                                    width: 45.51*fem,
-                                    height: double.infinity,
-                                    decoration: BoxDecoration (
-                                      color: const Color(0xffb1a0ea),
-                                      borderRadius: BorderRadius.circular(99*fem),
-                                    ),
-                                    child: Center(
-                                      child: Text(
-                                        '2/5',
-                                        style: SafeGoogleFont (
-                                          'Inter',
-                                          fontSize: 13*ffem,
-                                          fontWeight: FontWeight.w500,
-                                          height: 1.2125*ffem/fem,
-                                          color: const Color(0xffffffff),
+                              shadows: const [
+                                BoxShadow(
+                                  color: Color(0x3F000000),
+                                  blurRadius: 5,
+                                  offset: Offset(0, 0),
+                                  spreadRadius: 0,
+                                )
+                              ],
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Container(
+                                  width: 330,
+                                  height: 151,
+                                  child: Stack(
+                                    children: [
+                                      Positioned(
+                                        left: 0,
+                                        top: 0,
+                                        child: Container(
+                                          width: 350,
+                                          height: 131,
+
                                         ),
                                       ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          Container(
-                            // Bj6 (I2510:2510;2510:2266)
-                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 5*fem),
-                            width: double.infinity,
-                            child: Text(
-                              '12/08/2023',
-                              textAlign: TextAlign.center,
-                              style: SafeGoogleFont (
-                                'Inter',
-                                fontSize: 12*ffem,
-                                fontWeight: FontWeight.w400,
-                                height: 1.2125*ffem/fem,
-                                color: const Color(0xff000000),
-                              ),
-                            ),
-                          ),
-                          Container(
-                            // autogroupr3agWWU (AQPMfkvMhj2aZxuupsR3Ag)
-                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 0*fem),
-                            width: double.infinity,
-                            height: 90*fem,
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                Expanded(
-                                  child: Container(
-                                    // autogroupzam6e6t (AQPMnFjXqX1prAeMqJzAm6)
-                                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 141.99*fem, 0*fem),
-                                    width: 116.01*fem,
-                                    height: double.infinity,
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Container(
-                                          // duration200pm0300pmAL8 (I2510:2510;2510:2252)
-                                          margin: EdgeInsets.fromLTRB(1.01*fem, 0*fem, 0*fem, 3*fem),
+                                      Positioned(
+                                        left: 230,
+                                        top: 76,
+                                        child: Container(
+                                          width: 96,
+                                          height: 38,
+                                          child: Stack(
+                                            children: [
+                                              Positioned(
+                                                left: 0,
+                                                top: 0,
+                                                child: Container(
+                                                  width: 96,
+                                                  height: 38,
+                                                  decoration: ShapeDecoration(
+                                                    color: Color(0xFF1F0A68),
+                                                    shape: RoundedRectangleBorder(
+                                                      side: BorderSide(width: 1),
+                                                      borderRadius: BorderRadius.circular(10),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              const Positioned(
+                                                left: 24,
+                                                top: 7,
+                                                child: Text(
+                                                  'Book',
+                                                  textAlign: TextAlign.center,
+                                                  style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 18,
+                                                    fontFamily: 'Inter',
+                                                    fontWeight: FontWeight.w600,
+                                                    height: 0,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                      const Positioned(
+                                        left: 19.01,
+                                        top: 63,
+                                        child: SizedBox(
+                                          width: 174.98,
                                           child: Text(
                                             '2:00 PM - 03:00 PM',
-                                            style: SafeGoogleFont (
-                                              'Inter',
-                                              fontSize: 12*ffem,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 12,
+                                              fontFamily: 'Inter',
                                               fontWeight: FontWeight.w400,
-                                              height: 1.2125*ffem/fem,
-                                              color: const Color(0xff000000),
+                                              height: 0,
                                             ),
                                           ),
                                         ),
-                                        Container(
-                                          // price500G8G (I2510:2510;2510:2254)
-                                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 2*fem),
-                                          width: double.infinity,
+                                      ),
+                                      const Positioned(
+                                        left: 19.01,
+                                        top: 81,
+                                        child: SizedBox(
+                                          width: 78.89,
                                           child: Text(
                                             'Price - 500 /-',
                                             textAlign: TextAlign.center,
-                                            style: SafeGoogleFont (
-                                              'Inter',
-                                              fontSize: 12*ffem,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 12,
+                                              fontFamily: 'Inter',
                                               fontWeight: FontWeight.w500,
-                                              height: 1.2125*ffem/fem,
-                                              color: const Color(0xff000000),
+                                              height: 0,
                                             ),
                                           ),
                                         ),
-                                        Container(
-                                          // group192aek (I2510:2510;2510:2255)
-                                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 19.01*fem, 0*fem),
-                                          child: TextButton(
-                                            onPressed: () {},
-                                            style: TextButton.styleFrom (
-                                              padding: EdgeInsets.zero,
-                                            ),
-                                            child: Container(
-                                              padding: EdgeInsets.fromLTRB(0.43*fem, 0*fem, 0*fem, 0*fem),
-                                              width: double.infinity,
-                                              child: Row(
-                                                crossAxisAlignment: CrossAxisAlignment.center,
-                                                children: [
-                                                  Container(
-                                                    // viewdetailstQY (I2510:2510;2510:2258)
-                                                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 4.57*fem, 0*fem),
-                                                    child: Text(
-                                                      'View Details',
-                                                      textAlign: TextAlign.center,
-                                                      style: SafeGoogleFont (
-                                                        'Inter',
-                                                        fontSize: 12*ffem,
-                                                        fontWeight: FontWeight.w800,
-                                                        height: 1.2125*ffem/fem,
-                                                        color: const Color(0xff000000),
+                                      ),
+                                      Positioned(
+                                        left: 18,
+                                        top: 98,
+                                        child: Container(
+                                          width: 97,
+                                          height: 17,
+                                          child: Stack(
+                                            children: [
+                                              Positioned(
+                                                left: 80,
+                                                top: 17,
+                                                child: Transform(
+                                                  transform: Matrix4.identity()..translate(0.0, 0.0)..rotateZ(-1.57),
+                                                  child: Container(
+                                                    width: 17,
+                                                    height: 17,
+                                                    decoration: const BoxDecoration(
+                                                      image: DecorationImage(
+                                                        image: AssetImage('assets/page-1/images/arrow-down-2.png'),
+                                                        fit: BoxFit.fill,
                                                       ),
                                                     ),
                                                   ),
-                                                  SizedBox(
-                                                    // arrowdown21VA (I2510:2510;2510:2256)
-                                                    width: 17*fem,
-                                                    height: 17*fem,
-                                                    child: Image.asset(
-                                                      'assets/page-1/images/arrow-down-2.png',
-                                                      fit: BoxFit.cover,
+                                                ),
+                                              ),
+                                              const Positioned(
+                                                left: 0,
+                                                top: 1,
+                                                child: SizedBox(
+                                                  width: 75.86,
+                                                  child: Text(
+                                                    'View Details',
+                                                    textAlign: TextAlign.center,
+                                                    style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 12,
+                                                      fontFamily: 'Inter',
+                                                      fontWeight: FontWeight.w800,
+                                                      height: 0,
                                                     ),
                                                   ),
-                                                ],
+                                                ),
                                               ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                      Positioned(
+                                        left: 19.01,
+                                        top: 15,
+                                        child: Container(
+                                          width: 352.99,
+                                          height: 24,
+                                          child: Stack(
+                                            children: [
+                                              Positioned(
+                                                left: 260.47,
+                                                top: 3,
+                                                child: Container(
+                                                  width: 45.51,
+                                                  height: 19,
+                                                  child: Stack(
+                                                    children: [
+                                                      Positioned(
+                                                        left: 0,
+                                                        top: 0,
+                                                        child: Container(
+                                                          width: 45.51,
+                                                          height: 19,
+                                                          decoration: ShapeDecoration(
+                                                            color: Color(0xFFB1A0EA),
+                                                            shape: RoundedRectangleBorder(
+                                                              borderRadius: BorderRadius.circular(99),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      const Positioned(
+                                                        left: 12.14,
+                                                        top: 2,
+                                                        child: SizedBox(
+                                                          width: 22.25,
+                                                          height: 15,
+                                                          child: Text(
+                                                            '2/5',
+                                                            style: TextStyle(
+                                                              color: Colors.white,
+                                                              fontSize: 13,
+                                                              fontFamily: 'Inter',
+                                                              fontWeight: FontWeight.w500,
+                                                              height: 0,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                              Positioned(
+                                                left: 0,
+                                                top: 0,
+                                                child: SizedBox(
+                                                  width: 198.24,
+                                                  child: Text(
+                                                    'Importance of CUET',
+                                                    style: TextStyle(
+                                                      color: Color(0xFF1F0A68),
+                                                      fontSize: 20,
+                                                      fontFamily: 'Inter',
+                                                      fontWeight: FontWeight.w600,
+                                                      height: 0,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                      const Positioned(
+                                        left: 19.01,
+                                        top: 43,
+                                        child: SizedBox(
+                                          width: 67.77,
+                                          height: 16,
+                                          child: Text(
+                                            '12/08/2023',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 12,
+                                              fontFamily: 'Inter',
+                                              fontWeight: FontWeight.w400,
+                                              height: 0,
                                             ),
                                           ),
                                         ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  // group184kSk (I2510:2510;2510:2246)
-                                  margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 1*fem),
-                                  width: 92*fem,
-                                  height: 38*fem,
-                                  decoration: BoxDecoration (
-                                    borderRadius: BorderRadius.circular(10*fem),
-                                  ),
-                                  child: Container(
-                                    // group186sXN (I2510:2510;2510:2247)
-                                    width: double.infinity,
-                                    height: double.infinity,
-                                    decoration: BoxDecoration (
-                                      border: Border.all(color: const Color(0xff000000)),
-                                      color: const Color(0xff1f0a68),
-                                      borderRadius: BorderRadius.circular(10*fem),
-                                    ),
-                                    child: Center(
-                                      child: Text(
-                                        'Book',
-                                        textAlign: TextAlign.center,
-                                        style: SafeGoogleFont (
-                                          'Inter',
-                                          fontSize: 18*ffem,
-                                          fontWeight: FontWeight.w600,
-                                          height: 1.2125*ffem/fem,
-                                          color: const Color(0xffffffff),
-                                        ),
                                       ),
-                                    ),
+                                    ],
                                   ),
                                 ),
                               ],
                             ),
-                          ),
+                          )
+
+
                         ],
                       ),
                     );
@@ -531,7 +578,7 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
 
   Future<bool> _onBackPressed()async {
     Navigator.push(
-      context,MaterialPageRoute(builder: (context) => CounsellorListPage_offline() ),
+      context,MaterialPageRoute(builder: (context) => HomePageContainer_2() ),
     );
     return true;
   }
