@@ -72,7 +72,7 @@ class _HomePageContainerState extends State<HomePageContainer> {
             ),
           ),
           BottomNavigationBarItem(
-            label: "Feed",
+            label: "Booking",
             icon: ImageIcon(
               AssetImage("assets/page-1/images/booking.png"),
             ),

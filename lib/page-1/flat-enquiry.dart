@@ -1319,7 +1319,7 @@ class _FlatEnqState extends State<FlatEnq> {
                                         Container(
                                           // commentaue (2958:493)
                                           margin: EdgeInsets.fromLTRB(0 * fem,
-                                              0 * fem, 278 * fem, 0 * fem),
+                                              0 * fem, 276 * fem, 0 * fem),
                                           child: Text(
                                             'Comment...',
                                             style: SafeGoogleFont(
@@ -1393,7 +1393,7 @@ class _FlatEnqState extends State<FlatEnq> {
                                         Container(
                                           // diploma2Hn (2958:490)
                                           margin: EdgeInsets.fromLTRB(0 * fem,
-                                              1 * fem, 9 * fem, 0 * fem),
+                                              1 * fem, 5 * fem, 0 * fem),
                                           width: 21 * fem,
                                           height: 21 * fem,
                                           child: Image.asset(
@@ -1418,7 +1418,7 @@ class _FlatEnqState extends State<FlatEnq> {
                                   Container(
                                     // group367Ufa (2958:486)
                                     margin: EdgeInsets.fromLTRB(
-                                        6 * fem, 0 * fem, 207 * fem, 0 * fem),
+                                        6 * fem, 0 * fem, 205 * fem, 0 * fem),
                                     width: double.infinity,
                                     child: Row(
                                       crossAxisAlignment:
@@ -1460,7 +1460,7 @@ class _FlatEnqState extends State<FlatEnq> {
                             Container(
                               // group375rg8 (2960:425)
                               margin: EdgeInsets.fromLTRB(
-                                  6 * fem, 0 * fem, 249 * fem, 15 * fem),
+                                  6 * fem, 0 * fem, 246 * fem, 15 * fem),
                               width: double.infinity,
                               child: Row(
                                 crossAxisAlignment: CrossAxisAlignment.center,
