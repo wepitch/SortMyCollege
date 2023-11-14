@@ -254,7 +254,7 @@ class _CounsellorListPage_offlineState
                             ),
                             Container(
                               color: Colors.white,
-                              margin: const EdgeInsets.fromLTRB(0, 10, 0, 40),
+                              margin: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                               child: ListView.builder(
                                   padding: const EdgeInsets.symmetric(horizontal: 10),
                                   itemCount: /*listController.cousnellorlist.length*/ 10,
@@ -270,7 +270,7 @@ class _CounsellorListPage_offlineState
                                           margin: EdgeInsets.fromLTRB(20 * fem,
                                               10 * fem, 10 * fem, 10.73 * fem),
                                           width: 400 * fem,
-                                          height: 300 * fem,
+                                          height: 280 * fem,
                                           decoration: BoxDecoration(
                                             color: const Color(0xfff7f4ff),
                                             borderRadius:
@@ -371,13 +371,13 @@ class _CounsellorListPage_offlineState
                                                       Positioned(
                                                         child: Container(
                                                           width: 370 * fem,
-                                                          height: 290.1 * fem,
+                                                          height: 270.1 * fem,
                                                           child: Stack(
                                                             children: [
                                                               Positioned(
                                                                 // rectangle107TMB (730:30)
                                                                 left: 0 * fem,
-                                                                top: 139.0888214111 *
+                                                                top: 115.0888214111 *
                                                                     fem,
                                                                 child: Align(
                                                                   child: SizedBox(
@@ -622,7 +622,7 @@ class _CounsellorListPage_offlineState
                                                                         margin: EdgeInsets.fromLTRB(
                                                                             0 *
                                                                                 fem,
-                                                                            25.5 *
+                                                                            3.5 *
                                                                                 fem,
                                                                             3.29 *
                                                                                 fem,
@@ -745,7 +745,7 @@ class _CounsellorListPage_offlineState
                                                                 // group127Yc9 (730:56)
                                                                 left: 15.095703125 *
                                                                     fem,
-                                                                top: 185.1729736328 *
+                                                                top: 170.1729736328 *
                                                                     fem,
                                                                 child: Container(
                                                                   width: 330.19 * fem,
@@ -1168,7 +1168,7 @@ class _CounsellorListPage_offlineState
                                               Positioned(
                                                 // rectangle202WCq (782:2)
                                                 left: 10 * fem,
-                                                top: 240.5815429688 * fem,
+                                                top: 220.5815429688 * fem,
                                                 child: Align(
                                                   child: SizedBox(
                                                     width: 370 * fem,
@@ -1192,7 +1192,7 @@ class _CounsellorListPage_offlineState
                                               Positioned(
                                                 // booknownAM (730:83)
                                                 left: 146.9609375 * fem,
-                                                top: 260.3315429688 * fem,
+                                                top: 240.3315429688 * fem,
                                                 child: Align(
                                                   child: SizedBox(
                                                     width: 91 * fem,

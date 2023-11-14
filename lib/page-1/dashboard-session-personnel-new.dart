@@ -90,27 +90,6 @@ class _Counseling_Session_PersonnelState
               child: Stack(
                 children: [
                   Positioned(
-                    // bookyourslotnzU (1779:1252)
-                    left: 54 * fem,
-                    top: 178.5 * fem,
-                    child: Align(
-                      child: SizedBox(
-                        width: 250 * fem,
-                        height: 20 * fem,
-                        child: Text(
-                          'Book Your Personnel Slot',
-                          style: SafeGoogleFont(
-                            'Inter',
-                            fontSize: 20 * ffem,
-                            fontWeight: FontWeight.w600,
-                            height: 1.2125 * ffem / fem,
-                            color: const Color(0xff000000),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
                     // frame203HwE (2521:6011)
                     left: 30 * fem,
                     top: 24 * fem,
@@ -136,7 +115,7 @@ class _Counseling_Session_PersonnelState
                               height: double.infinity,
                               decoration: BoxDecoration(
                                 border:
-                                    Border.all(color: const Color(0xff1f0a68)),
+                                Border.all(color: const Color(0xff1f0a68)),
                                 color: const Color(0xffffffff),
                                 borderRadius: BorderRadius.circular(5 * fem),
                               ),
@@ -247,7 +226,7 @@ class _Counseling_Session_PersonnelState
 
                                           child: Row(
                                             crossAxisAlignment:
-                                                CrossAxisAlignment.center,
+                                            CrossAxisAlignment.center,
                                             children: [
                                               Center(
                                                 // today21octT6p (2620:3575)
@@ -264,11 +243,11 @@ class _Counseling_Session_PersonnelState
                                                       'Inter',
                                                       fontSize: 12 * ffem,
                                                       fontWeight:
-                                                          FontWeight.w700,
+                                                      FontWeight.w700,
                                                       height:
-                                                          1.2125 * ffem / fem,
+                                                      1.2125 * ffem / fem,
                                                       letterSpacing:
-                                                          0.59375 * fem,
+                                                      0.59375 * fem,
                                                       color: const Color(
                                                           0xff000000),
                                                     ),
@@ -286,9 +265,9 @@ class _Counseling_Session_PersonnelState
                                                     fontWeight: FontWeight.w700,
                                                     height: 1.2125 * ffem / fem,
                                                     letterSpacing:
-                                                        0.59375 * fem,
+                                                    0.59375 * fem,
                                                     color:
-                                                        const Color(0xff8d8888),
+                                                    const Color(0xff8d8888),
                                                   ),
                                                 ),
                                               ),
@@ -306,6 +285,27 @@ class _Counseling_Session_PersonnelState
                       ),
                     ),
                   ),
+                  Positioned(
+                    // bookyourslotnzU (1779:1252)
+                    left: 54 * fem,
+                    top: 178.5 * fem,
+                    child: Align(
+                      child: SizedBox(
+                        width: 250 * fem,
+                        height: 20 * fem,
+                        child: Text(
+                          'Book Your Personnel Slot',
+                          style: SafeGoogleFont(
+                            'Inter',
+                            fontSize: 20 * ffem,
+                            fontWeight: FontWeight.w600,
+                            height: 1.2125 * ffem / fem,
+                            color: const Color(0xff000000),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -317,8 +317,8 @@ class _Counseling_Session_PersonnelState
                   itemBuilder: (context, index) {
                     return Container(
                       // group193fip (I2510:2510;2510:2244)
-                      margin: EdgeInsets.fromLTRB(10 * fem,10 * fem, 10 * fem, 10 * fem),
-                      padding: EdgeInsets.fromLTRB(5*fem, 10.5*fem, 5*fem, 16*fem),
+                      margin: EdgeInsets.fromLTRB(10 * fem,0 * fem, 10 * fem, 10 * fem),
+                      padding: EdgeInsets.fromLTRB(5*fem, 0.5*fem, 5*fem, 16*fem),
                       width: double.infinity,
 
                       child: Column(
@@ -326,7 +326,7 @@ class _Counseling_Session_PersonnelState
                         children: [
                           Container(
                             width: 350,
-                            height: 131,
+                            height: 130,
                             decoration: ShapeDecoration(
                               color: Colors.white,
                               shape: RoundedRectangleBorder(
@@ -348,7 +348,7 @@ class _Counseling_Session_PersonnelState
                               children: [
                                 Container(
                                   width: 330,
-                                  height: 151,
+                                  height: 150,
                                   child: Stack(
                                     children: [
                                       Positioned(
