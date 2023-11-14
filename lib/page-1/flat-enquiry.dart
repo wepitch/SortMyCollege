@@ -126,7 +126,7 @@ class _FlatEnqState extends State<FlatEnq> {
             Container(
               // frame325A8g (2958:415)
               width: 431 * fem,
-              height: 300 * fem,
+              height: 420*fem,
               child: Stack(
                 children: [
                   Positioned(
@@ -369,7 +369,7 @@ class _FlatEnqState extends State<FlatEnq> {
                   Positioned(
                     // group228so6 (2958:443)
                     left: 43.1260986328 * fem,
-                    top: 303.8251953125 * fem,
+                    top: 320.8251953125 * fem,
                     child: Container(
                       width: 342.25 * fem,
                       height: 41.07 * fem,
@@ -449,7 +449,7 @@ class _FlatEnqState extends State<FlatEnq> {
                           Positioned(
                             // frame2203Di (2958:448)
                             left: 0 * fem,
-                            top: 2.9533691406 * fem,
+                            top: 1.9533691406 * fem,
                             child: Container(
                               width: 350.25 * fem,
                               height: 32.95 * fem,
@@ -649,8 +649,8 @@ class _FlatEnqState extends State<FlatEnq> {
                   ),
                   Positioned(
                     // group2944Ta (2958:469)
-                    left: 0 * fem,
-                    top: 359.4067382812 * fem,
+                    left: 10 * fem,
+                   top: 370.4067382812 * fem,
                     child: Container(
                       width: 429.5 * fem,
                       height: 43 * fem,
@@ -728,11 +728,12 @@ class _FlatEnqState extends State<FlatEnq> {
             ),
             Expanded(
               child: SingleChildScrollView(
+                physics: visible ? const  AlwaysScrollableScrollPhysics() : const NeverScrollableScrollPhysics(),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
-                    Container(
+                    SizedBox(
                       width: 400 * fem,
                       child: Container(
                         // autogroupsfmiJmE (obc8V9JeemyS6W4xtsFmi)
@@ -774,8 +775,7 @@ class _FlatEnqState extends State<FlatEnq> {
                                               '\u2022 Industry\'s standard dummy text ever since the 1500s\n'
                                               '\u2022 Industry\'s standard dummy text ever since the 1500s\n'
                                               '\u2022 Industry\'s standard dummy text ever since the 1500s\n'
-                                              '\u2022 Industry\'s standard dummy text ever since the 1500s\n'
-                                              '\u2022 Industry\'s standard dummy text ever since the 1500s.\n',
+                                              ,
                                           style: SafeGoogleFont(
                                             'Inter',
                                             fontSize: 14 * ffem,
@@ -788,7 +788,7 @@ class _FlatEnqState extends State<FlatEnq> {
                                           text: '\n',
                                           style: SafeGoogleFont(
                                             'Inter',
-                                            fontSize: 14 * ffem,
+                                            fontSize: 2 * ffem,
                                             fontWeight: FontWeight.w400,
                                             height: 1.7549999782 * ffem / fem,
                                             color: Color(0xff595959),
@@ -828,7 +828,7 @@ class _FlatEnqState extends State<FlatEnq> {
                                         'Read more...',
                                         style: SafeGoogleFont(
                                           'Inter',
-                                          fontSize: 16 * ffem,
+                                          fontSize: 15 * ffem,
                                           fontWeight: FontWeight.w700,
                                           height: 1.5549999555 * ffem / fem,
                                           color: Color(0xff040404),
@@ -843,739 +843,749 @@ class _FlatEnqState extends State<FlatEnq> {
                         ),
                       ),
                     ),
-                    Visibility(
-                      visible: visible,
-                      child: Container(
-                        width: 440 * fem,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                              // clienttestimonialsL32 (2958:482)
-                              margin: EdgeInsets.fromLTRB(
-                                  20 * fem, 0 * fem, 0 * fem, 15 * fem),
-                              child: Text(
-                                'Client Testimonials',
-                                style: SafeGoogleFont(
-                                  'Inter',
-                                  fontSize: 20 * ffem,
-                                  fontWeight: FontWeight.w700,
-                                  height: 1.2125 * ffem / fem,
-                                  color: Color(0xff000000),
-                                ),
-                              ),
-                            ),
-                            Container(
-                              // group368qVa (2958:504)
-                              margin: EdgeInsets.fromLTRB(
-                                  0 * fem, 0 * fem, 0 * fem, 19.57 * fem),
-                              width: double.infinity,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Container(
-                                    // group363y5z (2958:509)
-                                    margin: EdgeInsets.fromLTRB(
-                                        0 * fem, 0 * fem, 0 * fem, 18 * fem),
-                                    width: double.infinity,
-                                    height: 196 * fem,
-                                    child: Stack(
-                                      children: [
-                                        Positioned(
-                                          // rectangle265uVS (2958:510)
-                                          left: 38 * fem,
-                                          top: 0 * fem,
-                                          child: Align(
-                                            child: SizedBox(
-                                              width: 355 * fem,
-                                              height: 196 * fem,
-                                              child: Container(
-                                                decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          10 * fem),
-                                                  color: Color(0xffffffff),
-                                                  boxShadow: [
-                                                    BoxShadow(
-                                                      color: Color(0x1c000000),
-                                                      offset: Offset(
-                                                          0 * fem, 2 * fem),
-                                                      blurRadius: 6 * fem,
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Positioned(
-                                          // group362BSx (2958:511)
-                                          left: 0 * fem,
-                                          top: 13 * fem,
-                                          child: Container(
-                                            width: 448 * fem,
-                                            height: 145 * fem,
-                                            child: Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.center,
-                                              children: [
-                                                Container(
-                                                  // ellipse34hgC (2958:518)
-                                                  margin: EdgeInsets.fromLTRB(
-                                                      194 * fem,
-                                                      0 * fem,
-                                                      194 * fem,
-                                                      6 * fem),
-                                                  width: double.infinity,
-                                                  height: 60 * fem,
-                                                  decoration: BoxDecoration(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            30 * fem),
-                                                    image:
-                                                        const DecorationImage(
-                                                      fit: BoxFit.cover,
-                                                      image: AssetImage(
-                                                        'assets/page-1/images/ellipse-34-bg-yqT.png',
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                                Container(
-                                                  // autogroupkg8gQKi (obd53QjXDk74WfGeHkg8G)
-                                                  margin: EdgeInsets.fromLTRB(
-                                                      20 * fem,
-                                                      0 * fem,
-                                                      22 * fem,
-                                                      12.79 * fem),
-                                                  width: double.infinity,
-                                                  child: Row(
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
-                                                    children: [
-                                                      Container(
-                                                        // vectorvor (2958:521)
-                                                        margin:
-                                                            EdgeInsets.fromLTRB(
-                                                                0 * fem,
-                                                                2 * fem,
-                                                                142.5 * fem,
-                                                                0 * fem),
-                                                        width: 13 * fem,
-                                                        height: 33 * fem,
-                                                        child: Image.asset(
-                                                          'assets/page-1/images/vector-jKW.png',
-                                                          width: 13 * fem,
-                                                          height: 33 * fem,
-                                                        ),
-                                                      ),
-                                                      Container(
-                                                        // autogroupyqpxFbE (obdB3EjxG3FnEim7TyQpx)
-                                                        margin:
-                                                            EdgeInsets.fromLTRB(
-                                                                0 * fem,
-                                                                6 * fem,
-                                                                139.53 * fem,
-                                                                0 * fem),
-                                                        width: 96.97 * fem,
-                                                        child: Column(
-                                                          crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .center,
-                                                          children: [
-                                                            Container(
-                                                              // alexyXE (2958:519)
-                                                              margin: EdgeInsets
-                                                                  .fromLTRB(
-                                                                      0 * fem,
-                                                                      0 * fem,
-                                                                      0.97 *
-                                                                          fem,
-                                                                      12.78 *
-                                                                          fem),
-                                                              child: Text(
-                                                                'Alex',
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .center,
-                                                                style:
-                                                                    SafeGoogleFont(
-                                                                  'Inter',
-                                                                  fontSize:
-                                                                      12 * ffem,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w400,
-                                                                  height:
-                                                                      1.2125 *
-                                                                          ffem /
-                                                                          fem,
-                                                                  color: Color(
-                                                                      0xff000000),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            Container(
-                                                              // group3616Lx (2958:512)
-                                                              width: double
-                                                                  .infinity,
-                                                              child: Row(
-                                                                crossAxisAlignment:
-                                                                    CrossAxisAlignment
-                                                                        .center,
-                                                                children: [
-                                                                  Container(
-                                                                    // streamlineinterfacefavoritesta (2958:513)
-                                                                    width:
-                                                                        12.97 *
-                                                                            fem,
-                                                                    height:
-                                                                        12.44 *
-                                                                            fem,
-                                                                    child: Image
-                                                                        .asset(
-                                                                      'assets/page-1/images/group-95T.png',
-                                                                      width:
-                                                                          12.97 *
-                                                                              fem,
-                                                                      height:
-                                                                          12.44 *
-                                                                              fem,
-                                                                    ),
-                                                                  ),
-                                                                  SizedBox(
-                                                                    width:
-                                                                        8.03 *
-                                                                            fem,
-                                                                  ),
-                                                                  Container(
-                                                                    // streamlineinterfacefavoritesta (2958:514)
-                                                                    width:
-                                                                        12.97 *
-                                                                            fem,
-                                                                    height:
-                                                                        12.44 *
-                                                                            fem,
-                                                                    child: Image
-                                                                        .asset(
-                                                                      'assets/page-1/images/group-yah.png',
-                                                                      width:
-                                                                          12.97 *
-                                                                              fem,
-                                                                      height:
-                                                                          12.44 *
-                                                                              fem,
-                                                                    ),
-                                                                  ),
-                                                                  SizedBox(
-                                                                    width:
-                                                                        8.03 *
-                                                                            fem,
-                                                                  ),
-                                                                  Container(
-                                                                    // streamlineinterfacefavoritesta (2958:515)
-                                                                    width:
-                                                                        12.97 *
-                                                                            fem,
-                                                                    height:
-                                                                        12.44 *
-                                                                            fem,
-                                                                    child: Image
-                                                                        .asset(
-                                                                      'assets/page-1/images/group-yah.png',
-                                                                      width:
-                                                                          12.97 *
-                                                                              fem,
-                                                                      height:
-                                                                          12.44 *
-                                                                              fem,
-                                                                    ),
-                                                                  ),
-                                                                  SizedBox(
-                                                                    width:
-                                                                        8.03 *
-                                                                            fem,
-                                                                  ),
-                                                                  Container(
-                                                                    // streamlineinterfacefavoritesta (2958:516)
-                                                                    width:
-                                                                        12.97 *
-                                                                            fem,
-                                                                    height:
-                                                                        12.44 *
-                                                                            fem,
-                                                                    child: Image
-                                                                        .asset(
-                                                                      'assets/page-1/images/unfillstar.png',
-                                                                      width:
-                                                                          12.97 *
-                                                                              fem,
-                                                                      height:
-                                                                          12.44 *
-                                                                              fem,
-                                                                    ),
-                                                                  ),
-                                                                  SizedBox(
-                                                                    width:
-                                                                        8.03 *
-                                                                            fem,
-                                                                  ),
-                                                                  Container(
-                                                                    // streamlineinterfacefavoritesta (2958:517)
-                                                                    width:
-                                                                        12.97 *
-                                                                            fem,
-                                                                    height:
-                                                                        12.44 *
-                                                                            fem,
-                                                                    child: Image
-                                                                        .asset(
-                                                                      'assets/page-1/images/unfillstar.png',
-                                                                      width:
-                                                                          12.97 *
-                                                                              fem,
-                                                                      height:
-                                                                          12.44 *
-                                                                              fem,
-                                                                    ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                      ),
-                                                      Container(
-                                                        // vectorKWY (2958:522)
-                                                        width: 14 * fem,
-                                                        height: 33 * fem,
-                                                        child: Image.asset(
-                                                          'assets/page-1/images/vector-DCt.png',
-                                                          width: 14 * fem,
-                                                          height: 33 * fem,
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                                Text(
-                                                  // compassionateinsightfulcounsel (2958:520)
-                                                  '"Compassionate, insightful counselor - highly recommend!"',
-                                                  textAlign: TextAlign.center,
-                                                  style: SafeGoogleFont(
-                                                    'Inter',
-                                                    fontSize: 11 * ffem,
-                                                    fontWeight: FontWeight.w400,
-                                                    height: 1.2125 * ffem / fem,
-                                                    fontStyle: FontStyle.italic,
-                                                    color: Color(0xffa09d9d),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Container(
-                                    // frame134m7e (2958:505)
-                                    margin: EdgeInsets.fromLTRB(
-                                        0 * fem, 0 * fem, 8.29 * fem, 0 * fem),
-                                    width: 33.78 * fem,
-                                    height: 6.43 * fem,
-                                    child: Image.asset(
-                                      'assets/page-1/images/frame-134.png',
-                                      width: 33.78 * fem,
-                                      height: 6.43 * fem,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Container(
-                              // group374Gq6 (2958:538)
-                              margin: EdgeInsets.fromLTRB(
-                                  7 * fem, 0 * fem, 11 * fem, 0 * fem),
-                              width: double.infinity,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Container(
-                                    // autogroupndmaoq2 (obcXDzR7vjLQoZdzSNDMA)
-                                    padding: EdgeInsets.fromLTRB(16.5 * fem,
-                                        0 * fem, 16.5 * fem, 12.79 * fem),
-                                    width: double.infinity,
-                                    height: 61 * fem,
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Container(
-                                          // giveareviewLKA (2958:502)
-                                          margin: EdgeInsets.fromLTRB(0.5 * fem,
-                                              0 * fem, 0 * fem, 7.78 * fem),
-                                          child: Text(
-                                            'Give a Review',
-                                            style: SafeGoogleFont(
-                                              'Inter',
-                                              fontSize: 16 * ffem,
-                                              fontWeight: FontWeight.w700,
-                                              height: 1.7002272606 * ffem / fem,
-                                              color: Color(0xff000000),
-                                            ),
-                                          ),
-                                        ),
-                                        Container(
-                                          // group360eKr (2958:496)
-                                          child: Row(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
-                                            children: [
-                                              Container(
-                                                // streamlineinterfacefavoritesta (2958:497)
-                                                width: 12.97 * fem,
-                                                height: 12.44 * fem,
-                                                child: Image.asset(
-                                                  'assets/page-1/images/unfillstar.png',
-                                                  width: 12.97 * fem,
-                                                  height: 12.44 * fem,
-                                                ),
-                                              ),
-                                              SizedBox(
-                                                width: 8.03 * fem,
-                                              ),
-                                              Container(
-                                                // streamlineinterfacefavoritesta (2958:498)
-                                                width: 12.97 * fem,
-                                                height: 12.44 * fem,
-                                                child: Image.asset(
-                                                  'assets/page-1/images/unfillstar.png',
-                                                  width: 12.97 * fem,
-                                                  height: 12.44 * fem,
-                                                ),
-                                              ),
-                                              SizedBox(
-                                                width: 8.03 * fem,
-                                              ),
-                                              Container(
-                                                // streamlineinterfacefavoritesta (2958:499)
-                                                width: 12.97 * fem,
-                                                height: 12.44 * fem,
-                                                child: Image.asset(
-                                                  'assets/page-1/images/unfillstar.png',
-                                                  width: 12.97 * fem,
-                                                  height: 12.44 * fem,
-                                                ),
-                                              ),
-                                              SizedBox(
-                                                width: 8.03 * fem,
-                                              ),
-                                              Container(
-                                                // streamlineinterfacefavoritesta (2958:500)
-                                                width: 12.97 * fem,
-                                                height: 12.44 * fem,
-                                                child: Image.asset(
-                                                  'assets/page-1/images/group-PhK.png',
-                                                  width: 12.97 * fem,
-                                                  height: 12.44 * fem,
-                                                ),
-                                              ),
-                                              SizedBox(
-                                                width: 8.03 * fem,
-                                              ),
-                                              Container(
-                                                // streamlineinterfacefavoritesta (2958:501)
-                                                width: 12.97 * fem,
-                                                height: 12.44 * fem,
-                                                child: Image.asset(
-                                                  'assets/page-1/images/group-PhK.png',
-                                                  width: 12.97 * fem,
-                                                  height: 12.44 * fem,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Container(
-                                    // group365t1E (2958:491)
-                                    padding: EdgeInsets.fromLTRB(
-                                        16 * fem, 10 * fem, 17 * fem, 8 * fem),
-                                    width: double.infinity,
-                                    height: 42 * fem,
-                                    decoration: BoxDecoration(
-                                      border:
-                                          Border.all(color: Color(0xffd5cfcf)),
-                                      color: Color(0xffffffff),
-                                    ),
-                                    child: Row(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        Container(
-                                          // commentaue (2958:493)
-                                          margin: EdgeInsets.fromLTRB(0 * fem,
-                                              0 * fem, 276 * fem, 0 * fem),
-                                          child: Text(
-                                            'Comment...',
-                                            style: SafeGoogleFont(
-                                              'Inter',
-                                              fontSize: 14 * ffem,
-                                              fontWeight: FontWeight.w500,
-                                              height: 1.7034202251 * ffem / fem,
-                                              color: Color(0xffd5cfcf),
-                                            ),
-                                          ),
-                                        ),
-                                        Container(
-                                          // icbaselinesend7Pn (2958:494)
-                                          width: 21 * fem,
-                                          height: 18 * fem,
-                                          child: Image.asset(
-                                            'assets/page-1/images/ic-baseline-send.png',
-                                            width: 21 * fem,
-                                            height: 18 * fem,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Visibility(
-                      visible: visible,
-                      child: Container(
-                        width: 400 * fem,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                              // group3663Ax (2958:483)
-                              margin: EdgeInsets.fromLTRB(
-                                  0 * fem, 0 * fem, 0 * fem, 16.13 * fem),
-                              width: 333 * fem,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    // moreinformationZf6 (2958:485)
-                                    margin: EdgeInsets.fromLTRB(
-                                        0 * fem, 0 * fem, 0 * fem, 13 * fem),
-                                    child: Text(
-                                      'More Information',
-                                      style: SafeGoogleFont(
-                                        'Inter',
-                                        fontSize: 20 * ffem,
-                                        fontWeight: FontWeight.w700,
-                                        height: 1.2125 * ffem / fem,
-                                        color: Color(0xff000000),
-                                      ),
-                                    ),
-                                  ),
-                                  Container(
-                                    // group378HLC (2960:430)
-                                    margin: EdgeInsets.fromLTRB(
-                                        5 * fem, 0 * fem, 0 * fem, 11 * fem),
-                                    width: double.infinity,
-                                    child: Row(
-                                      crossAxisAlignment:
-                                      CrossAxisAlignment.center,
-                                      children: [
-                                        Container(
-                                          // diploma2Hn (2958:490)
-                                          margin: EdgeInsets.fromLTRB(0 * fem,
-                                              1 * fem, 5 * fem, 0 * fem),
-                                          width: 21 * fem,
-                                          height: 21 * fem,
-                                          child: Image.asset(
-                                            'assets/page-1/images/diploma.png',
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        Text(
-                                          // uiuxdesignercertificateazurece (2958:484)
-                                          'UI UX Designer Certificate, Azure Certificate',
-                                          style: SafeGoogleFont(
-                                            'Inter',
-                                            fontSize: 14 * ffem,
-                                            fontWeight: FontWeight.w500,
-                                            height: 1.7034202251 * ffem / fem,
-                                            color: Color(0xff8e8989),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Container(
-                                    // group367Ufa (2958:486)
-                                    margin: EdgeInsets.fromLTRB(
-                                        6 * fem, 0 * fem, 205 * fem, 0 * fem),
-                                    width: double.infinity,
-                                    child: Row(
-                                      crossAxisAlignment:
-                                      CrossAxisAlignment.center,
-                                      children: [
-                                        Container(
-                                          // group3692BJ (2958:488)
-                                          margin: EdgeInsets.fromLTRB(0 * fem,
-                                              0 * fem, 10 * fem, 0 * fem),
-                                          width: 19 * fem,
-                                          height: 19.87 * fem,
-                                          child: Image.asset(
-                                            'assets/page-1/images/group-369.png',
-                                            width: 19 * fem,
-                                            height: 19.87 * fem,
-                                          ),
-                                        ),
-                                        Container(
-                                          // englishhindi9Wp (2958:487)
-                                          margin: EdgeInsets.fromLTRB(0 * fem,
-                                              1.13 * fem, 0 * fem, 0 * fem),
-                                          child: Text(
-                                            'English, Hindi',
-                                            style: SafeGoogleFont(
-                                              'Inter',
-                                              fontSize: 14 * ffem,
-                                              fontWeight: FontWeight.w500,
-                                              height: 1.2125 * ffem / fem,
-                                              color: Color(0xff8e8989),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Container(
-                              // group375rg8 (2960:425)
-                              margin: EdgeInsets.fromLTRB(
-                                  6 * fem, 0 * fem, 246 * fem, 15 * fem),
-                              width: double.infinity,
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Container(
-                                    // mapsandflagszGY (2958:542)
-                                    margin: EdgeInsets.fromLTRB(
-                                        0 * fem, 0 * fem, 7 * fem, 0 * fem),
-                                    width: 22 * fem,
-                                    height: 22 * fem,
-                                    child: Image.asset(
-                                      'assets/page-1/images/maps-and-flags.png',
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                  Container(
-                                    // rajasthanjaipuriTS (2958:540)
-                                    margin: EdgeInsets.fromLTRB(
-                                        0 * fem, 1 * fem, 0 * fem, 0 * fem),
-                                    child: Text(
-                                      'Rajasthan, Jaipur',
-                                      style: SafeGoogleFont(
-                                        'Inter',
-                                        fontSize: 14 * ffem,
-                                        fontWeight: FontWeight.w500,
-                                        height: 1.2125 * ffem / fem,
-                                        color: Color(0xff8e8989),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Container(
-                              // group376qHA (2960:426)
-                              margin: EdgeInsets.fromLTRB(
-                                  6 * fem, 0 * fem, 332 * fem, 15 * fem),
-                              width: double.infinity,
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Container(
-                                    // sexB68 (2958:541)
-                                    margin: EdgeInsets.fromLTRB(
-                                        0 * fem, 0 * fem, 7 * fem, 0 * fem),
-                                    width: 22 * fem,
-                                    height: 22 * fem,
-                                    child: Image.asset(
-                                      'assets/page-1/images/sex.png',
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                  Container(
-                                    // male7Eg (2958:539)
-                                    margin: EdgeInsets.fromLTRB(
-                                        0 * fem, 1 * fem, 0 * fem, 0 * fem),
-                                    child: Text(
-                                      'Male',
-                                      style: SafeGoogleFont(
-                                        'Inter',
-                                        fontSize: 14 * ffem,
-                                        fontWeight: FontWeight.w500,
-                                        height: 1.2125 * ffem / fem,
-                                        color: Color(0xff8e8989),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Container(
-                              // group377qAg (2960:427)
-                              margin: EdgeInsets.fromLTRB(
-                                  4 * fem, 0 * fem, 347 * fem, 25 * fem),
-                              width: double.infinity,
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Container(
-                                    // ageX3W (2958:544)
-                                    margin: EdgeInsets.fromLTRB(
-                                        0 * fem, 0 * fem, 8 * fem, 0 * fem),
-                                    width: 23 * fem,
-                                    height: 23 * fem,
-                                    child: Image.asset(
-                                      'assets/page-1/images/age.png',
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                  Text(
-                                    // qZz (2958:543)
-                                    '28',
-                                    style: SafeGoogleFont(
-                                      'Inter',
-                                      fontSize: 14 * ffem,
-                                      fontWeight: FontWeight.w500,
-                                      height: 1.2125 * ffem / fem,
-                                      color: Color(0xff8e8989),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    )
+                    Column(
+                     crossAxisAlignment: CrossAxisAlignment.center,
+                     children: [
+                       Visibility(
+                         visible: visible,
+                         maintainSize: true,
+                         maintainAnimation: true,
+                         maintainState: true,
+                         child: Container(
+                           width: 400 * fem,
+                           child: Column(
+                             crossAxisAlignment: CrossAxisAlignment.start,
+                             children: [
+                               Container(
+                                 // group3663Ax (2958:483)
+                                 margin: EdgeInsets.fromLTRB(
+                                     0 * fem, 0 * fem, 0 * fem, 16.13 * fem),
+                                 width: 333 * fem,
+                                 child: Column(
+                                   crossAxisAlignment: CrossAxisAlignment.start,
+                                   children: [
+                                     Container(
+                                       // moreinformationZf6 (2958:485)
+                                       margin: EdgeInsets.fromLTRB(
+                                           0 * fem, 0 * fem, 0 * fem, 13 * fem),
+                                       child: Text(
+                                         'More Information',
+                                         style: SafeGoogleFont(
+                                           'Inter',
+                                           fontSize: 20 * ffem,
+                                           fontWeight: FontWeight.w700,
+                                           height: 1.2125 * ffem / fem,
+                                           color: Color(0xff000000),
+                                         ),
+                                       ),
+                                     ),
+                                     Container(
+                                       // group378HLC (2960:430)
+                                       margin: EdgeInsets.fromLTRB(
+                                           5 * fem, 0 * fem, 0 * fem, 11 * fem),
+                                       width: double.infinity,
+                                       child: Row(
+                                         crossAxisAlignment:
+                                         CrossAxisAlignment.center,
+                                         children: [
+                                           Container(
+                                             // diploma2Hn (2958:490)
+                                             margin: EdgeInsets.fromLTRB(0 * fem,
+                                                 1 * fem, 5 * fem, 0 * fem),
+                                             width: 21 * fem,
+                                             height: 21 * fem,
+                                             child: Image.asset(
+                                               'assets/page-1/images/diploma.png',
+                                               fit: BoxFit.cover,
+                                             ),
+                                           ),
+                                           Text(
+                                             // uiuxdesignercertificateazurece (2958:484)
+                                             'UI UX Designer Certificate, Azure Certificate',
+                                             style: SafeGoogleFont(
+                                               'Inter',
+                                               fontSize: 14 * ffem,
+                                               fontWeight: FontWeight.w500,
+                                               height: 1.7034202251 * ffem / fem,
+                                               color: Color(0xff8e8989),
+                                             ),
+                                           ),
+                                         ],
+                                       ),
+                                     ),
+                                     Container(
+                                       // group367Ufa (2958:486)
+                                       margin: EdgeInsets.fromLTRB(
+                                           6 * fem, 0 * fem, 205 * fem, 0 * fem),
+                                       width: double.infinity,
+                                       child: Row(
+                                         crossAxisAlignment:
+                                         CrossAxisAlignment.center,
+                                         children: [
+                                           Container(
+                                             // group3692BJ (2958:488)
+                                             margin: EdgeInsets.fromLTRB(0 * fem,
+                                                 0 * fem, 10 * fem, 0 * fem),
+                                             width: 19 * fem,
+                                             height: 19.87 * fem,
+                                             child: Image.asset(
+                                               'assets/page-1/images/group-369.png',
+                                               width: 19 * fem,
+                                               height: 19.87 * fem,
+                                             ),
+                                           ),
+                                           Container(
+                                             // englishhindi9Wp (2958:487)
+                                             margin: EdgeInsets.fromLTRB(0 * fem,
+                                                 1.13 * fem, 0 * fem, 0 * fem),
+                                             child: Text(
+                                               'English, Hindi',
+                                               style: SafeGoogleFont(
+                                                 'Inter',
+                                                 fontSize: 14 * ffem,
+                                                 fontWeight: FontWeight.w500,
+                                                 height: 1.2125 * ffem / fem,
+                                                 color: Color(0xff8e8989),
+                                               ),
+                                             ),
+                                           ),
+                                         ],
+                                       ),
+                                     ),
+                                   ],
+                                 ),
+                               ),
+                               Container(
+                                 // group375rg8 (2960:425)
+                                 margin: EdgeInsets.fromLTRB(
+                                     6 * fem, 0 * fem, 246 * fem, 15 * fem),
+                                 width: double.infinity,
+                                 child: Row(
+                                   crossAxisAlignment: CrossAxisAlignment.center,
+                                   children: [
+                                     Container(
+                                       // mapsandflagszGY (2958:542)
+                                       margin: EdgeInsets.fromLTRB(
+                                           0 * fem, 0 * fem, 7 * fem, 0 * fem),
+                                       width: 22 * fem,
+                                       height: 22 * fem,
+                                       child: Image.asset(
+                                         'assets/page-1/images/maps-and-flags.png',
+                                         fit: BoxFit.cover,
+                                       ),
+                                     ),
+                                     Container(
+                                       // rajasthanjaipuriTS (2958:540)
+                                       margin: EdgeInsets.fromLTRB(
+                                           0 * fem, 1 * fem, 0 * fem, 0 * fem),
+                                       child: Text(
+                                         'Rajasthan, Jaipur',
+                                         style: SafeGoogleFont(
+                                           'Inter',
+                                           fontSize: 14 * ffem,
+                                           fontWeight: FontWeight.w500,
+                                           height: 1.2125 * ffem / fem,
+                                           color: Color(0xff8e8989),
+                                         ),
+                                       ),
+                                     ),
+                                   ],
+                                 ),
+                               ),
+                               Container(
+                                 // group376qHA (2960:426)
+                                 margin: EdgeInsets.fromLTRB(
+                                     6 * fem, 0 * fem, 332 * fem, 15 * fem),
+                                 width: double.infinity,
+                                 child: Row(
+                                   crossAxisAlignment: CrossAxisAlignment.center,
+                                   children: [
+                                     Container(
+                                       // sexB68 (2958:541)
+                                       margin: EdgeInsets.fromLTRB(
+                                           0 * fem, 0 * fem, 7 * fem, 0 * fem),
+                                       width: 22 * fem,
+                                       height: 22 * fem,
+                                       child: Image.asset(
+                                         'assets/page-1/images/sex.png',
+                                         fit: BoxFit.cover,
+                                       ),
+                                     ),
+                                     Container(
+                                       // male7Eg (2958:539)
+                                       margin: EdgeInsets.fromLTRB(
+                                           0 * fem, 1 * fem, 0 * fem, 0 * fem),
+                                       child: Text(
+                                         'Male',
+                                         style: SafeGoogleFont(
+                                           'Inter',
+                                           fontSize: 14 * ffem,
+                                           fontWeight: FontWeight.w500,
+                                           height: 1.2125 * ffem / fem,
+                                           color: Color(0xff8e8989),
+                                         ),
+                                       ),
+                                     ),
+                                   ],
+                                 ),
+                               ),
+                               Container(
+                                 // group377qAg (2960:427)
+                                 margin: EdgeInsets.fromLTRB(
+                                     4 * fem, 0 * fem, 347 * fem, 25 * fem),
+                                 width: double.infinity,
+                                 child: Row(
+                                   crossAxisAlignment: CrossAxisAlignment.center,
+                                   children: [
+                                     Container(
+                                       // ageX3W (2958:544)
+                                       margin: EdgeInsets.fromLTRB(
+                                           0 * fem, 0 * fem, 8 * fem, 0 * fem),
+                                       width: 23 * fem,
+                                       height: 23 * fem,
+                                       child: Image.asset(
+                                         'assets/page-1/images/age.png',
+                                         fit: BoxFit.cover,
+                                       ),
+                                     ),
+                                     Text(
+                                       // qZz (2958:543)
+                                       '28',
+                                       style: SafeGoogleFont(
+                                         'Inter',
+                                         fontSize: 14 * ffem,
+                                         fontWeight: FontWeight.w500,
+                                         height: 1.2125 * ffem / fem,
+                                         color: Color(0xff8e8989),
+                                       ),
+                                     ),
+                                   ],
+                                 ),
+                               ),
+                             ],
+                           ),
+                         ),
+                       ),
+                       Visibility(
+                         visible: visible,
+                         maintainSize: true,
+                         maintainAnimation: true,
+                         maintainState: true,
+                         child: Container(
+                           width: 440 * fem,
+                           child: Column(
+                             crossAxisAlignment: CrossAxisAlignment.start,
+                             children: [
+                               Container(
+                                 // clienttestimonialsL32 (2958:482)
+                                 margin: EdgeInsets.fromLTRB(
+                                     20 * fem, 0 * fem, 0 * fem, 15 * fem),
+                                 child: Text(
+                                   'Client Testimonials',
+                                   style: SafeGoogleFont(
+                                     'Inter',
+                                     fontSize: 20 * ffem,
+                                     fontWeight: FontWeight.w700,
+                                     height: 1.2125 * ffem / fem,
+                                     color: Color(0xff000000),
+                                   ),
+                                 ),
+                               ),
+                               Container(
+                                 // group368qVa (2958:504)
+                                 margin: EdgeInsets.fromLTRB(
+                                     0 * fem, 0 * fem, 0 * fem, 19.57 * fem),
+                                 width: double.infinity,
+                                 child: Column(
+                                   crossAxisAlignment: CrossAxisAlignment.center,
+                                   children: [
+                                     Container(
+                                       // group363y5z (2958:509)
+                                       margin: EdgeInsets.fromLTRB(
+                                           0 * fem, 0 * fem, 0 * fem, 18 * fem),
+                                       width: double.infinity,
+                                       height: 196 * fem,
+                                       child: Stack(
+                                         children: [
+                                           Positioned(
+                                             // rectangle265uVS (2958:510)
+                                             left: 38 * fem,
+                                             top: 0 * fem,
+                                             child: Align(
+                                               child: SizedBox(
+                                                 width: 355 * fem,
+                                                 height: 196 * fem,
+                                                 child: Container(
+                                                   decoration: BoxDecoration(
+                                                     borderRadius:
+                                                     BorderRadius.circular(
+                                                         10 * fem),
+                                                     color: Color(0xffffffff),
+                                                     boxShadow: [
+                                                       BoxShadow(
+                                                         color: Color(0x1c000000),
+                                                         offset: Offset(
+                                                             0 * fem, 2 * fem),
+                                                         blurRadius: 6 * fem,
+                                                       ),
+                                                     ],
+                                                   ),
+                                                 ),
+                                               ),
+                                             ),
+                                           ),
+                                           Positioned(
+                                             // group362BSx (2958:511)
+                                             left: 0 * fem,
+                                             top: 13 * fem,
+                                             child: Container(
+                                               width: 448 * fem,
+                                               height: 145 * fem,
+                                               child: Column(
+                                                 crossAxisAlignment:
+                                                 CrossAxisAlignment.center,
+                                                 children: [
+                                                   Container(
+                                                     // ellipse34hgC (2958:518)
+                                                     margin: EdgeInsets.fromLTRB(
+                                                         194 * fem,
+                                                         0 * fem,
+                                                         194 * fem,
+                                                         6 * fem),
+                                                     width: double.infinity,
+                                                     height: 60 * fem,
+                                                     decoration: BoxDecoration(
+                                                       borderRadius:
+                                                       BorderRadius.circular(
+                                                           30 * fem),
+                                                       image:
+                                                       const DecorationImage(
+                                                         fit: BoxFit.cover,
+                                                         image: AssetImage(
+                                                           'assets/page-1/images/ellipse-34-bg-yqT.png',
+                                                         ),
+                                                       ),
+                                                     ),
+                                                   ),
+                                                   Container(
+                                                     // autogroupkg8gQKi (obd53QjXDk74WfGeHkg8G)
+                                                     margin: EdgeInsets.fromLTRB(
+                                                         20 * fem,
+                                                         0 * fem,
+                                                         22 * fem,
+                                                         12.79 * fem),
+                                                     width: double.infinity,
+                                                     child: Row(
+                                                       crossAxisAlignment:
+                                                       CrossAxisAlignment
+                                                           .start,
+                                                       children: [
+                                                         Container(
+                                                           // vectorvor (2958:521)
+                                                           margin:
+                                                           EdgeInsets.fromLTRB(
+                                                               0 * fem,
+                                                               2 * fem,
+                                                               142.5 * fem,
+                                                               0 * fem),
+                                                           width: 13 * fem,
+                                                           height: 33 * fem,
+                                                           child: Image.asset(
+                                                             'assets/page-1/images/vector-jKW.png',
+                                                             width: 13 * fem,
+                                                             height: 33 * fem,
+                                                           ),
+                                                         ),
+                                                         Container(
+                                                           // autogroupyqpxFbE (obdB3EjxG3FnEim7TyQpx)
+                                                           margin:
+                                                           EdgeInsets.fromLTRB(
+                                                               0 * fem,
+                                                               6 * fem,
+                                                               139.53 * fem,
+                                                               0 * fem),
+                                                           width: 96.97 * fem,
+                                                           child: Column(
+                                                             crossAxisAlignment:
+                                                             CrossAxisAlignment
+                                                                 .center,
+                                                             children: [
+                                                               Container(
+                                                                 // alexyXE (2958:519)
+                                                                 margin: EdgeInsets
+                                                                     .fromLTRB(
+                                                                     0 * fem,
+                                                                     0 * fem,
+                                                                     0.97 *
+                                                                         fem,
+                                                                     12.78 *
+                                                                         fem),
+                                                                 child: Text(
+                                                                   'Alex',
+                                                                   textAlign:
+                                                                   TextAlign
+                                                                       .center,
+                                                                   style:
+                                                                   SafeGoogleFont(
+                                                                     'Inter',
+                                                                     fontSize:
+                                                                     12 * ffem,
+                                                                     fontWeight:
+                                                                     FontWeight
+                                                                         .w400,
+                                                                     height:
+                                                                     1.2125 *
+                                                                         ffem /
+                                                                         fem,
+                                                                     color: Color(
+                                                                         0xff000000),
+                                                                   ),
+                                                                 ),
+                                                               ),
+                                                               Container(
+                                                                 // group3616Lx (2958:512)
+                                                                 width: double
+                                                                     .infinity,
+                                                                 child: Row(
+                                                                   crossAxisAlignment:
+                                                                   CrossAxisAlignment
+                                                                       .center,
+                                                                   children: [
+                                                                     Container(
+                                                                       // streamlineinterfacefavoritesta (2958:513)
+                                                                       width:
+                                                                       12.97 *
+                                                                           fem,
+                                                                       height:
+                                                                       12.44 *
+                                                                           fem,
+                                                                       child: Image
+                                                                           .asset(
+                                                                         'assets/page-1/images/group-95T.png',
+                                                                         width:
+                                                                         12.97 *
+                                                                             fem,
+                                                                         height:
+                                                                         12.44 *
+                                                                             fem,
+                                                                       ),
+                                                                     ),
+                                                                     SizedBox(
+                                                                       width:
+                                                                       8.03 *
+                                                                           fem,
+                                                                     ),
+                                                                     Container(
+                                                                       // streamlineinterfacefavoritesta (2958:514)
+                                                                       width:
+                                                                       12.97 *
+                                                                           fem,
+                                                                       height:
+                                                                       12.44 *
+                                                                           fem,
+                                                                       child: Image
+                                                                           .asset(
+                                                                         'assets/page-1/images/group-yah.png',
+                                                                         width:
+                                                                         12.97 *
+                                                                             fem,
+                                                                         height:
+                                                                         12.44 *
+                                                                             fem,
+                                                                       ),
+                                                                     ),
+                                                                     SizedBox(
+                                                                       width:
+                                                                       8.03 *
+                                                                           fem,
+                                                                     ),
+                                                                     Container(
+                                                                       // streamlineinterfacefavoritesta (2958:515)
+                                                                       width:
+                                                                       12.97 *
+                                                                           fem,
+                                                                       height:
+                                                                       12.44 *
+                                                                           fem,
+                                                                       child: Image
+                                                                           .asset(
+                                                                         'assets/page-1/images/group-yah.png',
+                                                                         width:
+                                                                         12.97 *
+                                                                             fem,
+                                                                         height:
+                                                                         12.44 *
+                                                                             fem,
+                                                                       ),
+                                                                     ),
+                                                                     SizedBox(
+                                                                       width:
+                                                                       8.03 *
+                                                                           fem,
+                                                                     ),
+                                                                     Container(
+                                                                       // streamlineinterfacefavoritesta (2958:516)
+                                                                       width:
+                                                                       12.97 *
+                                                                           fem,
+                                                                       height:
+                                                                       12.44 *
+                                                                           fem,
+                                                                       child: Image
+                                                                           .asset(
+                                                                         'assets/page-1/images/unfillstar.png',
+                                                                         width:
+                                                                         12.97 *
+                                                                             fem,
+                                                                         height:
+                                                                         12.44 *
+                                                                             fem,
+                                                                       ),
+                                                                     ),
+                                                                     SizedBox(
+                                                                       width:
+                                                                       8.03 *
+                                                                           fem,
+                                                                     ),
+                                                                     Container(
+                                                                       // streamlineinterfacefavoritesta (2958:517)
+                                                                       width:
+                                                                       12.97 *
+                                                                           fem,
+                                                                       height:
+                                                                       12.44 *
+                                                                           fem,
+                                                                       child: Image
+                                                                           .asset(
+                                                                         'assets/page-1/images/unfillstar.png',
+                                                                         width:
+                                                                         12.97 *
+                                                                             fem,
+                                                                         height:
+                                                                         12.44 *
+                                                                             fem,
+                                                                       ),
+                                                                     ),
+                                                                   ],
+                                                                 ),
+                                                               ),
+                                                             ],
+                                                           ),
+                                                         ),
+                                                         Container(
+                                                           // vectorKWY (2958:522)
+                                                           width: 14 * fem,
+                                                           height: 33 * fem,
+                                                           child: Image.asset(
+                                                             'assets/page-1/images/vector-DCt.png',
+                                                             width: 14 * fem,
+                                                             height: 33 * fem,
+                                                           ),
+                                                         ),
+                                                       ],
+                                                     ),
+                                                   ),
+                                                   Text(
+                                                     // compassionateinsightfulcounsel (2958:520)
+                                                     '"Compassionate, insightful counselor - highly recommend!"',
+                                                     textAlign: TextAlign.center,
+                                                     style: SafeGoogleFont(
+                                                       'Inter',
+                                                       fontSize: 11 * ffem,
+                                                       fontWeight: FontWeight.w400,
+                                                       height: 1.2125 * ffem / fem,
+                                                       fontStyle: FontStyle.italic,
+                                                       color: Color(0xffa09d9d),
+                                                     ),
+                                                   ),
+                                                 ],
+                                               ),
+                                             ),
+                                           ),
+                                         ],
+                                       ),
+                                     ),
+                                     Container(
+                                       // frame134m7e (2958:505)
+                                       margin: EdgeInsets.fromLTRB(
+                                           0 * fem, 0 * fem, 8.29 * fem, 0 * fem),
+                                       width: 33.78 * fem,
+                                       height: 6.43 * fem,
+                                       child: Image.asset(
+                                         'assets/page-1/images/frame-134.png',
+                                         width: 33.78 * fem,
+                                         height: 6.43 * fem,
+                                       ),
+                                     ),
+                                   ],
+                                 ),
+                               ),
+                               Container(
+                                 // group374Gq6 (2958:538)
+                                 margin: EdgeInsets.fromLTRB(
+                                     7 * fem, 0 * fem, 11 * fem, 0 * fem),
+                                 width: double.infinity,
+                                 child: Column(
+                                   crossAxisAlignment: CrossAxisAlignment.center,
+                                   children: [
+                                     Container(
+                                       // autogroupndmaoq2 (obcXDzR7vjLQoZdzSNDMA)
+                                       padding: EdgeInsets.fromLTRB(16.5 * fem,
+                                           0 * fem, 16.5 * fem, 12.79 * fem),
+                                       width: double.infinity,
+                                       height: 61 * fem,
+                                       child: Column(
+                                         crossAxisAlignment:
+                                         CrossAxisAlignment.start,
+                                         children: [
+                                           Container(
+                                             // giveareviewLKA (2958:502)
+                                             margin: EdgeInsets.fromLTRB(0.5 * fem,
+                                                 0 * fem, 0 * fem, 7.78 * fem),
+                                             child: Text(
+                                               'Give a Review',
+                                               style: SafeGoogleFont(
+                                                 'Inter',
+                                                 fontSize: 16 * ffem,
+                                                 fontWeight: FontWeight.w700,
+                                                 height: 1.7002272606 * ffem / fem,
+                                                 color: Color(0xff000000),
+                                               ),
+                                             ),
+                                           ),
+                                           Container(
+                                             // group360eKr (2958:496)
+                                             child: Row(
+                                               crossAxisAlignment:
+                                               CrossAxisAlignment.center,
+                                               children: [
+                                                 Container(
+                                                   // streamlineinterfacefavoritesta (2958:497)
+                                                   width: 12.97 * fem,
+                                                   height: 12.44 * fem,
+                                                   child: Image.asset(
+                                                     'assets/page-1/images/unfillstar.png',
+                                                     width: 12.97 * fem,
+                                                     height: 12.44 * fem,
+                                                   ),
+                                                 ),
+                                                 SizedBox(
+                                                   width: 8.03 * fem,
+                                                 ),
+                                                 Container(
+                                                   // streamlineinterfacefavoritesta (2958:498)
+                                                   width: 12.97 * fem,
+                                                   height: 12.44 * fem,
+                                                   child: Image.asset(
+                                                     'assets/page-1/images/unfillstar.png',
+                                                     width: 12.97 * fem,
+                                                     height: 12.44 * fem,
+                                                   ),
+                                                 ),
+                                                 SizedBox(
+                                                   width: 8.03 * fem,
+                                                 ),
+                                                 Container(
+                                                   // streamlineinterfacefavoritesta (2958:499)
+                                                   width: 12.97 * fem,
+                                                   height: 12.44 * fem,
+                                                   child: Image.asset(
+                                                     'assets/page-1/images/unfillstar.png',
+                                                     width: 12.97 * fem,
+                                                     height: 12.44 * fem,
+                                                   ),
+                                                 ),
+                                                 SizedBox(
+                                                   width: 8.03 * fem,
+                                                 ),
+                                                 Container(
+                                                   // streamlineinterfacefavoritesta (2958:500)
+                                                   width: 12.97 * fem,
+                                                   height: 12.44 * fem,
+                                                   child: Image.asset(
+                                                     'assets/page-1/images/group-PhK.png',
+                                                     width: 12.97 * fem,
+                                                     height: 12.44 * fem,
+                                                   ),
+                                                 ),
+                                                 SizedBox(
+                                                   width: 8.03 * fem,
+                                                 ),
+                                                 Container(
+                                                   // streamlineinterfacefavoritesta (2958:501)
+                                                   width: 12.97 * fem,
+                                                   height: 12.44 * fem,
+                                                   child: Image.asset(
+                                                     'assets/page-1/images/group-PhK.png',
+                                                     width: 12.97 * fem,
+                                                     height: 12.44 * fem,
+                                                   ),
+                                                 ),
+                                               ],
+                                             ),
+                                           ),
+                                         ],
+                                       ),
+                                     ),
+                                     Container(
+                                       // group365t1E (2958:491)
+                                       padding: EdgeInsets.fromLTRB(
+                                           16 * fem, 10 * fem, 17 * fem, 8 * fem),
+                                       width: double.infinity,
+                                       height: 42 * fem,
+                                       decoration: BoxDecoration(
+                                         border:
+                                         Border.all(color: Color(0xffd5cfcf)),
+                                         color: Color(0xffffffff),
+                                       ),
+                                       child: Row(
+                                         crossAxisAlignment:
+                                         CrossAxisAlignment.center,
+                                         children: [
+                                           Container(
+                                             // commentaue (2958:493)
+                                             margin: EdgeInsets.fromLTRB(0 * fem,
+                                                 0 * fem, 276 * fem, 0 * fem),
+                                             child: Text(
+                                               'Comment...',
+                                               style: SafeGoogleFont(
+                                                 'Inter',
+                                                 fontSize: 14 * ffem,
+                                                 fontWeight: FontWeight.w500,
+                                                 height: 1.7034202251 * ffem / fem,
+                                                 color: Color(0xffd5cfcf),
+                                               ),
+                                             ),
+                                           ),
+                                           Container(
+                                             // icbaselinesend7Pn (2958:494)
+                                             width: 21 * fem,
+                                             height: 18 * fem,
+                                             child: Image.asset(
+                                               'assets/page-1/images/ic-baseline-send.png',
+                                               width: 21 * fem,
+                                               height: 18 * fem,
+                                             ),
+                                           ),
+                                         ],
+                                       ),
+                                     ),
+                                   ],
+                                 ),
+                               ),
+                             ],
+                           ),
+                         ),
+                       ),
+                     ],
+                                          )
                   ],
                 ),
               ),
             ),
-            Container(
+            SizedBox(
               // group371aXa (2936:506)
               width: double.infinity,
-              
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [

@@ -253,52 +253,58 @@ class _HomePageState extends State<HomePage> {
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Container(
-                          // autogroupfspu6hX (AXyFA37bt2ojAabTr9Fspu)
-                          padding: EdgeInsets.fromLTRB(20*fem, 9*fem, 20*fem, 15.66*fem),
-                          width: 110*fem,
-                          height: double.infinity,
-                          decoration: const BoxDecoration (
-                            image: DecorationImage (
-                              fit: BoxFit.cover,
-                              image: AssetImage (
-                                'assets/page-1/images/frame-3.png',
-                              ),
+                         Container(
+                            // autogroupfspu6hX (AXyFA37bt2ojAabTr9Fspu)
+                           padding: EdgeInsets.fromLTRB(12*fem, 7*fem, 12*fem, 12.66*fem),
+                           width: 105*fem,
+                           height: double.infinity,
+                           clipBehavior: Clip.antiAlias,
+                           decoration: BoxDecoration(
+                             color: Colors.white,
+                             borderRadius: BorderRadius.circular(10),
+                               boxShadow: [
+                                 BoxShadow(
+                                 offset: Offset(0, 1),
+                                 blurRadius: 5,
+                                 color: Colors.black.withOpacity(0.3),
+                                 ),
+                            ],
+                           ),
+                          
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                    // untitleddesign51zH7 (1115:125)
+                                    margin: EdgeInsets.fromLTRB(0*fem, 5*fem, 1*fem, 8.34*fem),
+                                    width: 45*fem,
+                                    height: 66*fem,
+                                    child: Image.asset(
+                                      'assets/page-1/images/untitled-design-5-1.png',
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                                GestureDetector(
+                                  onTap: () {     onTapgotocounsellor(context);    },
+                                  child: Text(
+                                    // counsellorhxD (993:189)
+                                    'Counsellor',
+                                    textAlign: TextAlign.center,
+                                    style: SafeGoogleFont (
+                                      'Inter',
+                                      fontSize: 12*ffem,
+                                      fontWeight: FontWeight.w700,
+                                      height: 1.2125*ffem/fem,
+                                      color: const Color(0xff000000),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Expanded(
-                                child: Container(
-                                  // untitleddesign51zH7 (1115:125)
-                                  margin: EdgeInsets.fromLTRB(0*fem, 5*fem, 1*fem, 8.34*fem),
-                                  width: 45*fem,
-                                  height: 66*fem,
-                                  child: Image.asset(
-                                    'assets/page-1/images/untitled-design-5-1.png',
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                              ),
-                              GestureDetector(
-                                onTap: () {     onTapgotocounsellor(context);    },
-                                child: Text(
-                                  // counsellorhxD (993:189)
-                                  'Counsellor',
-                                  textAlign: TextAlign.center,
-                                  style: SafeGoogleFont (
-                                    'Inter',
-                                    fontSize: 12*ffem,
-                                    fontWeight: FontWeight.w700,
-                                    height: 1.2125*ffem/fem,
-                                    color: const Color(0xff000000),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+                        
                         Container(
                           // autogroupebw1SQ1 (AXyFHhZVzFQXkZZUnCebW1)
                           padding: EdgeInsets.fromLTRB(23*fem, 2*fem, 0*fem, 0*fem),
@@ -312,6 +318,18 @@ class _HomePageState extends State<HomePage> {
                                 padding: EdgeInsets.fromLTRB(15*fem, 4*fem, 9*fem, 6*fem),
                                 width: 110*fem,
                                 height: double.infinity,
+
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(10),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      offset: Offset(0, 1),
+                                      blurRadius: 5,
+                                      color: Colors.black.withOpacity(0.3),
+                                    ),
+                                  ],
+                                ),
 
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -365,9 +383,6 @@ class _HomePageState extends State<HomePage> {
                                     Container(
                                       // entrancepreparationYjs (993:185)
                                       margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 7*fem, 0*fem),
-                                      constraints: BoxConstraints (
-                                        maxWidth: 75*fem,
-                                      ),
                                       child: Text(
                                         'Entrance \nPreparation',
                                         textAlign: TextAlign.center,
@@ -392,6 +407,18 @@ class _HomePageState extends State<HomePage> {
                                 child: Container(
                                   padding: EdgeInsets.fromLTRB(20*fem, 4*fem, 20*fem, 13*fem),
                                   height: double.infinity,
+                                  clipBehavior: Clip.antiAlias,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(10),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        offset: Offset(0, 1),
+                                        blurRadius: 5,
+                                        color: Colors.black.withOpacity(0.3),
+                                      ),
+                                    ],
+                                  ),
 
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -449,7 +476,18 @@ class _HomePageState extends State<HomePage> {
                             padding: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 15.66*fem),
                             width: 110*fem,
                             height: double.infinity,
-
+                            clipBehavior: Clip.antiAlias,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                              boxShadow: [
+                                BoxShadow(
+                                  offset: Offset(0, 1),
+                                  blurRadius: 5,
+                                  color: Colors.black.withOpacity(0.3),
+                                ),
+                              ],
+                            ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
@@ -479,6 +517,7 @@ class _HomePageState extends State<HomePage> {
                                   constraints: BoxConstraints (
                                     maxWidth: 70*fem,
                                   ),
+
                                   child: Text(
                                     'Vocational \nCourses',
                                     textAlign: TextAlign.center,
@@ -514,6 +553,18 @@ class _HomePageState extends State<HomePage> {
                                   child: Container(
                                     padding: EdgeInsets.fromLTRB(19*fem, 4*fem, 19*fem, 3*fem),
                                     height: double.infinity,
+                                    clipBehavior: Clip.antiAlias,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(10),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          offset: Offset(0, 1),
+                                          blurRadius: 5,
+                                          color: Colors.black.withOpacity(0.3),
+                                        ),
+                                      ],
+                                    ),
 
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -552,7 +603,7 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                 ),
                               ),
-                              TextButton(
+                             /* TextButton(
                                 // frame64hX (993:202)
                                 onPressed: () {},
                                 style: TextButton.styleFrom (
@@ -591,7 +642,7 @@ class _HomePageState extends State<HomePage> {
                                     ],
                                   ),
                                 ),
-                              ),
+                              ),*/
                             ],
                           ),
                         ),
