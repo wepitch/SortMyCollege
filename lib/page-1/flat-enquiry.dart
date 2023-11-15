@@ -168,7 +168,7 @@ class _FlatEnqState extends State<FlatEnq> {
                                   margin: EdgeInsets.fromLTRB(0.5 * fem,
                                       0 * fem, 0 * fem, 3.83 * fem),
                                   child: Text(
-                                    'Product Designer @WePitch',
+                                    'Career Counsellor',
                                     style: SafeGoogleFont(
                                       'Inter',
                                       fontSize: 14 * ffem,
@@ -274,14 +274,14 @@ class _FlatEnqState extends State<FlatEnq> {
                           ),
                           Container(
                             // followHHA (2958:432)
-                            width: 124.5 * fem,
+                            width: 190.5 * fem,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Container(
                                   // autogroupftf2dbv (obb7MBBAqyJAyMRWaFtF2)
                                   margin: EdgeInsets.fromLTRB(
-                                      0 * fem, 0 * fem, 0 * fem, 8.7 * fem),
+                                      60 * fem, 0 * fem, 0 * fem, 8.7 * fem),
                                   width: double.infinity,
                                   height: 48.3 * fem,
                                   child: Stack(
@@ -779,9 +779,9 @@ class _FlatEnqState extends State<FlatEnq> {
                                           style: SafeGoogleFont(
                                             'Inter',
                                             fontSize: 14 * ffem,
-                                            fontWeight: FontWeight.w700,
+                                            fontWeight: FontWeight.w400,
                                             height: 2.4549999782 * ffem / fem,
-                                            color: Color(0xff595959),
+                                            color: Color(0xFF595959),
                                           ),
                                         ),
                                         TextSpan(
@@ -1079,7 +1079,7 @@ class _FlatEnqState extends State<FlatEnq> {
                                Container(
                                  // clienttestimonialsL32 (2958:482)
                                  margin: EdgeInsets.fromLTRB(
-                                     20 * fem, 0 * fem, 0 * fem, 15 * fem),
+                                     20 * fem, 0 * fem, 0 * fem, 3 * fem),
                                  child: Text(
                                    'Client Testimonials',
                                    style: SafeGoogleFont(
@@ -1094,7 +1094,7 @@ class _FlatEnqState extends State<FlatEnq> {
                                Container(
                                  // group368qVa (2958:504)
                                  margin: EdgeInsets.fromLTRB(
-                                     0 * fem, 0 * fem, 0 * fem, 19.57 * fem),
+                                     0 * fem, 0 * fem, 0 * fem, 0 * fem),
                                  width: double.infinity,
                                  child: Column(
                                    crossAxisAlignment: CrossAxisAlignment.center,
@@ -1102,9 +1102,9 @@ class _FlatEnqState extends State<FlatEnq> {
                                      Container(
                                        // group363y5z (2958:509)
                                        margin: EdgeInsets.fromLTRB(
-                                           0 * fem, 0 * fem, 0 * fem, 18 * fem),
+                                           0 * fem, 0 * fem, 0 * fem, 5 * fem),
                                        width: double.infinity,
-                                       height: 196 * fem,
+                                       height: 190 * fem,
                                        child: Stack(
                                          children: [
                                            Positioned(
@@ -1114,7 +1114,7 @@ class _FlatEnqState extends State<FlatEnq> {
                                              child: Align(
                                                child: SizedBox(
                                                  width: 355 * fem,
-                                                 height: 196 * fem,
+                                                 height: 176 * fem,
                                                  child: Container(
                                                    decoration: BoxDecoration(
                                                      borderRadius:
@@ -1441,7 +1441,7 @@ class _FlatEnqState extends State<FlatEnq> {
                                            Container(
                                              // giveareviewLKA (2958:502)
                                              margin: EdgeInsets.fromLTRB(0.5 * fem,
-                                                 0 * fem, 0 * fem, 7.78 * fem),
+                                                 0 * fem, 0 * fem, 3.78 * fem),
                                              child: Text(
                                                'Give a Review',
                                                style: SafeGoogleFont(
@@ -1530,9 +1530,9 @@ class _FlatEnqState extends State<FlatEnq> {
                                      Container(
                                        // group365t1E (2958:491)
                                        padding: EdgeInsets.fromLTRB(
-                                           16 * fem, 10 * fem, 17 * fem, 8 * fem),
+                                           16 * fem, 8 * fem, 17 * fem, 8 * fem),
                                        width: double.infinity,
-                                       height: 42 * fem,
+                                       height: 38 * fem,
                                        decoration: BoxDecoration(
                                          border:
                                          Border.all(color: Color(0xffd5cfcf)),
@@ -1598,7 +1598,7 @@ class _FlatEnqState extends State<FlatEnq> {
                         Positioned(
                           // frame324GvC (2936:447)
                           left: 0 * fem,
-                          top: 56 * fem,
+                          top: 55 * fem,
                           child: Container(
                             padding: EdgeInsets.fromLTRB(
                                 16 * fem, 8 * fem, 16 * fem, 8 * fem),

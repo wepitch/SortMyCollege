@@ -256,17 +256,17 @@ class _HomePageState extends State<HomePage> {
                          Container(
                             // autogroupfspu6hX (AXyFA37bt2ojAabTr9Fspu)
                            padding: EdgeInsets.fromLTRB(12*fem, 7*fem, 12*fem, 12.66*fem),
-                           width: 105*fem,
-                           height: double.infinity,
+                           width: 110*fem,
+                           height: 113*fem,
                            clipBehavior: Clip.antiAlias,
                            decoration: BoxDecoration(
                              color: Colors.white,
-                             borderRadius: BorderRadius.circular(10),
+                             borderRadius: BorderRadius.circular(5),
                                boxShadow: [
                                  BoxShadow(
-                                 offset: Offset(0, 1),
-                                 blurRadius: 5,
-                                 color: Colors.black.withOpacity(0.3),
+                                 offset: const Offset(0, 4),
+                                 blurRadius: 4,
+                                 color: Colors.black.withOpacity(0.1),
                                  ),
                             ],
                            ),
@@ -294,7 +294,7 @@ class _HomePageState extends State<HomePage> {
                                     textAlign: TextAlign.center,
                                     style: SafeGoogleFont (
                                       'Inter',
-                                      fontSize: 12*ffem,
+                                      fontSize: 13*ffem,
                                       fontWeight: FontWeight.w700,
                                       height: 1.2125*ffem/fem,
                                       color: const Color(0xff000000),
@@ -317,16 +317,16 @@ class _HomePageState extends State<HomePage> {
                                 margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 23*fem, 0*fem),
                                 padding: EdgeInsets.fromLTRB(15*fem, 4*fem, 9*fem, 6*fem),
                                 width: 110*fem,
-                                height: double.infinity,
-
+                                height: 113*fem,
+                                clipBehavior: Clip.antiAlias,
                                 decoration: BoxDecoration(
                                   color: Colors.white,
-                                  borderRadius: BorderRadius.circular(10),
+                                  borderRadius: BorderRadius.circular(5),
                                   boxShadow: [
                                     BoxShadow(
-                                      offset: Offset(0, 1),
-                                      blurRadius: 5,
-                                      color: Colors.black.withOpacity(0.3),
+                                      offset: const Offset(0, 4),
+                                      blurRadius: 4,
+                                      color: Colors.black.withOpacity(0.1),
                                     ),
                                   ],
                                 ),
@@ -388,7 +388,7 @@ class _HomePageState extends State<HomePage> {
                                         textAlign: TextAlign.center,
                                         style: SafeGoogleFont (
                                           'Inter',
-                                          fontSize: 12*ffem,
+                                          fontSize: 13*ffem,
                                           fontWeight: FontWeight.w700,
                                           height: 1.2125*ffem/fem,
                                           color: const Color(0xff000000),
@@ -406,21 +406,21 @@ class _HomePageState extends State<HomePage> {
                                 ),
                                 child: Container(
                                   padding: EdgeInsets.fromLTRB(20*fem, 4*fem, 20*fem, 13*fem),
-                                  height: double.infinity,
-                                  clipBehavior: Clip.antiAlias,
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(10),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        offset: Offset(0, 1),
-                                        blurRadius: 5,
-                                        color: Colors.black.withOpacity(0.3),
-                                      ),
-                                    ],
-                                  ),
-
-                                  child: Column(
+                                    width: 110*fem,
+                                    height: 113*fem,
+                                    clipBehavior: Clip.antiAlias,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(5),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          offset: const Offset(0, 4),
+                                          blurRadius: 4,
+                                          color: Colors.black.withOpacity(0.1),
+                                        ),
+                                      ],
+                                    ),
+                                child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.center,
                                     children: [
                                       Container(
@@ -475,16 +475,16 @@ class _HomePageState extends State<HomePage> {
                           child: Container(
                             padding: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 15.66*fem),
                             width: 110*fem,
-                            height: double.infinity,
+                            height: 113*fem,
                             clipBehavior: Clip.antiAlias,
                             decoration: BoxDecoration(
                               color: Colors.white,
-                              borderRadius: BorderRadius.circular(10),
+                              borderRadius: BorderRadius.circular(5),
                               boxShadow: [
                                 BoxShadow(
-                                  offset: Offset(0, 1),
-                                  blurRadius: 5,
-                                  color: Colors.black.withOpacity(0.3),
+                                  offset: const Offset(0, 4),
+                                  blurRadius: 4,
+                                  color: Colors.black.withOpacity(0.1),
                                 ),
                               ],
                             ),
@@ -552,20 +552,20 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   child: Container(
                                     padding: EdgeInsets.fromLTRB(19*fem, 4*fem, 19*fem, 3*fem),
-                                    height: double.infinity,
-                                    clipBehavior: Clip.antiAlias,
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(10),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          offset: Offset(0, 1),
-                                          blurRadius: 5,
-                                          color: Colors.black.withOpacity(0.3),
-                                        ),
-                                      ],
-                                    ),
-
+                                      width: 110*fem,
+                                      height: 113*fem,
+                                      clipBehavior: Clip.antiAlias,
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.circular(5),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            offset: const Offset(0, 4),
+                                            blurRadius: 4,
+                                            color: Colors.black.withOpacity(0.1),
+                                          ),
+                                        ],
+                                      ),
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.center,
                                       children: [

@@ -161,12 +161,12 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                   ),
                   Positioned(
                     // line37dXE (2620:3331)
-                    left: 34*fem,
-                    top: 96*fem,
+                    left: 0*fem,
+                    top: 90*fem,
                     child: Align(
                       child: SizedBox(
                         width: 430*fem,
-                        height: 2*fem,
+                        height: 1*fem,
                         child: Container(
                           decoration: const BoxDecoration (
                             color: Color(0x21000000),

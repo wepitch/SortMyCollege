@@ -162,8 +162,8 @@ class _CounsellorListPage_offlineState
                               'Filter',
                               style: SafeGoogleFont(
                                 'Inter',
-                                fontSize: 15 * ffem,
-                                fontWeight: FontWeight.w600,
+                                fontSize: 14 * ffem,
+                                fontWeight: FontWeight.w400,
                                 height: 1.2125 * ffem / fem,
                                 color: Color(0xff000000),
                               ),
@@ -451,7 +451,7 @@ class _CounsellorListPage_offlineState
                                                                                       "Anshika Mehra",
                                                                                       style: SafeGoogleFont(
                                                                                         'Inter',
-                                                                                        fontSize: 23 * ffem,
+                                                                                        fontSize: 22 * ffem,
                                                                                         fontWeight: FontWeight.w700,
                                                                                         height: 1.2125 * ffem / fem,
                                                                                         color: Color(0xFF41403F),
