@@ -178,11 +178,9 @@ class SplashScreen extends StatelessWidget {
   }
 
   void onTapGettingstarted(BuildContext context) {
-    //Navigator.push(context, MaterialPageRoute(builder: (context) => HomePageContainer()));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => HomePageContainer()));
     //Navigator.push(context, MaterialPageRoute(builder: (context) => WelcomeScreen()));
-    //Navigator.push(context, MaterialPageRoute(builder: (context) => Selectdob()));
-    //Navigator.push(context, MaterialPageRoute(builder: (context) => Selectgender()));
-    Navigator.push(context, MaterialPageRoute(builder: (context) => EducationLevel()));
+    //Navigator.push(context, MaterialPageRoute(builder: (context) => EducationLevel()));
 
 
   }

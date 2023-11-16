@@ -11,7 +11,6 @@ class FlatEnq extends StatefulWidget {
 
 class _FlatEnqState extends State<FlatEnq> {
   bool visible = false;
-
   @override
   Widget build(BuildContext context) {
     double baseWidth = 430;
@@ -35,98 +34,7 @@ class _FlatEnqState extends State<FlatEnq> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                // group29Bkc (2608:497)
-                margin:
-                EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 0.17 * fem),
-                padding: EdgeInsets.fromLTRB(
-                    14 * fem, 39 * fem, 14 * fem, 13.83 * fem),
-                width: double.infinity,
-                height: 82.83 * fem,
-                decoration: BoxDecoration(
-                  color: Color(0xff1f0a68),
-                  borderRadius: BorderRadius.only(
-                    bottomRight: Radius.circular(20 * fem),
-                    bottomLeft: Radius.circular(20 * fem),
-                  ),
-                ),
-                child: Container(
-                  // frame294gBa (2608:507)
-                  width: double.infinity,
-                  height: double.infinity,
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Expanded(
-                        child: Container(
-                          // group231Jye (2608:500)
-                          margin: EdgeInsets.fromLTRB(
-                              0 * fem, 5 * fem, 100 * fem, 0 * fem),
-                          child: TextButton(
-                            onPressed: () {},
-                            style: TextButton.styleFrom(
-                              padding: EdgeInsets.zero,
-                            ),
-                            child: Container(
-                              padding: EdgeInsets.fromLTRB(
-                                  0 * fem, 0 * fem, 7 * fem, 0 * fem),
-                              height: double.infinity,
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Container(
-                                    // backQFz (2608:502)
-                                    margin: EdgeInsets.fromLTRB(
-                                        0 * fem, 0 * fem, 10.73 * fem, 2 * fem),
-                                    width: 20.27 * fem,
-                                    height: 20 * fem,
-                                    child: Image.asset(
-                                      'assets/page-1/images/back-Zpm.png',
-                                      width: 11.27 * fem,
-                                      height: 20 * fem,
-                                    ),
-                                  ),
-                                  Text(
-                                    // anshikamehra7w6 (2608:501)
-                                    'Anshika Mehra',
-                                    style: SafeGoogleFont(
-                                      'Inter',
-                                      fontSize: 24 * ffem,
-                                      fontWeight: FontWeight.w600,
-                                      height: 1.2125 * ffem / fem,
-                                      color: Color(0xffffffff),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        // more12fBv (2846:779)
-                        margin: EdgeInsets.fromLTRB(
-                            0 * fem, 0 * fem, 0 * fem, 1 * fem),
-                        child: TextButton(
-                          onPressed: () {},
-                          style: TextButton.styleFrom(
-                            padding: EdgeInsets.zero,
-                          ),
-                          child: Container(
-                            width: 25 * fem,
-                            height: 24 * fem,
-                            child: Image.asset(
-                              'assets/page-1/images/more-1-2.png',
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Container(
+              SizedBox(
                 // frame325A8g (2958:415)
                 width: 431 * fem,
                 height: 420 * fem,
@@ -168,8 +76,8 @@ class _FlatEnqState extends State<FlatEnq> {
                                 children: [
                                   Container(
                                     // productdesignerwepitchFpL (2958:419)
-                                    margin: EdgeInsets.fromLTRB(0.5 * fem,
-                                        0 * fem, 0 * fem, 3.83 * fem),
+                                    margin: EdgeInsets.fromLTRB(
+                                        0.5 * fem, 0 * fem, 0 * fem, 3.83 * fem),
                                     child: Text(
                                       'Career Counsellor',
                                       style: SafeGoogleFont(
@@ -186,7 +94,7 @@ class _FlatEnqState extends State<FlatEnq> {
                                     width: 136.91 * fem,
                                     child: Column(
                                       crossAxisAlignment:
-                                      CrossAxisAlignment.start,
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Container(
                                           // group282uP6 (2958:425)
@@ -195,7 +103,7 @@ class _FlatEnqState extends State<FlatEnq> {
                                           width: double.infinity,
                                           child: Row(
                                             crossAxisAlignment:
-                                            CrossAxisAlignment.center,
+                                                CrossAxisAlignment.center,
                                             children: [
                                               Container(
                                                 // groupeLg (2958:427)
@@ -238,7 +146,7 @@ class _FlatEnqState extends State<FlatEnq> {
                                           width: double.infinity,
                                           child: Row(
                                             crossAxisAlignment:
-                                            CrossAxisAlignment.center,
+                                                CrossAxisAlignment.center,
                                             children: [
                                               Container(
                                                 // group2s2 (2958:423)
@@ -306,8 +214,8 @@ class _FlatEnqState extends State<FlatEnq> {
                                                     color: Color(0x70000000)),
                                                 color: Color(0xff1f0a68),
                                                 borderRadius:
-                                                BorderRadius.circular(
-                                                    5 * fem),
+                                                    BorderRadius.circular(
+                                                        5 * fem),
                                               ),
                                               child: Center(
                                                 child: Text(
@@ -329,12 +237,12 @@ class _FlatEnqState extends State<FlatEnq> {
                                   ),
                                   Container(
                                     // autogrouptdtw6dv (obbCWhEmJ7cxZxekJtdTW)
-                                    margin: EdgeInsets.fromLTRB(60.48 * fem,
-                                        0 * fem, 9.02 * fem, 0 * fem),
+                                    margin: EdgeInsets.fromLTRB(
+                                        7.48 * fem, 0 * fem, 9.02 * fem, 0 * fem),
                                     width: double.infinity,
                                     child: Row(
                                       crossAxisAlignment:
-                                      CrossAxisAlignment.center,
+                                          CrossAxisAlignment.center,
                                       children: [
                                         Container(
                                           // groupqLc (2958:435)
@@ -390,8 +298,8 @@ class _FlatEnqState extends State<FlatEnq> {
                                   children: [
                                     Container(
                                       // K9J (2958:445)
-                                      margin: EdgeInsets.fromLTRB(0 * fem,
-                                          0 * fem, 87.29 * fem, 0 * fem),
+                                      margin: EdgeInsets.fromLTRB(
+                                          0 * fem, 0 * fem, 87.29 * fem, 0 * fem),
                                       constraints: BoxConstraints(
                                         maxWidth: 3 * fem,
                                       ),
@@ -428,8 +336,8 @@ class _FlatEnqState extends State<FlatEnq> {
                                     ),
                                     Container(
                                       // 8Me (2958:447)
-                                      margin: EdgeInsets.fromLTRB(0 * fem,
-                                          0 * fem, 0 * fem, 1.07 * fem),
+                                      margin: EdgeInsets.fromLTRB(
+                                          0 * fem, 0 * fem, 0 * fem, 1.07 * fem),
                                       constraints: BoxConstraints(
                                         maxWidth: 3 * fem,
                                       ),
@@ -461,21 +369,18 @@ class _FlatEnqState extends State<FlatEnq> {
                                   children: [
                                     Container(
                                       // group223m9i (2958:450)
-                                      margin: EdgeInsets.fromLTRB(0 * fem,
-                                          0 * fem, 43.08 * fem, 0 * fem),
+                                      margin: EdgeInsets.fromLTRB(
+                                          0 * fem, 0 * fem, 43.08 * fem, 0 * fem),
                                       height: double.infinity,
                                       child: Column(
                                         crossAxisAlignment:
-                                        CrossAxisAlignment.center,
+                                            CrossAxisAlignment.center,
                                         children: [
                                           Center(
                                             // experienceVrQ (2958:452)
                                             child: Container(
-                                              margin: EdgeInsets.fromLTRB(
-                                                  0 * fem,
-                                                  0 * fem,
-                                                  0 * fem,
-                                                  2.95 * fem),
+                                              margin: EdgeInsets.fromLTRB(0 * fem,
+                                                  0 * fem, 0 * fem, 2.95 * fem),
                                               child: Text(
                                                 'Experience',
                                                 textAlign: TextAlign.center,
@@ -509,21 +414,18 @@ class _FlatEnqState extends State<FlatEnq> {
                                     ),
                                     Container(
                                       // group223iz4 (2958:455)
-                                      margin: EdgeInsets.fromLTRB(0 * fem,
-                                          0 * fem, 51.08 * fem, 0 * fem),
+                                      margin: EdgeInsets.fromLTRB(
+                                          0 * fem, 0 * fem, 51.08 * fem, 0 * fem),
                                       height: double.infinity,
                                       child: Column(
                                         crossAxisAlignment:
-                                        CrossAxisAlignment.center,
+                                            CrossAxisAlignment.center,
                                         children: [
                                           Center(
                                             // sessions53v (2958:457)
                                             child: Container(
-                                              margin: EdgeInsets.fromLTRB(
-                                                  0 * fem,
-                                                  0 * fem,
-                                                  0 * fem,
-                                                  2.95 * fem),
+                                              margin: EdgeInsets.fromLTRB(0 * fem,
+                                                  0 * fem, 0 * fem, 2.95 * fem),
                                               child: Text(
                                                 'Sessions',
                                                 textAlign: TextAlign.center,
@@ -554,21 +456,18 @@ class _FlatEnqState extends State<FlatEnq> {
                                     ),
                                     Container(
                                       // group223MGL (2958:460)
-                                      margin: EdgeInsets.fromLTRB(0 * fem,
-                                          0 * fem, 48.08 * fem, 0 * fem),
+                                      margin: EdgeInsets.fromLTRB(
+                                          0 * fem, 0 * fem, 48.08 * fem, 0 * fem),
                                       height: double.infinity,
                                       child: Column(
                                         crossAxisAlignment:
-                                        CrossAxisAlignment.center,
+                                            CrossAxisAlignment.center,
                                         children: [
                                           Center(
                                             // rewardsJBa (2958:462)
                                             child: Container(
-                                              margin: EdgeInsets.fromLTRB(
-                                                  0 * fem,
-                                                  0 * fem,
-                                                  0 * fem,
-                                                  2.95 * fem),
+                                              margin: EdgeInsets.fromLTRB(0 * fem,
+                                                  0 * fem, 0 * fem, 2.95 * fem),
                                               child: Text(
                                                 'Rewards',
                                                 textAlign: TextAlign.center,
@@ -599,21 +498,18 @@ class _FlatEnqState extends State<FlatEnq> {
                                     ),
                                     Container(
                                       // group223Fm2 (2958:465)
-                                      margin: EdgeInsets.fromLTRB(0 * fem,
-                                          0.05 * fem, 0 * fem, 0 * fem),
+                                      margin: EdgeInsets.fromLTRB(
+                                          0 * fem, 0.05 * fem, 0 * fem, 0 * fem),
                                       height: double.infinity,
                                       child: Column(
                                         crossAxisAlignment:
-                                        CrossAxisAlignment.center,
+                                            CrossAxisAlignment.center,
                                         children: [
                                           Center(
                                             // reviews1EQ (2958:467)
                                             child: Container(
-                                              margin: EdgeInsets.fromLTRB(
-                                                  0 * fem,
-                                                  0 * fem,
-                                                  0 * fem,
-                                                  2.91 * fem),
+                                              margin: EdgeInsets.fromLTRB(0 * fem,
+                                                  0 * fem, 0 * fem, 2.91 * fem),
                                               child: Text(
                                                 'Reviews',
                                                 textAlign: TextAlign.center,
@@ -729,12 +625,9 @@ class _FlatEnqState extends State<FlatEnq> {
                   ],
                 ),
               ),
-              SizedBox(
-                height: 290 * fem,
-                child: SingleChildScrollView(
-                  physics: visible
-                      ? const AlwaysScrollableScrollPhysics()
-                      : const AlwaysScrollableScrollPhysics(),
+
+              Column(children: [
+                SizedBox(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -774,10 +667,9 @@ class _FlatEnqState extends State<FlatEnq> {
                                     RichText(
                                       text: TextSpan(
                                         children: [
-                                          visible == false
-                                              ? TextSpan(
+                                          TextSpan(
                                             text:
-                                            '\u2022 Lorem Ipsum is simply dummy text of the printing \n'
+                                                '\u2022 Lorem Ipsum is simply dummy text of the printing \n'
                                                 '\u2022 Typesetting industry. Lorem Ipsum has been the \n'
                                                 '\u2022 Industry\'s standard dummy text ever since the 1500s\n'
                                                 '\u2022 Industry\'s standard dummy text ever since the 1500s\n'
@@ -786,29 +678,7 @@ class _FlatEnqState extends State<FlatEnq> {
                                               'Inter',
                                               fontSize: 14 * ffem,
                                               fontWeight: FontWeight.w400,
-                                              height: 2.4549999782 *
-                                                  ffem /
-                                                  fem,
-                                              color: Color(0xFF595959),
-                                            ),
-                                          )
-                                              : TextSpan(
-                                            text:
-                                            '\u2022 Lorem Ipsum is simply dummy text of the printing \n'
-                                                '\u2022 Typesetting industry. Lorem Ipsum has been the \n'
-                                                '\u2022 Industry\'s standard dummy text ever since the 1500s\n'
-                                                '\u2022 Industry\'s standard dummy text ever since the 1500s\n'
-                                                '\u2022 Industry\'s standard dummy text ever since the 1500s\n'
-                                                '\u2022 Industry\'s standard dummy text ever since the 1500s\n'
-                                                '\u2022 Industry\'s standard dummy text ever since the 1500s\n'
-                                                '\u2022 Industry\'s standard dummy text ever since the 1500s\n',
-                                            style: SafeGoogleFont(
-                                              'Inter',
-                                              fontSize: 14 * ffem,
-                                              fontWeight: FontWeight.w400,
-                                              height: 2.4549999782 *
-                                                  ffem /
-                                                  fem,
+                                              height: 2.4549999782 * ffem / fem,
                                               color: Color(0xFF595959),
                                             ),
                                           ),
@@ -886,7 +756,7 @@ class _FlatEnqState extends State<FlatEnq> {
                                   width: 333 * fem,
                                   child: Column(
                                     crossAxisAlignment:
-                                    CrossAxisAlignment.start,
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Container(
                                         // moreinformationZf6 (2958:485)
@@ -910,7 +780,7 @@ class _FlatEnqState extends State<FlatEnq> {
                                         width: double.infinity,
                                         child: Row(
                                           crossAxisAlignment:
-                                          CrossAxisAlignment.center,
+                                              CrossAxisAlignment.center,
                                           children: [
                                             Container(
                                               // diploma2Hn (2958:490)
@@ -934,7 +804,7 @@ class _FlatEnqState extends State<FlatEnq> {
                                                 fontSize: 14 * ffem,
                                                 fontWeight: FontWeight.w500,
                                                 height:
-                                                1.7034202251 * ffem / fem,
+                                                    1.7034202251 * ffem / fem,
                                                 color: Color(0xff8e8989),
                                               ),
                                             ),
@@ -948,7 +818,7 @@ class _FlatEnqState extends State<FlatEnq> {
                                         width: double.infinity,
                                         child: Row(
                                           crossAxisAlignment:
-                                          CrossAxisAlignment.center,
+                                              CrossAxisAlignment.center,
                                           children: [
                                             Container(
                                               // group3692BJ (2958:488)
@@ -996,7 +866,7 @@ class _FlatEnqState extends State<FlatEnq> {
                                   width: double.infinity,
                                   child: Row(
                                     crossAxisAlignment:
-                                    CrossAxisAlignment.center,
+                                        CrossAxisAlignment.center,
                                     children: [
                                       Container(
                                         // mapsandflagszGY (2958:542)
@@ -1034,7 +904,7 @@ class _FlatEnqState extends State<FlatEnq> {
                                   width: double.infinity,
                                   child: Row(
                                     crossAxisAlignment:
-                                    CrossAxisAlignment.center,
+                                        CrossAxisAlignment.center,
                                     children: [
                                       Container(
                                         // sexB68 (2958:541)
@@ -1072,7 +942,7 @@ class _FlatEnqState extends State<FlatEnq> {
                                   width: double.infinity,
                                   child: Row(
                                     crossAxisAlignment:
-                                    CrossAxisAlignment.center,
+                                        CrossAxisAlignment.center,
                                     children: [
                                       Container(
                                         // ageX3W (2958:544)
@@ -1129,12 +999,12 @@ class _FlatEnqState extends State<FlatEnq> {
                                   width: double.infinity,
                                   child: Column(
                                     crossAxisAlignment:
-                                    CrossAxisAlignment.center,
+                                        CrossAxisAlignment.center,
                                     children: [
                                       Container(
                                         // group363y5z (2958:509)
-                                        margin: EdgeInsets.fromLTRB(0 * fem,
-                                            0 * fem, 0 * fem, 5 * fem),
+                                        margin: EdgeInsets.fromLTRB(
+                                            0 * fem, 0 * fem, 0 * fem, 5 * fem),
                                         width: double.infinity,
                                         height: 190 * fem,
                                         child: Stack(
@@ -1150,18 +1020,15 @@ class _FlatEnqState extends State<FlatEnq> {
                                                   child: Container(
                                                     decoration: BoxDecoration(
                                                       borderRadius:
-                                                      BorderRadius
-                                                          .circular(
-                                                          10 * fem),
-                                                      color:
-                                                      Color(0xffffffff),
+                                                          BorderRadius.circular(
+                                                              10 * fem),
+                                                      color: Color(0xffffffff),
                                                       boxShadow: [
                                                         BoxShadow(
-                                                          color: Color(
-                                                              0x1c000000),
+                                                          color:
+                                                              Color(0x1c000000),
                                                           offset: Offset(
-                                                              0 * fem,
-                                                              2 * fem),
+                                                              0 * fem, 2 * fem),
                                                           blurRadius: 6 * fem,
                                                         ),
                                                       ],
@@ -1179,27 +1046,25 @@ class _FlatEnqState extends State<FlatEnq> {
                                                 height: 145 * fem,
                                                 child: Column(
                                                   crossAxisAlignment:
-                                                  CrossAxisAlignment
-                                                      .center,
+                                                      CrossAxisAlignment.center,
                                                   children: [
                                                     Container(
                                                       // ellipse34hgC (2958:518)
                                                       margin:
-                                                      EdgeInsets.fromLTRB(
-                                                          194 * fem,
-                                                          0 * fem,
-                                                          194 * fem,
-                                                          6 * fem),
+                                                          EdgeInsets.fromLTRB(
+                                                              194 * fem,
+                                                              0 * fem,
+                                                              194 * fem,
+                                                              6 * fem),
                                                       width: double.infinity,
                                                       height: 60 * fem,
-                                                      decoration:
-                                                      BoxDecoration(
+                                                      decoration: BoxDecoration(
                                                         borderRadius:
-                                                        BorderRadius
-                                                            .circular(
-                                                            30 * fem),
+                                                            BorderRadius
+                                                                .circular(
+                                                                    30 * fem),
                                                         image:
-                                                        const DecorationImage(
+                                                            const DecorationImage(
                                                           fit: BoxFit.cover,
                                                           image: AssetImage(
                                                             'assets/page-1/images/ellipse-34-bg-yqT.png',
@@ -1210,51 +1075,47 @@ class _FlatEnqState extends State<FlatEnq> {
                                                     Container(
                                                       // autogroupkg8gQKi (obd53QjXDk74WfGeHkg8G)
                                                       margin:
-                                                      EdgeInsets.fromLTRB(
-                                                          20 * fem,
-                                                          0 * fem,
-                                                          22 * fem,
-                                                          12.79 * fem),
+                                                          EdgeInsets.fromLTRB(
+                                                              20 * fem,
+                                                              0 * fem,
+                                                              22 * fem,
+                                                              12.79 * fem),
                                                       width: double.infinity,
                                                       child: Row(
                                                         crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
+                                                            CrossAxisAlignment
+                                                                .start,
                                                         children: [
                                                           Container(
                                                             // vectorvor (2958:521)
                                                             margin: EdgeInsets
                                                                 .fromLTRB(
-                                                                0 * fem,
-                                                                2 * fem,
-                                                                142.5 *
-                                                                    fem,
-                                                                0 * fem),
+                                                                    0 * fem,
+                                                                    2 * fem,
+                                                                    142.5 * fem,
+                                                                    0 * fem),
                                                             width: 13 * fem,
                                                             height: 33 * fem,
-                                                            child:
-                                                            Image.asset(
+                                                            child: Image.asset(
                                                               'assets/page-1/images/vector-jKW.png',
                                                               width: 13 * fem,
-                                                              height:
-                                                              33 * fem,
+                                                              height: 33 * fem,
                                                             ),
                                                           ),
                                                           Container(
                                                             // autogroupyqpxFbE (obdB3EjxG3FnEim7TyQpx)
                                                             margin: EdgeInsets
                                                                 .fromLTRB(
-                                                                0 * fem,
-                                                                6 * fem,
-                                                                139.53 *
-                                                                    fem,
-                                                                0 * fem),
-                                                            width:
-                                                            96.97 * fem,
+                                                                    0 * fem,
+                                                                    6 * fem,
+                                                                    139.53 *
+                                                                        fem,
+                                                                    0 * fem),
+                                                            width: 96.97 * fem,
                                                             child: Column(
                                                               crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .center,
+                                                                  CrossAxisAlignment
+                                                                      .center,
                                                               children: [
                                                                 Container(
                                                                   // alexyXE (2958:519)
@@ -1268,16 +1129,17 @@ class _FlatEnqState extends State<FlatEnq> {
                                                                   child: Text(
                                                                     'Alex',
                                                                     textAlign:
-                                                                    TextAlign
-                                                                        .center,
+                                                                        TextAlign
+                                                                            .center,
                                                                     style:
-                                                                    SafeGoogleFont(
+                                                                        SafeGoogleFont(
                                                                       'Inter',
                                                                       fontSize:
-                                                                      12 *
-                                                                          ffem,
+                                                                          12 *
+                                                                              ffem,
                                                                       fontWeight:
-                                                                      FontWeight.w400,
+                                                                          FontWeight
+                                                                              .w400,
                                                                       height: 1.2125 *
                                                                           ffem /
                                                                           fem,
@@ -1292,98 +1154,98 @@ class _FlatEnqState extends State<FlatEnq> {
                                                                       .infinity,
                                                                   child: Row(
                                                                     crossAxisAlignment:
-                                                                    CrossAxisAlignment
-                                                                        .center,
+                                                                        CrossAxisAlignment
+                                                                            .center,
                                                                     children: [
                                                                       Container(
                                                                         // streamlineinterfacefavoritesta (2958:513)
-                                                                        width:
-                                                                        12.97 * fem,
-                                                                        height:
-                                                                        12.44 * fem,
-                                                                        child:
-                                                                        Image.asset(
+                                                                        width: 12.97 *
+                                                                            fem,
+                                                                        height: 12.44 *
+                                                                            fem,
+                                                                        child: Image
+                                                                            .asset(
                                                                           'assets/page-1/images/group-95T.png',
                                                                           width:
-                                                                          12.97 * fem,
+                                                                              12.97 * fem,
                                                                           height:
-                                                                          12.44 * fem,
+                                                                              12.44 * fem,
                                                                         ),
                                                                       ),
                                                                       SizedBox(
-                                                                        width:
-                                                                        8.03 * fem,
+                                                                        width: 8.03 *
+                                                                            fem,
                                                                       ),
                                                                       Container(
                                                                         // streamlineinterfacefavoritesta (2958:514)
-                                                                        width:
-                                                                        12.97 * fem,
-                                                                        height:
-                                                                        12.44 * fem,
-                                                                        child:
-                                                                        Image.asset(
+                                                                        width: 12.97 *
+                                                                            fem,
+                                                                        height: 12.44 *
+                                                                            fem,
+                                                                        child: Image
+                                                                            .asset(
                                                                           'assets/page-1/images/group-yah.png',
                                                                           width:
-                                                                          12.97 * fem,
+                                                                              12.97 * fem,
                                                                           height:
-                                                                          12.44 * fem,
+                                                                              12.44 * fem,
                                                                         ),
                                                                       ),
                                                                       SizedBox(
-                                                                        width:
-                                                                        8.03 * fem,
+                                                                        width: 8.03 *
+                                                                            fem,
                                                                       ),
                                                                       Container(
                                                                         // streamlineinterfacefavoritesta (2958:515)
-                                                                        width:
-                                                                        12.97 * fem,
-                                                                        height:
-                                                                        12.44 * fem,
-                                                                        child:
-                                                                        Image.asset(
+                                                                        width: 12.97 *
+                                                                            fem,
+                                                                        height: 12.44 *
+                                                                            fem,
+                                                                        child: Image
+                                                                            .asset(
                                                                           'assets/page-1/images/group-yah.png',
                                                                           width:
-                                                                          12.97 * fem,
+                                                                              12.97 * fem,
                                                                           height:
-                                                                          12.44 * fem,
+                                                                              12.44 * fem,
                                                                         ),
                                                                       ),
                                                                       SizedBox(
-                                                                        width:
-                                                                        8.03 * fem,
+                                                                        width: 8.03 *
+                                                                            fem,
                                                                       ),
                                                                       Container(
                                                                         // streamlineinterfacefavoritesta (2958:516)
-                                                                        width:
-                                                                        12.97 * fem,
-                                                                        height:
-                                                                        12.44 * fem,
-                                                                        child:
-                                                                        Image.asset(
+                                                                        width: 12.97 *
+                                                                            fem,
+                                                                        height: 12.44 *
+                                                                            fem,
+                                                                        child: Image
+                                                                            .asset(
                                                                           'assets/page-1/images/unfillstar.png',
                                                                           width:
-                                                                          12.97 * fem,
+                                                                              12.97 * fem,
                                                                           height:
-                                                                          12.44 * fem,
+                                                                              12.44 * fem,
                                                                         ),
                                                                       ),
                                                                       SizedBox(
-                                                                        width:
-                                                                        8.03 * fem,
+                                                                        width: 8.03 *
+                                                                            fem,
                                                                       ),
                                                                       Container(
                                                                         // streamlineinterfacefavoritesta (2958:517)
-                                                                        width:
-                                                                        12.97 * fem,
-                                                                        height:
-                                                                        12.44 * fem,
-                                                                        child:
-                                                                        Image.asset(
+                                                                        width: 12.97 *
+                                                                            fem,
+                                                                        height: 12.44 *
+                                                                            fem,
+                                                                        child: Image
+                                                                            .asset(
                                                                           'assets/page-1/images/unfillstar.png',
                                                                           width:
-                                                                          12.97 * fem,
+                                                                              12.97 * fem,
                                                                           height:
-                                                                          12.44 * fem,
+                                                                              12.44 * fem,
                                                                         ),
                                                                       ),
                                                                     ],
@@ -1396,12 +1258,10 @@ class _FlatEnqState extends State<FlatEnq> {
                                                             // vectorKWY (2958:522)
                                                             width: 14 * fem,
                                                             height: 33 * fem,
-                                                            child:
-                                                            Image.asset(
+                                                            child: Image.asset(
                                                               'assets/page-1/images/vector-DCt.png',
                                                               width: 14 * fem,
-                                                              height:
-                                                              33 * fem,
+                                                              height: 33 * fem,
                                                             ),
                                                           ),
                                                         ],
@@ -1411,19 +1271,18 @@ class _FlatEnqState extends State<FlatEnq> {
                                                       // compassionateinsightfulcounsel (2958:520)
                                                       '"Compassionate, insightful counselor - highly recommend!"',
                                                       textAlign:
-                                                      TextAlign.center,
+                                                          TextAlign.center,
                                                       style: SafeGoogleFont(
                                                         'Inter',
                                                         fontSize: 11 * ffem,
                                                         fontWeight:
-                                                        FontWeight.w400,
-                                                        height: 1.2125 *
-                                                            ffem /
-                                                            fem,
+                                                            FontWeight.w400,
+                                                        height:
+                                                            1.2125 * ffem / fem,
                                                         fontStyle:
-                                                        FontStyle.italic,
+                                                            FontStyle.italic,
                                                         color:
-                                                        Color(0xffa09d9d),
+                                                            Color(0xffa09d9d),
                                                       ),
                                                     ),
                                                   ],
@@ -1455,20 +1314,17 @@ class _FlatEnqState extends State<FlatEnq> {
                                   width: double.infinity,
                                   child: Column(
                                     crossAxisAlignment:
-                                    CrossAxisAlignment.center,
+                                        CrossAxisAlignment.center,
                                     children: [
                                       Container(
                                         // autogroupndmaoq2 (obcXDzR7vjLQoZdzSNDMA)
-                                        padding: EdgeInsets.fromLTRB(
-                                            16.5 * fem,
-                                            0 * fem,
-                                            16.5 * fem,
-                                            12.79 * fem),
+                                        padding: EdgeInsets.fromLTRB(16.5 * fem,
+                                            0 * fem, 16.5 * fem, 12.79 * fem),
                                         width: double.infinity,
                                         height: 61 * fem,
                                         child: Column(
                                           crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Container(
                                               // giveareviewLKA (2958:502)
@@ -1483,9 +1339,8 @@ class _FlatEnqState extends State<FlatEnq> {
                                                   'Inter',
                                                   fontSize: 16 * ffem,
                                                   fontWeight: FontWeight.w700,
-                                                  height: 1.7002272606 *
-                                                      ffem /
-                                                      fem,
+                                                  height:
+                                                      1.7002272606 * ffem / fem,
                                                   color: Color(0xff000000),
                                                 ),
                                               ),
@@ -1494,7 +1349,7 @@ class _FlatEnqState extends State<FlatEnq> {
                                               // group360eKr (2958:496)
                                               child: Row(
                                                 crossAxisAlignment:
-                                                CrossAxisAlignment.center,
+                                                    CrossAxisAlignment.center,
                                                 children: [
                                                   Container(
                                                     // streamlineinterfacefavoritesta (2958:497)
@@ -1577,7 +1432,7 @@ class _FlatEnqState extends State<FlatEnq> {
                                         ),
                                         child: Row(
                                           crossAxisAlignment:
-                                          CrossAxisAlignment.center,
+                                              CrossAxisAlignment.center,
                                           children: [
                                             Container(
                                               // commentaue (2958:493)
@@ -1592,9 +1447,8 @@ class _FlatEnqState extends State<FlatEnq> {
                                                   'Inter',
                                                   fontSize: 14 * ffem,
                                                   fontWeight: FontWeight.w500,
-                                                  height: 1.7034202251 *
-                                                      ffem /
-                                                      fem,
+                                                  height:
+                                                      1.7034202251 * ffem / fem,
                                                   color: Color(0xffd5cfcf),
                                                 ),
                                               ),
@@ -1623,61 +1477,298 @@ class _FlatEnqState extends State<FlatEnq> {
                     ],
                   ),
                 ),
-              ),
-              SizedBox(
-                // group371aXa (2936:506)
-                width: double.infinity,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      // autogroupuuww8oz (obZ7jq9Hv3ndwJa9LuuwW)
-                      width: double.infinity,
-                      height: 113 * fem,
-                      child: Stack(
-                        children: [
-                          Positioned(
-                            // frame324GvC (2936:447)
-                            left: 0 * fem,
-                            top: 55 * fem,
-                            child: Container(
-                              padding: EdgeInsets.fromLTRB(
-                                  16 * fem, 8 * fem, 16 * fem, 8 * fem),
-                              width: 430 * fem,
-                              height: 57 * fem,
-                              decoration: BoxDecoration(
-                                border: Border.all(color: Color(0x35000000)),
-                              ),
+                SizedBox(
+                  // group371aXa (2936:506)
+                  width: double.infinity,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Container(
+                        // autogroupuuww8oz (obZ7jq9Hv3ndwJa9LuuwW)
+                        width: double.infinity,
+                        height: 113 * fem,
+                        child: Stack(
+                          children: [
+                            Positioned(
+                              // frame324GvC (2936:447)
+                              left: 0 * fem,
+                              top: 55 * fem,
                               child: Container(
-                                // group370NiL (2936:483)
-                                width: double.infinity,
-                                height: double.infinity,
-                                child: Row(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Expanded(
-                                      child: Container(
-                                        // group347Kda (2936:448)
+                                padding: EdgeInsets.fromLTRB(
+                                    16 * fem, 8 * fem, 16 * fem, 8 * fem),
+                                width: 430 * fem,
+                                height: 57 * fem,
+                                decoration: BoxDecoration(
+                                  border: Border.all(color: Color(0x35000000)),
+                                ),
+                                child: Container(
+                                  // group370NiL (2936:483)
+                                  width: double.infinity,
+                                  height: double.infinity,
+                                  child: Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Expanded(
+                                        child: Container(
+                                          // group347Kda (2936:448)
+                                          margin: EdgeInsets.fromLTRB(0 * fem,
+                                              0 * fem, 115 * fem, 0 * fem),
+                                          height: double.infinity,
+                                          child: Row(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              Container(
+                                                // group345fBe (2936:458)
+                                                margin: EdgeInsets.fromLTRB(
+                                                    0 * fem,
+                                                    0 * fem,
+                                                    5 * fem,
+                                                    0 * fem),
+                                                width: 42 * fem,
+                                                height: double.infinity,
+                                                child: Stack(
+                                                  children: [
+                                                    Positioned(
+                                                      // group298bLC (2936:459)
+                                                      left: 0 * fem,
+                                                      top: 0 * fem,
+                                                      child: Align(
+                                                        child: SizedBox(
+                                                          width: 42 * fem,
+                                                          height: 41 * fem,
+                                                          child: Image.asset(
+                                                            'assets/page-1/images/group-298.png',
+                                                            width: 42 * fem,
+                                                            height: 41 * fem,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Positioned(
+                                                      // conversationi9v (2936:461)
+                                                      left: 10.7692871094 * fem,
+                                                      top: 9.4614257812 * fem,
+                                                      child: Align(
+                                                        child: SizedBox(
+                                                          width: 21.54 * fem,
+                                                          height: 21.03 * fem,
+                                                          child: Image.asset(
+                                                            'assets/page-1/images/conversation.png',
+                                                            fit: BoxFit.cover,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              Container(
+                                                // group346qEY (2936:449)
+                                                margin: EdgeInsets.fromLTRB(
+                                                    0 * fem,
+                                                    0.5 * fem,
+                                                    0 * fem,
+                                                    1 * fem),
+                                                width: 115 * fem,
+                                                height: double.infinity,
+                                                child: Stack(
+                                                  children: [
+                                                    Positioned(
+                                                      // personalsessionmdz (2936:453)
+                                                      left: 0 * fem,
+                                                      top: 0 * fem,
+                                                      child: Align(
+                                                        child: SizedBox(
+                                                          width: 97 * fem,
+                                                          height: 15 * fem,
+                                                          child: Text(
+                                                            'Personal Session',
+                                                            style:
+                                                                SafeGoogleFont(
+                                                              'Inter',
+                                                              fontSize:
+                                                                  12 * ffem,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w400,
+                                                              height: 1.2125 *
+                                                                  ffem /
+                                                                  fem,
+                                                              color: Color(
+                                                                  0xff000000),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Positioned(
+                                                      // group344gW4 (2936:454)
+                                                      left: 0 * fem,
+                                                      top: 14.5 * fem,
+                                                      child: Container(
+                                                        width: 115 * fem,
+                                                        height: 25 * fem,
+                                                        child: Row(
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            Container(
+                                                              // rupeebsv (2936:457)
+                                                              margin: EdgeInsets
+                                                                  .fromLTRB(
+                                                                      0 * fem,
+                                                                      0 * fem,
+                                                                      2 * fem,
+                                                                      1 * fem),
+                                                              width: 11 * fem,
+                                                              height: 14 * fem,
+                                                              child:
+                                                                  Image.asset(
+                                                                'assets/page-1/images/rupee-12.png',
+                                                                fit: BoxFit
+                                                                    .cover,
+                                                              ),
+                                                            ),
+                                                            Container(
+                                                              // LKi (2936:455)
+                                                              margin: EdgeInsets
+                                                                  .fromLTRB(
+                                                                      0 * fem,
+                                                                      0 * fem,
+                                                                      1 * fem,
+                                                                      0 * fem),
+                                                              child: Text(
+                                                                '1500',
+                                                                style:
+                                                                    SafeGoogleFont(
+                                                                  'Inter',
+                                                                  fontSize:
+                                                                      20 * ffem,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  height:
+                                                                      1.2125 *
+                                                                          ffem /
+                                                                          fem,
+                                                                  color: Color(
+                                                                      0xff000000),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                            Container(
+                                                              // onwardsTfE (2936:456)
+                                                              margin: EdgeInsets
+                                                                  .fromLTRB(
+                                                                      0 * fem,
+                                                                      4 * fem,
+                                                                      0 * fem,
+                                                                      0 * fem),
+                                                              child: Text(
+                                                                'Onwards',
+                                                                style:
+                                                                    SafeGoogleFont(
+                                                                  'Inter',
+                                                                  fontSize:
+                                                                      12 * ffem,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                  height:
+                                                                      1.2125 *
+                                                                          ffem /
+                                                                          fem,
+                                                                  color: Color(
+                                                                      0xff6b6b6b),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                      Container(
+                                        // group349P36 (2936:462)
+                                        width: 116 * fem,
+                                        height: double.infinity,
+                                        decoration: BoxDecoration(
+                                          color: Color(0xff1f0a68),
+                                          borderRadius:
+                                              BorderRadius.circular(5 * fem),
+                                        ),
+                                        child: Center(
+                                          child: Center(
+                                            child: Text(
+                                              'Book',
+                                              textAlign: TextAlign.center,
+                                              style: SafeGoogleFont(
+                                                'Inter',
+                                                fontSize: 16 * ffem,
+                                                fontWeight: FontWeight.w400,
+                                                height: 1.2125 * ffem / fem,
+                                                color: Color(0xffffffff),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                              // frame32649E (2936:484)
+                              left: 0 * fem,
+                              top: 0 * fem,
+                              child: Container(
+                                padding: EdgeInsets.fromLTRB(
+                                    16 * fem, 8 * fem, 16 * fem, 8 * fem),
+                                width: 430 * fem,
+                                height: 57 * fem,
+                                decoration: BoxDecoration(
+                                  border: Border.all(color: Color(0x35000000)),
+                                ),
+                                child: Container(
+                                  // group370y1J (2936:485)
+                                  width: double.infinity,
+                                  height: double.infinity,
+                                  child: Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Container(
+                                        // group347XHi (2936:486)
                                         margin: EdgeInsets.fromLTRB(0 * fem,
-                                            0 * fem, 115 * fem, 0 * fem),
+                                            0 * fem, 123 * fem, 0 * fem),
                                         height: double.infinity,
                                         child: Row(
                                           crossAxisAlignment:
-                                          CrossAxisAlignment.center,
+                                              CrossAxisAlignment.center,
                                           children: [
                                             Container(
-                                              // group345fBe (2936:458)
+                                              // autogroupvexiTSG (obZYj7WRacadntT6aVeXi)
                                               margin: EdgeInsets.fromLTRB(
                                                   0 * fem,
                                                   0 * fem,
-                                                  5 * fem,
+                                                  8 * fem,
                                                   0 * fem),
                                               width: 42 * fem,
                                               height: double.infinity,
                                               child: Stack(
                                                 children: [
                                                   Positioned(
-                                                    // group298bLC (2936:459)
+                                                    // group345C8x (2936:496)
                                                     left: 0 * fem,
                                                     top: 0 * fem,
                                                     child: Align(
@@ -1685,7 +1776,7 @@ class _FlatEnqState extends State<FlatEnq> {
                                                         width: 42 * fem,
                                                         height: 41 * fem,
                                                         child: Image.asset(
-                                                          'assets/page-1/images/group-298.png',
+                                                          'assets/page-1/images/ellipse-47-xPB.png',
                                                           width: 42 * fem,
                                                           height: 41 * fem,
                                                         ),
@@ -1693,15 +1784,15 @@ class _FlatEnqState extends State<FlatEnq> {
                                                     ),
                                                   ),
                                                   Positioned(
-                                                    // conversationi9v (2936:461)
-                                                    left: 10.7692871094 * fem,
-                                                    top: 9.4614257812 * fem,
+                                                    // usersgroupJxg (2936:503)
+                                                    left: 11 * fem,
+                                                    top: 10 * fem,
                                                     child: Align(
                                                       child: SizedBox(
-                                                        width: 21.54 * fem,
-                                                        height: 21.03 * fem,
+                                                        width: 21 * fem,
+                                                        height: 21 * fem,
                                                         child: Image.asset(
-                                                          'assets/page-1/images/conversation.png',
+                                                          'assets/page-1/images/usergroup.png',
                                                           fit: BoxFit.cover,
                                                         ),
                                                       ),
@@ -1711,31 +1802,31 @@ class _FlatEnqState extends State<FlatEnq> {
                                               ),
                                             ),
                                             Container(
-                                              // group346qEY (2936:449)
+                                              // group346EbS (2936:487)
                                               margin: EdgeInsets.fromLTRB(
                                                   0 * fem,
                                                   0.5 * fem,
                                                   0 * fem,
                                                   1 * fem),
-                                              width: 115 * fem,
+                                              width: 105 * fem,
                                               height: double.infinity,
                                               child: Stack(
                                                 children: [
                                                   Positioned(
-                                                    // personalsessionmdz (2936:453)
+                                                    // groupsessionZtc (2936:491)
                                                     left: 0 * fem,
                                                     top: 0 * fem,
                                                     child: Align(
                                                       child: SizedBox(
-                                                        width: 97 * fem,
+                                                        width: 83 * fem,
                                                         height: 15 * fem,
                                                         child: Text(
-                                                          'Personal Session',
+                                                          'Group Session',
                                                           style: SafeGoogleFont(
                                                             'Inter',
                                                             fontSize: 12 * ffem,
                                                             fontWeight:
-                                                            FontWeight.w400,
+                                                                FontWeight.w400,
                                                             height: 1.2125 *
                                                                 ffem /
                                                                 fem,
@@ -1747,25 +1838,25 @@ class _FlatEnqState extends State<FlatEnq> {
                                                     ),
                                                   ),
                                                   Positioned(
-                                                    // group344gW4 (2936:454)
+                                                    // group344UEt (2936:492)
                                                     left: 0 * fem,
                                                     top: 14.5 * fem,
                                                     child: Container(
-                                                      width: 115 * fem,
+                                                      width: 105 * fem,
                                                       height: 25 * fem,
                                                       child: Row(
                                                         crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .center,
+                                                            CrossAxisAlignment
+                                                                .center,
                                                         children: [
                                                           Container(
-                                                            // rupeebsv (2936:457)
+                                                            // rupeezU8 (2936:495)
                                                             margin: EdgeInsets
                                                                 .fromLTRB(
-                                                                0 * fem,
-                                                                0 * fem,
-                                                                2 * fem,
-                                                                1 * fem),
+                                                                    0 * fem,
+                                                                    0 * fem,
+                                                                    2 * fem,
+                                                                    1 * fem),
                                                             width: 11 * fem,
                                                             height: 14 * fem,
                                                             child: Image.asset(
@@ -1773,50 +1864,42 @@ class _FlatEnqState extends State<FlatEnq> {
                                                               fit: BoxFit.cover,
                                                             ),
                                                           ),
-                                                          Container(
-                                                            // LKi (2936:455)
-                                                            margin: EdgeInsets
-                                                                .fromLTRB(
-                                                                0 * fem,
-                                                                0 * fem,
-                                                                1 * fem,
-                                                                0 * fem),
-                                                            child: Text(
-                                                              '1500',
-                                                              style:
-                                                              SafeGoogleFont(
-                                                                'Inter',
-                                                                fontSize:
-                                                                20 * ffem,
-                                                                fontWeight:
-                                                                FontWeight
-                                                                    .w600,
-                                                                height: 1.2125 *
-                                                                    ffem /
-                                                                    fem,
-                                                                color: Color(
-                                                                    0xff000000),
-                                                              ),
+                                                          Text(
+                                                            // vcg (2936:493)
+                                                            '500',
+                                                            style:
+                                                                SafeGoogleFont(
+                                                              'Inter',
+                                                              fontSize:
+                                                                  20 * ffem,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w600,
+                                                              height: 1.2125 *
+                                                                  ffem /
+                                                                  fem,
+                                                              color: Color(
+                                                                  0xff000000),
                                                             ),
                                                           ),
                                                           Container(
-                                                            // onwardsTfE (2936:456)
+                                                            // onwards5Va (2936:494)
                                                             margin: EdgeInsets
                                                                 .fromLTRB(
-                                                                0 * fem,
-                                                                4 * fem,
-                                                                0 * fem,
-                                                                0 * fem),
+                                                                    0 * fem,
+                                                                    4 * fem,
+                                                                    0 * fem,
+                                                                    0 * fem),
                                                             child: Text(
                                                               'Onwards',
                                                               style:
-                                                              SafeGoogleFont(
+                                                                  SafeGoogleFont(
                                                                 'Inter',
                                                                 fontSize:
-                                                                12 * ffem,
+                                                                    12 * ffem,
                                                                 fontWeight:
-                                                                FontWeight
-                                                                    .w500,
+                                                                    FontWeight
+                                                                        .w500,
                                                                 height: 1.2125 *
                                                                     ffem /
                                                                     fem,
@@ -1835,254 +1918,43 @@ class _FlatEnqState extends State<FlatEnq> {
                                           ],
                                         ),
                                       ),
-                                    ),
-                                    Container(
-                                      // group349P36 (2936:462)
-                                      width: 116 * fem,
-                                      height: double.infinity,
-                                      decoration: BoxDecoration(
-                                        color: Color(0xff1f0a68),
-                                        borderRadius:
-                                        BorderRadius.circular(5 * fem),
-                                      ),
-                                      child: Center(
+                                      Container(
+                                        // group349oRa (2936:500)
+                                        width: 116 * fem,
+                                        height: double.infinity,
+                                        decoration: BoxDecoration(
+                                          color: Color(0xff1f0a68),
+                                          borderRadius:
+                                              BorderRadius.circular(5 * fem),
+                                        ),
                                         child: Center(
-                                          child: Text(
-                                            'Book',
-                                            textAlign: TextAlign.center,
-                                            style: SafeGoogleFont(
-                                              'Inter',
-                                              fontSize: 16 * ffem,
-                                              fontWeight: FontWeight.w400,
-                                              height: 1.2125 * ffem / fem,
-                                              color: Color(0xffffffff),
+                                          child: Center(
+                                            child: Text(
+                                              'Book',
+                                              textAlign: TextAlign.center,
+                                              style: SafeGoogleFont(
+                                                'Inter',
+                                                fontSize: 16 * ffem,
+                                                fontWeight: FontWeight.w400,
+                                                height: 1.2125 * ffem / fem,
+                                                color: Color(0xffffffff),
+                                              ),
                                             ),
                                           ),
                                         ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                          Positioned(
-                            // frame32649E (2936:484)
-                            left: 0 * fem,
-                            top: 0 * fem,
-                            child: Container(
-                              padding: EdgeInsets.fromLTRB(
-                                  16 * fem, 8 * fem, 16 * fem, 8 * fem),
-                              width: 430 * fem,
-                              height: 57 * fem,
-                              decoration: BoxDecoration(
-                                border: Border.all(color: Color(0x35000000)),
-                              ),
-                              child: Container(
-                                // group370y1J (2936:485)
-                                width: double.infinity,
-                                height: double.infinity,
-                                child: Row(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      // group347XHi (2936:486)
-                                      margin: EdgeInsets.fromLTRB(
-                                          0 * fem, 0 * fem, 123 * fem, 0 * fem),
-                                      height: double.infinity,
-                                      child: Row(
-                                        crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                        children: [
-                                          Container(
-                                            // autogroupvexiTSG (obZYj7WRacadntT6aVeXi)
-                                            margin: EdgeInsets.fromLTRB(0 * fem,
-                                                0 * fem, 8 * fem, 0 * fem),
-                                            width: 42 * fem,
-                                            height: double.infinity,
-                                            child: Stack(
-                                              children: [
-                                                Positioned(
-                                                  // group345C8x (2936:496)
-                                                  left: 0 * fem,
-                                                  top: 0 * fem,
-                                                  child: Align(
-                                                    child: SizedBox(
-                                                      width: 42 * fem,
-                                                      height: 41 * fem,
-                                                      child: Image.asset(
-                                                        'assets/page-1/images/ellipse-47-xPB.png',
-                                                        width: 42 * fem,
-                                                        height: 41 * fem,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                                Positioned(
-                                                  // usersgroupJxg (2936:503)
-                                                  left: 11 * fem,
-                                                  top: 10 * fem,
-                                                  child: Align(
-                                                    child: SizedBox(
-                                                      width: 21 * fem,
-                                                      height: 21 * fem,
-                                                      child: Image.asset(
-                                                        'assets/page-1/images/usergroup.png',
-                                                        fit: BoxFit.cover,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                          Container(
-                                            // group346EbS (2936:487)
-                                            margin: EdgeInsets.fromLTRB(0 * fem,
-                                                0.5 * fem, 0 * fem, 1 * fem),
-                                            width: 105 * fem,
-                                            height: double.infinity,
-                                            child: Stack(
-                                              children: [
-                                                Positioned(
-                                                  // groupsessionZtc (2936:491)
-                                                  left: 0 * fem,
-                                                  top: 0 * fem,
-                                                  child: Align(
-                                                    child: SizedBox(
-                                                      width: 83 * fem,
-                                                      height: 15 * fem,
-                                                      child: Text(
-                                                        'Group Session',
-                                                        style: SafeGoogleFont(
-                                                          'Inter',
-                                                          fontSize: 12 * ffem,
-                                                          fontWeight:
-                                                          FontWeight.w400,
-                                                          height: 1.2125 *
-                                                              ffem /
-                                                              fem,
-                                                          color:
-                                                          Color(0xff000000),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                                Positioned(
-                                                  // group344UEt (2936:492)
-                                                  left: 0 * fem,
-                                                  top: 14.5 * fem,
-                                                  child: Container(
-                                                    width: 105 * fem,
-                                                    height: 25 * fem,
-                                                    child: Row(
-                                                      crossAxisAlignment:
-                                                      CrossAxisAlignment
-                                                          .center,
-                                                      children: [
-                                                        Container(
-                                                          // rupeezU8 (2936:495)
-                                                          margin: EdgeInsets
-                                                              .fromLTRB(
-                                                              0 * fem,
-                                                              0 * fem,
-                                                              2 * fem,
-                                                              1 * fem),
-                                                          width: 11 * fem,
-                                                          height: 14 * fem,
-                                                          child: Image.asset(
-                                                            'assets/page-1/images/rupee-12.png',
-                                                            fit: BoxFit.cover,
-                                                          ),
-                                                        ),
-                                                        Text(
-                                                          // vcg (2936:493)
-                                                          '500',
-                                                          style: SafeGoogleFont(
-                                                            'Inter',
-                                                            fontSize: 20 * ffem,
-                                                            fontWeight:
-                                                            FontWeight.w600,
-                                                            height: 1.2125 *
-                                                                ffem /
-                                                                fem,
-                                                            color: Color(
-                                                                0xff000000),
-                                                          ),
-                                                        ),
-                                                        Container(
-                                                          // onwards5Va (2936:494)
-                                                          margin: EdgeInsets
-                                                              .fromLTRB(
-                                                              0 * fem,
-                                                              4 * fem,
-                                                              0 * fem,
-                                                              0 * fem),
-                                                          child: Text(
-                                                            'Onwards',
-                                                            style:
-                                                            SafeGoogleFont(
-                                                              'Inter',
-                                                              fontSize:
-                                                              12 * ffem,
-                                                              fontWeight:
-                                                              FontWeight
-                                                                  .w500,
-                                                              height: 1.2125 *
-                                                                  ffem /
-                                                                  fem,
-                                                              color: Color(
-                                                                  0xff6b6b6b),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    Container(
-                                      // group349oRa (2936:500)
-                                      width: 116 * fem,
-                                      height: double.infinity,
-                                      decoration: BoxDecoration(
-                                        color: Color(0xff1f0a68),
-                                        borderRadius:
-                                        BorderRadius.circular(5 * fem),
-                                      ),
-                                      child: Center(
-                                        child: Center(
-                                          child: Text(
-                                            'Book',
-                                            textAlign: TextAlign.center,
-                                            style: SafeGoogleFont(
-                                              'Inter',
-                                              fontSize: 16 * ffem,
-                                              fontWeight: FontWeight.w400,
-                                              height: 1.2125 * ffem / fem,
-                                              color: Color(0xffffffff),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
+              ]),
             ],
           ),
         ),

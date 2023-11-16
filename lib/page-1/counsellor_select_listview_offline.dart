@@ -508,12 +508,12 @@ class _CounsellorListPage_offlineState
                                                                       Container(
                                                                         // autogrouprcmfMPw (5rq7T8nCN5sYC595gTrcmf)
                                                                         margin: EdgeInsets.fromLTRB(
-                                                                            10.79 *
+                                                                            30.79 *
                                                                                 fem,
                                                                             0 * fem,
                                                                             0 *
                                                                                 fem,
-                                                                            11.5 *
+                                                                            8.5 *
                                                                                 fem),
                                                                         width: double
                                                                             .infinity,
