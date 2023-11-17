@@ -34,17 +34,12 @@ class CounsellorListPage_offline extends StatefulWidget {
       _CounsellorListPage_offlineState();
 }
 
-class _CounsellorListPage_offlineState
-    extends State<CounsellorListPage_offline> {
-  bool _isLoading = true;
-
-  //List<Dummymodel>? getData = [];
-  //List<CounsellorModel>? getData = [];
-  //final ListController listController = Get.put(ListController());
+class _CounsellorListPage_offlineState extends State<CounsellorListPage_offline> {
+  final ListController listController = Get.put(ListController());
   @override
   void initState() {
     super.initState();
-    //ApiService.getCounsellor_1();
+    ApiService.getCounsellor_Data();
   }
 
   @override
@@ -52,7 +47,6 @@ class _CounsellorListPage_offlineState
     double baseWidth = 460;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-
     return WillPopScope(
         onWillPop: _onBackPressed,
         child: Container(
@@ -60,7 +54,9 @@ class _CounsellorListPage_offlineState
           decoration: const BoxDecoration(
             color: Color(0xffffffff),
           ),
-          child: Column(
+          child: Obx( ()  => listController.isLoading.value
+           ? const Center(child: CircularProgressIndicator())
+            :Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
@@ -257,7 +253,7 @@ class _CounsellorListPage_offlineState
                               margin: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                               child: ListView.builder(
                                   padding: const EdgeInsets.symmetric(horizontal: 10),
-                                  itemCount: /*listController.cousnellorlist.length*/ 10,
+                                  itemCount: listController.cousnellorlist_data.length ,
                                   physics: const ScrollPhysics(),
                                   shrinkWrap: true,
                                   primary: false,
@@ -299,8 +295,8 @@ class _CounsellorListPage_offlineState
                                                               BorderRadius
                                                                   .circular(
                                                                   75 * fem),
-                                                              child: Image.asset(
-                                                                'assets/page-1/images/rectangle-101-4oB.png',
+                                                              child: Image.network(
+                                                                "https://media.gettyimages.com/id/1334712074/vector/coming-soon-message.jpg?s=612x612&w=0&k=20&c=0GbpL-k_lXkXC4LidDMCFGN_Wo8a107e5JzTwYteXaw=",
                                                                 fit: BoxFit.cover,
                                                               ),
                                                             ),
@@ -448,7 +444,7 @@ class _CounsellorListPage_offlineState
                                                                                     // anshikamehrausP (730:37)
                                                                                     margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 4.25 * fem),
                                                                                     child: Text(
-                                                                                      "Anshika Mehra",
+                                                                                      "${listController.cousnellorlist_data?[index].name}",
                                                                                       style: SafeGoogleFont(
                                                                                         'Inter',
                                                                                         fontSize: 22 * ffem,
@@ -461,8 +457,7 @@ class _CounsellorListPage_offlineState
                                                                                   Text(
                                                                                     // productdesignerwepitchd2h (730:38)
                                                                                     "Product Designer At WePitch",
-                        
-                                                                                    style: SafeGoogleFont(
+                                                                                     style: SafeGoogleFont(
                                                                                       'Inter',
                                                                                       fontSize: 12 * ffem,
                                                                                       fontWeight: FontWeight.w400,
@@ -522,7 +517,7 @@ class _CounsellorListPage_offlineState
                                                                           CrossAxisAlignment
                                                                               .start,
                                                                           children: [
-                        
+
                                                                             Container(
                                                                               // clockcircularoutlineQuw (730:55)
                                                                               margin: EdgeInsets.fromLTRB(
@@ -597,7 +592,7 @@ class _CounsellorListPage_offlineState
                                                                             ),
                                                                             Text(
                                                                               // 9W9 (730:71)
-                                                                              '4.5',
+                                                                              '${listController.cousnellorlist_data?[index].averageRating}',
                                                                               textAlign:
                                                                               TextAlign.center,
                                                                               style:
@@ -728,7 +723,7 @@ class _CounsellorListPage_offlineState
                                                                                         ),
                                                                                       ),
                                                                                     ),
-                        
+
                                                                                   ),
                                                                                 ],
                                                                               ),
@@ -736,7 +731,7 @@ class _CounsellorListPage_offlineState
                                                                           ],
                                                                         ),
                                                                       ),
-                        
+
                                                                     ],
                                                                   ),
                                                                 ),
@@ -813,7 +808,7 @@ class _CounsellorListPage_offlineState
                                                                                   0 * fem),
                                                                               child:
                                                                               Text(
-                                                                                "10"
+                                                                                "${listController.cousnellorlist_data?[index].experienceInYears}"
                                                                                     " year",
                                                                                 style:
                                                                                 SafeGoogleFont(
@@ -921,7 +916,7 @@ class _CounsellorListPage_offlineState
                                                                                   0 * fem),
                                                                               child:
                                                                               Text(
-                                                                                "10",
+                                                                                '${listController.cousnellorlist_data?[index].totalSessions}',
                                                                                 style:
                                                                                 SafeGoogleFont(
                                                                                   'Inter',
@@ -1032,7 +1027,7 @@ class _CounsellorListPage_offlineState
                                                                                   0 * fem),
                                                                               child:
                                                                               Text(
-                                                                                "5 +",
+                                                                                " ${listController.cousnellorlist_data?[index].rewardPoints} +",
                                                                                 style:
                                                                                 SafeGoogleFont(
                                                                                   'Inter',
@@ -1134,7 +1129,7 @@ class _CounsellorListPage_offlineState
                                                                                   0 * fem),
                                                                               child:
                                                                               Text(
-                                                                                '2.5K',
+                                                                                '${listController.cousnellorlist_data?[index].averageRating} K' ,
                                                                                 style:
                                                                                 SafeGoogleFont(
                                                                                   'Inter',
@@ -1231,7 +1226,8 @@ class _CounsellorListPage_offlineState
               ),
             ],
           ),
-        ));
+        ) ));
+
   }
 
   void onTapgotocounsellor(BuildContext context) {

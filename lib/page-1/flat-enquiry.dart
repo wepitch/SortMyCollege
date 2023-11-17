@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
+
+import '../other/Counsellor_Detail_Controller.dart';
+import '../other/api_service.dart';
+import '../other/listcontroler.dart';
 
 class FlatEnq extends StatefulWidget {
   @override
@@ -11,6 +17,14 @@ class FlatEnq extends StatefulWidget {
 
 class _FlatEnqState extends State<FlatEnq> {
   bool visible = false;
+  final CounsellorDetailController counsellorDetailController = Get.put(CounsellorDetailController());
+
+  @override
+  void initState() {
+    super.initState();
+    ApiService.getCounsellor_Detail();
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +33,9 @@ class _FlatEnqState extends State<FlatEnq> {
     double ffem = fem * 0.97;
 
     return Scaffold(
-      body: Container(
+      body: Obx( ()  => counsellorDetailController.isLoading.value
+        ? const Center(child: CircularProgressIndicator())
+        :Container(
         width: double.infinity,
         decoration: const BoxDecoration(
           // color: Colors.red,
@@ -171,7 +187,7 @@ class _FlatEnqState extends State<FlatEnq> {
                                     margin: EdgeInsets.fromLTRB(0.5 * fem,
                                         0 * fem, 0 * fem, 3.83 * fem),
                                     child: Text(
-                                      'Career Counsellor',
+                                      '${counsellorDetailController.cousnellorlist_detail?[0].name}',
                                       style: SafeGoogleFont(
                                         'Inter',
                                         fontSize: 14 * ffem,
@@ -220,7 +236,7 @@ class _FlatEnqState extends State<FlatEnq> {
                                                     0 * fem,
                                                     0 * fem),
                                                 child: Text(
-                                                  '4.9 (986)',
+                                                  '${counsellorDetailController.cousnellorlist_detail?[0].averageRating}',
                                                   style: SafeGoogleFont(
                                                     'Inter',
                                                     fontSize: 12 * ffem,
@@ -350,7 +366,7 @@ class _FlatEnqState extends State<FlatEnq> {
                                         ),
                                         Text(
                                           // followingweY (2958:442)
-                                          '456 Following',
+                                          '${counsellorDetailController.cousnellorlist_detail?[0].followersCount}' " Following",
                                           style: SafeGoogleFont(
                                             'Inter',
                                             fontSize: 12 * ffem,
@@ -494,7 +510,7 @@ class _FlatEnqState extends State<FlatEnq> {
                                             margin: EdgeInsets.fromLTRB(0 * fem,
                                                 0 * fem, 2.72 * fem, 0 * fem),
                                             child: Text(
-                                              '10+ yrs',
+                                              '${counsellorDetailController.cousnellorlist_detail?[0].experienceInYears} + yrs',
                                               style: SafeGoogleFont(
                                                 'Inter',
                                                 fontSize: 13 * ffem,
@@ -539,7 +555,7 @@ class _FlatEnqState extends State<FlatEnq> {
                                           ),
                                           Text(
                                             // bY4 (2958:458)
-                                            '245',
+                                            '${counsellorDetailController.cousnellorlist_detail?[0].totalSessionsAttended}',
                                             textAlign: TextAlign.center,
                                             style: SafeGoogleFont(
                                               'Inter',
@@ -777,6 +793,7 @@ class _FlatEnqState extends State<FlatEnq> {
                                           visible == false
                                               ? TextSpan(
                                             text:
+                                            
                                             '\u2022 Lorem Ipsum is simply dummy text of the printing \n'
                                                 '\u2022 Typesetting industry. Lorem Ipsum has been the \n'
                                                 '\u2022 Industry\'s standard dummy text ever since the 1500s\n'
@@ -928,7 +945,7 @@ class _FlatEnqState extends State<FlatEnq> {
                                             ),
                                             Text(
                                               // uiuxdesignercertificateazurece (2958:484)
-                                              'UI UX Designer Certificate, Azure Certificate',
+                                              'PHD',
                                               style: SafeGoogleFont(
                                                 'Inter',
                                                 fontSize: 14 * ffem,
@@ -973,7 +990,7 @@ class _FlatEnqState extends State<FlatEnq> {
                                                   0 * fem,
                                                   0 * fem),
                                               child: Text(
-                                                'English, Hindi',
+                                                'Hindi,English',
                                                 style: SafeGoogleFont(
                                                   'Inter',
                                                   fontSize: 14 * ffem,
@@ -1052,7 +1069,7 @@ class _FlatEnqState extends State<FlatEnq> {
                                         margin: EdgeInsets.fromLTRB(
                                             0 * fem, 1 * fem, 0 * fem, 0 * fem),
                                         child: Text(
-                                          'Male',
+                                          '${counsellorDetailController.cousnellorlist_detail?[0].gender}',
                                           style: SafeGoogleFont(
                                             'Inter',
                                             fontSize: 14 * ffem,
@@ -2087,6 +2104,7 @@ class _FlatEnqState extends State<FlatEnq> {
           ),
         ),
       ),
+      )
     );
   }
 }

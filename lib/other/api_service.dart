@@ -3,15 +3,13 @@ import 'dart:developer';
 
 import 'package:http/http.dart' as http;
 
+import '../model/counsellor_data.dart';
+import '../model/counsellor_detail.dart';
 import '../model/cousnellor_list_model.dart';
 import '../model/response_model.dart';
 import 'constants.dart';
-
-
-
 class ApiService
 {
-
   static Future<List<CounsellorModel>> getCounsellor_1() async
   {
     //var url = Uri.parse("https://jsonplaceholder.typicode.com/posts");
@@ -22,15 +20,30 @@ class ApiService
     return  List<CounsellorModel>.from(json.decode(response.body).map((x) => CounsellorModel.fromJson(x)));
   }
 
-  static Future<CounsellorModel> getCounsellor() async
+  static Future<List<CounsellorData>> getCounsellor_Data() async
   {
-      var data;
-      var url = Uri.parse(AppConstants.baseUrl+AppConstants.usersEndpoint);
-      final response = await http.get(url, headers: {"Content-Type": "application/json"});
-      data = json.decode(response.body);
-      return CounsellorModel.fromJson(data);
+    var url = Uri.parse("http://13.127.104.198:9000/counsellor/");
+    final response = await http.get(
+        url, headers: {"Content-Type": "application/json"});
+    var data = json.decode(response.body);
+    // print(data);
+    return  List<CounsellorData>.from(data.map((x) => CounsellorData.fromJson(x)));
+  }
 
-    }
+
+  static Future<List<CounsellorDetail>> getCounsellor_Detail() async
+  {
+    var url = Uri.parse("http://13.127.104.198:9000/counsellor/6555cd97a87471eb78138fb2");
+    final response = await http.get(
+        url, headers: {"Content-Type": "application/json"});
+    var data = json.decode(response.body);
+     print("======");
+     print(data);
+    print("********");
+    return  List<CounsellorDetail>.from(data.map((x) => CounsellorDetail.fromJson(x)));
+  }
+
+
 
   static Future<ResponseModel> call_otp1() async
   {
@@ -82,7 +95,6 @@ class ApiService
     print(data);
     return data;
   }
-
 
 
   Future call_otp(String email) async

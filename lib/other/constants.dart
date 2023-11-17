@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 
 
 class AppConstants {
-  static String baseUrl = 'http://13.127.104.198';
-  static String usersEndpoint = '/counsellor/6523dca688ac57fd5fb63d46';
+  static String baseUrl = 'http://13.127.104.198:9000';
+  static String counsellorlistEndpoint = '/counsellor/';
   static String sendotpRequest = '/user/auth/sendOTPEmail';
   static String verifyotpRequest = '/user/auth/verifyOTPEmail';
 

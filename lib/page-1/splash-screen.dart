@@ -7,6 +7,7 @@ import 'package:myapp/page-1/selectgender.dart';
 import 'package:myapp/page-1/welcome-screen.dart';
 import 'package:myapp/utils.dart';
 
+import 'counsellor_select_listview_offline.dart';
 import 'edulevel.dart';
 import 'homepagecontainer.dart';
 
@@ -178,8 +179,8 @@ class SplashScreen extends StatelessWidget {
   }
 
   void onTapGettingstarted(BuildContext context) {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => HomePageContainer()));
-    //Navigator.push(context, MaterialPageRoute(builder: (context) => WelcomeScreen()));
+    //Navigator.push(context, MaterialPageRoute(builder: (context) => HomePageContainer()));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => CounsellorListPage_offline()));
     //Navigator.push(context, MaterialPageRoute(builder: (context) => EducationLevel()));
 
 
