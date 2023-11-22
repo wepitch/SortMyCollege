@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/page-1/booking_page.dart';
 import 'package:myapp/page-1/webinar-detail-second-full-view.dart';
 import 'package:myapp/page-1/webinar.dart';
 import 'package:myapp/page-1/homepage.dart';
@@ -30,14 +31,11 @@ class _HomePageContainerState extends State<HomePageContainer> {
 
   Widget _webnar = Webnar();
 
-  Widget _feed = ExplorerFeed();
+  Widget _booking = BookingPage();
 
   Widget _news = News();
 
   Widget _profile = Profile();
-
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -45,18 +43,17 @@ class _HomePageContainerState extends State<HomePageContainer> {
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
     return Scaffold(
-    body: getBody(),
-    bottomNavigationBar: BottomNavigationBar(
+      body: getBody(),
+      bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: selectedIndex,
         iconSize: 22.0,
         selectedFontSize: 14.0,
         unselectedFontSize: 12.0,
-        selectedItemColor:const Color(0xff512DA8),
-        unselectedItemColor:const Color(0xff565656),
+        selectedItemColor: const Color(0xff512DA8),
+        unselectedItemColor: const Color(0xff565656),
         showSelectedLabels: true,
-        showUnselectedLabels:true,
-
+        showUnselectedLabels: true,
         items: const [
           BottomNavigationBarItem(
             label: "Home",
@@ -64,7 +61,6 @@ class _HomePageContainerState extends State<HomePageContainer> {
               AssetImage("assets/page-1/images/home-1-pSd.png"),
             ),
           ),
-
           BottomNavigationBarItem(
             label: "Webinar",
             icon: ImageIcon(
@@ -86,7 +82,7 @@ class _HomePageContainerState extends State<HomePageContainer> {
           BottomNavigationBarItem(
             icon: ImageIcon(
               AssetImage("assets/page-1/images/user-1-1-J3b.png"),
-              ),
+            ),
             label: "Profile",
           )
         ],
@@ -97,49 +93,39 @@ class _HomePageContainerState extends State<HomePageContainer> {
     );
   }
 
-  void onTapHandler(int index)
-  {
+  void onTapHandler(int index) {
     setState(() {
       selectedIndex = index;
     });
   }
 
-  Widget getBody( )  {
-    if(selectedIndex == 0) {
+  Widget getBody() {
+    if (selectedIndex == 0) {
       return _home;
-    } else if(this.selectedIndex==1) {
+    } else if (this.selectedIndex == 1) {
       return _webnar;
-    }else if(this.selectedIndex==2) {
-      return this._feed;
-    }
-    else if(this.selectedIndex==3) {
+    } else if (this.selectedIndex == 2) {
+      return this._booking;
+    } else if (this.selectedIndex == 3) {
       return this._news;
-    }
-    else if(this.selectedIndex==4) {
+    } else if (this.selectedIndex == 4) {
       return this._profile;
-    }
-    else {
+    } else {
       return this._home;
     }
   }
 
-
-
   void onTapgotocounsellor(BuildContext context) {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => CounsellorListPage()));
-   }
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => CounsellorListPage()));
+  }
 
   void onTapGettingstarted2(BuildContext context) {
     Navigator.push(context, MaterialPageRoute(builder: (context) => Webnar()));
   }
 
   void onTapGettingstarted3(BuildContext context) {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => const ExplorerFeed()));
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const ExplorerFeed()));
   }
-
-
-
-
-
-
 }
