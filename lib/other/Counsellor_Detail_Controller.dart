@@ -4,10 +4,12 @@ import 'package:myapp/other/api_service.dart';
 import '../model/counsellor_data.dart';
 import '../model/counsellor_detail.dart';
 import '../model/cousnellor_list_model.dart';
-class CounsellorDetailController extends GetxController
-{
+
+class CounsellorDetailController extends GetxController {
+  CounsellorDetailController({required this.id});
+  final String id;
   var isLoading = true.obs;
-  List<CounsellorDetail> cousnellorlist_detail=[];
+  List<CounsellorDetail> cousnellorlist_detail = [];
 
   @override
   void onInit() {
@@ -15,7 +17,6 @@ class CounsellorDetailController extends GetxController
     super.onInit();
     //fetchCounsellor();
     fetchCounsellor_detail();
-
   }
 
   /*void fetchCounsellor () async {
@@ -32,18 +33,13 @@ class CounsellorDetailController extends GetxController
 
   }*/
 
-  void fetchCounsellor_detail () async {
-    try{
+  void fetchCounsellor_detail() async {
+    try {
       isLoading(true);
-      var counsellor = await ApiService.getCounsellor_Detail();
-      cousnellorlist_detail.assignAll(counsellor);
-    }
-    finally{
+      var counsellor = await ApiService.getCounsellor_Detail(id);
+      cousnellorlist_detail = counsellor;
+    } finally {
       isLoading(false);
     }
-
   }
-
-
-
 }

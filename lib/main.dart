@@ -5,13 +5,13 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/page-1/homepagecontainer.dart';
-import 'package:myapp/page-1/flat-enquiry.dart';
+import 'package:myapp/page-1/counsellor_details_page.dart';
 import 'package:myapp/page-1/splash-screen.dart';
 import 'package:myapp/utils.dart';
 import 'package:myapp/page-1/filter_degree.dart';
 import 'package:myapp/page-1/assets.dart';
- import 'package:myapp/page-1/dashboard-session-group-new.dart';
- import 'package:myapp/page-1/filter_1.dart';
+import 'package:myapp/page-1/dashboard-session-group-new.dart';
+import 'package:myapp/page-1/filter_1.dart';
 // import 'package:myapp/page-1/student-community-NJD.dart';
 // import 'package:myapp/page-1/courses.dart';
 // import 'package:myapp/page-1/detailed-cb.dart';
@@ -91,19 +91,18 @@ import 'package:myapp/page-1/assets.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-	@override
-	Widget build(BuildContext context) {
-	return GetMaterialApp(
-		title: 'Flutter',
-		debugShowCheckedModeBanner: false,
-		scrollBehavior: MyCustomScrollBehavior(),
-		theme: ThemeData(
-		primarySwatch: Colors.grey,
-		),
-		home: Scaffold(
-		body: SplashScreen() ,
-		),
-		builder: EasyLoading.init()
-	  );
-	}
+  @override
+  Widget build(BuildContext context) {
+    return GetMaterialApp(
+        title: 'Flutter',
+        debugShowCheckedModeBanner: false,
+        scrollBehavior: MyCustomScrollBehavior(),
+        theme: ThemeData(
+          primarySwatch: Colors.grey,
+        ),
+        home: Scaffold(
+          body: SplashScreen(),
+        ),
+        builder: EasyLoading.init());
+  }
 }
