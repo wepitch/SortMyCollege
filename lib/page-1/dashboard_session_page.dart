@@ -100,6 +100,7 @@ class _CounsellingSessionPageState extends State<CounsellingSessionPage> {
           Expanded(
             // flex: 2,
             child: PageView(
+              physics: NeverScrollableScrollPhysics(),
               onPageChanged: (value) {
                 setState(() {
                   selectedIndex = value;
@@ -146,7 +147,7 @@ class _CounsellingSessionPageState extends State<CounsellingSessionPage> {
               backgroundColor:
                   isPressed ? const Color(0xffE3398C) : Colors.transparent),
           onPressed: onPressed,
-          child: const Text("Personal Session")),
+          child: Text(title)),
     );
   }
 }

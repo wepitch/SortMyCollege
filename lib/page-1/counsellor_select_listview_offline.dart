@@ -324,7 +324,9 @@ class _CounsellorListPage_offlineState
                                                                                 fem),
                                                                         child: Image
                                                                             .network(
-                                                                          "https://media.gettyimages.com/id/1334712074/vector/coming-soon-message.jpg?s=612x612&w=0&k=20&c=0GbpL-k_lXkXC4LidDMCFGN_Wo8a107e5JzTwYteXaw=",
+                                                                          listController.cousnellorlist_data[index].profilePic.contains("http")
+                                                                              ? listController.cousnellorlist_data[index].profilePic
+                                                                              : "https://media.gettyimages.com/id/1334712074/vector/coming-soon-message.jpg?s=612x612&w=0&k=20&c=0GbpL-k_lXkXC4LidDMCFGN_Wo8a107e5JzTwYteXaw=",
                                                                           fit: BoxFit
                                                                               .cover,
                                                                         ),
