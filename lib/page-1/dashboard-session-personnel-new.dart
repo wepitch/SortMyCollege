@@ -32,6 +32,7 @@ class _Counseling_Session_PersonnelState
           children: [
             SizedBox(
               // frame12Fje (1879:51)
+              //updated
               width: double.infinity,
               height: 100,
               child: Stack(
