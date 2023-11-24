@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:myapp/other/counsellor_details_provider.dart';
+import 'package:myapp/page-1/dashboard_session_page.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 
@@ -972,7 +973,11 @@ class _CounsellorListPage_offlineState
                                                                   GestureDetector(
                                                                 onTap: () {
                                                                   onTapgotocounsellor(
-                                                                      context);
+                                                                      context,
+                                                                      name: listController
+                                                                          .cousnellorlist_data[
+                                                                              index]
+                                                                          .name);
                                                                 },
                                                                 child: Text(
                                                                   'BOOK NOW',
@@ -1016,11 +1021,13 @@ class _CounsellorListPage_offlineState
             )));
   }
 
-  void onTapgotocounsellor(BuildContext context) {
+  void onTapgotocounsellor(BuildContext context, {required String name}) {
     Navigator.push(
         context,
         MaterialPageRoute(
-            builder: (context) => const Counseling_Session_group()));
+            builder: (context) => CounsellingSessionPage(
+                  name: name,
+                )));
   }
 
   void onTap_goto_detailPage(BuildContext, String id) {

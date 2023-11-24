@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:myapp/page-1/homepagecontainer_2.dart';
 import 'package:myapp/utils.dart';
@@ -8,10 +6,11 @@ import 'counsellor_select_listview_offline.dart';
 import 'dashboard-session-personnel-new.dart';
 
 class Counseling_Session_group extends StatefulWidget {
-  const Counseling_Session_group({super.key});
-
+  const Counseling_Session_group({super.key, required this.name});
+  final String name;
   @override
-  State<Counseling_Session_group> createState() => _Counseling_Session_groupState();
+  State<Counseling_Session_group> createState() =>
+      _Counseling_Session_groupState();
 }
 
 class _Counseling_Session_groupState extends State<Counseling_Session_group> {
@@ -24,164 +23,25 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
       onWillPop: _onBackPressed,
       child: Container(
         width: double.infinity,
-        decoration: const BoxDecoration (
-        color: Color(0xffffffff),
+        decoration: const BoxDecoration(
+          color: Color(0xffffffff),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
-              // group29C7A (1779:1031)
-              margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 0.17*fem),
-              padding: EdgeInsets.fromLTRB(20*fem, 37.79*fem, 206*fem, 15.04*fem),
-              width: double.infinity,
-              decoration: BoxDecoration (
-                color: const Color(0xff1f0a68),
-                borderRadius: BorderRadius.only (
-                  bottomRight: Radius.circular(20*fem),
-                  bottomLeft: Radius.circular(20*fem),
-                ),
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Flexible(
-                    child: Container(
-                      // backU4g (1779:1037)
-                      margin: EdgeInsets.fromLTRB(0*fem, 0.08*fem, 18.99*fem, 0*fem),
-                      child: TextButton(
-                        onPressed: () {},
-                        style: TextButton.styleFrom (
-                          padding: EdgeInsets.zero,
-                        ),
-                        child: SizedBox(
-                          width: 11.01*fem,
-                          height: 20*fem,
-                          child: Image.asset(
-                            'assets/page-1/images/back-d2Q.png',
-                            width: 11.01*fem,
-                            height: 20*fem,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Text(
-                    // anshikamehra7tL (1779:1035)
-                    'Anshika Mehra',
-                    style: SafeGoogleFont (
-                      'Inter',
-                      fontSize: 24*ffem,
-                      fontWeight: FontWeight.w600,
-                      height: 1.2125*ffem/fem,
-                      color: const Color(0xffffffff),
-                    ),
-                  ),
-                ],
-              ),
-            ),
             SizedBox(
               // frame12Fje (1879:51)
               width: double.infinity,
-              height: 200*fem,
+              height: 100,
               child: Stack(
                 children: [
                   Positioned(
-                    // frame203HwE (2521:6011)
-                    left: 30*fem,
-                    top: 24*fem,
-                    child: SizedBox(
-                      width: 390*fem,
-                      height: 45*fem,
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Container(
-                            // group1887fN (2510:1595)
-                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 6*fem, 0*fem),
-                            width: 192*fem,
-                            height: double.infinity,
-                            decoration: BoxDecoration (
-                              color: const Color(0xffe3398c),
-                              borderRadius: BorderRadius.circular(5*fem),
-                            ),
-                            child: Center(
-                              child: Center(
-                                child: Text(
-                                  'Group Sessions',
-                                  textAlign: TextAlign.center,
-                                  style: SafeGoogleFont (
-                                    'Inter',
-                                    fontSize: 15*ffem,
-                                    fontWeight: FontWeight.w600,
-                                    height: 1.2125*ffem/fem,
-                                    letterSpacing: 0.59375*fem,
-                                    color: const Color(0xffffffff),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.push(context,
-                                  MaterialPageRoute(builder: (context) => const Counseling_Session_Personnel()));
-
-                            },
-                            child: Container(
-                              // group202xvt (2521:5786)
-                              width: 192*fem,
-                              height: double.infinity,
-                              decoration: BoxDecoration (
-                                border: Border.all(color: const Color(0xff1f0a68)),
-                                color: const Color(0xffffffff),
-                                borderRadius: BorderRadius.circular(5*fem),
-                              ),
-                              child: Center(
-                                child: Center(
-                                  child: Text(
-                                    'Personal Sessions',
-                                    textAlign: TextAlign.center,
-                                    style: SafeGoogleFont (
-                                      'Inter',
-                                      fontSize: 15*ffem,
-                                      fontWeight: FontWeight.w600,
-                                      height: 1.2125*ffem/fem,
-                                      letterSpacing: 0.59375*fem,
-                                      color: const Color(0xff1f0a68),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    // line37dXE (2620:3331)
-                    left: 0*fem,
-                    top: 90*fem,
-                    child: Align(
-                      child: SizedBox(
-                        width: 430*fem,
-                        height: 1*fem,
-                        child: Container(
-                          decoration: const BoxDecoration (
-                            color: Color(0x21000000),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
                     // frame311tGg (2620:3569)
-                    left: 14*fem,
-                    top: 112*fem,
+                    left: 14 * fem,
+                    top: 20,
                     child: SizedBox(
-                      width: 400*fem,
-                      height: 45*fem,
+                      width: 400 * fem,
+                      height: 45 * fem,
                       child: ListView.builder(
                         shrinkWrap: true,
                         physics: const BouncingScrollPhysics(),
@@ -193,42 +53,56 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                             children: [
                               SizedBox(
                                 // autogroupxl2cQF2 (AQPQSWdqPNQ5gmJbZ1XL2c)
-                                width: 190*fem,
+                                width: 190 * fem,
                                 height: double.infinity,
                                 child: Stack(
                                   children: [
                                     Positioned(
                                       // group307bKW (2620:3570)
-                                      left: 10*fem,
-                                      top: 0*fem,
+                                      left: 10 * fem,
+                                      top: 0 * fem,
                                       child: Container(
-                                        padding: EdgeInsets.fromLTRB(10.32*fem, 15*fem, 0*fem, 15*fem),
-                                        width: 166*fem,
-                                        height: 45*fem,
-                                        decoration: BoxDecoration (
-                                          border: Border.all(color: const Color(0xff1f0a68)),
+                                        padding: EdgeInsets.fromLTRB(
+                                            10.32 * fem,
+                                            15 * fem,
+                                            0 * fem,
+                                            15 * fem),
+                                        width: 166 * fem,
+                                        height: 45 * fem,
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                              color: const Color(0xff1f0a68)),
                                           color: const Color(0xffffffff),
                                         ),
                                         child: SizedBox(
                                           // group310VQt (2620:3574)
 
                                           child: Row(
-                                            crossAxisAlignment: CrossAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
                                             children: [
                                               Center(
                                                 // today21octT6p (2620:3575)
                                                 child: Container(
-                                                  margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 7*fem, 0*fem),
+                                                  margin: EdgeInsets.fromLTRB(
+                                                      0 * fem,
+                                                      0 * fem,
+                                                      7 * fem,
+                                                      0 * fem),
                                                   child: Text(
                                                     'Today, 21 Oct',
                                                     textAlign: TextAlign.center,
-                                                    style: SafeGoogleFont (
+                                                    style: SafeGoogleFont(
                                                       'Inter',
-                                                      fontSize: 12*ffem,
-                                                      fontWeight: FontWeight.w700,
-                                                      height: 1.2125*ffem/fem,
-                                                      letterSpacing: 0.59375*fem,
-                                                      color: const Color(0xff000000),
+                                                      fontSize: 12 * ffem,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      height:
+                                                          1.2125 * ffem / fem,
+                                                      letterSpacing:
+                                                          0.59375 * fem,
+                                                      color: const Color(
+                                                          0xff000000),
                                                     ),
                                                   ),
                                                 ),
@@ -238,13 +112,15 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                                 child: Text(
                                                   'No slots',
                                                   textAlign: TextAlign.center,
-                                                  style: SafeGoogleFont (
+                                                  style: SafeGoogleFont(
                                                     'Inter',
-                                                    fontSize: 12*ffem,
+                                                    fontSize: 12 * ffem,
                                                     fontWeight: FontWeight.w700,
-                                                    height: 1.2125*ffem/fem,
-                                                    letterSpacing: 0.59375*fem,
-                                                    color: const Color(0xff8d8888),
+                                                    height: 1.2125 * ffem / fem,
+                                                    letterSpacing:
+                                                        0.59375 * fem,
+                                                    color:
+                                                        const Color(0xff8d8888),
                                                   ),
                                                 ),
                                               ),
@@ -264,19 +140,19 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                   ),
                   Positioned(
                     // bookyourslotnzU (1779:1252)
-                    left: 54*fem,
-                    top: 178.5*fem,
+                    left: 30 * fem,
+                    top: 80.5 * fem,
                     child: Align(
                       child: SizedBox(
-                        width: 220*fem,
-                        height: 20*fem,
+                        width: 220 * fem,
+                        height: 20 * fem,
                         child: Text(
                           'Book Your Group Slot',
-                          style: SafeGoogleFont (
+                          style: SafeGoogleFont(
                             'Inter',
-                            fontSize: 20*ffem,
+                            fontSize: 20 * ffem,
                             fontWeight: FontWeight.w600,
-                            height: 1.2125*ffem/fem,
+                            height: 1.2125 * ffem / fem,
                             color: const Color(0xff000000),
                           ),
                         ),
@@ -285,8 +161,6 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                   ),
                 ],
               ),
-
-
             ),
             Expanded(
               child: ListView.builder(
@@ -296,8 +170,10 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                   itemBuilder: (context, index) {
                     return Container(
                       // group193fip (I2510:2510;2510:2244)
-                      margin: EdgeInsets.fromLTRB(10 * fem,0 * fem, 10 * fem, 0 * fem),
-                      padding: EdgeInsets.fromLTRB(5*fem, 0.5*fem, 5*fem, 16*fem),
+                      margin: EdgeInsets.fromLTRB(
+                          10 * fem, 0 * fem, 10 * fem, 0 * fem),
+                      padding: EdgeInsets.fromLTRB(
+                          5 * fem, 0.5 * fem, 5 * fem, 16 * fem),
                       width: double.infinity,
 
                       child: Column(
@@ -336,7 +212,6 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                         child: Container(
                                           width: 350,
                                           height: 131,
-
                                         ),
                                       ),
                                       Positioned(
@@ -355,9 +230,13 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                                   height: 38,
                                                   decoration: ShapeDecoration(
                                                     color: Color(0xFF1F0A68),
-                                                    shape: RoundedRectangleBorder(
-                                                      side: BorderSide(width: 1),
-                                                      borderRadius: BorderRadius.circular(10),
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      side:
+                                                          BorderSide(width: 1),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10),
                                                     ),
                                                   ),
                                                 ),
@@ -428,13 +307,17 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                                 left: 80,
                                                 top: 17,
                                                 child: Transform(
-                                                  transform: Matrix4.identity()..translate(0.0, 0.0)..rotateZ(-1.57),
+                                                  transform: Matrix4.identity()
+                                                    ..translate(0.0, 0.0)
+                                                    ..rotateZ(-1.57),
                                                   child: Container(
                                                     width: 17,
                                                     height: 17,
-                                                    decoration: const BoxDecoration(
+                                                    decoration:
+                                                        const BoxDecoration(
                                                       image: DecorationImage(
-                                                        image: AssetImage('assets/page-1/images/arrow-down-2.png'),
+                                                        image: AssetImage(
+                                                            'assets/page-1/images/arrow-down-2.png'),
                                                         fit: BoxFit.fill,
                                                       ),
                                                     ),
@@ -453,7 +336,8 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                                       color: Colors.black,
                                                       fontSize: 12,
                                                       fontFamily: 'Inter',
-                                                      fontWeight: FontWeight.w800,
+                                                      fontWeight:
+                                                          FontWeight.w800,
                                                       height: 0,
                                                     ),
                                                   ),
@@ -485,10 +369,16 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                                         child: Container(
                                                           width: 45.51,
                                                           height: 19,
-                                                          decoration: ShapeDecoration(
-                                                            color: Color(0xFFB1A0EA),
-                                                            shape: RoundedRectangleBorder(
-                                                              borderRadius: BorderRadius.circular(99),
+                                                          decoration:
+                                                              ShapeDecoration(
+                                                            color: Color(
+                                                                0xFFB1A0EA),
+                                                            shape:
+                                                                RoundedRectangleBorder(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          99),
                                                             ),
                                                           ),
                                                         ),
@@ -502,10 +392,14 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                                           child: Text(
                                                             '2/5',
                                                             style: TextStyle(
-                                                              color: Colors.white,
+                                                              color:
+                                                                  Colors.white,
                                                               fontSize: 13,
-                                                              fontFamily: 'Inter',
-                                                              fontWeight: FontWeight.w500,
+                                                              fontFamily:
+                                                                  'Inter',
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
                                                               height: 0,
                                                             ),
                                                           ),
@@ -526,7 +420,8 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                                       color: Color(0xFF1F0A68),
                                                       fontSize: 20,
                                                       fontFamily: 'Inter',
-                                                      fontWeight: FontWeight.w600,
+                                                      fontWeight:
+                                                          FontWeight.w600,
                                                       height: 0,
                                                     ),
                                                   ),
@@ -561,8 +456,6 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                               ],
                             ),
                           )
-
-
                         ],
                       ),
                     );
@@ -574,15 +467,11 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
     );
   }
 
-
-  Future<bool> _onBackPressed()async {
+  Future<bool> _onBackPressed() async {
     Navigator.push(
-      context,MaterialPageRoute(builder: (context) => HomePageContainer_2() ),
+      context,
+      MaterialPageRoute(builder: (context) => HomePageContainer_2()),
     );
     return true;
   }
-
-
-
-
 }
