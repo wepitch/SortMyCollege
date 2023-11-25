@@ -585,6 +585,7 @@ class _CounsellorListPage_offlineState
                                                                                     ],
                                                                                   ),
                                                                                 ),
+                                                                                //updated
                                                                                 Container(
                                                                                   // group1324p9 (730:74)
                                                                                   margin: EdgeInsets.fromLTRB(0 * fem, 3.5 * fem, 3.29 * fem, 0 * fem),

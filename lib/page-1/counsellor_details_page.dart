@@ -13,6 +13,7 @@ import 'package:readmore/readmore.dart';
 import '../other/Counsellor_Detail_Controller.dart';
 import '../other/api_service.dart';
 import '../other/listcontroler.dart';
+import 'counsellor_feed_page.dart';
 
 class CounsellorDetialsPage extends StatefulWidget {
   final String id;
@@ -66,7 +67,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                       width: double.infinity,
                       height: 82.83 * fem,
                       decoration: BoxDecoration(
-                        color: Color(0xff1f0a68),
+                        color: const Color(0xff1f0a68),
                         borderRadius: BorderRadius.only(
                           bottomRight: Radius.circular(20 * fem),
                           bottomLeft: Radius.circular(20 * fem),
@@ -123,7 +124,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                             fontSize: 24 * ffem,
                                             fontWeight: FontWeight.w600,
                                             height: 1.2125 * ffem / fem,
-                                            color: Color(0xffffffff),
+                                            color: const Color(0xffffffff),
                                           ),
                                         ),
                                       ],
@@ -170,7 +171,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                 width: 430 * fem,
                                 height: 1304 * fem,
                                 child: Container(
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     color: Color(0xffffffff),
                                   ),
                                 ),
@@ -207,7 +208,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                               fontSize: 14 * ffem,
                                               fontWeight: FontWeight.w600,
                                               height: 1.2125 * ffem / fem,
-                                              color: Color(0xff1f0a68),
+                                              color: const Color(0xff1f0a68),
                                             ),
                                           ),
                                         ),
@@ -264,8 +265,8 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                                           height: 1.2125 *
                                                               ffem /
                                                               fem,
-                                                          color:
-                                                              Color(0xff414040),
+                                                          color: const Color(
+                                                              0xff414040),
                                                         ),
                                                       ),
                                                     ),
@@ -305,8 +306,8 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                                             FontWeight.w500,
                                                         height:
                                                             1.2125 * ffem / fem,
-                                                        color:
-                                                            Color(0xff414040),
+                                                        color: const Color(
+                                                            0xff414040),
                                                       ),
                                                     ),
                                                   ],
@@ -347,9 +348,10 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                                     height: 35.13 * fem,
                                                     decoration: BoxDecoration(
                                                       border: Border.all(
-                                                          color: Color(
+                                                          color: const Color(
                                                               0x70000000)),
-                                                      color: Color(0xff1f0a68),
+                                                      color: const Color(
+                                                          0xff1f0a68),
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               5 * fem),
@@ -365,8 +367,8 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                                           height: 1.2125 *
                                                               ffem /
                                                               fem,
-                                                          color:
-                                                              Color(0xffffffff),
+                                                          color: const Color(
+                                                              0xffffffff),
                                                         ),
                                                       ),
                                                     ),
@@ -412,7 +414,8 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                                   fontSize: 12 * ffem,
                                                   fontWeight: FontWeight.w500,
                                                   height: 1.2125 * ffem / fem,
-                                                  color: Color(0xff5c5b5b),
+                                                  color:
+                                                      const Color(0xff5c5b5b),
                                                 ),
                                               ),
                                             ],
@@ -461,7 +464,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                                 fontWeight: FontWeight.w400,
                                                 height:
                                                     0.4849999746 * ffem / fem,
-                                                color: Color(0xff9a9898),
+                                                color: const Color(0xff9a9898),
                                               ),
                                             ),
                                           ),
@@ -484,7 +487,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                                 fontWeight: FontWeight.w400,
                                                 height:
                                                     0.4849999746 * ffem / fem,
-                                                color: Color(0xff9a9898),
+                                                color: const Color(0xff9a9898),
                                               ),
                                             ),
                                           ),
@@ -504,7 +507,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                                 fontWeight: FontWeight.w400,
                                                 height:
                                                     0.4849999746 * ffem / fem,
-                                                color: Color(0xff9a9898),
+                                                color: const Color(0xff9a9898),
                                               ),
                                             ),
                                           ),
@@ -551,8 +554,8 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                                             FontWeight.w500,
                                                         height:
                                                             1.2125 * ffem / fem,
-                                                        color:
-                                                            Color(0xff8d8888),
+                                                        color: const Color(
+                                                            0xff8d8888),
                                                       ),
                                                     ),
                                                   ),
@@ -573,7 +576,8 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                                           FontWeight.w700,
                                                       height:
                                                           1.2125 * ffem / fem,
-                                                      color: Color(0xff000000),
+                                                      color: const Color(
+                                                          0xff000000),
                                                     ),
                                                   ),
                                                 ),
@@ -608,8 +612,8 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                                             FontWeight.w500,
                                                         height:
                                                             1.2125 * ffem / fem,
-                                                        color:
-                                                            Color(0xff8d8888),
+                                                        color: const Color(
+                                                            0xff8d8888),
                                                       ),
                                                     ),
                                                   ),
@@ -623,7 +627,8 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                                     fontSize: 13 * ffem,
                                                     fontWeight: FontWeight.w700,
                                                     height: 1.2125 * ffem / fem,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
                                               ],
@@ -657,8 +662,8 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                                             FontWeight.w500,
                                                         height:
                                                             1.2125 * ffem / fem,
-                                                        color:
-                                                            Color(0xff8d8888),
+                                                        color: const Color(
+                                                            0xff8d8888),
                                                       ),
                                                     ),
                                                   ),
@@ -672,7 +677,8 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                                     fontSize: 13 * ffem,
                                                     fontWeight: FontWeight.w700,
                                                     height: 1.2125 * ffem / fem,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
                                               ],
@@ -706,8 +712,8 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                                             FontWeight.w500,
                                                         height:
                                                             1.2125 * ffem / fem,
-                                                        color:
-                                                            Color(0xff8d8888),
+                                                        color: const Color(
+                                                            0xff8d8888),
                                                       ),
                                                     ),
                                                   ),
@@ -721,7 +727,8 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                                     fontSize: 13 * ffem,
                                                     fontWeight: FontWeight.w700,
                                                     height: 1.2125 * ffem / fem,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
                                               ],
@@ -752,9 +759,9 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                     width: 223.41 * fem,
                                     height: double.infinity,
                                     decoration: BoxDecoration(
-                                      border:
-                                          Border.all(color: Color(0xff000000)),
-                                      color: Color(0xfff6f5f5),
+                                      border: Border.all(
+                                          color: const Color(0xff000000)),
+                                      color: const Color(0xfff6f5f5),
                                     ),
                                     child: Center(
                                       child: Text(
@@ -764,29 +771,43 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                           fontSize: 16 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.2125 * ffem / fem,
-                                          color: Color(0xff000000),
+                                          color: const Color(0xff000000),
                                         ),
                                       ),
                                     ),
                                   ),
-                                  Container(
-                                    // autogroup3nc8fyA (obbx5GzBHseGVLnZt3NC8)
-                                    width: 206.04 * fem,
-                                    height: double.infinity,
-                                    decoration: BoxDecoration(
-                                      border:
-                                          Border.all(color: Color(0xffffffff)),
-                                      color: Color(0xfff6f5f5),
-                                    ),
-                                    child: Center(
-                                      child: Text(
-                                        'Feed',
-                                        style: SafeGoogleFont(
-                                          'Inter',
-                                          fontSize: 16 * ffem,
-                                          fontWeight: FontWeight.w400,
-                                          height: 1.2125 * ffem / fem,
-                                          color: Color(0xff000000),
+                                  GestureDetector(
+                                    onTap: () {
+                                      String name = counsellorDetailController
+                                          .cousnellorlist_detail[0].name;
+
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  CounsellorFeedPage(
+                                                    name: name,
+                                                  )));
+                                    },
+                                    child: Container(
+                                      // autogroup3nc8fyA (obbx5GzBHseGVLnZt3NC8)
+                                      width: 206.04 * fem,
+                                      height: double.infinity,
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                            color: const Color(0xffffffff)),
+                                        color: const Color(0xfff6f5f5),
+                                      ),
+                                      child: Center(
+                                        child: Text(
+                                          'Feed',
+                                          style: SafeGoogleFont(
+                                            'Inter',
+                                            fontSize: 16 * ffem,
+                                            fontWeight: FontWeight.w400,
+                                            height: 1.2125 * ffem / fem,
+                                            color: const Color(0xff000000),
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -856,7 +877,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                                 fontWeight: FontWeight.w700,
                                                 height:
                                                     1.7549999237 * ffem / fem,
-                                                color: Color(0xff000000),
+                                                color: const Color(0xff000000),
                                               ),
                                             ),
                                           ),
@@ -871,7 +892,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                               fontSize: 14 * ffem,
                                               fontWeight: FontWeight.w700,
                                               height: 2 * ffem / fem,
-                                              color: Color(0xFF595959),
+                                              color: const Color(0xFF595959),
                                             ),
                                             trimLines: 1,
                                             // trimLength: 20,
@@ -882,14 +903,14 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                               fontSize: 15 * ffem,
                                               fontWeight: FontWeight.w700,
                                               height: 1.5549999555 * ffem / fem,
-                                              color: Color(0xff040404),
+                                              color: const Color(0xff040404),
                                             ),
                                             lessStyle: SafeGoogleFont(
                                               'Inter',
                                               fontSize: 15 * ffem,
                                               fontWeight: FontWeight.w700,
                                               height: 1.5549999555 * ffem / fem,
-                                              color: Color(0xff040404),
+                                              color: const Color(0xff040404),
                                             ),
                                           )
                                         ],
@@ -928,7 +949,8 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                                   fontSize: 20 * ffem,
                                                   fontWeight: FontWeight.w700,
                                                   height: 1.2125 * ffem / fem,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ),
@@ -979,7 +1001,8 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                                       height: 1.7034202251 *
                                                           ffem /
                                                           fem,
-                                                      color: Color(0xff8e8989),
+                                                      color: const Color(
+                                                          0xff8e8989),
                                                     ),
                                                   ),
                                                 ],
@@ -1039,8 +1062,8 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                                             FontWeight.w500,
                                                         height:
                                                             1.2125 * ffem / fem,
-                                                        color:
-                                                            Color(0xff8e8989),
+                                                        color: const Color(
+                                                            0xff8e8989),
                                                       ),
                                                     ),
                                                   ),
@@ -1087,7 +1110,8 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                                   fontSize: 14 * ffem,
                                                   fontWeight: FontWeight.w500,
                                                   height: 1.2125 * ffem / fem,
-                                                  color: Color(0xff8e8989),
+                                                  color:
+                                                      const Color(0xff8e8989),
                                                 ),
                                               ),
                                             ),
@@ -1131,7 +1155,8 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                                   fontSize: 14 * ffem,
                                                   fontWeight: FontWeight.w500,
                                                   height: 1.2125 * ffem / fem,
-                                                  color: Color(0xff8e8989),
+                                                  color:
+                                                      const Color(0xff8e8989),
                                                 ),
                                               ),
                                             ),
@@ -1178,7 +1203,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                                 fontSize: 14 * ffem,
                                                 fontWeight: FontWeight.w500,
                                                 height: 1.2125 * ffem / fem,
-                                                color: Color(0xff8e8989),
+                                                color: const Color(0xff8e8989),
                                               ),
                                             ),
                                           ],
@@ -1204,7 +1229,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                             fontSize: 20 * ffem,
                                             fontWeight: FontWeight.w700,
                                             height: 1.2125 * ffem / fem,
-                                            color: Color(0xff000000),
+                                            color: const Color(0xff000000),
                                           ),
                                         ),
                                       ),
@@ -1244,11 +1269,11 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                                                     .circular(
                                                                         10 *
                                                                             fem),
-                                                            color: Color(
+                                                            color: const Color(
                                                                 0xffffffff),
                                                             boxShadow: [
                                                               BoxShadow(
-                                                                color: Color(
+                                                                color: const Color(
                                                                     0x1c000000),
                                                                 offset: Offset(
                                                                     0 * fem,
@@ -1382,7 +1407,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                                                                 ffem /
                                                                                 fem,
                                                                             color:
-                                                                                Color(0xff000000),
+                                                                                const Color(0xff000000),
                                                                           ),
                                                                         ),
                                                                       ),
@@ -1500,7 +1525,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                                               fontStyle:
                                                                   FontStyle
                                                                       .italic,
-                                                              color: Color(
+                                                              color: const Color(
                                                                   0xffa09d9d),
                                                             ),
                                                           ),
@@ -1568,8 +1593,8 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                                         height: 1.7002272606 *
                                                             ffem /
                                                             fem,
-                                                        color:
-                                                            Color(0xff000000),
+                                                        color: const Color(
+                                                            0xff000000),
                                                       ),
                                                     ),
                                                   ),
@@ -1659,8 +1684,9 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                               height: 38 * fem,
                                               decoration: BoxDecoration(
                                                 border: Border.all(
-                                                    color: Color(0xffd5cfcf)),
-                                                color: Color(0xffffffff),
+                                                    color: const Color(
+                                                        0xffd5cfcf)),
+                                                color: const Color(0xffffffff),
                                               ),
                                               child: Row(
                                                 crossAxisAlignment:
@@ -1683,8 +1709,8 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                                         height: 1.7034202251 *
                                                             ffem /
                                                             fem,
-                                                        color:
-                                                            Color(0xffd5cfcf),
+                                                        color: const Color(
+                                                            0xffd5cfcf),
                                                       ),
                                                     ),
                                                   ),
@@ -1735,8 +1761,8 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                     width: 430 * fem,
                                     height: 57 * fem,
                                     decoration: BoxDecoration(
-                                      border:
-                                          Border.all(color: Color(0x35000000)),
+                                      border: Border.all(
+                                          color: const Color(0x35000000)),
                                     ),
                                     child: Container(
                                       // group370NiL (2936:483)
@@ -1845,7 +1871,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                                                       1.2125 *
                                                                           ffem /
                                                                           fem,
-                                                                  color: Color(
+                                                                  color: const Color(
                                                                       0xff000000),
                                                                 ),
                                                               ),
@@ -1911,7 +1937,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                                                       height: 1.2125 *
                                                                           ffem /
                                                                           fem,
-                                                                      color: Color(
+                                                                      color: const Color(
                                                                           0xff000000),
                                                                     ),
                                                                   ),
@@ -1938,7 +1964,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                                                       height: 1.2125 *
                                                                           ffem /
                                                                           fem,
-                                                                      color: Color(
+                                                                      color: const Color(
                                                                           0xff6b6b6b),
                                                                     ),
                                                                   ),
@@ -1959,7 +1985,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                             width: 116 * fem,
                                             height: double.infinity,
                                             decoration: BoxDecoration(
-                                              color: Color(0xff1f0a68),
+                                              color: const Color(0xff1f0a68),
                                               borderRadius:
                                                   BorderRadius.circular(
                                                       5 * fem),
@@ -1974,7 +2000,8 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                                     fontSize: 16 * ffem,
                                                     fontWeight: FontWeight.w400,
                                                     height: 1.2125 * ffem / fem,
-                                                    color: Color(0xffffffff),
+                                                    color:
+                                                        const Color(0xffffffff),
                                                   ),
                                                 ),
                                               ),
@@ -1995,8 +2022,8 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                     width: 430 * fem,
                                     height: 57 * fem,
                                     decoration: BoxDecoration(
-                                      border:
-                                          Border.all(color: Color(0x35000000)),
+                                      border: Border.all(
+                                          color: const Color(0x35000000)),
                                     ),
                                     child: Container(
                                       // group370y1J (2936:485)
@@ -2092,7 +2119,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                                                 height: 1.2125 *
                                                                     ffem /
                                                                     fem,
-                                                                color: Color(
+                                                                color: const Color(
                                                                     0xff000000),
                                                               ),
                                                             ),
@@ -2154,7 +2181,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                                                       1.2125 *
                                                                           ffem /
                                                                           fem,
-                                                                  color: Color(
+                                                                  color: const Color(
                                                                       0xff000000),
                                                                 ),
                                                               ),
@@ -2181,7 +2208,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                                                         1.2125 *
                                                                             ffem /
                                                                             fem,
-                                                                    color: Color(
+                                                                    color: const Color(
                                                                         0xff6b6b6b),
                                                                   ),
                                                                 ),
@@ -2201,7 +2228,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                             width: 116 * fem,
                                             height: double.infinity,
                                             decoration: BoxDecoration(
-                                              color: Color(0xff1f0a68),
+                                              color: const Color(0xff1f0a68),
                                               borderRadius:
                                                   BorderRadius.circular(
                                                       5 * fem),
@@ -2216,7 +2243,8 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                                     fontSize: 16 * ffem,
                                                     fontWeight: FontWeight.w400,
                                                     height: 1.2125 * ffem / fem,
-                                                    color: Color(0xffffffff),
+                                                    color:
+                                                        const Color(0xffffffff),
                                                   ),
                                                 ),
                                               ),
@@ -2240,3 +2268,5 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
     );
   }
 }
+
+//updated
