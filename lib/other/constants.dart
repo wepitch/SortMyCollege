@@ -2,13 +2,12 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 
-
 class AppConstants {
   static String baseUrl = 'http://13.127.104.198:9000';
   static String counsellorlistEndpoint = '/counsellor/';
   static String sendotpRequest = '/user/auth/sendOTPEmail';
   static String verifyotpRequest = '/user/auth/verifyOTPEmail';
-
+  static const imagePath = "assets/page-1/images/";
   static const appName = "sortmycollege";
   static const packageId = "com.sortmycollege";
   static const txt_haveac = "Already have an account";
@@ -87,50 +86,50 @@ class AppConstants {
   static const txt_enoofcards = "Enter no. of id cards required";
   static const fnameerror = "Please enter first name";
   static const lnameerror = "Please enter last name";
-  static const doberror= "Please select date of birth";
-  static const phoneerror= "Please enter phone number";
-  static const phonenotvalid= "Please enter vlaid phone number";
+  static const doberror = "Please select date of birth";
+  static const phoneerror = "Please enter phone number";
+  static const phonenotvalid = "Please enter vlaid phone number";
 
-  static const emailerror= "Please enter email";
-  static const emailvaliderror= "Please enter valid email";
-  static const otperror= "Please enter OTP";
-  static const otpvalid= "Please enter valid OTP";
-  static const otpinvalid= "Invalid OTP";
-  static const passworderror= "Please enter password";
-  static const websiteerror= "Please enter website";
-  static const websitepropererror= "Please enter valid website";
-  static const roleerror= "Please enter role";
-  static const countryerror= "Please select country";
-  static const cityerror= "Please select city";
-  static const stateerror= "Please select state";
-  static const institutionerror= "Please select institution";
-  static const noofcardserror= "Please enter no. of cards";
-  static const something_wrong= "Something went wrong, please try again!";
-  static const profile_data_unavailable= "No Profile Data available";
-  static const resend_otp_success= "Otp Sent Successfully!";
-  static const reg_success= "Registration Successful!";
-  static const add_card_success= "ID Card added Successfully!";
-  static const edit_card_success= "ID Card Updated Successfully!";
-  static const proupdate_success= "Profile Updated Successfully!";
-  static const carddelete_success= "ID Card Deleted Successful!";
-  static const notiremove_success= "Notification removed Successfully!";
-  static const login_success= "Logged in successfully!";
+  static const emailerror = "Please enter email";
+  static const emailvaliderror = "Please enter valid email";
+  static const otperror = "Please enter OTP";
+  static const otpvalid = "Please enter valid OTP";
+  static const otpinvalid = "Invalid OTP";
+  static const passworderror = "Please enter password";
+  static const websiteerror = "Please enter website";
+  static const websitepropererror = "Please enter valid website";
+  static const roleerror = "Please enter role";
+  static const countryerror = "Please select country";
+  static const cityerror = "Please select city";
+  static const stateerror = "Please select state";
+  static const institutionerror = "Please select institution";
+  static const noofcardserror = "Please enter no. of cards";
+  static const something_wrong = "Something went wrong, please try again!";
+  static const profile_data_unavailable = "No Profile Data available";
+  static const resend_otp_success = "Otp Sent Successfully!";
+  static const reg_success = "Registration Successful!";
+  static const add_card_success = "ID Card added Successfully!";
+  static const edit_card_success = "ID Card Updated Successfully!";
+  static const proupdate_success = "Profile Updated Successfully!";
+  static const carddelete_success = "ID Card Deleted Successful!";
+  static const notiremove_success = "Notification removed Successfully!";
+  static const login_success = "Logged in successfully!";
   static const instnameerror = "Please enter institution name";
-  static const fullnameerror= "Please enter full name";
+  static const fullnameerror = "Please enter full name";
   static const txt_dash = "Dashboard";
   static const txt_appinfo = "App Info";
   static const txt_sel_inst = "SELECT INSTITUTION";
   static const txt_termsandconditions = "Terms And Conditions";
   static const txt_manage = "Manage";
   static const txt_noti = "Notifications";
-  static const IS_LOGGEDIN ="isloggedin";
-  static const TOKEN_API ="apitoken";
-  static const TOKEN_EXPIRY ="tokenexpiry";
-  static const USER_TYPE ="user_type";
-  static const USER_ID ="user_id";
-  static const LAST_PUNCH ="last_punch";
-  static const USER_EMAIL ="user_email";
-  static const USER_NAME ="user_name";
+  static const IS_LOGGEDIN = "isloggedin";
+  static const TOKEN_API = "apitoken";
+  static const TOKEN_EXPIRY = "tokenexpiry";
+  static const USER_TYPE = "user_type";
+  static const USER_ID = "user_id";
+  static const LAST_PUNCH = "last_punch";
+  static const USER_EMAIL = "user_email";
+  static const USER_NAME = "user_name";
   static const txt_search = "Search";
   static const sel_institition = "SELECT INSTITUTION";
   static const add_photo = "ADD ID PHOTO";
@@ -138,10 +137,12 @@ class AppConstants {
   static const uplaod_photo = "UPLOAD PHOTO";
   static const conf_proceed = "CONFIRM & PROCEED";
   static const add_card = "ADD CARD";
-  static const namelengtherror= "Institution name should be at least three characters long!";
+  static const namelengtherror =
+      "Institution name should be at least three characters long!";
   //static const emailerror= "Please enter email";
-  static const countrylengtherror= "Country should be at least two characters long!";
-  static const citylengtherror= "City should be at least two characters long!";
+  static const countrylengtherror =
+      "Country should be at least two characters long!";
+  static const citylengtherror = "City should be at least two characters long!";
   static const txt_nocompany = "No Institution Available!";
   static const txt_nonoti = "No Notifications!";
   static const txt_nocards = "No Cards Available!";
@@ -155,7 +156,8 @@ class AppConstants {
   static const txt_user_register = "User Registered Successfully!";
   static const txt_register_not_available = "Registration Form Unavailable!";
   static const txt_carddata_not_available = "Card Data Unavailable!";
-  static const attendance_office_diff = "You are trying to scan card with different office";
+  static const attendance_office_diff =
+      "You are trying to scan card with different office";
   static const valid_email = "Please enter valid email";
   //static const emailerror= "Please enter email";
   /*static const txt_password = "Password";
@@ -199,7 +201,6 @@ class AppColors {
   static var color_card_border1 = "#e0e0e0";
   static var color_card_foreground1 = "#e0e0e0";
   static var color_card_background1 = "#ffffff";
-
 }
 
 Color fromHex(String hexString) {
@@ -242,7 +243,6 @@ class AppImages {
   static const logout = "assets/images/profileScreen/logout.png";
   static const profile = "assets/images/profileScreen/profile.png";
 }
-
 
 class AppLinks {
   static const citizenship = "http://www.uscis.gov/";

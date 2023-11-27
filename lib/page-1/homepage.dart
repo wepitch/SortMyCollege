@@ -288,13 +288,14 @@ class _HomePageState extends State<HomePage> {
                               Expanded(
                                 child: Container(
                                   // untitleddesign51zH7 (1115:125)
-                                  margin: EdgeInsets.fromLTRB(
-                                      0 * fem, 5 * fem, 1 * fem, 8.34 * fem),
-                                  width: 45 * fem,
-                                  height: 66 * fem,
+                                  margin: EdgeInsets.only(bottom: 5),
+                                  // margin: EdgeInsets.fromLTRB(
+                                  //     0 * fem, 5 * fem, 1 * fem, 8.34 * fem),
+                                  width: 35,
+                                  height: 64,
                                   child: Image.asset(
                                     'assets/page-1/images/untitled-design-5-1.png',
-                                    fit: BoxFit.cover,
+                                    // fit: BoxFit.cover,
                                   ),
                                 ),
                               ),

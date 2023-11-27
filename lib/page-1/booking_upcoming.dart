@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/page-1/booking_confirmatoin_page.dart';
 import 'package:myapp/utils.dart';
 
 class BookingUpcoming extends StatelessWidget {
@@ -118,7 +119,16 @@ class BookingUpcoming extends StatelessWidget {
                                 width: 134,
                                 height: 24,
                                 child: GestureDetector(
-                                  onTap: () {},
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const BookingConfirmationPage(
+                                                    isUpcoming: true,
+                                                    isConfirmed: false,
+                                                    time: "11:31")));
+                                  },
                                   child: Container(
                                       decoration: BoxDecoration(
                                         border: Border.all(),
@@ -274,7 +284,16 @@ class BookingUpcoming extends StatelessWidget {
                                 width: 134,
                                 height: 24,
                                 child: GestureDetector(
-                                  onTap: () {},
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const BookingConfirmationPage(
+                                                    isUpcoming: true,
+                                                    isConfirmed: true,
+                                                    time: "10:44")));
+                                  },
                                   child: Container(
                                       decoration: BoxDecoration(
                                         border: Border.all(),

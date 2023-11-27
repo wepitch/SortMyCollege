@@ -28,7 +28,6 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
   @override
   void initState() {
     super.initState();
-
     context.read<CounsellorDetailsProvider>().fetchCounsellor_detail(widget.id);
   }
 
