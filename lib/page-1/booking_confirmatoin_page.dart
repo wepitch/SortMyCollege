@@ -60,7 +60,7 @@ class BookingConfirmationPage extends StatelessWidget {
                     height: 11,
                   ),
                   Image.asset(
-                    "${AppConstants.imagePath}images/${isConfirmed ? "booking-confirm.png" : "booking-cancel.png"}",
+                    "${AppConstants.imagePath}${isConfirmed ? "booking-confirm.png" : "booking-cancel.png"}",
                     height: 105,
                     width: 105,
                   ),
