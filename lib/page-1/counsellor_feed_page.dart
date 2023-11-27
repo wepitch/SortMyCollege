@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/model/counsellor_feed_model.dart';
+import 'package:myapp/other/constants.dart';
 
 import '../utils.dart';
 
@@ -213,8 +214,8 @@ Widget counsellorFeedPost(
                       border: Border.all(),
                       borderRadius: BorderRadius.circular(21)),
                   child: Center(
-                    child: Image.network(
-                      "https://th.bing.com/th/id/R.80ff6f8bdc1018bac3c8150f15f6e034?rik=wtJyCwP6gVnqPg&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_86166.png&ehk=SJuDvP6fGrdZe3eBf3NGI3KRcLI6ggORkTC%2bqLwKqtw%3d&risl=&pid=ImgRaw&r=0",
+                    child: Image.asset(
+                      "${AppConstants.imagePath}like-xzD.png",
                       height: 18,
                       width: 18,
                       color: Colors.black,
@@ -231,8 +232,8 @@ Widget counsellorFeedPost(
                       border: Border.all(),
                       borderRadius: BorderRadius.circular(21)),
                   child: Center(
-                    child: Image.network(
-                      "https://i.pinimg.com/originals/1a/77/b8/1a77b82fa5cf6252cb3169e29c613d85.png",
+                    child: Image.asset(
+                      "${AppConstants.imagePath}save-instagram-bold.png",
                       height: 18,
                       width: 18,
                       color: Colors.black,
@@ -249,8 +250,8 @@ Widget counsellorFeedPost(
                       border: Border.all(),
                       borderRadius: BorderRadius.circular(21)),
                   child: Center(
-                    child: Image.network(
-                      "https://www.neplan.ch/wp-content/uploads/2014/09/Webservice.png",
+                    child: Image.asset(
+                      "${AppConstants.imagePath}group-38-oFX.png",
                       height: 18,
                       width: 18,
                       color: Colors.black,

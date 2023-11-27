@@ -25,7 +25,7 @@ class ApiService {
     var url = Uri.parse("https://server.sortmycollege.com/counsellor/");
     final response =
         await http.get(url, headers: {"Content-Type": "application/json"});
-    var data = jsonDecode(response.body);
+    var data = jsonDecode(response.body.toString());
     // print(data);
     return List<CounsellorData>.from(
         data.map((x) => CounsellorData.fromJson(x)));
@@ -35,7 +35,7 @@ class ApiService {
     var url = Uri.parse("https://server.sortmycollege.com/counsellor/$id");
     final response =
         await http.get(url, headers: {"Content-Type": "application/json"});
-    var data = jsonDecode(response.body);
+    var data = jsonDecode(response.body.toString());
     print("======");
     console.log(data.toString());
     print("********");

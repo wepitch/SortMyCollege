@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/page-1/booking_confirmatoin_page.dart';
 import 'package:myapp/utils.dart';
 
 class BookingToday extends StatelessWidget {
@@ -6,6 +7,8 @@ class BookingToday extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // String title = "Session starts in";
+    String time = "25:15";
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: ListView(
@@ -84,7 +87,7 @@ class BookingToday extends StatelessWidget {
                                   RichText(
                                       text: TextSpan(children: <TextSpan>[
                                     TextSpan(
-                                        text: "25:15",
+                                        text: time,
                                         style: SafeGoogleFont("Inter",
                                             fontWeight: FontWeight.w600,
                                             fontSize: 20,
@@ -118,7 +121,18 @@ class BookingToday extends StatelessWidget {
                                 width: 134,
                                 height: 24,
                                 child: GestureDetector(
-                                  onTap: () {},
+                                  onTap: () {
+                                    // confirmation page
+
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                BookingConfirmationPage(
+                                                    time: time,
+                                                    isUpcoming: false,
+                                                    isConfirmed: true)));
+                                  },
                                   child: Container(
                                       decoration: BoxDecoration(
                                         border: Border.all(),

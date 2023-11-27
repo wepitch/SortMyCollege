@@ -644,6 +644,7 @@ class _CounsellorListPage_offlineState
                                                                                         ),
                                                                                       ),
                                                                                       const SizedBox(width: 80),
+                                                                                      Spacer(),
                                                                                       SizedBox(
                                                                                         width: 130.85,
                                                                                         height: 25.09,
@@ -673,7 +674,7 @@ class _CounsellorListPage_offlineState
                                                                                                 height: 16.05,
                                                                                                 child: GestureDetector(
                                                                                                   onTap: () {
-                                                                                                    var id = listController.cousnellorlist_data[index].id;
+                                                                                                    String id = listController.cousnellorlist_data[index].id;
                                                                                                     print(id);
                                                                                                     onTap_goto_detailPage(context, id);
                                                                                                   },
@@ -1038,7 +1039,7 @@ class _CounsellorListPage_offlineState
         context,
         MaterialPageRoute(
             builder: (context) => ChangeNotifierProvider(
-                create: (_) => CounsellorDetailsProvider(),
+                create: (context) => CounsellorDetailsProvider(),
                 child: CounsellorDetialsPage(id: id))));
   }
 
