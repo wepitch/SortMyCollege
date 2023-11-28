@@ -35,12 +35,18 @@ class ApiService {
     var url = Uri.parse("https://server.sortmycollege.com/counsellor/$id");
     final response =
         await http.get(url, headers: {"Content-Type": "application/json"});
-    var data = jsonDecode(response.body.toString());
+    if (response.statusCode == 200) {
+      var data = jsonDecode(response.body.toString());
+
+      console.log(data.toString());
+      return List<CounsellorDetail>.from(
+          data.map((x) => CounsellorDetail.fromJson(x)));
+    } else {
+      console.log(response.body.toString());
+    }
+    return [];
     print("======");
-    console.log(data.toString());
     print("********");
-    return List<CounsellorDetail>.from(
-        data.map((x) => CounsellorDetail.fromJson(x)));
   }
 
   static Future<ResponseModel> call_otp1() async {

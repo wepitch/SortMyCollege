@@ -6,6 +6,7 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/model/counsellor_detail.dart';
 import 'package:myapp/other/counsellor_details_provider.dart';
+import 'package:myapp/page-1/payment_gateaway.dart';
 import 'package:myapp/utils.dart';
 import 'package:provider/provider.dart';
 import 'package:readmore/readmore.dart';
@@ -1979,28 +1980,35 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                               ),
                                             ),
                                           ),
-                                          Container(
-                                            // group349P36 (2936:462)
-                                            width: 116 * fem,
-                                            height: double.infinity,
-                                            decoration: BoxDecoration(
-                                              color: const Color(0xff1f0a68),
-                                              borderRadius:
-                                                  BorderRadius.circular(
-                                                      5 * fem),
-                                            ),
-                                            child: Center(
+                                          GestureDetector(
+                                            onTap: () {
+                                              onTapBook(context);
+                                            },
+                                            child: Container(
+                                              // group349P36 (2936:462)
+                                              width: 116 * fem,
+                                              height: double.infinity,
+                                              decoration: BoxDecoration(
+                                                color: const Color(0xff1f0a68),
+                                                borderRadius:
+                                                    BorderRadius.circular(
+                                                        5 * fem),
+                                              ),
                                               child: Center(
-                                                child: Text(
-                                                  'Book',
-                                                  textAlign: TextAlign.center,
-                                                  style: SafeGoogleFont(
-                                                    'Inter',
-                                                    fontSize: 16 * ffem,
-                                                    fontWeight: FontWeight.w400,
-                                                    height: 1.2125 * ffem / fem,
-                                                    color:
-                                                        const Color(0xffffffff),
+                                                child: Center(
+                                                  child: Text(
+                                                    'Book',
+                                                    textAlign: TextAlign.center,
+                                                    style: SafeGoogleFont(
+                                                      'Inter',
+                                                      fontSize: 16 * ffem,
+                                                      fontWeight:
+                                                          FontWeight.w400,
+                                                      height:
+                                                          1.2125 * ffem / fem,
+                                                      color: const Color(
+                                                          0xffffffff),
+                                                    ),
                                                   ),
                                                 ),
                                               ),
@@ -2222,28 +2230,35 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                                               ],
                                             ),
                                           ),
-                                          Container(
-                                            // group349oRa (2936:500)
-                                            width: 116 * fem,
-                                            height: double.infinity,
-                                            decoration: BoxDecoration(
-                                              color: const Color(0xff1f0a68),
-                                              borderRadius:
-                                                  BorderRadius.circular(
-                                                      5 * fem),
-                                            ),
-                                            child: Center(
+                                          GestureDetector(
+                                            onTap: () {
+                                              onTapBook(context);
+                                            },
+                                            child: Container(
+                                              // group349oRa (2936:500)
+                                              width: 116 * fem,
+                                              height: double.infinity,
+                                              decoration: BoxDecoration(
+                                                color: const Color(0xff1f0a68),
+                                                borderRadius:
+                                                    BorderRadius.circular(
+                                                        5 * fem),
+                                              ),
                                               child: Center(
-                                                child: Text(
-                                                  'Book',
-                                                  textAlign: TextAlign.center,
-                                                  style: SafeGoogleFont(
-                                                    'Inter',
-                                                    fontSize: 16 * ffem,
-                                                    fontWeight: FontWeight.w400,
-                                                    height: 1.2125 * ffem / fem,
-                                                    color:
-                                                        const Color(0xffffffff),
+                                                child: Center(
+                                                  child: Text(
+                                                    'Book',
+                                                    textAlign: TextAlign.center,
+                                                    style: SafeGoogleFont(
+                                                      'Inter',
+                                                      fontSize: 16 * ffem,
+                                                      fontWeight:
+                                                          FontWeight.w400,
+                                                      height:
+                                                          1.2125 * ffem / fem,
+                                                      color: const Color(
+                                                          0xffffffff),
+                                                    ),
                                                   ),
                                                 ),
                                               ),
@@ -2269,3 +2284,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
 }
 
 //updated
+void onTapBook(BuildContext context) {
+  Navigator.push(context,
+      MaterialPageRoute(builder: (context) => const PaymentGateAway()));
+}

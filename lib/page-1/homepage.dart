@@ -825,7 +825,7 @@ class _HomePageState extends State<HomePage> {
 
   void onTapgotocounsellor(BuildContext context) {
     Navigator.push(context,
-        MaterialPageRoute(builder: (context) => CounsellorListPage_offline()));
+        MaterialPageRoute(builder: (context) => HomePageContainer_2()));
     //Navigator.push(context, MaterialPageRoute(builder: (context) => Webnar()));
   }
 
