@@ -22,6 +22,7 @@ class _EducationLevelState extends State<EducationLevel> {
       clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(color: Colors.white),
       child: Stack(
+        alignment: Alignment.center,
         children: [
           Positioned(
             left: 0,
@@ -108,11 +109,16 @@ class _EducationLevelState extends State<EducationLevel> {
                       ),
                     ),
                   ),
-                   Positioned(
+                  Positioned(
                     left: 120,
                     top: 8,
                     child: GestureDetector(
-                      onTap: () {   Navigator.push(context, MaterialPageRoute(builder: (context) =>  Selectgender()));      },
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Selectgender()));
+                      },
                       child: const SizedBox(
                         width: 74,
                         child: Text(

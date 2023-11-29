@@ -47,6 +47,7 @@ dependencies:
   readmore: ^2.2.0
   flutter_image_slideshow: ^0.1.6
   carousel_slider: ^4.2.1
+  intl: ^0.18.1
 
 dev_dependencies:
   flutter_test:

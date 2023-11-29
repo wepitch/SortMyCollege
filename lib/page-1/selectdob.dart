@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
+import 'package:myapp/page-1/homepagecontainer_2.dart';
 import 'package:myapp/utils.dart';
 
 import 'homepagecontainer.dart';
@@ -12,6 +14,7 @@ class Selectdob extends StatefulWidget {
 }
 
 class _SelectdobState extends State<Selectdob> {
+  String date = "DD/MM/YYYY";
   @override
   Widget build(BuildContext context) {
     double baseWidth = 430;
@@ -113,7 +116,12 @@ class _SelectdobState extends State<Selectdob> {
                     left: 126,
                     top: 9,
                     child: GestureDetector(
-                      onTap: () {   Navigator.push(context, MaterialPageRoute(builder: (context) =>  HomePageContainer()));      },
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomePageContainer_2()));
+                      },
                       child: SizedBox(
                         width: 74,
                         child: Text(
@@ -151,18 +159,35 @@ class _SelectdobState extends State<Selectdob> {
           Positioned(
             left: 40,
             top: 348,
-            child: SizedBox(
-              width: 282,
-              height: 26,
-              child: Text(
-                'DD/MM/YYYY',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 20,
-                  fontFamily: 'Montserrat',
-                  fontWeight: FontWeight.w700,
-                  height: 0,
+            child: GestureDetector(
+              onTap: () {
+                var now = DateTime.now();
+                var firstDate = DateTime(1999);
+                var lastDate = DateTime(2010);
+
+                showDatePicker(
+                        context: context,
+                        initialDate: now,
+                        firstDate: firstDate,
+                        lastDate: now)
+                    .then((value) {
+                  date = DateFormat("d/M/yyyy").format(value!).toString();
+                  setState(() {});
+                });
+              },
+              child: SizedBox(
+                width: 282,
+                height: 26,
+                child: Text(
+                  date,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontFamily: 'Montserrat',
+                    fontWeight: FontWeight.w700,
+                    height: 0,
+                  ),
                 ),
               ),
             ),

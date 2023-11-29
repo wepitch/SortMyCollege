@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/page-1/counsellor_select_listview_offline.dart';
+import 'package:myapp/page-1/edulevel.dart';
 
 import '../utils.dart';
 
@@ -189,6 +190,6 @@ class SplashScreen2 extends StatelessWidget {
 }
 
 void onTapGettingstarted(BuildContext context) {
-  Navigator.push(context,
-      MaterialPageRoute(builder: (context) => CounsellorListPage_offline()));
+  Navigator.push(
+      context, MaterialPageRoute(builder: (context) => EducationLevel()));
 }

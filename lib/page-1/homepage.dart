@@ -6,7 +6,7 @@ import 'package:myapp/page-1/webinar-detail-second-full-view.dart';
 import 'package:myapp/page-1/webinar.dart';
 import 'package:myapp/page-1/homepagecontainer_2.dart';
 import 'package:myapp/utils.dart';
-
+import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'counsellor-select-new.dart';
 import 'counsellor_select_listview_offline.dart';
 import 'counselor-dashboard-new-full-view.dart';
@@ -288,7 +288,7 @@ class _HomePageState extends State<HomePage> {
                               Expanded(
                                 child: Container(
                                   // untitleddesign51zH7 (1115:125)
-                                  margin: EdgeInsets.only(bottom: 5),
+                                  margin: const EdgeInsets.only(bottom: 5),
                                   // margin: EdgeInsets.fromLTRB(
                                   //     0 * fem, 5 * fem, 1 * fem, 8.34 * fem),
                                   width: 35,
@@ -766,29 +766,35 @@ class _HomePageState extends State<HomePage> {
                     left: 20.3735351562 * fem,
                     top: 20.33984375 * fem,
                     child: Align(
-                      child: SizedBox(
+                      // image slider
+                      child: Container(
+                        constraints: const BoxConstraints(
+                          maxHeight: 120,
+                          maxWidth: 390,
+                        ),
+                        // color: Colors.red,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20)),
                         width: 390 * fem,
                         height: 120 * fem,
-                        child: Image.asset(
-                          'assets/page-1/images/mask-group-wih.png',
-                          width: 390 * fem,
-                          height: 120 * fem,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    // group3aH7 (442:13)
-                    left: 202.1865234375 * fem,
-                    top: 156.3399658203 * fem,
-                    child: Align(
-                      child: SizedBox(
-                        width: 26 * fem,
-                        height: 6 * fem,
-                        child: Image.asset(
-                          'assets/page-1/images/group-3.png',
-                          width: 26 * fem,
-                          height: 6 * fem,
+                        child: ImageSlideshow(
+                          autoPlayInterval: 6000,
+                          isLoop: true,
+                          indicatorColor: Colors.black,
+                          indicatorBackgroundColor: Colors.white,
+                          children: dummyImagesSlider
+                              .map((e) => Container(
+                                    width: 390 * fem,
+                                    height: 120 * fem,
+                                    decoration: BoxDecoration(
+                                        borderRadius: const BorderRadius.all(
+                                            Radius.circular(20)),
+                                        image: DecorationImage(
+                                          image: NetworkImage(e),
+                                          fit: BoxFit.cover,
+                                        )),
+                                  ))
+                              .toList(),
                         ),
                       ),
                     ),
@@ -838,3 +844,9 @@ class _HomePageState extends State<HomePage> {
         context, MaterialPageRoute(builder: (context) => const ExplorerFeed()));
   }
 }
+
+List<String> dummyImagesSlider = [
+  "https://static.vecteezy.com/system/resources/previews/001/937/644/original/online-education-application-learning-worldwide-on-computer-mobile-website-background-social-distance-concept-the-classroom-training-course-library-illustration-flat-vector.jpg",
+  "https://www.insidehighered.com/sites/default/server_files/media/iStock-520374378.jpg",
+  "https://static.vecteezy.com/system/resources/previews/001/937/697/large_2x/online-education-application-learning-worldwide-on-computer-mobile-website-background-social-distance-concept-the-classroom-training-course-library-illustration-flat-vector.jpg",
+];
