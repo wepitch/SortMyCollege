@@ -6,11 +6,12 @@ class BookingPast extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0),
-      child: ListView(
-        children: [
-          Container(
+    var mWidth = MediaQuery.sizeOf(context).width;
+    return ListView(
+      children: [
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: mWidth * 0.02),
+          child: Container(
             margin: const EdgeInsets.only(bottom: 15),
             child: Stack(
               // fit: StackFit.expand,
@@ -25,6 +26,7 @@ class BookingPast extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(12.0),
                     child: Row(
+                        // mainAxisSize: MainAxisSize.min,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
@@ -166,7 +168,10 @@ class BookingPast extends StatelessWidget {
               ],
             ),
           ),
-          Container(
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: mWidth * 0.02),
+          child: Container(
             margin: const EdgeInsets.only(bottom: 15),
             child: Stack(
               // fit: StackFit.expand,
@@ -322,7 +327,10 @@ class BookingPast extends StatelessWidget {
               ],
             ),
           ),
-          Container(
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: mWidth * 0.02),
+          child: Container(
             margin: const EdgeInsets.only(bottom: 15),
             child: Stack(
               // fit: StackFit.expand,
@@ -435,8 +443,8 @@ class BookingPast extends StatelessWidget {
               ],
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

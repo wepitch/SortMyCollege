@@ -156,15 +156,17 @@ class CustomTab extends StatelessWidget {
   final VoidCallback onPressed;
   @override
   Widget build(BuildContext context) {
+    var mHeight = MediaQuery.sizeOf(context).height;
+    var mWidth = MediaQuery.sizeOf(context).width;
     return SizedBox(
       height: 60,
-      width: 110,
+      width: mWidth * 0.28,
       child: ElevatedButton(
           onPressed: onPressed,
           style: ElevatedButton.styleFrom(
               elevation: 5,
               textStyle: SafeGoogleFont('Inter',
-                  fontSize: 15.5, fontWeight: FontWeight.w600),
+                  fontSize: mWidth * 0.035, fontWeight: FontWeight.w600),
               foregroundColor: isSelected
                   ? const Color(0xffFFFFFF)
                   : const Color(0xff747474),

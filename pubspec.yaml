@@ -48,6 +48,7 @@ dependencies:
   flutter_image_slideshow: ^0.1.6
   carousel_slider: ^4.2.1
   intl: ^0.18.1
+  flutter_screenutil: ^5.9.0
 
 dev_dependencies:
   flutter_test:

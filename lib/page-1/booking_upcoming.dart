@@ -7,11 +7,12 @@ class BookingUpcoming extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0),
-      child: ListView(
-        children: [
-          Container(
+    var mWidth = MediaQuery.sizeOf(context).width;
+    return ListView(
+      children: [
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: mWidth * 0.02),
+          child: Container(
             margin: const EdgeInsets.only(bottom: 15),
             child: Stack(
               // fit: StackFit.expand,
@@ -176,7 +177,10 @@ class BookingUpcoming extends StatelessWidget {
               ],
             ),
           ),
-          Container(
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: mWidth * 0.02),
+          child: Container(
             margin: const EdgeInsets.only(bottom: 15),
             child: Stack(
               // fit: StackFit.expand,
@@ -341,7 +345,10 @@ class BookingUpcoming extends StatelessWidget {
               ],
             ),
           ),
-          Container(
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: mWidth * 0.02),
+          child: Container(
             margin: const EdgeInsets.only(bottom: 15),
             child: Stack(
               // fit: StackFit.expand,
@@ -497,7 +504,10 @@ class BookingUpcoming extends StatelessWidget {
               ],
             ),
           ),
-          Container(
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: mWidth * 0.02),
+          child: Container(
             margin: const EdgeInsets.only(bottom: 15),
             child: Stack(
               // fit: StackFit.expand,
@@ -610,8 +620,8 @@ class BookingUpcoming extends StatelessWidget {
               ],
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

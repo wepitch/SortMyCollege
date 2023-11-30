@@ -3,6 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/page-1/booking_page.dart';
+import 'package:myapp/page-1/counsellor_select_listview_offline.dart';
 import 'package:myapp/page-1/webinar-detail-second-full-view.dart';
 import 'package:myapp/page-1/webinar.dart';
 import 'package:myapp/page-1/homepage.dart';
@@ -116,8 +117,8 @@ class _HomePageContainerState extends State<HomePageContainer> {
   }
 
   void onTapgotocounsellor(BuildContext context) {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => CounsellorListPage()));
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => CounsellorListPage_offline()));
   }
 
   void onTapGettingstarted2(BuildContext context) {

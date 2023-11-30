@@ -1,199 +1,152 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
-import 'package:myapp/page-1/homepagecontainer_2.dart';
-import 'package:myapp/utils.dart';
+import 'package:myapp/page-1/homepagecontainer.dart';
+import 'package:myapp/page-1/selectdob.dart';
+import 'package:myapp/page-1/selectgender.dart';
 
-import 'homepagecontainer.dart';
+import '../utils.dart';
 
-class Selectdob extends StatefulWidget {
+class SelectDob extends StatefulWidget {
+  const SelectDob({super.key});
+
   @override
-  State<Selectdob> createState() => _SelectdobState();
+  State<SelectDob> createState() => _SelectDobState();
 }
 
-class _SelectdobState extends State<Selectdob> {
+class _SelectDobState extends State<SelectDob> {
   String date = "DD/MM/YYYY";
   @override
   Widget build(BuildContext context) {
-    double baseWidth = 430;
-    double fem = MediaQuery.of(context).size.width / baseWidth;
-    double ffem = fem * 0.97;
-    return Container(
-      width: 430,
-      height: 932,
-      clipBehavior: Clip.antiAlias,
-      decoration: BoxDecoration(color: Colors.white),
-      child: Stack(
-        children: [
-          Positioned(
-            left: 0,
-            top: 0,
-            child: Container(
-              width: 430,
-              height: 932,
-              decoration: BoxDecoration(color: Colors.white),
-            ),
-          ),
-          Positioned(
-            left: 40,
-            top: 165,
-            child: SizedBox(
-              width: 282,
-              height: 42,
-              child: Text(
-                'Sort Your Entire College Journey!',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Color(0xFF1F0A68),
-                  fontSize: 16,
-                  fontFamily: 'Roboto',
-                  fontWeight: FontWeight.w700,
-                  height: 0,
-                ),
-              ),
-            ),
-          ),
-          Positioned(
-            left: 50,
-            top: 244,
-            child: SizedBox(
-              width: 282,
-              height: 42,
-              child: Text(
-                'Date of Birth',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 20,
-                  fontFamily: 'Roboto',
-                  fontWeight: FontWeight.w700,
-                  height: 0,
-                ),
-              ),
-            ),
-          ),
-          Positioned(
-            left: 15,
-            top: 61,
-            child: Container(
-              width: 294,
-              height: 80,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(
-                      'assets/page-1/images/sortmycollege-logo-1.png'),
-                  fit: BoxFit.fill,
-                ),
-              ),
-            ),
-          ),
-          Positioned(
-            left: 20,
-            top: 450,
-            child: Container(
-              width: 326,
-              height: 45,
-              child: Stack(
-                children: [
-                  Positioned(
-                    left: 0,
-                    top: 0,
-                    child: Container(
-                      width: 326,
-                      height: 45,
-                      decoration: ShapeDecoration(
-                        color: Color(0xFF1F0A68),
-                        shape: RoundedRectangleBorder(
-                          side: BorderSide(width: 1),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    left: 126,
-                    top: 9,
-                    child: GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => HomePageContainer_2()));
-                      },
-                      child: SizedBox(
-                        width: 74,
-                        child: Text(
-                          'Next',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 24,
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.w400,
-                            height: 0,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Positioned(
-            left: 40,
-            top: 323,
-            child: Container(
-              width: 289,
-              height: 74,
-              decoration: ShapeDecoration(
-                color: Color(0xFFD9D9D9),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-              ),
-            ),
-          ),
-          Positioned(
-            left: 40,
-            top: 348,
-            child: GestureDetector(
-              onTap: () {
-                var now = DateTime.now();
-                var firstDate = DateTime(1999);
-                var lastDate = DateTime(2010);
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 61),
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                // sortmycollegelogo1WFT (1115:272)
+                width: 294,
+                height: 80,
+                padding: const EdgeInsets.all(0),
 
-                showDatePicker(
-                        context: context,
-                        initialDate: now,
-                        firstDate: firstDate,
-                        lastDate: now)
-                    .then((value) {
-                  date = DateFormat("d/M/yyyy").format(value!).toString();
-                  setState(() {});
-                });
-              },
-              child: SizedBox(
-                width: 282,
-                height: 26,
+                margin: const EdgeInsets.fromLTRB(0, 0, 0, 24),
+
+                child: Image.asset(
+                  'assets/page-1/images/sortmycollege-logo-1.png',
+                  fit: BoxFit.fitWidth,
+                  height: 80,
+                ),
+              ),
+              Container(
+                // sortyourentirecollegejourneyDQ (1115:271)
+                margin: const EdgeInsets.fromLTRB(0, 0, 0, 50),
                 child: Text(
-                  date,
+                  'Sort Your Entire College Journey!',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 20,
-                    fontFamily: 'Montserrat',
+                  style: SafeGoogleFont(
+                    'Roboto',
+                    fontSize: 16,
                     fontWeight: FontWeight.w700,
-                    height: 0,
+                    height: 1.1725,
+                    color: const Color(0xff1f0a68),
                   ),
                 ),
               ),
-            ),
+              Text(
+                "Date of Birth",
+                style: SafeGoogleFont(
+                  "Montserrat",
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(
+                height: 50,
+              ),
+              customButton(
+                onPressed: () {
+                  var now = DateTime.now();
+                  var firstDate = DateTime(1999);
+                  var lastDate = DateTime(2010);
+
+                  showDatePicker(
+                          context: context,
+                          initialDate: now,
+                          firstDate: firstDate,
+                          lastDate: now)
+                      .then((value) {
+                    date = DateFormat("d/M/yyyy").format(value!).toString();
+                    setState(() {});
+                  });
+                },
+                title: date,
+              ),
+              const Spacer(),
+              nextButton(
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => HomePageContainer()));
+                  },
+                  title: "Next")
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
+}
+
+Widget customButton({
+  required VoidCallback onPressed,
+  required String title,
+}) {
+  return Padding(
+    padding: const EdgeInsets.only(bottom: 22),
+    child: SizedBox(
+      height: 74,
+      width: 289,
+      child: OutlinedButton(
+        onPressed: onPressed,
+        style: OutlinedButton.styleFrom(
+            backgroundColor: const Color(0xffD9D9D9),
+            foregroundColor: Colors.black,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+            )),
+        child: Text(
+          title,
+          style: SafeGoogleFont(
+            "Montserrat",
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+    ),
+  );
+}
+
+Widget nextButton({required VoidCallback onPressed, required String title}) {
+  return SizedBox(
+    height: 45,
+    width: 326,
+    child: OutlinedButton(
+        onPressed: onPressed,
+        style: OutlinedButton.styleFrom(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+            backgroundColor: const Color(0xff1F0A68),
+            foregroundColor: Colors.white),
+        child: Text(
+          title,
+          style: SafeGoogleFont(
+            "Roboto",
+            fontSize: 24,
+          ),
+        )),
+  );
 }

@@ -9,11 +9,12 @@ class BookingToday extends StatelessWidget {
   Widget build(BuildContext context) {
     // String title = "Session starts in";
     String time = "25:15";
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0),
-      child: ListView(
-        children: [
-          Container(
+    var mWidth = MediaQuery.sizeOf(context).width;
+    return ListView(
+      children: [
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: mWidth * 0.02),
+          child: Container(
             margin: const EdgeInsets.only(bottom: 15),
             child: Stack(
               // fit: StackFit.expand,
@@ -180,7 +181,10 @@ class BookingToday extends StatelessWidget {
               ],
             ),
           ),
-          Container(
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: mWidth * 0.02),
+          child: Container(
             margin: const EdgeInsets.only(bottom: 15),
             child: Stack(
               // fit: StackFit.expand,
@@ -309,7 +313,10 @@ class BookingToday extends StatelessWidget {
               ],
             ),
           ),
-          Container(
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: mWidth * 0.02),
+          child: Container(
             margin: const EdgeInsets.only(bottom: 15),
             child: Stack(
               // fit: StackFit.expand,
@@ -422,8 +429,8 @@ class BookingToday extends StatelessWidget {
               ],
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

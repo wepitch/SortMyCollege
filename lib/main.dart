@@ -12,6 +12,7 @@ import 'package:myapp/page-1/filter_degree.dart';
 import 'package:myapp/page-1/assets.dart';
 import 'package:myapp/page-1/dashboard-session-group-new.dart';
 import 'package:myapp/page-1/filter_1.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 // import 'package:myapp/page-1/student-community-NJD.dart';
 // import 'package:myapp/page-1/courses.dart';
 // import 'package:myapp/page-1/detailed-cb.dart';
@@ -93,16 +94,21 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-        title: 'Flutter',
-        debugShowCheckedModeBanner: false,
-        scrollBehavior: MyCustomScrollBehavior(),
-        theme: ThemeData(
-          primarySwatch: Colors.grey,
-        ),
-        home: Scaffold(
-          body: SplashScreen(),
-        ),
-        builder: EasyLoading.init());
+    return ScreenUtilInit(
+      designSize: const Size(330, 667),
+      builder: (context, child) {
+        return GetMaterialApp(
+            title: 'Flutter',
+            debugShowCheckedModeBanner: false,
+            scrollBehavior: MyCustomScrollBehavior(),
+            theme: ThemeData(
+              primarySwatch: Colors.grey,
+            ),
+            home: Scaffold(
+              body: SplashScreen(),
+            ),
+            builder: EasyLoading.init());
+      },
+    );
   }
 }
