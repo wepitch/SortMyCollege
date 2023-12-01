@@ -43,7 +43,7 @@ class _BookingPageState extends State<BookingPage> {
             padding: const EdgeInsets.only(left: 0, top: 18, bottom: 18),
             child: GestureDetector(
               onTap: () {
-                Navigator.push(
+                Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                         builder: (context) => const HomePageContainer()));

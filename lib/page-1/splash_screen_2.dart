@@ -3,6 +3,8 @@ import 'package:myapp/page-1/counsellor_select_listview_offline.dart';
 import 'package:myapp/page-1/edulevel.dart';
 
 import '../utils.dart';
+import 'package:lottie/lottie.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 class SplashScreen2 extends StatelessWidget {
   const SplashScreen2({super.key});
@@ -14,6 +16,7 @@ class SplashScreen2 extends StatelessWidget {
     print(mHeight);
     print(mWidth);
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -21,7 +24,7 @@ class SplashScreen2 extends StatelessWidget {
             // sortmycollegelogo1WFT (1115:272)
             width: mWidth * 0.8,
             height: mHeight * 0.1,
-            padding: EdgeInsets.all(0),
+            padding: const EdgeInsets.all(0),
 
             margin: EdgeInsets.fromLTRB(0, mHeight * 0.12, 0, 24),
 
@@ -61,31 +64,63 @@ class SplashScreen2 extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  "Making A Student's \nLife Simple ",
-                  textAlign: TextAlign.center,
-                  style: SafeGoogleFont(
-                    'Jost',
-                    fontSize: mHeight * 0.04,
-                    fontWeight: FontWeight.w400,
-                    height: 1.4,
-                    color: const Color(0xff1F0A68),
-                  ),
-                ),
-                const SizedBox(
-                  height: 8,
-                ),
                 Container(
-                  // group135K6R (1012:218)
-                  margin: const EdgeInsets.fromLTRB(0, 0, 6.4, 0),
-                  width: 23.6,
-                  height: 6.01,
-                  child: Image.asset(
-                    'assets/page-1/images/group-135.png',
-                    width: 23.6,
-                    height: 6.01,
-                  ),
+                  // color: Colors.red,
+                  // alignment: Alignment.bottomCenter,
+                  child: AnimatedTextKit(
+                      isRepeatingAnimation: true,
+                      repeatForever: true,
+                      stopPauseOnTap: true,
+                      animatedTexts: [
+                        TyperAnimatedText(
+                          "Making A Student's Life Simple ",
+                          // rotateOut: true,
+                          // textDirection: TextDirection.rtl,
+                          textAlign: TextAlign.center,
+                          // duration: const Duration(seconds: 1),
+                          textStyle: SafeGoogleFont(
+                            'Jost',
+                            fontSize: mHeight * 0.04,
+                            fontWeight: FontWeight.w400,
+                            height: 1.4,
+                            color: const Color(0xff1F0A68),
+                          ),
+                        ),
+                        TyperAnimatedText(
+                          "Sort Your College Life With Us",
+
+                          textAlign: TextAlign.center,
+                          // rotateOut: true,
+                          // duration: const Duration(seconds: 1),
+                          textStyle: SafeGoogleFont(
+                            'Jost',
+                            fontSize: mHeight * 0.04,
+                            fontWeight: FontWeight.w400,
+                            height: 1.4,
+                            color: const Color(0xff1F0A68),
+                          ),
+                        ),
+                      ]),
                 ),
+                // Expanded(
+                //   child: Container(
+                //     alignment: Alignment.topCenter,
+                //     // group135K6R (1012:218)
+                //     margin: const EdgeInsets.fromLTRB(0, 0, 6.4, 0),
+                //     width: 200.6,
+                //     height: 200.01,
+
+                //     child: ColorFiltered(
+                //       colorFilter: const ColorFilter.mode(
+                //           Color(0xff1F0A68), BlendMode.modulate),
+                //       child: Lottie.asset(
+                //         'assets/animations/loadingdot.json',
+                //         fit: BoxFit.cover,
+                //         alignment: Alignment.topCenter,
+                //       ),
+                //     ),
+                //   ),
+                // ),
               ],
             ),
           ),
@@ -191,5 +226,5 @@ class SplashScreen2 extends StatelessWidget {
 
 void onTapGettingstarted(BuildContext context) {
   Navigator.pushReplacement(
-      context, MaterialPageRoute(builder: (context) => EducationLevel()));
+      context, MaterialPageRoute(builder: (context) => const EducationLevel()));
 }

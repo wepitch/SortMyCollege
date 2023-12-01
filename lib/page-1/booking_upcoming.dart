@@ -11,7 +11,7 @@ class BookingUpcoming extends StatelessWidget {
     return ListView(
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: mWidth * 0.02),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Container(
             margin: const EdgeInsets.only(bottom: 15),
             child: Stack(
@@ -26,7 +26,7 @@ class BookingUpcoming extends StatelessWidget {
                       borderRadius: BorderRadius.circular(15)),
                   child: Padding(
                     padding: const EdgeInsets.all(12.0),
-                    child: Row(
+                    child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
@@ -37,7 +37,7 @@ class BookingUpcoming extends StatelessWidget {
                                 children: [
                                   Image.asset(
                                     "assets/page-1/images/profile_booking.png",
-                                    width: 56,
+                                    width: mWidth * 0.15,
                                     height: 60,
                                   ),
                                   const SizedBox(
@@ -51,7 +51,7 @@ class BookingUpcoming extends StatelessWidget {
                                         "Sandeep Mehra",
                                         style: SafeGoogleFont(
                                           "Inter",
-                                          fontSize: 17,
+                                          fontSize: mWidth * 0.045,
                                           fontWeight: FontWeight.w600,
                                         ),
                                       ),
@@ -62,7 +62,7 @@ class BookingUpcoming extends StatelessWidget {
                                         style: SafeGoogleFont(
                                           "Inter",
                                           color: const Color(0xff747474),
-                                          fontSize: 13,
+                                          fontSize: mWidth * 0.035,
                                           fontWeight: FontWeight.w600,
                                         ),
                                       ),
@@ -70,16 +70,22 @@ class BookingUpcoming extends StatelessWidget {
                                   )
                                 ],
                               ),
-                              const SizedBox(
-                                height: 15,
-                              ),
+                            ],
+                          ),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
+                                  const SizedBox(
+                                    height: 15,
+                                  ),
                                   Text(
                                     "Cancelled",
                                     style: SafeGoogleFont("Inter",
-                                        fontSize: 14,
+                                        fontSize: mWidth * 0.038,
                                         color: Colors.red,
                                         fontWeight: FontWeight.bold),
                                   ),
@@ -99,51 +105,51 @@ class BookingUpcoming extends StatelessWidget {
                                             color: const Color(0xff8E8989)))
                                   ]))
                                 ],
-                              )
-                            ],
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Text(
-                                "Personal Session",
-                                style: SafeGoogleFont("Inter",
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 14,
-                                    color: const Color(0xff1F0A68)),
                               ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              SizedBox(
-                                width: 134,
-                                height: 24,
-                                child: GestureDetector(
-                                  onTap: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const BookingConfirmationPage(
-                                                    isUpcoming: true,
-                                                    isConfirmed: false,
-                                                    time: "11:31")));
-                                  },
-                                  child: Container(
-                                      decoration: BoxDecoration(
-                                        border: Border.all(),
-                                        borderRadius: BorderRadius.circular(20),
-                                      ),
-                                      child: Center(
-                                          child: Text(
-                                        "View details",
-                                        style: SafeGoogleFont("Inter",
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: 12,
-                                            color: Colors.black),
-                                      ))),
-                                ),
+                              const Spacer(),
+                              Column(
+                                children: [
+                                  Text(
+                                    "Personal Session",
+                                    style: SafeGoogleFont("Inter",
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: mWidth * 0.038,
+                                        color: const Color(0xff1F0A68)),
+                                  ),
+                                  const SizedBox(
+                                    height: 5,
+                                  ),
+                                  SizedBox(
+                                    width: mWidth * 0.34,
+                                    height: 24,
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    const BookingConfirmationPage(
+                                                        isUpcoming: true,
+                                                        isConfirmed: false,
+                                                        time: "11:31")));
+                                      },
+                                      child: Container(
+                                          decoration: BoxDecoration(
+                                            border: Border.all(),
+                                            borderRadius:
+                                                BorderRadius.circular(20),
+                                          ),
+                                          child: Center(
+                                              child: Text(
+                                            "View details",
+                                            style: SafeGoogleFont("Inter",
+                                                fontWeight: FontWeight.w600,
+                                                fontSize: mWidth * 0.032,
+                                                color: Colors.black),
+                                          ))),
+                                    ),
+                                  ),
+                                ],
                               )
                             ],
                           )
@@ -179,7 +185,7 @@ class BookingUpcoming extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: mWidth * 0.02),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Container(
             margin: const EdgeInsets.only(bottom: 15),
             child: Stack(
@@ -194,7 +200,7 @@ class BookingUpcoming extends StatelessWidget {
                       borderRadius: BorderRadius.circular(15)),
                   child: Padding(
                     padding: const EdgeInsets.all(12.0),
-                    child: Row(
+                    child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
@@ -205,7 +211,7 @@ class BookingUpcoming extends StatelessWidget {
                                 children: [
                                   Image.asset(
                                     "assets/page-1/images/profile_booking.png",
-                                    width: 56,
+                                    width: mWidth * 0.15,
                                     height: 60,
                                   ),
                                   const SizedBox(
@@ -219,7 +225,7 @@ class BookingUpcoming extends StatelessWidget {
                                         "Sandeep Mehra",
                                         style: SafeGoogleFont(
                                           "Inter",
-                                          fontSize: 17,
+                                          fontSize: mWidth * 0.045,
                                           fontWeight: FontWeight.w600,
                                         ),
                                       ),
@@ -230,7 +236,7 @@ class BookingUpcoming extends StatelessWidget {
                                         style: SafeGoogleFont(
                                           "Inter",
                                           color: const Color(0xff747474),
-                                          fontSize: 13,
+                                          fontSize: mWidth * 0.035,
                                           fontWeight: FontWeight.w600,
                                         ),
                                       ),
@@ -238,16 +244,22 @@ class BookingUpcoming extends StatelessWidget {
                                   )
                                 ],
                               ),
-                              const SizedBox(
-                                height: 15,
-                              ),
+                            ],
+                          ),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
+                                  const SizedBox(
+                                    height: 15,
+                                  ),
                                   Text(
                                     "Rescheduled",
                                     style: SafeGoogleFont("Inter",
-                                        fontSize: 14,
+                                        fontSize: mWidth * 0.038,
                                         color: const Color(0xff0029FF),
                                         fontWeight: FontWeight.bold),
                                   ),
@@ -267,51 +279,51 @@ class BookingUpcoming extends StatelessWidget {
                                             color: const Color(0xff8E8989)))
                                   ]))
                                 ],
-                              )
-                            ],
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Text(
-                                "Group Session",
-                                style: SafeGoogleFont("Inter",
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 14,
-                                    color: const Color(0xff1F0A68)),
                               ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              SizedBox(
-                                width: 134,
-                                height: 24,
-                                child: GestureDetector(
-                                  onTap: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const BookingConfirmationPage(
-                                                    isUpcoming: true,
-                                                    isConfirmed: true,
-                                                    time: "10:44")));
-                                  },
-                                  child: Container(
-                                      decoration: BoxDecoration(
-                                        border: Border.all(),
-                                        borderRadius: BorderRadius.circular(20),
-                                      ),
-                                      child: Center(
-                                          child: Text(
-                                        "View details",
-                                        style: SafeGoogleFont("Inter",
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: 12,
-                                            color: Colors.black),
-                                      ))),
-                                ),
+                              const Spacer(),
+                              Column(
+                                children: [
+                                  Text(
+                                    "Group Session",
+                                    style: SafeGoogleFont("Inter",
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: mWidth * 0.038,
+                                        color: const Color(0xff1F0A68)),
+                                  ),
+                                  const SizedBox(
+                                    height: 5,
+                                  ),
+                                  SizedBox(
+                                    width: mWidth * 0.34,
+                                    height: 24,
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    const BookingConfirmationPage(
+                                                        isUpcoming: true,
+                                                        isConfirmed: true,
+                                                        time: "10:44")));
+                                      },
+                                      child: Container(
+                                          decoration: BoxDecoration(
+                                            border: Border.all(),
+                                            borderRadius:
+                                                BorderRadius.circular(20),
+                                          ),
+                                          child: Center(
+                                              child: Text(
+                                            "View details",
+                                            style: SafeGoogleFont("Inter",
+                                                fontWeight: FontWeight.w600,
+                                                fontSize: mWidth * 0.032,
+                                                color: Colors.black),
+                                          ))),
+                                    ),
+                                  ),
+                                ],
                               )
                             ],
                           )
@@ -347,7 +359,7 @@ class BookingUpcoming extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: mWidth * 0.02),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Container(
             margin: const EdgeInsets.only(bottom: 15),
             child: Stack(
@@ -362,7 +374,7 @@ class BookingUpcoming extends StatelessWidget {
                       borderRadius: BorderRadius.circular(15)),
                   child: Padding(
                     padding: const EdgeInsets.all(12.0),
-                    child: Row(
+                    child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
@@ -373,7 +385,7 @@ class BookingUpcoming extends StatelessWidget {
                                 children: [
                                   Image.asset(
                                     "assets/page-1/images/profile_booking.png",
-                                    width: 56,
+                                    width: mWidth * 0.15,
                                     height: 60,
                                   ),
                                   const SizedBox(
@@ -387,7 +399,7 @@ class BookingUpcoming extends StatelessWidget {
                                         "Sandeep Mehra",
                                         style: SafeGoogleFont(
                                           "Inter",
-                                          fontSize: 17,
+                                          fontSize: mWidth * 0.045,
                                           fontWeight: FontWeight.w600,
                                         ),
                                       ),
@@ -398,7 +410,7 @@ class BookingUpcoming extends StatelessWidget {
                                         style: SafeGoogleFont(
                                           "Inter",
                                           color: const Color(0xff747474),
-                                          fontSize: 13,
+                                          fontSize: mWidth * 0.035,
                                           fontWeight: FontWeight.w600,
                                         ),
                                       ),
@@ -406,16 +418,22 @@ class BookingUpcoming extends StatelessWidget {
                                   )
                                 ],
                               ),
-                              const SizedBox(
-                                height: 15,
-                              ),
+                            ],
+                          ),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
+                                  const SizedBox(
+                                    height: 15,
+                                  ),
                                   Text(
                                     "Booked",
                                     style: SafeGoogleFont("Inter",
-                                        fontSize: 14,
+                                        fontSize: mWidth * 0.038,
                                         color: const Color(0xff0029FF),
                                         fontWeight: FontWeight.bold),
                                   ),
@@ -435,42 +453,51 @@ class BookingUpcoming extends StatelessWidget {
                                             color: const Color(0xff8E8989)))
                                   ]))
                                 ],
-                              )
-                            ],
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Text(
-                                "Group Session",
-                                style: SafeGoogleFont("Inter",
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 14,
-                                    color: const Color(0xff1F0A68)),
                               ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              SizedBox(
-                                width: 134,
-                                height: 24,
-                                child: GestureDetector(
-                                  onTap: () {},
-                                  child: Container(
-                                      decoration: BoxDecoration(
-                                        border: Border.all(),
-                                        borderRadius: BorderRadius.circular(20),
-                                      ),
-                                      child: Center(
-                                          child: Text(
-                                        "View details",
-                                        style: SafeGoogleFont("Inter",
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: 12,
-                                            color: Colors.black),
-                                      ))),
-                                ),
+                              const Spacer(),
+                              Column(
+                                children: [
+                                  Text(
+                                    "Group Session",
+                                    style: SafeGoogleFont("Inter",
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: mWidth * 0.038,
+                                        color: const Color(0xff1F0A68)),
+                                  ),
+                                  const SizedBox(
+                                    height: 5,
+                                  ),
+                                  SizedBox(
+                                    width: mWidth * 0.34,
+                                    height: 24,
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    const BookingConfirmationPage(
+                                                        isUpcoming: true,
+                                                        isConfirmed: true,
+                                                        time: "10:44")));
+                                      },
+                                      child: Container(
+                                          decoration: BoxDecoration(
+                                            border: Border.all(),
+                                            borderRadius:
+                                                BorderRadius.circular(20),
+                                          ),
+                                          child: Center(
+                                              child: Text(
+                                            "View details",
+                                            style: SafeGoogleFont("Inter",
+                                                fontWeight: FontWeight.w600,
+                                                fontSize: mWidth * 0.032,
+                                                color: Colors.black),
+                                          ))),
+                                    ),
+                                  ),
+                                ],
                               )
                             ],
                           )
@@ -506,7 +533,7 @@ class BookingUpcoming extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: mWidth * 0.02),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Container(
             margin: const EdgeInsets.only(bottom: 15),
             child: Stack(
@@ -521,7 +548,7 @@ class BookingUpcoming extends StatelessWidget {
                       borderRadius: BorderRadius.circular(15)),
                   child: Padding(
                     padding: const EdgeInsets.all(12.0),
-                    child: Row(
+                    child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
@@ -532,7 +559,7 @@ class BookingUpcoming extends StatelessWidget {
                                 children: [
                                   Image.asset(
                                     "assets/page-1/images/profile_booking.png",
-                                    width: 56,
+                                    width: mWidth * 0.15,
                                     height: 60,
                                   ),
                                   const SizedBox(
@@ -546,7 +573,7 @@ class BookingUpcoming extends StatelessWidget {
                                         "Sandeep Mehra",
                                         style: SafeGoogleFont(
                                           "Inter",
-                                          fontSize: 17,
+                                          fontSize: mWidth * 0.045,
                                           fontWeight: FontWeight.w600,
                                         ),
                                       ),
@@ -557,7 +584,7 @@ class BookingUpcoming extends StatelessWidget {
                                         style: SafeGoogleFont(
                                           "Inter",
                                           color: const Color(0xff747474),
-                                          fontSize: 13,
+                                          fontSize: mWidth * 0.035,
                                           fontWeight: FontWeight.w600,
                                         ),
                                       ),
@@ -565,30 +592,48 @@ class BookingUpcoming extends StatelessWidget {
                                   )
                                 ],
                               ),
-                              const SizedBox(
-                                height: 15,
-                              ),
                             ],
                           ),
-                          SizedBox(
-                            width: 134,
-                            height: 24,
-                            child: GestureDetector(
-                              onTap: () {},
-                              child: Container(
-                                  decoration: BoxDecoration(
-                                    border: Border.all(),
-                                    borderRadius: BorderRadius.circular(20),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              const Spacer(),
+                              Column(
+                                children: [
+                                  SizedBox(
+                                    width: mWidth * 0.34,
+                                    height: 24,
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        // Navigator.push(
+                                        //     context,
+                                        //     MaterialPageRoute(
+                                        //         builder: (context) =>
+                                        //             const BookingConfirmationPage(
+                                        //                 isUpcoming: true,
+                                        //                 isConfirmed: true,
+                                        //                 time: "10:44")));
+                                      },
+                                      child: Container(
+                                          decoration: BoxDecoration(
+                                            border: Border.all(),
+                                            borderRadius:
+                                                BorderRadius.circular(20),
+                                          ),
+                                          child: Center(
+                                              child: Text(
+                                            "View details",
+                                            style: SafeGoogleFont("Inter",
+                                                fontWeight: FontWeight.w600,
+                                                fontSize: mWidth * 0.032,
+                                                color: Colors.black),
+                                          ))),
+                                    ),
                                   ),
-                                  child: Center(
-                                      child: Text(
-                                    "View details",
-                                    style: SafeGoogleFont("Inter",
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 12,
-                                        color: Colors.black),
-                                  ))),
-                            ),
+                                ],
+                              )
+                            ],
                           )
                         ]),
                   ),
@@ -607,7 +652,7 @@ class BookingUpcoming extends StatelessWidget {
                     height: 17,
                     child: Center(
                       child: Text(
-                        "EP",
+                        "Counsellor",
                         style: SafeGoogleFont(
                           "Inter",
                           fontSize: 8,

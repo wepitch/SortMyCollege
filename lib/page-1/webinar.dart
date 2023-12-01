@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/page-1/homepagecontainer.dart';
 import 'package:myapp/page-1/webinar-detail-second-full-view.dart';
 import 'package:myapp/utils.dart';
 
@@ -16,7 +17,7 @@ class Webnar extends StatelessWidget {
       child: Container(
         // webinarTfP (466:141)
         width: double.infinity,
-        decoration: const BoxDecoration (
+        decoration: const BoxDecoration(
           color: Color(0xffffffff),
         ),
         child: Column(
@@ -24,68 +25,81 @@ class Webnar extends StatelessWidget {
           children: [
             Container(
               // group48zQR (493:292)
-              padding: EdgeInsets.fromLTRB(20*fem, 37.79*fem, 30*fem, 15.04*fem),
+              padding: EdgeInsets.fromLTRB(
+                  20 * fem, 37.79 * fem, 30 * fem, 15.04 * fem),
               width: double.infinity,
-              decoration: BoxDecoration (
-                gradient: const LinearGradient (
+              decoration: BoxDecoration(
+                gradient: const LinearGradient(
                   begin: Alignment(-1.661, -1),
                   end: Alignment(2.81, -1),
                   colors: <Color>[Color(0xfc1f0a68), Color(0xffe3398c)],
                   stops: <double>[0, 1],
                 ),
-                borderRadius: BorderRadius.only (
-                  bottomRight: Radius.circular(20*fem),
-                  bottomLeft: Radius.circular(20*fem),
+                borderRadius: BorderRadius.only(
+                  bottomRight: Radius.circular(20 * fem),
+                  bottomLeft: Radius.circular(20 * fem),
                 ),
               ),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Container(
-                    // backcwb (493:287)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0.08*fem, 18.99*fem, 0*fem),
-                    width: 11.01*fem,
-                    height: 20*fem,
-                    child: Image.asset(
-                      'assets/page-1/images/back-rNM.png',
-                      width: 11.01*fem,
-                      height: 20*fem,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const HomePageContainer()));
+                    },
+                    child: Container(
+                      // backcwb (493:287)
+                      margin: EdgeInsets.fromLTRB(
+                          0 * fem, 0.08 * fem, 18.99 * fem, 0 * fem),
+                      width: 11.01 * fem,
+                      height: 20 * fem,
+                      child: Image.asset(
+                        'assets/page-1/images/back-rNM.png',
+                        width: 11.01 * fem,
+                        height: 20 * fem,
+                      ),
                     ),
                   ),
                   Container(
                     // webinarXHs (473:289)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 178.08*fem, 0*fem),
+                    margin: EdgeInsets.fromLTRB(
+                        0 * fem, 0 * fem, 178.08 * fem, 0 * fem),
                     child: Text(
                       'Webinar',
-                      style: SafeGoogleFont (
+                      style: SafeGoogleFont(
                         'Inter',
-                        fontSize: 24*ffem,
+                        fontSize: 24 * ffem,
                         fontWeight: FontWeight.w600,
-                        height: 1.2125*ffem/fem,
-                        color: Color(0xffffffff),
+                        height: 1.2125 * ffem / fem,
+                        color: const Color(0xffffffff),
                       ),
                     ),
                   ),
                   Container(
                     // layer3R8M (473:287)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 18.53*fem, 5*fem),
-                    width: 26.39*fem,
-                    height: 25*fem,
+                    margin: EdgeInsets.fromLTRB(
+                        0 * fem, 0 * fem, 18.53 * fem, 5 * fem),
+                    width: 26.39 * fem,
+                    height: 25 * fem,
                     child: Image.asset(
                       'assets/page-1/images/layer-3.png',
-                      width: 26.39*fem,
-                      height: 25*fem,
+                      width: 26.39 * fem,
+                      height: 25 * fem,
                     ),
                   ),
                   Container(
                     // vectorXBP (473:290)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 5*fem),
-                    width: 30*fem,
-                    height: 25*fem,
+                    margin:
+                        EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 5 * fem),
+                    width: 30 * fem,
+                    height: 25 * fem,
                     child: Image.asset(
                       'assets/page-1/images/vector-7Q5.png',
-                      width: 30*fem,
-                      height: 25*fem,
+                      width: 30 * fem,
+                      height: 25 * fem,
                     ),
                   ),
                 ],
@@ -93,87 +107,89 @@ class Webnar extends StatelessWidget {
             ),
             Container(
               // autogroupuamw2dw (5rtgkr2LpcHEDQ2uSZuAmw)
-              padding: EdgeInsets.fromLTRB(15*fem, 15*fem, 8*fem, 20*fem),
+              padding:
+                  EdgeInsets.fromLTRB(15 * fem, 15 * fem, 8 * fem, 20 * fem),
               width: double.infinity,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
                     // autogroupufgmMRK (5rte36DsMV4JTTfxx1uFGM)
-                    margin: EdgeInsets.fromLTRB(5*fem, 0*fem, 12*fem, 14.72*fem),
+                    margin: EdgeInsets.fromLTRB(
+                        5 * fem, 0 * fem, 12 * fem, 14.72 * fem),
                     width: double.infinity,
-                    height: 35*fem,
+                    height: 35 * fem,
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Container(
                           // autogroupplobTDT (5rteCvGpqderUBDTtDpLob)
-                          width: 120*fem,
+                          width: 120 * fem,
                           height: double.infinity,
-                          decoration: BoxDecoration (
-                            color: Color(0xffe7e7eb),
-                            borderRadius: BorderRadius.circular(3*fem),
+                          decoration: BoxDecoration(
+                            color: const Color(0xffe7e7eb),
+                            borderRadius: BorderRadius.circular(3 * fem),
                           ),
                           child: Center(
                             child: Text(
                               'Upcoming',
                               textAlign: TextAlign.center,
-                              style: SafeGoogleFont (
+                              style: SafeGoogleFont(
                                 'Inter',
-                                fontSize: 18*ffem,
+                                fontSize: 18 * ffem,
                                 fontWeight: FontWeight.w600,
-                                height: 1.2125*ffem/fem,
-                                color: Color(0xff747474),
+                                height: 1.2125 * ffem / fem,
+                                color: const Color(0xff747474),
                               ),
                             ),
                           ),
                         ),
                         SizedBox(
-                          width: 15*fem,
+                          width: 15 * fem,
                         ),
                         Container(
                           // autogroup1vah6XK (5rteJAd5iYQrrBmX3W1VAh)
-                          width: 120*fem,
+                          width: 120 * fem,
                           height: double.infinity,
-                          decoration: BoxDecoration (
-                            color: Color(0xffe7e7eb),
-                            borderRadius: BorderRadius.circular(3*fem),
+                          decoration: BoxDecoration(
+                            color: const Color(0xffe7e7eb),
+                            borderRadius: BorderRadius.circular(3 * fem),
                           ),
                           child: Center(
                             child: Text(
                               'Today',
                               textAlign: TextAlign.center,
-                              style: SafeGoogleFont (
+                              style: SafeGoogleFont(
                                 'Inter',
-                                fontSize: 18*ffem,
+                                fontSize: 18 * ffem,
                                 fontWeight: FontWeight.w600,
-                                height: 1.2125*ffem/fem,
-                                color: Color(0xff2d2d2d),
+                                height: 1.2125 * ffem / fem,
+                                color: const Color(0xff2d2d2d),
                               ),
                             ),
                           ),
                         ),
                         SizedBox(
-                          width: 15*fem,
+                          width: 15 * fem,
                         ),
                         Container(
                           // autogrouphqvtxpR (5rteNq9ycEs65JhnjyHqVT)
-                          width: 120*fem,
+                          width: 120 * fem,
                           height: double.infinity,
-                          decoration: BoxDecoration (
-                            color: Color(0xffe7e7eb),
-                            borderRadius: BorderRadius.circular(3*fem),
+                          decoration: BoxDecoration(
+                            color: const Color(0xffe7e7eb),
+                            borderRadius: BorderRadius.circular(3 * fem),
                           ),
                           child: Center(
                             child: Text(
                               'Past',
                               textAlign: TextAlign.center,
-                              style: SafeGoogleFont (
+                              style: SafeGoogleFont(
                                 'Inter',
-                                fontSize: 18*ffem,
+                                fontSize: 18 * ffem,
                                 fontWeight: FontWeight.w600,
-                                height: 1.2125*ffem/fem,
-                                color: Color(0xff747474),
+                                height: 1.2125 * ffem / fem,
+                                color: const Color(0xff747474),
                               ),
                             ),
                           ),
@@ -183,43 +199,44 @@ class Webnar extends StatelessWidget {
                   ),
                   Container(
                     // group923ay (514:239)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 7*fem, 14.01*fem),
-                    width: 400*fem,
-                    height: 105.99*fem,
+                    margin: EdgeInsets.fromLTRB(
+                        0 * fem, 0 * fem, 7 * fem, 14.01 * fem),
+                    width: 400 * fem,
+                    height: 105.99 * fem,
                     child: Stack(
                       children: [
                         Positioned(
                           // groupZJR (514:240)
-                          left: 0*fem,
-                          top: 0*fem,
+                          left: 0 * fem,
+                          top: 0 * fem,
                           child: Align(
                             child: SizedBox(
-                              width: 400*fem,
-                              height: 105.99*fem,
+                              width: 400 * fem,
+                              height: 105.99 * fem,
                               child: Image.asset(
                                 'assets/page-1/images/group-1Lm.png',
-                                width: 400*fem,
-                                height: 105.99*fem,
+                                width: 400 * fem,
+                                height: 105.99 * fem,
                               ),
                             ),
                           ),
                         ),
                         Positioned(
                           // areyouconfusedwhattochoosee4y (514:273)
-                          left: 10*fem,
-                          top: 25.2799987793*fem,
+                          left: 10 * fem,
+                          top: 25.2799987793 * fem,
                           child: Align(
                             child: SizedBox(
-                              width: 232*fem,
-                              height: 19*fem,
+                              width: 232 * fem,
+                              height: 19 * fem,
                               child: Text(
                                 'Are you confused what to choose?',
-                                style: SafeGoogleFont (
+                                style: SafeGoogleFont(
                                   'Inter',
-                                  fontSize: 14*ffem,
+                                  fontSize: 14 * ffem,
                                   fontWeight: FontWeight.w500,
-                                  height: 1.3252271925*ffem/fem,
-                                  color: Color(0xffffffff),
+                                  height: 1.3252271925 * ffem / fem,
+                                  color: const Color(0xffffffff),
                                 ),
                               ),
                             ),
@@ -227,22 +244,22 @@ class Webnar extends StatelessWidget {
                         ),
                         Positioned(
                           // callnow6hf (514:274)
-                          left: 10*fem,
-                          top: 50.8818359375*fem,
+                          left: 10 * fem,
+                          top: 50.8818359375 * fem,
                           child: Align(
                             child: SizedBox(
-                              width: 87*fem,
-                              height: 20*fem,
+                              width: 87 * fem,
+                              height: 20 * fem,
                               child: Text(
                                 'CALL NOW',
-                                style: SafeGoogleFont (
+                                style: SafeGoogleFont(
                                   'Inter',
-                                  fontSize: 16*ffem,
+                                  fontSize: 16 * ffem,
                                   fontWeight: FontWeight.w700,
-                                  height: 1.2125*ffem/fem,
+                                  height: 1.2125 * ffem / fem,
                                   decoration: TextDecoration.underline,
-                                  color: Color(0xffffffff),
-                                  decorationColor: Color(0xffffffff),
+                                  color: const Color(0xffffffff),
+                                  decorationColor: const Color(0xffffffff),
                                 ),
                               ),
                             ),
@@ -253,39 +270,42 @@ class Webnar extends StatelessWidget {
                   ),
                   Container(
                     // autogroupcw5oAhX (5rtebVTYjzNrG4PP4gCW5o)
-                    margin: EdgeInsets.fromLTRB(5*fem, 0*fem, 0*fem, 0*fem),
+                    margin:
+                        EdgeInsets.fromLTRB(5 * fem, 0 * fem, 0 * fem, 0 * fem),
                     width: double.infinity,
-                    height: 450.99*fem,
+                    height: 450.99 * fem,
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Container(
                           // autogroupgrizHGM (5rteia65rzfsh9jcXvgRiZ)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 8*fem, 0*fem),
-                          width: 390*fem,
+                          margin: EdgeInsets.fromLTRB(
+                              0 * fem, 0 * fem, 8 * fem, 0 * fem),
+                          width: 390 * fem,
                           height: double.infinity,
                           child: Stack(
                             children: [
                               Positioned(
                                 // group151TF (466:214)
-                                left: 97.3295898438*fem,
-                                top: 189.450012207*fem,
+                                left: 97.3295898438 * fem,
+                                top: 189.450012207 * fem,
                                 child: Container(
-                                  width: 55.8*fem,
-                                  height: 18*fem,
-                                  decoration: BoxDecoration (
-                                    color: Color(0xfff18470),
-                                    borderRadius: BorderRadius.circular(3*fem),
+                                  width: 55.8 * fem,
+                                  height: 18 * fem,
+                                  decoration: BoxDecoration(
+                                    color: const Color(0xfff18470),
+                                    borderRadius:
+                                        BorderRadius.circular(3 * fem),
                                   ),
                                   child: Center(
                                     child: Text(
                                       'Design',
-                                      style: SafeGoogleFont (
+                                      style: SafeGoogleFont(
                                         'Inter',
-                                        fontSize: 11*ffem,
+                                        fontSize: 11 * ffem,
                                         fontWeight: FontWeight.w400,
-                                        height: 1.2125*ffem/fem,
-                                        color: Color(0xffffffff),
+                                        height: 1.2125 * ffem / fem,
+                                        color: const Color(0xffffffff),
                                       ),
                                     ),
                                   ),
@@ -293,88 +313,117 @@ class Webnar extends StatelessWidget {
                               ),
                               Positioned(
                                 // group40TKF (481:338)
-                                left: 0*fem,
-                                top: 0*fem,
+                                left: 0 * fem,
+                                top: 0 * fem,
                                 child: Container(
-                                  padding: EdgeInsets.fromLTRB(10*fem, 10*fem, 10*fem, 21*fem),
-                                  width: 390*fem,
-                                  height: 424.99*fem,
-                                  decoration: BoxDecoration (
-                                    color: Color(0xfffff9ec),
-                                    borderRadius: BorderRadius.circular(10*fem),
+                                  padding: EdgeInsets.fromLTRB(
+                                      10 * fem, 10 * fem, 10 * fem, 21 * fem),
+                                  width: 390 * fem,
+                                  height: 424.99 * fem,
+                                  decoration: BoxDecoration(
+                                    color: const Color(0xfffff9ec),
+                                    borderRadius:
+                                        BorderRadius.circular(10 * fem),
                                   ),
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
                                     children: [
                                       Flexible(
                                         child: Container(
                                           // group37iW5 (481:335)
-                                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 10*fem),
-                                          width: 370*fem,
-                                          height: 200*fem,
+                                          margin: EdgeInsets.fromLTRB(0 * fem,
+                                              0 * fem, 0 * fem, 10 * fem),
+                                          width: 370 * fem,
+                                          height: 200 * fem,
                                           child: Image.asset(
                                             'assets/page-1/images/group-37-TkD.png',
-                                            width: 370*fem,
-                                            height: 200*fem,
+                                            width: 370 * fem,
+                                            height: 200 * fem,
                                           ),
                                         ),
                                       ),
                                       Container(
                                         // group362Fs (481:334)
-                                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 17*fem, 16*fem),
-                                        width: 353*fem,
+                                        margin: EdgeInsets.fromLTRB(0 * fem,
+                                            0 * fem, 17 * fem, 16 * fem),
+                                        width: 353 * fem,
                                         child: Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             GestureDetector(
-                                              onTap: () {     onTapGettingstarted(context);    },
+                                              onTap: () {
+                                                onTapGettingstarted(context);
+                                              },
                                               child: Container(
                                                 // daysbecomeuxdesigneraccordingt (466:228)
-                                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 9.04*fem),
-                                                constraints: BoxConstraints (
-                                                  maxWidth: 289*fem,
+                                                margin: EdgeInsets.fromLTRB(
+                                                    0 * fem,
+                                                    0 * fem,
+                                                    0 * fem,
+                                                    9.04 * fem),
+                                                constraints: BoxConstraints(
+                                                  maxWidth: 289 * fem,
                                                 ),
                                                 child: Text(
                                                   '90 Days Become UX Designer\naccording to new world',
-                                                  style: SafeGoogleFont (
+                                                  style: SafeGoogleFont(
                                                     'Inter',
-                                                    fontSize: 20*ffem,
+                                                    fontSize: 20 * ffem,
                                                     fontWeight: FontWeight.w600,
-                                                    height: 1.2125*ffem/fem,
-                                                    color: Color(0xff41403f),
+                                                    height: 1.2125 * ffem / fem,
+                                                    color:
+                                                        const Color(0xff41403f),
                                                   ),
                                                 ),
                                               ),
                                             ),
                                             Container(
                                               // group32oR3 (481:325)
-                                              margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 260*fem, 8.57*fem),
+                                              margin: EdgeInsets.fromLTRB(
+                                                  0 * fem,
+                                                  0 * fem,
+                                                  260 * fem,
+                                                  8.57 * fem),
                                               width: double.infinity,
                                               child: Row(
-                                                crossAxisAlignment: CrossAxisAlignment.center,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.center,
                                                 children: [
                                                   Container(
                                                     // groupjJh (481:322)
-                                                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 6*fem, 0.37*fem),
-                                                    width: 15*fem,
-                                                    height: 15*fem,
+                                                    margin: EdgeInsets.fromLTRB(
+                                                        0 * fem,
+                                                        0 * fem,
+                                                        6 * fem,
+                                                        0.37 * fem),
+                                                    width: 15 * fem,
+                                                    height: 15 * fem,
                                                     child: Image.asset(
                                                       'assets/page-1/images/group-mkD.png',
-                                                      width: 15*fem,
-                                                      height: 15*fem,
+                                                      width: 15 * fem,
+                                                      height: 15 * fem,
                                                     ),
                                                   ),
                                                   Container(
                                                     // sessions2ob (481:320)
-                                                    margin: EdgeInsets.fromLTRB(0*fem, 0.38*fem, 0*fem, 0*fem),
+                                                    margin: EdgeInsets.fromLTRB(
+                                                        0 * fem,
+                                                        0.38 * fem,
+                                                        0 * fem,
+                                                        0 * fem),
                                                     child: Text(
                                                       '14 Sessions',
-                                                      style: SafeGoogleFont (
+                                                      style: SafeGoogleFont(
                                                         'Inter',
-                                                        fontSize: 12*ffem,
-                                                        fontWeight: FontWeight.w500,
-                                                        height: 1.2125*ffem/fem,
-                                                        color: Color(0xff8d8888),
+                                                        fontSize: 12 * ffem,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                        height:
+                                                            1.2125 * ffem / fem,
+                                                        color: const Color(
+                                                            0xff8d8888),
                                                       ),
                                                     ),
                                                   ),
@@ -383,18 +432,18 @@ class Webnar extends StatelessWidget {
                                             ),
                                             Container(
                                               // companiesofalltypesandsizesrel (481:324)
-                                              constraints: BoxConstraints (
-                                                maxWidth: 353*fem,
-                                                
+                                              constraints: BoxConstraints(
+                                                maxWidth: 353 * fem,
                                               ),
                                               child: Text(
                                                 'Companies of all types and sizes rely on user experience\n(UX) designers to help this will keep our brand \n to get company..',
-                                                style: SafeGoogleFont (
+                                                style: SafeGoogleFont(
                                                   'Inter',
-                                                  fontSize: 13*ffem,
+                                                  fontSize: 13 * ffem,
                                                   fontWeight: FontWeight.w500,
-                                                  height: 1.2125*ffem/fem,
-                                                  color: Color(0xff8e8989),
+                                                  height: 1.2125 * ffem / fem,
+                                                  color:
+                                                      const Color(0xff8e8989),
                                                 ),
                                               ),
                                             ),
@@ -403,37 +452,54 @@ class Webnar extends StatelessWidget {
                                       ),
                                       Container(
                                         // rectangle124cG1 (481:330)
-                                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 11*fem),
+                                        margin: EdgeInsets.fromLTRB(0 * fem,
+                                            0 * fem, 0 * fem, 11 * fem),
                                         width: double.infinity,
-                                        height: 1*fem,
-                                        decoration: BoxDecoration (
-                                          borderRadius: BorderRadius.circular(10*fem),
-                                          color: Color(0xffafafaf),
+                                        height: 1 * fem,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(10 * fem),
+                                          color: const Color(0xffafafaf),
                                         ),
                                       ),
                                       Container(
                                         // group39iZw (481:337)
-                                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 9.5*fem, 0*fem),
+                                        margin: EdgeInsets.fromLTRB(0 * fem,
+                                            0 * fem, 9.5 * fem, 0 * fem),
                                         width: double.infinity,
                                         child: Row(
-                                          crossAxisAlignment: CrossAxisAlignment.end,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.end,
                                           children: [
                                             Container(
                                               // group33rAM (481:331)
-                                              margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 69.5*fem, 0*fem),
-                                              decoration: BoxDecoration (
-                                                borderRadius: BorderRadius.circular(32*fem),
+                                              margin: EdgeInsets.fromLTRB(
+                                                  0 * fem,
+                                                  0 * fem,
+                                                  69.5 * fem,
+                                                  0 * fem),
+                                              decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(
+                                                        32 * fem),
                                               ),
                                               child: Row(
-                                                crossAxisAlignment: CrossAxisAlignment.end,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.end,
                                                 children: [
                                                   Container(
                                                     // rectangle110ARw (466:235)
-                                                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 10*fem, 1*fem),
-                                                    width: 40*fem,
-                                                    height: 40*fem,
+                                                    margin: EdgeInsets.fromLTRB(
+                                                        0 * fem,
+                                                        0 * fem,
+                                                        10 * fem,
+                                                        1 * fem),
+                                                    width: 40 * fem,
+                                                    height: 40 * fem,
                                                     child: ClipRRect(
-                                                      borderRadius: BorderRadius.circular(32*fem),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              32 * fem),
                                                       child: Image.asset(
                                                         'assets/page-1/images/rectangle-110-F8M.png',
                                                         fit: BoxFit.cover,
@@ -443,31 +509,49 @@ class Webnar extends StatelessWidget {
                                                   Container(
                                                     // autogroupts4mftV (5rteytyt5RsUs7feQ3Ts4m)
                                                     child: Column(
-                                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
                                                       children: [
                                                         Container(
                                                           // anshikamehrapWV (466:236)
-                                                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 6*fem),
+                                                          margin: EdgeInsets
+                                                              .fromLTRB(
+                                                                  0 * fem,
+                                                                  0 * fem,
+                                                                  0 * fem,
+                                                                  6 * fem),
                                                           child: Text(
                                                             'Anshika Mehra',
-                                                            style: SafeGoogleFont (
+                                                            style:
+                                                                SafeGoogleFont(
                                                               'Inter',
-                                                              fontSize: 14*ffem,
-                                                              fontWeight: FontWeight.w600,
-                                                              height: 1.2125*ffem/fem,
-                                                              color: Color(0xff41403f),
+                                                              fontSize:
+                                                                  14 * ffem,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w600,
+                                                              height: 1.2125 *
+                                                                  ffem /
+                                                                  fem,
+                                                              color: const Color(
+                                                                  0xff41403f),
                                                             ),
                                                           ),
                                                         ),
                                                         Text(
                                                           // productdesignerwepitchXQu (466:237)
                                                           'Product Designer @WePitch',
-                                                          style: SafeGoogleFont (
+                                                          style: SafeGoogleFont(
                                                             'Inter',
-                                                            fontSize: 11*ffem,
-                                                            fontWeight: FontWeight.w400,
-                                                            height: 1.2125*ffem/fem,
-                                                            color: Color(0xff8d8888),
+                                                            fontSize: 11 * ffem,
+                                                            fontWeight:
+                                                                FontWeight.w400,
+                                                            height: 1.2125 *
+                                                                ffem /
+                                                                fem,
+                                                            color: const Color(
+                                                                0xff8d8888),
                                                           ),
                                                         ),
                                                       ],
@@ -478,12 +562,12 @@ class Webnar extends StatelessWidget {
                                             ),
                                             Container(
                                               // group38rTB (481:336)
-                                              width: 94*fem,
-                                              height: 42*fem,
+                                              width: 94 * fem,
+                                              height: 42 * fem,
                                               child: Image.asset(
                                                 'assets/page-1/images/group-38-D1B.png',
-                                                width: 94*fem,
-                                                height: 42*fem,
+                                                width: 94 * fem,
+                                                height: 42 * fem,
                                               ),
                                             ),
                                           ],
@@ -502,15 +586,14 @@ class Webnar extends StatelessWidget {
                 ],
               ),
             ),
-           
           ],
         ),
       ),
-          );
+    );
   }
+
   void onTapGettingstarted(BuildContext context) {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => WebnarDetail()));
-
-
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => WebnarDetail()));
   }
 }

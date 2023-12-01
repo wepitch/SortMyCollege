@@ -714,53 +714,28 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   Positioned(
-                    // maskgroup4Gq (444:89)
-                    left: 20.3735351562 * fem,
-                    top: 211.169921875 * fem,
-                    child: Align(
+                      top: 195,
                       child: SizedBox(
-                        width: 145 * fem,
-                        height: 107 * fem,
-                        child: Image.asset(
-                          'assets/page-1/images/mask-group-fj7.png',
-                          width: 145 * fem,
-                          height: 107 * fem,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    // maskgroupmBF (444:91)
-                    left: 178.3735351562 * fem,
-                    top: 211.169921875 * fem,
-                    child: Align(
-                      child: SizedBox(
-                        width: 145 * fem,
-                        height: 107 * fem,
-                        child: Image.asset(
-                          'assets/page-1/images/mask-group-PXF.png',
-                          width: 145 * fem,
-                          height: 107 * fem,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    // maskgroup5Bw (444:93)
-                    left: 344.3735351562 * fem,
-                    top: 211.169921875 * fem,
-                    child: Align(
-                      child: SizedBox(
-                        width: 145 * fem,
-                        height: 107 * fem,
-                        child: Image.asset(
-                          'assets/page-1/images/mask-group-8d7.png',
-                          width: 145 * fem,
-                          height: 107 * fem,
-                        ),
-                      ),
-                    ),
-                  ),
+                        height: 107,
+                        width: MediaQuery.sizeOf(context).width,
+                        child: ListView.builder(
+                            itemCount: dummyImagesSlider.length,
+                            scrollDirection: Axis.horizontal,
+                            physics: const BouncingScrollPhysics(),
+                            itemBuilder: (context, index) {
+                              var item = dummyImagesSlider[index];
+                              return Container(
+                                width: 145,
+                                height: 107,
+                                margin: const EdgeInsets.only(left: 20),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    image: DecorationImage(
+                                        fit: BoxFit.cover,
+                                        image: NetworkImage(item))),
+                              );
+                            }),
+                      )),
                   Positioned(
                     // maskgroupUUy (444:85)
                     left: 20.3735351562 * fem,
@@ -830,8 +805,8 @@ class _HomePageState extends State<HomePage> {
   }
 
   void onTapgotocounsellor(BuildContext context) {
-    Navigator.push(context,
-        MaterialPageRoute(builder: (context) => HomePageContainer_2()));
+    Navigator.pushReplacement(context,
+        MaterialPageRoute(builder: (context) => const HomePageContainer_2()));
     //Navigator.push(context, MaterialPageRoute(builder: (context) => Webnar()));
   }
 
