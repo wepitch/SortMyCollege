@@ -1,14 +1,28 @@
+import 'dart:async';
+
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:myapp/page-1/counsellor_select_listview_offline.dart';
 import 'package:myapp/page-1/edulevel.dart';
 
 import '../utils.dart';
 import 'package:lottie/lottie.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 
-class SplashScreen2 extends StatelessWidget {
+import 'login.dart';
+
+class SplashScreen2 extends StatefulWidget {
   const SplashScreen2({super.key});
 
+  @override
+  State<SplashScreen2> createState() => _SplashScreen2State();
+}
+
+class _SplashScreen2State extends State<SplashScreen2> {
+  int selectIndex = 0;
   @override
   Widget build(BuildContext context) {
     var mHeight = MediaQuery.sizeOf(context).height;
@@ -49,83 +63,132 @@ class SplashScreen2 extends StatelessWidget {
               ),
             ),
           ),
-          Container(
-            // makingastudentslifesimple27K (1012:217)
-            margin: const EdgeInsets.symmetric(horizontal: 46),
-            height: mHeight * 0.25,
-            width: mWidth * 0.95,
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-                border: Border.all(
-                  width: 5,
-                  color: const Color(0xff1F0A68),
-                ),
-                borderRadius: BorderRadius.circular(30)),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  // color: Colors.red,
-                  // alignment: Alignment.bottomCenter,
-                  child: AnimatedTextKit(
-                      isRepeatingAnimation: true,
-                      repeatForever: true,
-                      stopPauseOnTap: true,
-                      animatedTexts: [
-                        TyperAnimatedText(
-                          "Making A Student's Life Simple ",
-                          // rotateOut: true,
-                          // textDirection: TextDirection.rtl,
-                          textAlign: TextAlign.center,
-                          // duration: const Duration(seconds: 1),
-                          textStyle: SafeGoogleFont(
-                            'Jost',
-                            fontSize: mHeight * 0.04,
-                            fontWeight: FontWeight.w400,
-                            height: 1.4,
-                            color: const Color(0xff1F0A68),
-                          ),
-                        ),
-                        TyperAnimatedText(
-                          "Sort Your College Life With Us",
+          CarouselSlider.builder(
+              itemCount: sliderTextImages.length,
+              itemBuilder: (context, index, realIndex) {
+                var textImage = sliderTextImages[index];
+                return Container(
+                  padding: EdgeInsets.all(5),
+                  // makingastudentslifesimple27K (1012:217)
+                  margin: const EdgeInsets.symmetric(horizontal: 46),
+                  height: mHeight * 0.25,
+                  width: mWidth * 0.95,
+                  alignment: Alignment.center,
 
-                          textAlign: TextAlign.center,
-                          // rotateOut: true,
-                          // duration: const Duration(seconds: 1),
-                          textStyle: SafeGoogleFont(
-                            'Jost',
-                            fontSize: mHeight * 0.04,
-                            fontWeight: FontWeight.w400,
-                            height: 1.4,
-                            color: const Color(0xff1F0A68),
-                          ),
-                        ),
-                      ]),
-                ),
-                // Expanded(
-                //   child: Container(
-                //     alignment: Alignment.topCenter,
-                //     // group135K6R (1012:218)
-                //     margin: const EdgeInsets.fromLTRB(0, 0, 6.4, 0),
-                //     width: 200.6,
-                //     height: 200.01,
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                        width: 5,
+                        color: const Color(0xff1F0A68),
+                      ),
+                      borderRadius: BorderRadius.circular(30)),
+                  child: Container(
+                    height: mHeight * 0.25,
+                    width: mWidth * 0.95,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(30),
+                        image: DecorationImage(
+                            image: AssetImage(textImage), fit: BoxFit.fill)),
+                  ),
 
-                //     child: ColorFiltered(
-                //       colorFilter: const ColorFilter.mode(
-                //           Color(0xff1F0A68), BlendMode.modulate),
-                //       child: Lottie.asset(
-                //         'assets/animations/loadingdot.json',
-                //         fit: BoxFit.cover,
-                //         alignment: Alignment.topCenter,
-                //       ),
-                //     ),
-                //   ),
-                // ),
-              ],
-            ),
+                  // child: Column(
+                  //   mainAxisAlignment: MainAxisAlignment.center,
+                  //   children: [
+
+                  //     // Container(
+                  //     //   // color: Colors.red,
+                  //     //   // alignment: Alignment.bottomCenter,
+                  //     //   child: AnimatedTextKit(
+                  //     //       isRepeatingAnimation: true,
+                  //     //       repeatForever: true,
+                  //     //       stopPauseOnTap: true,
+                  //     //       animatedTexts: [
+                  //     //         TyperAnimatedText(
+                  //     //           "Making A Student's Life Simple ",
+                  //     //           // rotateOut: true,
+                  //     //           // textDirection: TextDirection.rtl,
+                  //     //           textAlign: TextAlign.center,
+                  //     //           // duration: const Duration(seconds: 1),
+                  //     //           textStyle: SafeGoogleFont(
+                  //     //             'Jost',
+                  //     //             fontSize: mHeight * 0.04,
+                  //     //             fontWeight: FontWeight.w400,
+                  //     //             height: 1.4,
+                  //     //             color: const Color(0xff1F0A68),
+                  //     //           ),
+                  //     //         ),
+                  //     //         TyperAnimatedText(
+                  //     //           "Sort Your College Life With Us",
+
+                  //     //           textAlign: TextAlign.center,
+                  //     //           // rotateOut: true,
+                  //     //           // duration: const Duration(seconds: 1),
+                  //     //           textStyle: SafeGoogleFont(
+                  //     //             'Jost',
+                  //     //             fontSize: mHeight * 0.04,
+                  //     //             fontWeight: FontWeight.w400,
+                  //     //             height: 1.4,
+                  //     //             color: const Color(0xff1F0A68),
+                  //     //           ),
+                  //     //         ),
+                  //     //       ]),
+                  //     // ),
+                  //     // Expanded(
+                  //     //   child: Container(
+                  //     //     alignment: Alignment.topCenter,
+                  //     //     // group135K6R (1012:218)
+                  //     //     margin: const EdgeInsets.fromLTRB(0, 0, 6.4, 0),
+                  //     //     width: 200.6,
+                  //     //     height: 200.01,
+
+                  //     //     child: ColorFiltered(
+                  //     //       colorFilter: const ColorFilter.mode(
+                  //     //           Color(0xff1F0A68), BlendMode.modulate),
+                  //     //       child: Lottie.asset(
+                  //     //         'assets/animations/loadingdot.json',
+                  //     //         fit: BoxFit.cover,
+                  //     //         alignment: Alignment.topCenter,
+                  //     //       ),
+                  //     //     ),
+                  //     //   ),
+                  //     // ),
+                  //   ],
+                  // ),
+                );
+              },
+              options: CarouselOptions(
+                viewportFraction: 1,
+                autoPlay: true,
+                onPageChanged: (index, reason) {
+                  setState(() {
+                    selectIndex = index;
+                  });
+                },
+              )),
+          SizedBox(
+            height: 10,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TabPageSelectorIndicator(
+                  backgroundColor:
+                      selectIndex == 0 ? const Color(0xff1F0A68) : Colors.white,
+                  borderColor: const Color(0xff1F0A68),
+                  size: 10),
+              TabPageSelectorIndicator(
+                  backgroundColor:
+                      selectIndex == 1 ? const Color(0xff1F0A68) : Colors.white,
+                  borderColor: const Color(0xff1F0A68),
+                  size: 10),
+              TabPageSelectorIndicator(
+                  backgroundColor:
+                      selectIndex == 2 ? const Color(0xff1F0A68) : Colors.white,
+                  borderColor: const Color(0xff1F0A68),
+                  size: 10),
+            ],
           ),
           SizedBox(
-            height: mHeight * 0.12,
+            height: mHeight * 0.1,
           ),
           Container(
             // autogroupcwbsQtZ (AXy71GhMBQq3TFBbukcWBs)
@@ -172,29 +235,34 @@ class SplashScreen2 extends StatelessWidget {
             constraints: const BoxConstraints(
                 // maxWidth: 170,
                 ),
-            child: RichText(
-              textAlign: TextAlign.center,
-              text: TextSpan(
-                style: SafeGoogleFont(
-                  'Roboto',
-                  fontSize: 15,
-                  fontWeight: FontWeight.w700,
-                  height: 1.4818749746,
-                  color: const Color(0xff1f0a68),
-                ),
-                children: [
-                  TextSpan(
-                    text: 'Already have an account?\n',
-                    style: SafeGoogleFont(
-                      'Roboto',
-                      fontSize: 19,
-                      fontWeight: FontWeight.w400,
-                      height: 1.4826653059,
-                      color: Colors.black,
-                    ),
+            child: Column(
+              // textAlign: TextAlign.center,
+              // text: TextSpan(
+              //   style: SafeGoogleFont(
+              //     'Roboto',
+              //     fontSize: 15,
+              //     fontWeight: FontWeight.w700,
+              //     height: 1.4818749746,
+              //     color: const Color(0xff1f0a68),
+              //   ),
+              children: [
+                Text(
+                  'Already have an account?',
+                  style: SafeGoogleFont(
+                    'Roboto',
+                    fontSize: 19,
+                    fontWeight: FontWeight.w400,
+                    height: 1.4826653059,
+                    color: Colors.black,
                   ),
-                  TextSpan(
-                    text: 'Sign in',
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Login()));
+                  },
+                  child: Text(
+                    'Sign in',
                     style: SafeGoogleFont(
                       'Roboto',
                       fontSize: 20,
@@ -203,8 +271,8 @@ class SplashScreen2 extends StatelessWidget {
                       color: Colors.black,
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
           SizedBox(
@@ -228,3 +296,9 @@ void onTapGettingstarted(BuildContext context) {
   Navigator.pushReplacement(
       context, MaterialPageRoute(builder: (context) => const EducationLevel()));
 }
+
+List<String> sliderTextImages = [
+  "assets/page-1/images/splash_image1.jpg",
+  "assets/page-1/images/splash_image2.jpg",
+  "assets/page-1/images/splash_image3.jpg",
+];

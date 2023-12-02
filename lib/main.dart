@@ -4,6 +4,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/other/dependency_injection.dart';
 import 'package:myapp/page-1/homepagecontainer.dart';
 import 'package:myapp/page-1/counsellor_details_page.dart';
 import 'package:myapp/page-1/splash-screen.dart';
@@ -89,27 +90,25 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 // import 'package:myapp/page-1/vocational-course-offline-full-view.dart';
 // import 'package:myapp/page-1/share.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  runApp(const MyApp());
+  DependencyInjection.init();
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: const Size(330, 667),
-      builder: (context, child) {
-        return GetMaterialApp(
-            title: 'Flutter',
-            debugShowCheckedModeBanner: false,
-            scrollBehavior: MyCustomScrollBehavior(),
-            theme: ThemeData(
-              primarySwatch: Colors.grey,
-            ),
-            home: Scaffold(
-              body: SplashScreen(),
-            ),
-            builder: EasyLoading.init());
-      },
-    );
+    return GetMaterialApp(
+        title: 'Flutter',
+        debugShowCheckedModeBanner: false,
+        scrollBehavior: MyCustomScrollBehavior(),
+        theme: ThemeData(
+          primarySwatch: Colors.grey,
+        ),
+        home: Scaffold(
+          body: SplashScreen(),
+        ),
+        builder: EasyLoading.init());
   }
 }

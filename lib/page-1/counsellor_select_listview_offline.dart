@@ -1,4 +1,6 @@
 import 'dart:convert';
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:myapp/other/counsellor_details_provider.dart';
 import 'package:myapp/page-1/dashboard_session_page.dart';
 import 'package:provider/provider.dart';
@@ -42,10 +44,14 @@ class _CounsellorListPage_offlineState
   @override
   void initState() {
     super.initState();
-
     ApiService.getCounsellor_Data();
   }
 
+  Future<void> _refresh() {
+    return Future.delayed(const Duration(seconds: 4));
+  }
+
+  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     double baseWidth = 460;
@@ -232,97 +238,186 @@ class _CounsellorListPage_offlineState
                                             )),
                                           ),
                                           Positioned(
+                                              left: 150 * fem,
+                                              bottom: 20 * fem,
+                                              child: Row(
+                                                children: [
+                                                  TabPageSelectorIndicator(
+                                                      backgroundColor:
+                                                          selectedIndex == 0
+                                                              ? const Color(
+                                                                  0xff1F0A68)
+                                                              : Colors.grey,
+                                                      borderColor:
+                                                          Colors.transparent,
+                                                      size: 7),
+                                                  TabPageSelectorIndicator(
+                                                      backgroundColor:
+                                                          selectedIndex == 1
+                                                              ? const Color(
+                                                                  0xff1F0A68)
+                                                              : Colors.grey,
+                                                      borderColor:
+                                                          Colors.transparent,
+                                                      size: 7),
+                                                  TabPageSelectorIndicator(
+                                                      backgroundColor:
+                                                          selectedIndex == 2
+                                                              ? const Color(
+                                                                  0xff1F0A68)
+                                                              : Colors.grey,
+                                                      borderColor:
+                                                          Colors.transparent,
+                                                      size: 7)
+                                                ],
+                                              )),
+                                          Positioned(
                                             // whatentranceexaminationsshould (742:113)
                                             left: 13.28515625 * fem,
                                             top: 27.3145446777 * fem,
                                             child: Align(
+                                              alignment: Alignment.topLeft,
                                               child: SizedBox(
                                                   width: 245 * fem,
                                                   height: 40 * fem,
-                                                  child: AnimatedTextKit(
-                                                      repeatForever: true,
-                                                      animatedTexts: [
-                                                        TypewriterAnimatedText(
-                                                          'What entrance examinations should\ni prepare for?',
-                                                          textStyle:
-                                                              SafeGoogleFont(
-                                                            'Inter',
-                                                            fontSize: 14 * ffem,
-                                                            fontWeight:
-                                                                FontWeight.w500,
-                                                            height:
-                                                                1.3252271925 *
-                                                                    ffem /
-                                                                    fem,
-                                                            color: const Color(
-                                                                0xFF2A2F33),
-                                                          ),
+                                                  child: CarouselSlider(
+                                                    items: [
+                                                      Text(
+                                                        'What entrance examinations should\ni prepare for?',
+                                                        style: SafeGoogleFont(
+                                                          'Inter',
+                                                          fontSize: 14 * ffem,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          height: 1.3252271925 *
+                                                              ffem /
+                                                              fem,
+                                                          color: const Color(
+                                                              0xFF2A2F33),
                                                         ),
-                                                        TypewriterAnimatedText(
-                                                          'JEE?🤔',
-                                                          textStyle:
-                                                              SafeGoogleFont(
-                                                            'Inter',
-                                                            fontSize: 14 * ffem,
-                                                            fontWeight:
-                                                                FontWeight.w500,
-                                                            height:
-                                                                1.3252271925 *
-                                                                    ffem /
-                                                                    fem,
-                                                            color: const Color(
-                                                                0xFF2A2F33),
-                                                          ),
+                                                      ),
+                                                      Text(
+                                                        "Still Confused, Contact our top counsellors",
+                                                        textAlign:
+                                                            TextAlign.left,
+                                                        style: SafeGoogleFont(
+                                                          'Inter',
+                                                          fontSize: 14 * ffem,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          height: 1.3252271925 *
+                                                              ffem /
+                                                              fem,
+                                                          color: const Color(
+                                                              0xFF2A2F33),
                                                         ),
-                                                        TypewriterAnimatedText(
-                                                          'SSC?🤔',
-                                                          textStyle:
-                                                              SafeGoogleFont(
-                                                            'Inter',
-                                                            fontSize: 14 * ffem,
-                                                            fontWeight:
-                                                                FontWeight.w500,
-                                                            height:
-                                                                1.3252271925 *
-                                                                    ffem /
-                                                                    fem,
-                                                            color: const Color(
-                                                                0xFF2A2F33),
-                                                          ),
+                                                      ),
+                                                      Text(
+                                                        'our team will guide you in choosing the right path for you.',
+                                                        style: SafeGoogleFont(
+                                                          'Inter',
+                                                          fontSize: 14 * ffem,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          height: 1.3252271925 *
+                                                              ffem /
+                                                              fem,
+                                                          color: const Color(
+                                                              0xFF2A2F33),
                                                         ),
-                                                        TypewriterAnimatedText(
-                                                          'UPSC?🤔',
-                                                          textStyle:
-                                                              SafeGoogleFont(
-                                                            'Inter',
-                                                            fontSize: 14 * ffem,
-                                                            fontWeight:
-                                                                FontWeight.w500,
-                                                            height:
-                                                                1.3252271925 *
-                                                                    ffem /
-                                                                    fem,
-                                                            color: const Color(
-                                                                0xFF2A2F33),
-                                                          ),
-                                                        ),
-                                                        TypewriterAnimatedText(
-                                                          'our team will guide you in choosing the right path for you. 😊',
-                                                          textStyle:
-                                                              SafeGoogleFont(
-                                                            'Inter',
-                                                            fontSize: 14 * ffem,
-                                                            fontWeight:
-                                                                FontWeight.w500,
-                                                            height:
-                                                                1.3252271925 *
-                                                                    ffem /
-                                                                    fem,
-                                                            color: const Color(
-                                                                0xFF2A2F33),
-                                                          ),
-                                                        ),
-                                                      ])),
+                                                      ),
+                                                    ],
+                                                    options: CarouselOptions(
+                                                        onPageChanged:
+                                                            (index, reason) {
+                                                          setState(() {
+                                                            selectedIndex =
+                                                                index;
+                                                          });
+                                                        },
+                                                        viewportFraction: 1,
+                                                        autoPlay: true),
+                                                  )
+                                                  // child: AnimatedTextKit(
+                                                  //     repeatForever: true,
+                                                  //     animatedTexts: [
+                                                  //       TypewriterAnimatedText(
+                                                  //         'What entrance examinations should\ni prepare for?',
+                                                  //         textStyle:
+                                                  //             SafeGoogleFont(
+                                                  //           'Inter',
+                                                  //           fontSize: 14 * ffem,
+                                                  //           fontWeight:
+                                                  //               FontWeight.w500,
+                                                  //           height: 1.3252271925 *
+                                                  //               ffem /
+                                                  //               fem,
+                                                  //           color: const Color(
+                                                  //               0xFF2A2F33),
+                                                  //         ),
+                                                  //       ),
+                                                  //       TypewriterAnimatedText(
+                                                  //         'JEE?🤔',
+                                                  //         textStyle:
+                                                  //             SafeGoogleFont(
+                                                  //           'Inter',
+                                                  //           fontSize: 14 * ffem,
+                                                  //           fontWeight:
+                                                  //               FontWeight.w500,
+                                                  //           height: 1.3252271925 *
+                                                  //               ffem /
+                                                  //               fem,
+                                                  //           color: const Color(
+                                                  //               0xFF2A2F33),
+                                                  //         ),
+                                                  //       ),
+                                                  //       TypewriterAnimatedText(
+                                                  //         'SSC?🤔',
+                                                  //         textStyle:
+                                                  //             SafeGoogleFont(
+                                                  //           'Inter',
+                                                  //           fontSize: 14 * ffem,
+                                                  //           fontWeight:
+                                                  //               FontWeight.w500,
+                                                  //           height: 1.3252271925 *
+                                                  //               ffem /
+                                                  //               fem,
+                                                  //           color: const Color(
+                                                  //               0xFF2A2F33),
+                                                  //         ),
+                                                  //       ),
+                                                  //       TypewriterAnimatedText(
+                                                  //         'UPSC?🤔',
+                                                  //         textStyle:
+                                                  //             SafeGoogleFont(
+                                                  //           'Inter',
+                                                  //           fontSize: 14 * ffem,
+                                                  //           fontWeight:
+                                                  //               FontWeight.w500,
+                                                  //           height: 1.3252271925 *
+                                                  //               ffem /
+                                                  //               fem,
+                                                  //           color: const Color(
+                                                  //               0xFF2A2F33),
+                                                  //         ),
+                                                  //       ),
+                                                  //       TypewriterAnimatedText(
+                                                  //         'our team will guide you in choosing the right path for you. 😊',
+                                                  //         textStyle:
+                                                  //             SafeGoogleFont(
+                                                  //           'Inter',
+                                                  //           fontSize: 14 * ffem,
+                                                  //           fontWeight:
+                                                  //               FontWeight.w500,
+                                                  //           height: 1.3252271925 *
+                                                  //               ffem /
+                                                  //               fem,
+                                                  //           color: const Color(
+                                                  //               0xFF2A2F33),
+                                                  //         ),
+                                                  //       ),
+                                                  //     ]),
+                                                  ),
                                             ),
                                           ),
                                           Positioned(

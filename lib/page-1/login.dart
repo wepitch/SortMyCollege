@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:myapp/utils.dart';
 
 import '../model/response_model.dart';
@@ -26,13 +27,11 @@ class _Login extends State<Login> {
   final emailcontroller = TextEditingController();
   String _errorMessage = '';
 
-
   @override
   void initState() {
     super.initState();
     configLoading();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +43,7 @@ class _Login extends State<Login> {
       child: Container(
         // logindSh (437:98)
         width: double.infinity,
-        decoration: const BoxDecoration (
+        decoration: const BoxDecoration(
           color: Color(0xffffffff),
         ),
         child: Column(
@@ -52,14 +51,15 @@ class _Login extends State<Login> {
           children: [
             Container(
               // autogroupbax3xUy (AXyDhFDYztWoAJJL4EbaX3)
-              margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 50*fem),
-              padding: EdgeInsets.fromLTRB(60*fem, 142*fem, 76*fem, 85*fem),
+              margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 0),
+              padding:
+                  EdgeInsets.fromLTRB(60 * fem, 142 * fem, 76 * fem, 85 * fem),
               width: double.infinity,
-              decoration: BoxDecoration (
-                color: Color(0xffffffff),
-                borderRadius: BorderRadius.only (
-                  topLeft: Radius.circular(50*fem),
-                  topRight: Radius.circular(50*fem),
+              decoration: BoxDecoration(
+                color: const Color(0xffffffff),
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(50 * fem),
+                  topRight: Radius.circular(50 * fem),
                 ),
               ),
               child: Column(
@@ -67,9 +67,10 @@ class _Login extends State<Login> {
                 children: [
                   Container(
                     // sortmycollegelogo1qHs (1061:7)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 24*fem),
-                    width: 294*fem,
-                    height: 80*fem,
+                    margin: EdgeInsets.fromLTRB(
+                        0 * fem, 0 * fem, 0 * fem, 24 * fem),
+                    width: 294 * fem,
+                    height: 80 * fem,
                     child: Image.asset(
                       'assets/page-1/images/sortmycollege-logo-1-b8D.png',
                       fit: BoxFit.cover,
@@ -77,16 +78,17 @@ class _Login extends State<Login> {
                   ),
                   Container(
                     // sortyourentirecollegejourneykf (1061:9)
-                    margin: EdgeInsets.fromLTRB(22*fem, 0*fem, 0*fem, 0*fem),
+                    margin: EdgeInsets.fromLTRB(
+                        22 * fem, 0 * fem, 0 * fem, 0 * fem),
                     child: Text(
                       'Sort Your Entire College Journey!',
                       textAlign: TextAlign.center,
-                      style: SafeGoogleFont (
+                      style: SafeGoogleFont(
                         'Roboto',
-                        fontSize: 16*ffem,
+                        fontSize: 16 * ffem,
                         fontWeight: FontWeight.w700,
-                        height: 1.1725*ffem/fem,
-                        color: Color(0xff1f0a68),
+                        height: 1.1725 * ffem / fem,
+                        color: const Color(0xff1f0a68),
                       ),
                     ),
                   ),
@@ -95,18 +97,18 @@ class _Login extends State<Login> {
             ),
             Container(
               // welcomeback4RX (437:112)
-              margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 1*fem, 12*fem),
+              margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 1 * fem, 12 * fem),
               child: Text(
                 'Welcome Back!',
                 textAlign: TextAlign.center,
-                style: SafeGoogleFont (
+                style: SafeGoogleFont(
                   'Roboto',
-                  fontSize: 22*ffem,
+                  fontSize: 22 * ffem,
                   fontWeight: FontWeight.w600,
-                  height: 1.1725*ffem/fem,
+                  height: 1.1725 * ffem / fem,
                   decoration: TextDecoration.underline,
-                  color: Color(0xff000000),
-                  decorationColor: Color(0xff000000),
+                  color: const Color(0xff000000),
+                  decorationColor: const Color(0xff000000),
                 ),
               ),
             ),
@@ -114,17 +116,18 @@ class _Login extends State<Login> {
               // pleaselogintoyourexistingaccou (437:111)
               'Please Log into your existing account',
               textAlign: TextAlign.center,
-              style: SafeGoogleFont (
+              style: SafeGoogleFont(
                 'Roboto',
-                fontSize: 15*ffem,
+                fontSize: 15 * ffem,
                 fontWeight: FontWeight.w400,
-                height: 1.1725*ffem/fem,
-                color: Color(0xff000000),
+                height: 1.1725 * ffem / fem,
+                color: const Color(0xff000000),
               ),
             ),
             Container(
               // autogroupy8wsuS9 (AXyE5uEUBhrUYbR5AEY8ws)
-              padding: EdgeInsets.fromLTRB(60*fem, 37*fem, 60*fem, 91*fem),
+              padding:
+                  EdgeInsets.fromLTRB(60 * fem, 37 * fem, 60 * fem, 91 * fem),
               width: double.infinity,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -137,8 +140,8 @@ class _Login extends State<Login> {
                         15 * fem, 15 * fem, 15 * fem, 13 * fem),
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      border: Border.all(color: Color(0xff000000)),
-                      color: Color(0xfffffcfc),
+                      border: Border.all(color: const Color(0xff000000)),
+                      color: const Color(0xfffffcfc),
                       borderRadius: BorderRadius.circular(5 * fem),
                     ),
                     child: SizedBox(
@@ -151,20 +154,19 @@ class _Login extends State<Login> {
                           LengthLimitingTextInputFormatter(40),
                         ],
                         decoration: const InputDecoration(
-                          hintStyle: TextStyle(color: Colors.black, fontSize: 15.0),
+                          hintStyle:
+                              TextStyle(color: Colors.black, fontSize: 15.0),
                           hintText: "Enter Your Email",
                           border: InputBorder.none,
                           focusedBorder: InputBorder.none,
                         ),
-
                         style: SafeGoogleFont(
                           'Roboto',
                           fontSize: 18 * ffem,
                           fontWeight: FontWeight.w400,
                           height: 1.1810 * ffem / fem,
-                          color: Color(0xff000000),
+                          color: const Color(0xff000000),
                         ),
-
                       ),
                     ),
                   ),
@@ -176,8 +178,8 @@ class _Login extends State<Login> {
                         15 * fem, 15 * fem, 15 * fem, 13 * fem),
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      border: Border.all(color: Color(0xff000000)),
-                      color: Color(0xfffffcfc),
+                      border: Border.all(color: const Color(0xff000000)),
+                      color: const Color(0xfffffcfc),
                       borderRadius: BorderRadius.circular(10 * fem),
                     ),
                     child: SizedBox(
@@ -190,12 +192,12 @@ class _Login extends State<Login> {
                           LengthLimitingTextInputFormatter(10),
                         ],
                         decoration: const InputDecoration(
-                          hintStyle: TextStyle(color: Colors.black, fontSize: 15.0),
+                          hintStyle:
+                              TextStyle(color: Colors.black, fontSize: 15.0),
                           hintText: "Enter your Phone Number",
                           border: InputBorder.none,
                           focusedBorder: InputBorder.none,
                         ),
-
                         style: SafeGoogleFont(
                           'Roboto',
                           fontSize: 18 * ffem,
@@ -203,46 +205,48 @@ class _Login extends State<Login> {
                           height: 1.1525 * ffem / fem,
                           color: const Color(0xff000000),
                         ),
-
                       ),
                     ),
                   ),
                   Container(
                     // autogroupb1cmwGM (AXyDxzGKdcnpJKxVY5B1cM)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 39*fem),
+                    margin: EdgeInsets.fromLTRB(
+                        0 * fem, 0 * fem, 0 * fem, 39 * fem),
                     width: double.infinity,
-                    height: 45*fem,
-                    decoration: BoxDecoration (
-                      color: Color(0xff1f0a68),
-                      borderRadius: BorderRadius.circular(10*fem),
+                    height: 45 * fem,
+                    decoration: BoxDecoration(
+                      color: const Color(0xff1f0a68),
+                      borderRadius: BorderRadius.circular(10 * fem),
                     ),
                     child: Center(
                       child: GestureDetector(
                         onTap: () {
-                          if (check_val())
-                          {
-                            ApiService().call_otp_2(email: emailcontroller.text.toString().trim()).then((
-                                value) async{
-                              if(value["message"] == "Email sent successfully")
-                              {
+                          if (check_val()) {
+                            ApiService()
+                                .call_otp_2(
+                                    email:
+                                        emailcontroller.text.toString().trim())
+                                .then((value) async {
+                              if (value["message"] ==
+                                  "Email sent successfully") {
                                 onTapGettingstarted(context);
-                              }
-                              else{
+                              } else {
                                 EasyLoading.showToast("error",
-                                    toastPosition: EasyLoadingToastPosition.bottom);
+                                    toastPosition:
+                                        EasyLoadingToastPosition.bottom);
                               }
                             });
                           }
-                       },
+                        },
                         child: Text(
                           'Log in',
                           textAlign: TextAlign.center,
-                          style: SafeGoogleFont (
+                          style: SafeGoogleFont(
                             'Roboto',
-                            fontSize: 20*ffem,
+                            fontSize: 20 * ffem,
                             fontWeight: FontWeight.w400,
-                            height: 1.1725*ffem/fem,
-                            color: Color(0xffffffff),
+                            height: 1.1725 * ffem / fem,
+                            color: const Color(0xffffffff),
                           ),
                         ),
                       ),
@@ -250,44 +254,93 @@ class _Login extends State<Login> {
                   ),
                   Container(
                     // rectangle64brh (437:119)
-                    margin: EdgeInsets.fromLTRB(80*fem, 0*fem, 80*fem, 37*fem),
+                    margin: EdgeInsets.fromLTRB(80 * fem, 0 * fem, 80 * fem, 0),
                     width: double.infinity,
-                    height: 1*fem,
-                    decoration: BoxDecoration (
-                      borderRadius: BorderRadius.circular(10*fem),
-                      color: Color(0xff000000),
+                    height: 1 * fem,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10 * fem),
+                      color: const Color(0xff000000),
                     ),
+                  ),
+                  SizedBox(
+                    height: 11,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: 45,
+                        width: 45,
+                        child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                shape: const CircleBorder(),
+                                backgroundColor: Colors.white),
+                            onPressed: () async {
+                              await GoogleSignIn(scopes: [
+                                "email",
+                                'https://www.googleapis.com/auth/contacts.readonly'
+                              ]).signIn();
+                            },
+                            child: Image.asset(
+                              "assets/page-1/images/google.png",
+                              // fit: BoxFit.cover,
+                              height: 50,
+                              width: 50,
+                            )),
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      SizedBox(
+                        height: 45,
+                        width: 45,
+                        child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                shape: const CircleBorder(),
+                                backgroundColor: Colors.white),
+                            onPressed: () {},
+                            child: Image.asset(
+                              "assets/page-1/images/facebook.png",
+                              // fit: BoxFit.fill,
+                              height: 30,
+                              width: 30,
+                            )),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 11,
                   ),
                   RichText(
                     // donthaveanaccountsignupigR (437:120)
                     textAlign: TextAlign.center,
                     text: TextSpan(
-                      style: SafeGoogleFont (
+                      style: SafeGoogleFont(
                         'Inter',
-                        fontSize: 15*ffem,
+                        fontSize: 15 * ffem,
                         fontWeight: FontWeight.w400,
-                        height: 1.5303726196*ffem/fem,
-                        color: Color(0xff000000),
+                        height: 1.5303726196 * ffem / fem,
+                        color: const Color(0xff000000),
                       ),
                       children: [
                         TextSpan(
                           text: 'Don’t have an account? ',
-                          style: SafeGoogleFont (
+                          style: SafeGoogleFont(
                             'Roboto',
-                            fontSize: 15*ffem,
+                            fontSize: 15 * ffem,
                             fontWeight: FontWeight.w400,
-                            height: 1.4826653059*ffem/fem,
-                            color: Color(0xff000000),
+                            height: 1.4826653059 * ffem / fem,
+                            color: const Color(0xff000000),
                           ),
                         ),
                         TextSpan(
                           text: 'Sign up',
-                          style: SafeGoogleFont (
+                          style: SafeGoogleFont(
                             'Roboto',
-                            fontSize: 17*ffem,
+                            fontSize: 17 * ffem,
                             fontWeight: FontWeight.w700,
-                            height: 1.4826653059*ffem/fem,
-                            color: Color(0xff000000),
+                            height: 1.4826653059 * ffem / fem,
+                            color: const Color(0xff000000),
                           ),
                         ),
                       ],
@@ -299,16 +352,17 @@ class _Login extends State<Login> {
           ],
         ),
       ),
-          );
+    );
   }
-
-
 
   void onTapGettingstarted(BuildContext context) {
     //Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => HomePage()),(route) => false);
-    Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => Otp(emailcontroller.text.toString())),(route) => false);
+    Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(
+            builder: (context) => Otp(emailcontroller.text.toString())),
+        (route) => false);
   }
-
 
   bool validateMobile(String value) {
     String patttern = r'(^(?:[+0]9)?[0-9]{10,12}$)';
@@ -322,7 +376,7 @@ class _Login extends State<Login> {
   bool check_val() {
     bool isvaluevalid = true;
 
-   /* if(_nameController.text.toString().trim().isEmpty){
+    /* if(_nameController.text.toString().trim().isEmpty){
       EasyLoading.showToast(AppConstants.fullnameerror,
           toastPosition: EasyLoadingToastPosition.bottom);
       isvaluevalid = false;
@@ -332,15 +386,11 @@ class _Login extends State<Login> {
       EasyLoading.showToast(AppConstants.USER_EMAIL,
           toastPosition: EasyLoadingToastPosition.bottom);
       isvaluevalid = false;
-    }
-
-    else if (phonecontroller.text.toString().trim().isEmpty) {
+    } else if (phonecontroller.text.toString().trim().isEmpty) {
       EasyLoading.showToast(AppConstants.phoneerror,
           toastPosition: EasyLoadingToastPosition.bottom);
       isvaluevalid = false;
-    }
-
-    else if (validateMobile(phonecontroller.text.toString().trim())) {
+    } else if (validateMobile(phonecontroller.text.toString().trim())) {
       EasyLoading.showToast(AppConstants.phonenotvalid,
           toastPosition: EasyLoadingToastPosition.bottom);
       isvaluevalid = false;
@@ -362,17 +412,14 @@ class _Login extends State<Login> {
       ..dismissOnTap = false;
   }
 
-
-  bool isEmail(String em)
-  {
+  bool isEmail(String em) {
     bool isvaluevalid = false;
-    String p = r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+    String p =
+        r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
     RegExp regExp = new RegExp(p);
-    if(regExp.hasMatch(em))
-     {
-       isvaluevalid = true;
-     }
-    else{
+    if (regExp.hasMatch(em)) {
+      isvaluevalid = true;
+    } else {
       EasyLoading.showToast(AppConstants.valid_email,
           toastPosition: EasyLoadingToastPosition.bottom);
       isvaluevalid = false;
@@ -380,16 +427,9 @@ class _Login extends State<Login> {
     return isvaluevalid;
   }
 
-
-
-
-
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
     throw UnimplementedError();
   }
-
-
-
 }

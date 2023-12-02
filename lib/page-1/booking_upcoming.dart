@@ -266,7 +266,7 @@ class BookingUpcoming extends StatelessWidget {
                                   RichText(
                                       text: TextSpan(children: <TextSpan>[
                                     TextSpan(
-                                        text: "10:44",
+                                        text: "2:00",
                                         style: SafeGoogleFont("Inter",
                                             fontWeight: FontWeight.w600,
                                             fontSize: 20,
@@ -305,7 +305,7 @@ class BookingUpcoming extends StatelessWidget {
                                                     const BookingConfirmationPage(
                                                         isUpcoming: true,
                                                         isConfirmed: true,
-                                                        time: "10:44")));
+                                                        time: "2:00")));
                                       },
                                       child: Container(
                                           decoration: BoxDecoration(

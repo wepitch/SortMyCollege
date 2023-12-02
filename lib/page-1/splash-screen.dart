@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/other/counsellor_details_provider.dart';
+import 'package:myapp/page-1/counsellor_details_page2.dart';
 import 'package:myapp/page-1/selectdob.dart';
 import 'package:myapp/page-1/selectgender.dart';
 import 'package:myapp/page-1/splash_screen_2.dart';
 import 'package:myapp/page-1/welcome-screen.dart';
 import 'package:myapp/utils.dart';
+import 'package:provider/provider.dart';
 
 import 'counsellor_select_listview_offline.dart';
 import 'edulevel.dart';
@@ -55,7 +58,7 @@ class SplashScreen extends StatelessWidget {
                   fontSize: 16 * ffem,
                   fontWeight: FontWeight.w700,
                   height: 1.1725 * ffem / fem,
-                  color: Color(0xff1f0a68),
+                  color: const Color(0xff1f0a68),
                 ),
               ),
             ),
@@ -83,7 +86,7 @@ class SplashScreen extends StatelessWidget {
                   fontSize: 32 * ffem,
                   fontWeight: FontWeight.w400,
                   height: 1.2175 * ffem / fem,
-                  color: Color(0xff000000),
+                  color: const Color(0xff000000),
                 ),
               ),
             ),
@@ -106,11 +109,11 @@ class SplashScreen extends StatelessWidget {
               width: double.infinity,
               height: 44 * fem,
               decoration: BoxDecoration(
-                color: Color(0xff1f0a68),
+                color: const Color(0xff1f0a68),
                 borderRadius: BorderRadius.circular(10 * fem),
                 boxShadow: [
                   BoxShadow(
-                    color: Color(0x3f000000),
+                    color: const Color(0x3f000000),
                     offset: Offset(2 * fem, 3 * fem),
                     blurRadius: 1.5 * fem,
                   ),
@@ -129,7 +132,7 @@ class SplashScreen extends StatelessWidget {
                       fontSize: 20 * ffem,
                       fontWeight: FontWeight.w500,
                       height: 1.1725 * ffem / fem,
-                      color: Color(0xffffffff),
+                      color: const Color(0xffffffff),
                     ),
                   ),
                 ),
@@ -149,7 +152,7 @@ class SplashScreen extends StatelessWidget {
                     fontSize: 15 * ffem,
                     fontWeight: FontWeight.w700,
                     height: 1.4818749746 * ffem / fem,
-                    color: Color(0xff1f0a68),
+                    color: const Color(0xff1f0a68),
                   ),
                   children: [
                     TextSpan(
@@ -159,7 +162,7 @@ class SplashScreen extends StatelessWidget {
                         fontSize: 15 * ffem,
                         fontWeight: FontWeight.w400,
                         height: 1.4826653059 * ffem / fem,
-                        color: Color(0xff1f0a68),
+                        color: const Color(0xff1f0a68),
                       ),
                     ),
                     TextSpan(
@@ -169,7 +172,7 @@ class SplashScreen extends StatelessWidget {
                         fontSize: 17 * ffem,
                         fontWeight: FontWeight.w700,
                         height: 1.4826653059 * ffem / fem,
-                        color: Color(0xff1f0a68),
+                        color: const Color(0xff1f0a68),
                       ),
                     ),
                   ],
@@ -184,8 +187,8 @@ class SplashScreen extends StatelessWidget {
 
   void onTapGettingstarted(BuildContext context) {
     //Navigator.push(context, MaterialPageRoute(builder: (context) => HomePageContainer()));
-    Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => SplashScreen2()));
+    Navigator.pushReplacement(context,
+        MaterialPageRoute(builder: (context) => const SplashScreen2()));
 
     //Navigator.push(context, MaterialPageRoute(builder: (context) => EducationLevel()));
   }
