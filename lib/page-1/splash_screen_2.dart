@@ -36,8 +36,8 @@ class _SplashScreen2State extends State<SplashScreen2> {
         children: [
           Container(
             // sortmycollegelogo1WFT (1115:272)
-            width: mWidth * 0.8,
-            height: mHeight * 0.1,
+            width: mWidth * 0.7,
+            height: mHeight * 0.08,
             padding: const EdgeInsets.all(0),
 
             margin: EdgeInsets.fromLTRB(0, mHeight * 0.12, 0, 24),
@@ -71,7 +71,7 @@ class _SplashScreen2State extends State<SplashScreen2> {
                   padding: EdgeInsets.all(5),
                   // makingastudentslifesimple27K (1012:217)
                   margin: const EdgeInsets.symmetric(horizontal: 46),
-                  height: mHeight * 0.25,
+                  // height: 50,
                   width: mWidth * 0.95,
                   alignment: Alignment.center,
 
@@ -82,8 +82,8 @@ class _SplashScreen2State extends State<SplashScreen2> {
                       ),
                       borderRadius: BorderRadius.circular(30)),
                   child: Container(
-                    height: mHeight * 0.25,
-                    width: mWidth * 0.95,
+                    // height: mHeight * 0.1,
+                    // width: mWidth * 0.95,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
                         image: DecorationImage(
@@ -157,6 +157,7 @@ class _SplashScreen2State extends State<SplashScreen2> {
               },
               options: CarouselOptions(
                 viewportFraction: 1,
+                height: 190,
                 autoPlay: true,
                 onPageChanged: (index, reason) {
                   setState(() {
@@ -193,14 +194,14 @@ class _SplashScreen2State extends State<SplashScreen2> {
           Container(
             // autogroupcwbsQtZ (AXy71GhMBQq3TFBbukcWBs)
             // margin: const EdgeInsets.fromLTRB(72.5, 0, 80.5, 33),
-            width: 228,
-            height: 44,
+            width: 210,
+            height: 42,
 
             decoration: BoxDecoration(
               color: const Color(0xff1f0a68),
               borderRadius: BorderRadius.circular(10),
-              boxShadow: [
-                const BoxShadow(
+              boxShadow: const [
+                BoxShadow(
                   color: Color(0x3f000000),
                   offset: Offset(2, 3),
                   blurRadius: 1.5,

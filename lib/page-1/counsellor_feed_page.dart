@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/model/counsellor_feed_model.dart';
 import 'package:myapp/other/constants.dart';
+import 'package:myapp/page-1/counsellor_details_page.dart';
 
 import '../utils.dart';
 
 class CounsellorFeedPage extends StatefulWidget {
-  const CounsellorFeedPage({super.key, required this.name});
+  const CounsellorFeedPage({super.key, required this.name, required this.id});
   final String name;
+  final String id;
 
   @override
   State<CounsellorFeedPage> createState() => _CounsellorFeedPageState();
@@ -33,92 +35,101 @@ class _CounsellorFeedPageState extends State<CounsellorFeedPage>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: const Color(0xff1F0A68),
-        foregroundColor: Colors.white,
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 0, top: 18, bottom: 18),
-          child: GestureDetector(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: Image.asset(
-              'assets/page-1/images/back-rNM.png',
+    return WillPopScope(
+      onWillPop: () {
+        return _onBackPressed(context, widget.id);
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: const Color(0xff1F0A68),
+          foregroundColor: Colors.white,
+          leading: Padding(
+            padding: const EdgeInsets.only(left: 0, top: 18, bottom: 18),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Image.asset(
+                'assets/page-1/images/back-rNM.png',
+              ),
             ),
           ),
+          titleSpacing: -5,
+          title: Text(
+            widget.name,
+            style: SafeGoogleFont("Inter",
+                fontSize: 22, fontWeight: FontWeight.w600),
+          ),
+          shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(20),
+          )),
         ),
-        titleSpacing: -5,
-        title: Text(
-          widget.name,
-          style: SafeGoogleFont("Inter",
-              fontSize: 22, fontWeight: FontWeight.w600),
+        body: Column(
+          children: [
+            const SizedBox(
+              height: 20,
+            ),
+            Container(
+              color: Colors.grey.withOpacity(0.2),
+              child: TabBar(
+                  indicatorColor: const Color(0xff1F0A68),
+                  indicatorWeight: 3,
+                  controller: _controller,
+                  onTap: (value) {
+                    if (value == 0) {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  CounsellorDetialsPage(id: widget.id)));
+                    }
+                  },
+                  tabs: [
+                    Tab(
+                      child: Text(
+                        "Info",
+                        style: SafeGoogleFont("Inter",
+                            fontSize: 16, fontWeight: FontWeight.w500),
+                      ),
+                    ),
+                    Tab(
+                      child: Text(
+                        "Feed",
+                        style: SafeGoogleFont("Inter",
+                            fontSize: 16, fontWeight: FontWeight.w500),
+                      ),
+                    ),
+                  ]),
+            ),
+            const SizedBox(
+              height: 18,
+            ),
+            Expanded(
+                child: ListView.builder(
+                    itemCount: dummyData.length,
+                    itemBuilder: (context, index) {
+                      var data = dummyData[index];
+                      return Column(
+                        children: [
+                          counsellorFeedPost(
+                              context: context,
+                              postDetails: CounsellorPostModel(
+                                  name: widget.name,
+                                  role: data.role,
+                                  postTitle: data.postTitle,
+                                  profilePic: data.profilePic,
+                                  postPic: data.postPic)),
+                          Container(
+                            height: 0.5,
+                            width: double.infinity,
+                            color: Colors.black,
+                          )
+                        ],
+                      );
+                    }))
+          ],
         ),
-        shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(
-          bottom: Radius.circular(20),
-        )),
-      ),
-      body: Column(
-        children: [
-          const SizedBox(
-            height: 20,
-          ),
-          Container(
-            color: Colors.grey.withOpacity(0.2),
-            child: TabBar(
-                indicatorColor: const Color(0xff1F0A68),
-                indicatorWeight: 3,
-                controller: _controller,
-                onTap: (value) {
-                  if (value == 0) {
-                    Navigator.pop(context);
-                  }
-                },
-                tabs: [
-                  Tab(
-                    child: Text(
-                      "Info",
-                      style: SafeGoogleFont("Inter",
-                          fontSize: 16, fontWeight: FontWeight.w500),
-                    ),
-                  ),
-                  Tab(
-                    child: Text(
-                      "Feed",
-                      style: SafeGoogleFont("Inter",
-                          fontSize: 16, fontWeight: FontWeight.w500),
-                    ),
-                  ),
-                ]),
-          ),
-          const SizedBox(
-            height: 18,
-          ),
-          Expanded(
-              child: ListView.builder(
-                  itemCount: dummyData.length,
-                  itemBuilder: (context, index) {
-                    var data = dummyData[index];
-                    return Column(
-                      children: [
-                        counsellorFeedPost(
-                            context: context,
-                            postDetails: CounsellorPostModel(
-                                name: widget.name,
-                                role: data.role,
-                                postTitle: data.postTitle,
-                                profilePic: data.profilePic,
-                                postPic: data.postPic)),
-                        Container(
-                          height: 0.5,
-                          width: double.infinity,
-                          color: Colors.black,
-                        )
-                      ],
-                    );
-                  }))
-        ],
       ),
     );
   }
@@ -285,3 +296,9 @@ List<CounsellorPostModel> dummyData = [
       postPic:
           "https://media.istockphoto.com/photos/confident-teenage-girl-standing-with-arms-crossed-picture-id638756224"),
 ];
+
+Future<bool> _onBackPressed(BuildContext context, String id) async {
+  Navigator.pushReplacement(context,
+      MaterialPageRoute(builder: (context) => CounsellorDetialsPage(id: id)));
+  return true;
+}

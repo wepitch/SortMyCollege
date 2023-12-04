@@ -145,7 +145,7 @@ class _Login extends State<Login> {
                       borderRadius: BorderRadius.circular(5 * fem),
                     ),
                     child: SizedBox(
-                      height: 30,
+                      height: 16,
                       child: TextFormField(
                         cursorColor: Colors.black,
                         controller: emailcontroller,
@@ -156,8 +156,9 @@ class _Login extends State<Login> {
                         decoration: const InputDecoration(
                           hintStyle:
                               TextStyle(color: Colors.black, fontSize: 15.0),
-                          hintText: "Enter Your Email",
+                          hintText: "Enter Your Full name",
                           border: InputBorder.none,
+                          contentPadding: EdgeInsets.only(bottom: 12),
                           focusedBorder: InputBorder.none,
                         ),
                         style: SafeGoogleFont(
@@ -183,7 +184,7 @@ class _Login extends State<Login> {
                       borderRadius: BorderRadius.circular(10 * fem),
                     ),
                     child: SizedBox(
-                      height: 30,
+                      height: 16,
                       child: TextFormField(
                         cursorColor: Colors.black,
                         controller: phonecontroller,
@@ -192,6 +193,7 @@ class _Login extends State<Login> {
                           LengthLimitingTextInputFormatter(10),
                         ],
                         decoration: const InputDecoration(
+                          contentPadding: EdgeInsets.only(bottom: 12),
                           hintStyle:
                               TextStyle(color: Colors.black, fontSize: 15.0),
                           hintText: "Enter your Phone Number",
@@ -275,12 +277,7 @@ class _Login extends State<Login> {
                             style: ElevatedButton.styleFrom(
                                 shape: const CircleBorder(),
                                 backgroundColor: Colors.white),
-                            onPressed: () async {
-                              await GoogleSignIn(scopes: [
-                                "email",
-                                'https://www.googleapis.com/auth/contacts.readonly'
-                              ]).signIn();
-                            },
+                            onPressed: () async {},
                             child: Image.asset(
                               "assets/page-1/images/google.png",
                               // fit: BoxFit.cover,

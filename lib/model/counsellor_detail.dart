@@ -84,7 +84,7 @@ class CounsellorDetail {
 }
 
 class Location {
-  int? pincode;
+  String? pincode;
   String? city;
   String? state;
   String? country;

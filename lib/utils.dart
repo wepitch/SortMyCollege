@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
 
 class MyCustomScrollBehavior extends MaterialScrollBehavior {
   @override
@@ -78,5 +79,23 @@ TextStyle SafeGoogleFont(
       decorationStyle: decorationStyle,
       decorationThickness: decorationThickness,
     );
+  }
+}
+
+class SessionDate {
+  static DateTime now = DateTime.now();
+  static String todayDate = DateFormat("d MMM").format(now);
+
+  final List<String> dates = [
+    todayDate,
+  ];
+
+  void getDates() {
+    print(todayDate[0]);
+    for (int i = 1; i <= 7; i++) {
+      String date = todayDate.replaceFirst(
+          todayDate[0], (int.parse(todayDate[0]) + (i)).toString());
+      dates.add(date);
+    }
   }
 }

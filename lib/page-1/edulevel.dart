@@ -23,8 +23,8 @@ class _EducationLevelState extends State<EducationLevel> {
             children: [
               Container(
                 // sortmycollegelogo1WFT (1115:272)
-                width: 294,
-                height: 80,
+                width: 274,
+                height: 70,
                 padding: const EdgeInsets.all(0),
 
                 margin: const EdgeInsets.fromLTRB(0, 0, 0, 24),
@@ -43,7 +43,7 @@ class _EducationLevelState extends State<EducationLevel> {
                   textAlign: TextAlign.center,
                   style: SafeGoogleFont(
                     'Roboto',
-                    fontSize: 16,
+                    fontSize: 15,
                     fontWeight: FontWeight.w700,
                     height: 1.1725,
                     color: const Color(0xff1f0a68),
@@ -54,7 +54,7 @@ class _EducationLevelState extends State<EducationLevel> {
                 "Choose your Education Level",
                 style: SafeGoogleFont(
                   "Montserrat",
-                  fontSize: 20,
+                  fontSize: 19,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -112,8 +112,8 @@ Widget customButton(
   return Padding(
     padding: const EdgeInsets.only(bottom: 22),
     child: SizedBox(
-      height: 74,
-      width: 289,
+      height: 72,
+      width: 270,
       child: OutlinedButton(
         onPressed: onPressed,
         style: OutlinedButton.styleFrom(

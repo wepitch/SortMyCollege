@@ -14,6 +14,14 @@ class Counseling_Session_group extends StatefulWidget {
 }
 
 class _Counseling_Session_groupState extends State<Counseling_Session_group> {
+  SessionDate sessionDate = SessionDate();
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    sessionDate.getDates();
+  }
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 430;
@@ -46,7 +54,7 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                         shrinkWrap: true,
                         physics: const BouncingScrollPhysics(),
                         scrollDirection: Axis.horizontal,
-                        itemCount: 10,
+                        itemCount: sessionDate.dates.length,
                         itemBuilder: (context, index) {
                           return Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -90,7 +98,7 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                                       7 * fem,
                                                       0 * fem),
                                                   child: Text(
-                                                    'Today, 21 Oct',
+                                                    '${index == 0 ? "Today" : index == 1 ? "Tom" : ""}, ${sessionDate.dates[index]}',
                                                     textAlign: TextAlign.center,
                                                     style: SafeGoogleFont(
                                                       'Inter',

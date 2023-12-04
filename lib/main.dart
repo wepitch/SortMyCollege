@@ -4,6 +4,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/other/counsellor_details_provider.dart';
 import 'package:myapp/other/dependency_injection.dart';
 import 'package:myapp/page-1/homepagecontainer.dart';
 import 'package:myapp/page-1/counsellor_details_page.dart';
@@ -14,6 +15,7 @@ import 'package:myapp/page-1/assets.dart';
 import 'package:myapp/page-1/dashboard-session-group-new.dart';
 import 'package:myapp/page-1/filter_1.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 // import 'package:myapp/page-1/student-community-NJD.dart';
 // import 'package:myapp/page-1/courses.dart';
 // import 'package:myapp/page-1/detailed-cb.dart';
@@ -91,7 +93,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 // import 'package:myapp/page-1/share.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+      create: (context) => CounsellorDetailsProvider(), child: const MyApp()));
   DependencyInjection.init();
 }
 

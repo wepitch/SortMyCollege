@@ -798,71 +798,71 @@ class _CounsellorDetialsPage2State extends State<CounsellorDetialsPage2> {
                               child: Container(
                                 width: 429.5 * fem,
                                 height: 43 * fem,
-                                child: Row(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      // autogrouptoepzME (obbtQiRh6ocAKkRwwToep)
-                                      margin: EdgeInsets.fromLTRB(0 * fem,
-                                          0 * fem, 0.05 * fem, 0 * fem),
-                                      width: 223.41 * fem,
-                                      height: double.infinity,
-                                      decoration: BoxDecoration(
-                                        border: Border.all(
-                                            color: const Color(0xff000000)),
-                                        color: const Color(0xfff6f5f5),
-                                      ),
-                                      child: Center(
-                                        child: Text(
-                                          'Info',
-                                          style: SafeGoogleFont(
-                                            'Inter',
-                                            fontSize: 16 * ffem,
-                                            fontWeight: FontWeight.w400,
-                                            height: 1.2125 * ffem / fem,
-                                            color: const Color(0xff000000),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    GestureDetector(
-                                      onTap: () {
-                                        String name = counsellorDetailController
-                                            .cousnellorlist_detail[0].name;
+                                // child: Row(
+                                //   crossAxisAlignment: CrossAxisAlignment.center,
+                                //   children: [
+                                //     Container(
+                                //       // autogrouptoepzME (obbtQiRh6ocAKkRwwToep)
+                                //       margin: EdgeInsets.fromLTRB(0 * fem,
+                                //           0 * fem, 0.05 * fem, 0 * fem),
+                                //       width: 223.41 * fem,
+                                //       height: double.infinity,
+                                //       decoration: BoxDecoration(
+                                //         border: Border.all(
+                                //             color: const Color(0xff000000)),
+                                //         color: const Color(0xfff6f5f5),
+                                //       ),
+                                //       child: Center(
+                                //         child: Text(
+                                //           'Info',
+                                //           style: SafeGoogleFont(
+                                //             'Inter',
+                                //             fontSize: 16 * ffem,
+                                //             fontWeight: FontWeight.w400,
+                                //             height: 1.2125 * ffem / fem,
+                                //             color: const Color(0xff000000),
+                                //           ),
+                                //         ),
+                                //       ),
+                                //     ),
+                                //     GestureDetector(
+                                //       onTap: () {
+                                //         String name = counsellorDetailController
+                                //             .cousnellorlist_detail[0].name;
 
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    CounsellorFeedPage(
-                                                      name: name,
-                                                    )));
-                                      },
-                                      child: Container(
-                                        // autogroup3nc8fyA (obbx5GzBHseGVLnZt3NC8)
-                                        width: 206.04 * fem,
-                                        height: double.infinity,
-                                        decoration: BoxDecoration(
-                                          border: Border.all(
-                                              color: const Color(0xffffffff)),
-                                          color: const Color(0xfff6f5f5),
-                                        ),
-                                        child: Center(
-                                          child: Text(
-                                            'Feed',
-                                            style: SafeGoogleFont(
-                                              'Inter',
-                                              fontSize: 16 * ffem,
-                                              fontWeight: FontWeight.w400,
-                                              height: 1.2125 * ffem / fem,
-                                              color: const Color(0xff000000),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
+                                //         Navigator.push(
+                                //             context,
+                                //             MaterialPageRoute(
+                                //                 builder: (context) =>
+                                //                     CounsellorFeedPage(
+                                //                       name: name,
+                                //                     )));
+                                //       },
+                                //       child: Container(
+                                //         // autogroup3nc8fyA (obbx5GzBHseGVLnZt3NC8)
+                                //         width: 206.04 * fem,
+                                //         height: double.infinity,
+                                //         decoration: BoxDecoration(
+                                //           border: Border.all(
+                                //               color: const Color(0xffffffff)),
+                                //           color: const Color(0xfff6f5f5),
+                                //         ),
+                                //         child: Center(
+                                //           child: Text(
+                                //             'Feed',
+                                //             style: SafeGoogleFont(
+                                //               'Inter',
+                                //               fontSize: 16 * ffem,
+                                //               fontWeight: FontWeight.w400,
+                                //               height: 1.2125 * ffem / fem,
+                                //               color: const Color(0xff000000),
+                                //             ),
+                                //           ),
+                                //         ),
+                                //       ),
+                                //     ),
+                                //   ],
+                                // ),
                               ),
                             ),
                             Positioned(

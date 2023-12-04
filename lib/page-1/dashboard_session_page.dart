@@ -101,7 +101,7 @@ class _CounsellingSessionPageState extends State<CounsellingSessionPage> {
           Expanded(
             // flex: 2,
             child: PageView(
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               onPageChanged: (value) {
                 setState(() {
                   selectedIndex = value;

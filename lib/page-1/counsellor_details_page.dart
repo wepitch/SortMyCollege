@@ -23,13 +23,16 @@ class CounsellorDetialsPage extends StatefulWidget {
   State<CounsellorDetialsPage> createState() => _CounsellorDetialsPageState();
 }
 
-class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
+class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
+    with SingleTickerProviderStateMixin {
   bool visible = false;
+  late TabController _controller;
 
   @override
   void initState() {
     super.initState();
     context.read<CounsellorDetailsProvider>().fetchCounsellor_detail(widget.id);
+    _controller = TabController(length: 2, vsync: this, initialIndex: 0);
   }
 
   @override
@@ -744,75 +747,53 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage> {
                           ),
                           Positioned(
                             // group2944Ta (2958:469)
-                            left: 10 * fem,
+                            // left: 10 * fem,
                             top: 370.4067382812 * fem,
                             child: Container(
                               width: 429.5 * fem,
                               height: 43 * fem,
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Container(
-                                    // autogrouptoepzME (obbtQiRh6ocAKkRwwToep)
-                                    margin: EdgeInsets.fromLTRB(
-                                        0 * fem, 0 * fem, 0.05 * fem, 0 * fem),
-                                    width: 223.41 * fem,
-                                    height: double.infinity,
-                                    decoration: BoxDecoration(
-                                      border: Border.all(
-                                          color: const Color(0xff000000)),
-                                      color: const Color(0xfff6f5f5),
-                                    ),
-                                    child: Center(
-                                      child: Text(
-                                        'Info',
-                                        style: SafeGoogleFont(
-                                          'Inter',
-                                          fontSize: 16 * ffem,
-                                          fontWeight: FontWeight.w400,
-                                          height: 1.2125 * ffem / fem,
-                                          color: const Color(0xff000000),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      String name = counsellorDetailController
-                                          .cousnellorlist_detail[0].name;
-
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  CounsellorFeedPage(
-                                                    name: name,
-                                                  )));
+                              child: Container(
+                                color: Colors.grey.withOpacity(0.2),
+                                child: TabBar(
+                                    indicatorColor: const Color(0xff1F0A68),
+                                    indicatorWeight: 3,
+                                    controller: _controller,
+                                    onTap: (value) {
+                                      if (value == 1) {
+                                        Navigator.pushReplacement(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    CounsellorFeedPage(
+                                                      name: counsellorDetailController
+                                                          .cousnellorlist_detail[
+                                                              0]
+                                                          .name,
+                                                      id: counsellorDetailController
+                                                          .cousnellorlist_detail[
+                                                              0]
+                                                          .id,
+                                                    )));
+                                      }
                                     },
-                                    child: Container(
-                                      // autogroup3nc8fyA (obbx5GzBHseGVLnZt3NC8)
-                                      width: 206.04 * fem,
-                                      height: double.infinity,
-                                      decoration: BoxDecoration(
-                                        border: Border.all(
-                                            color: const Color(0xffffffff)),
-                                        color: const Color(0xfff6f5f5),
-                                      ),
-                                      child: Center(
+                                    tabs: [
+                                      Tab(
                                         child: Text(
-                                          'Feed',
-                                          style: SafeGoogleFont(
-                                            'Inter',
-                                            fontSize: 16 * ffem,
-                                            fontWeight: FontWeight.w400,
-                                            height: 1.2125 * ffem / fem,
-                                            color: const Color(0xff000000),
-                                          ),
+                                          "Info",
+                                          style: SafeGoogleFont("Inter",
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w500),
                                         ),
                                       ),
-                                    ),
-                                  ),
-                                ],
+                                      Tab(
+                                        child: Text(
+                                          "Feed",
+                                          style: SafeGoogleFont("Inter",
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w500),
+                                        ),
+                                      ),
+                                    ]),
                               ),
                             ),
                           ),
