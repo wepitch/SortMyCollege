@@ -91,7 +91,6 @@ class SessionDate {
   ];
 
   void getDates() {
-    print(todayDate[0]);
     for (int i = 1; i <= 7; i++) {
       String date = todayDate.replaceFirst(
           todayDate[0], (int.parse(todayDate[0]) + (i)).toString());
