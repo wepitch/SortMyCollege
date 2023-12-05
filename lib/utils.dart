@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
+import 'package:jiffy/jiffy.dart';
 
 class MyCustomScrollBehavior extends MaterialScrollBehavior {
   @override
@@ -84,17 +85,43 @@ TextStyle SafeGoogleFont(
 
 class SessionDate {
   static DateTime now = DateTime.now();
-  static String todayDate = DateFormat("d MMM").format(now);
 
-  final List<String> dates = [
-    todayDate,
+  static String todayDate = DateFormat("d MMM").format(now);
+  static String year = Jiffy.now().format(pattern: "yyyy");
+  static String get todayDay {
+    String day = Jiffy.parse("$todayDate $year", pattern: "d MMM yyyy")
+        .format(pattern: 'EEEE')
+        .toString();
+
+    return day;
+  }
+
+  final List<DateModel> dates = [
+    DateModel(day: todayDay, formattedDate: todayDate, date: "$todayDate $year")
   ];
 
   void getDates() {
     for (int i = 1; i <= 7; i++) {
-      String date = todayDate.replaceFirst(
-          todayDate[0], (int.parse(todayDate[0]) + (i)).toString());
-      dates.add(date);
+      String todayNum = todayDate[0];
+      String formattedDate = todayDate.replaceFirst(
+          todayDate[0], (int.parse(todayNum) + (i)).toString());
+      String day = Jiffy.parse("$formattedDate $year", pattern: "d MMM yyyy")
+          .format(pattern: 'EEEE')
+          .toString()
+          .substring(0, 3);
+
+      dates.add(DateModel(
+          day: day,
+          formattedDate: formattedDate,
+          date: "$formattedDate $year"));
     }
   }
+}
+
+class DateModel {
+  final String date;
+  final String formattedDate;
+  final String day;
+  DateModel(
+      {required this.day, required this.formattedDate, required this.date});
 }

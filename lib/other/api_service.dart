@@ -5,6 +5,7 @@ import 'package:http/http.dart' as http;
 
 import '../model/counsellor_data.dart';
 import '../model/counsellor_detail.dart';
+import '../model/counsellor_sessions.dart';
 import '../model/cousnellor_list_model.dart';
 import '../model/response_model.dart';
 import 'constants.dart';
@@ -110,6 +111,29 @@ class ApiService {
       print(await response.stream.bytesToString());
     } else {
       print(response.reasonPhrase);
+    }
+  }
+
+  static Future<CounsellorSessionDetails> getCounsellor_sessions(
+      {required String date,
+      required String sessionType,
+      required String id}) async {
+    var url = Uri.parse(
+        "https://server.sortmycollege.com/counsellor/$id/sessions?session_date=$date&session_type=$sessionType");
+
+    var response = await http.get(
+      url,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    );
+    var data;
+    if (response.statusCode == 200) {
+      data = jsonDecode(response.body.toString());
+      console.log(data.toString());
+      return CounsellorSessionDetails.fromJson(data);
+    } else {
+      return CounsellorSessionDetails();
     }
   }
 }

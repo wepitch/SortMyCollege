@@ -7,8 +7,10 @@ import 'counsellor_select_listview_offline.dart';
 import 'dashboard-session-personnel-new.dart';
 
 class CounsellingSessionPage extends StatefulWidget {
-  const CounsellingSessionPage({super.key, required this.name});
+  const CounsellingSessionPage(
+      {super.key, required this.name, required this.id});
   final String name;
+  final String id;
   @override
   State<CounsellingSessionPage> createState() => _CounsellingSessionPageState();
 }
@@ -54,7 +56,7 @@ class _CounsellingSessionPageState extends State<CounsellingSessionPage> {
         ),
         titleSpacing: -5,
         title: Text(
-          "${widget.name}",
+          widget.name,
           style: SafeGoogleFont("Inter",
               fontSize: 22, fontWeight: FontWeight.w600),
         ),
@@ -109,8 +111,14 @@ class _CounsellingSessionPageState extends State<CounsellingSessionPage> {
               },
               controller: _controller,
               children: [
-                Counseling_Session_group(name: widget.name),
-                const Counseling_Session_Personnel()
+                Counseling_Session_group(
+                  name: widget.name,
+                  id: widget.id,
+                ),
+                Counseling_Session_Personnel(
+                  id: widget.id,
+                  name: widget.name,
+                )
               ],
             ),
           )
