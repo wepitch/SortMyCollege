@@ -97,10 +97,14 @@ class SessionDate {
   }
 
   final List<DateModel> dates = [
-    DateModel(day: todayDay, formattedDate: todayDate, date: "$todayDate $year")
+    DateModel(
+        index: 0,
+        day: todayDay,
+        formattedDate: todayDate,
+        date: "$todayDate $year")
   ];
 
-  void getDates() {
+  void getDates(index) {
     for (int i = 1; i <= 7; i++) {
       String todayNum = todayDate[0];
       String formattedDate = todayDate.replaceFirst(
@@ -111,6 +115,7 @@ class SessionDate {
           .substring(0, 3);
 
       dates.add(DateModel(
+          index: index,
           day: day,
           formattedDate: formattedDate,
           date: "$formattedDate $year"));
@@ -122,6 +127,11 @@ class DateModel {
   final String date;
   final String formattedDate;
   final String day;
-  DateModel(
-      {required this.day, required this.formattedDate, required this.date});
+  final int index;
+  DateModel({
+    required this.index,
+    required this.day,
+    required this.formattedDate,
+    required this.date,
+  });
 }

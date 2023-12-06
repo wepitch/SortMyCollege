@@ -12,13 +12,15 @@ class CounsellorDetailsProvider extends ChangeNotifier {
   bool isLoading = true;
 
   void fetchCounsellor_detail(String id) async {
-    try {
+    var counsellor = await ApiService.getCounsellor_Detail(id);
+    isLoading = true;
+    cousnellorlist_detail = counsellor;
+    if (cousnellorlist_detail.isEmpty) {
       isLoading = true;
-      var counsellor = await ApiService.getCounsellor_Detail(id);
-      cousnellorlist_detail = counsellor;
-    } finally {
+    } else {
       isLoading = false;
     }
+
     notifyListeners();
   }
 

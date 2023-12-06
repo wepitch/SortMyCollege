@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:jiffy/jiffy.dart';
 import 'package:myapp/page-1/homepagecontainer_2.dart';
 import 'package:myapp/utils.dart';
+
 import 'package:provider/provider.dart';
+import 'package:readmore/readmore.dart';
 
 import '../other/counsellor_details_provider.dart';
 import 'counsellor_select_listview_offline.dart';
@@ -20,13 +22,15 @@ class Counseling_Session_group extends StatefulWidget {
 }
 
 class _Counseling_Session_groupState extends State<Counseling_Session_group> {
+  bool isExpanded = false;
   SessionDate sessionDate = SessionDate();
+  int selectedIndex = 0;
   String selectedDate = Jiffy.now().format(pattern: "dd/M/yyyy");
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    sessionDate.getDates();
+    sessionDate.getDates(selectedIndex);
     fetchDataFromApi();
   }
 
@@ -98,7 +102,7 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                                     .format(
                                                         pattern: "dd/M/yyyy");
                                                 console.log(date);
-
+                                                selectedIndex = index;
                                                 context
                                                     .read<
                                                         CounsellorDetailsProvider>()
@@ -176,7 +180,15 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                                         Center(
                                                           // noslotskrc (2620:3576)
                                                           child: Text(
-                                                            'No slots',
+                                                            index ==
+                                                                    selectedIndex
+                                                                ? counsellorSessionProvider.details.totalAvailableSlots ==
+                                                                            0 ||
+                                                                        counsellorSessionProvider.details.totalAvailableSlots ==
+                                                                            null
+                                                                    ? "No Slots"
+                                                                    : "${counsellorSessionProvider.details.totalAvailableSlots!} Slots"
+                                                                : "No Slots",
                                                             textAlign: TextAlign
                                                                 .center,
                                                             style:
@@ -192,8 +204,18 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                                                   fem,
                                                               letterSpacing:
                                                                   0.59375 * fem,
-                                                              color: const Color(
-                                                                  0xff8d8888),
+                                                              color: index ==
+                                                                      selectedIndex
+                                                                  ? counsellorSessionProvider.details.totalAvailableSlots ==
+                                                                              null ||
+                                                                          counsellorSessionProvider.details.totalAvailableSlots ==
+                                                                              0
+                                                                      ? Colors
+                                                                          .red
+                                                                      : Colors
+                                                                          .green
+                                                                  : const Color(
+                                                                      0xff8d8888),
                                                             ),
                                                           ),
                                                         ),
@@ -252,337 +274,578 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                 physics: const ScrollPhysics(),
                                 shrinkWrap: true,
                                 itemBuilder: (context, index) {
-                                  return Container(
-                                    // group193fip (I2510:2510;2510:2244)
-                                    margin: EdgeInsets.fromLTRB(
-                                        10 * fem, 0 * fem, 10 * fem, 0 * fem),
-                                    padding: EdgeInsets.fromLTRB(
-                                        5 * fem, 0.5 * fem, 5 * fem, 16 * fem),
-                                    width: double.infinity,
-
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Container(
-                                          width: 350,
-                                          height: 130,
-                                          decoration: ShapeDecoration(
-                                            color: Colors.white,
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(20),
+                                  return Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 16.0),
+                                    child: Card(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 19.5, vertical: 15),
+                                        child: Column(
+                                          children: [
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.end,
+                                              children: [
+                                                const Text(
+                                                  'Coming soon',
+                                                  style: TextStyle(
+                                                    color: Color(0xFF1F0A68),
+                                                    fontSize: 20,
+                                                    fontFamily: 'Inter',
+                                                    fontWeight: FontWeight.w600,
+                                                    height: 0,
+                                                  ),
+                                                ),
+                                                Container(
+                                                  width: 45.51,
+                                                  height: 19,
+                                                  decoration: ShapeDecoration(
+                                                    color:
+                                                        const Color(0xFFB1A0EA),
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              99),
+                                                    ),
+                                                  ),
+                                                  child: Center(
+                                                    child: Text(
+                                                      '${counsellorSessionProvider.details.sessions![index].sessionAvailableSlots}/${counsellorSessionProvider.details.sessions![index].sessionSlots}',
+                                                      style: const TextStyle(
+                                                        color: Colors.white,
+                                                        fontSize: 13,
+                                                        fontFamily: 'Inter',
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                        height: 0,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
                                             ),
-                                            shadows: const [
-                                              BoxShadow(
-                                                color: Color(0x3F000000),
-                                                blurRadius: 5,
-                                                offset: Offset(0, 0),
-                                                spreadRadius: 0,
-                                              )
-                                            ],
-                                          ),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.min,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
-                                            children: [
-                                              Container(
-                                                width: 330,
-                                                height: 150,
-                                                child: Stack(
+                                            const SizedBox(
+                                              height: 5,
+                                            ),
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.end,
+                                              children: [
+                                                Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
                                                   children: [
-                                                    Positioned(
-                                                      left: 0,
-                                                      top: 0,
-                                                      child: Container(
-                                                        width: 350,
-                                                        height: 131,
+                                                    Text(
+                                                      selectedDate,
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      style: const TextStyle(
+                                                        color: Colors.black,
+                                                        fontSize: 12,
+                                                        fontFamily: 'Inter',
+                                                        fontWeight:
+                                                            FontWeight.w400,
+                                                        height: 0,
                                                       ),
                                                     ),
-                                                    Positioned(
-                                                      left: 230,
-                                                      top: 70,
-                                                      child: Container(
-                                                        width: 96,
-                                                        height: 38,
-                                                        child: Stack(
-                                                          children: [
-                                                            Positioned(
-                                                              left: 0,
-                                                              top: 0,
-                                                              child: Container(
-                                                                width: 96,
-                                                                height: 38,
-                                                                decoration:
-                                                                    ShapeDecoration(
-                                                                  color: const Color(
-                                                                      0xFF1F0A68),
-                                                                  shape:
-                                                                      RoundedRectangleBorder(
-                                                                    side: const BorderSide(
-                                                                        width:
-                                                                            1),
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            10),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            const Positioned(
-                                                              left: 24,
-                                                              top: 7,
-                                                              child: Text(
-                                                                'Book',
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .center,
-                                                                style:
-                                                                    TextStyle(
-                                                                  color: Colors
-                                                                      .white,
-                                                                  fontSize: 18,
-                                                                  fontFamily:
-                                                                      'Inter',
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w600,
-                                                                  height: 0,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
+                                                    const SizedBox(
+                                                      height: 5,
+                                                    ),
+                                                    const Text(
+                                                      '2:00 PM - 03:00 PM',
+                                                      style: TextStyle(
+                                                        color: Colors.black,
+                                                        fontSize: 12,
+                                                        fontFamily: 'Inter',
+                                                        fontWeight:
+                                                            FontWeight.w400,
+                                                        height: 0,
                                                       ),
                                                     ),
-                                                    const Positioned(
-                                                      left: 19.01,
-                                                      top: 63,
-                                                      child: SizedBox(
-                                                        width: 174.98,
-                                                        child: Text(
-                                                          '2:00 PM - 03:00 PM',
-                                                          style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 12,
-                                                            fontFamily: 'Inter',
-                                                            fontWeight:
-                                                                FontWeight.w400,
-                                                            height: 0,
+                                                    const SizedBox(
+                                                      height: 5,
+                                                    ),
+                                                    Text(
+                                                      'Price - ${counsellorSessionProvider.details.sessions![index].sessionPrice} /-',
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      style: const TextStyle(
+                                                        color: Colors.black,
+                                                        fontSize: 12,
+                                                        fontFamily: 'Inter',
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                        height: 0,
+                                                      ),
+                                                    ),
+                                                    const SizedBox(
+                                                      height: 5,
+                                                    ),
+                                                    GestureDetector(
+                                                      onTap: () {
+                                                        isExpanded =
+                                                            !isExpanded;
+                                                        setState(() {});
+                                                      },
+                                                      child: const Row(
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .end,
+                                                        children: [
+                                                          Text(
+                                                            'View Details',
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                            style: TextStyle(
+                                                              color:
+                                                                  Colors.black,
+                                                              fontSize: 12,
+                                                              fontFamily:
+                                                                  'Inter',
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w800,
+                                                              height: 0,
+                                                            ),
                                                           ),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    //updated
-                                                    Positioned(
-                                                      left: 19.01,
-                                                      top: 81,
-                                                      child: SizedBox(
-                                                        width: 78.89,
-                                                        child: Text(
-                                                          'Price - ${counsellorSessionProvider.details.sessions![index].sessionPrice} /-',
-                                                          textAlign:
-                                                              TextAlign.center,
-                                                          style:
-                                                              const TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 12,
-                                                            fontFamily: 'Inter',
-                                                            fontWeight:
-                                                                FontWeight.w500,
-                                                            height: 0,
+                                                          SizedBox(
+                                                            width: 10,
                                                           ),
-                                                        ),
+                                                          Icon(
+                                                            Icons
+                                                                .arrow_forward_ios,
+                                                            size: 15,
+                                                          )
+                                                        ],
                                                       ),
                                                     ),
-                                                    Positioned(
-                                                      left: 18,
-                                                      top: 98,
-                                                      child: Container(
-                                                        width: 97,
-                                                        height: 17,
-                                                        child: Stack(
-                                                          children: [
-                                                            Positioned(
-                                                              left: 80,
-                                                              top: 17,
-                                                              child: Transform(
-                                                                transform: Matrix4
-                                                                    .identity()
-                                                                  ..translate(
-                                                                      0.0, 0.0)
-                                                                  ..rotateZ(
-                                                                      -1.57),
-                                                                child:
-                                                                    Container(
-                                                                  width: 17,
-                                                                  height: 17,
-                                                                  decoration:
-                                                                      const BoxDecoration(
-                                                                    image:
-                                                                        DecorationImage(
-                                                                      image: AssetImage(
-                                                                          'assets/page-1/images/arrow-down-2.png'),
-                                                                      fit: BoxFit
-                                                                          .fill,
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            const Positioned(
-                                                              left: 0,
-                                                              top: 1,
-                                                              child: SizedBox(
-                                                                width: 75.86,
-                                                                child: Text(
-                                                                  'View Details',
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                  style:
-                                                                      TextStyle(
-                                                                    color: Colors
-                                                                        .black,
-                                                                    fontSize:
-                                                                        12,
-                                                                    fontFamily:
-                                                                        'Inter',
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w800,
-                                                                    height: 0,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                      ),
+                                                    SizedBox(
+                                                      height: 5,
                                                     ),
-                                                    Positioned(
-                                                      left: 19.01,
-                                                      top: 15,
-                                                      child: Container(
-                                                        width: 352.99,
-                                                        height: 24,
-                                                        child: Stack(
-                                                          children: [
-                                                            Positioned(
-                                                              left: 260.47,
-                                                              top: 3,
-                                                              child: Container(
-                                                                width: 45.51,
-                                                                height: 19,
-                                                                child: Stack(
-                                                                  children: [
-                                                                    Positioned(
-                                                                      left: 0,
-                                                                      top: 0,
-                                                                      child:
-                                                                          Container(
-                                                                        width:
-                                                                            45.51,
-                                                                        height:
-                                                                            19,
-                                                                        decoration:
-                                                                            ShapeDecoration(
-                                                                          color:
-                                                                              const Color(0xFFB1A0EA),
-                                                                          shape:
-                                                                              RoundedRectangleBorder(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(99),
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                    Positioned(
-                                                                      left: 5,
-                                                                      top: 2,
-                                                                      child:
-                                                                          Text(
-                                                                        '${counsellorSessionProvider.details.sessions![index].sessionAvailableSlots}/${counsellorSessionProvider.details.sessions![index].sessionSlots}',
-                                                                        style:
-                                                                            const TextStyle(
-                                                                          color:
-                                                                              Colors.white,
-                                                                          fontSize:
-                                                                              13,
-                                                                          fontFamily:
-                                                                              'Inter',
-                                                                          fontWeight:
-                                                                              FontWeight.w500,
-                                                                          height:
-                                                                              0,
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  ],
-                                                                ),
+                                                    isExpanded
+                                                        ? Column(
+                                                            crossAxisAlignment:
+                                                                CrossAxisAlignment
+                                                                    .start,
+                                                            children: [
+                                                              Text(
+                                                                  "Name : ${widget.name}"),
+                                                              SizedBox(
+                                                                height: 5,
                                                               ),
-                                                            ),
-                                                            const Positioned(
-                                                              left: 0,
-                                                              top: 0,
-                                                              child: SizedBox(
-                                                                width: 198.24,
-                                                                child: Text(
-                                                                  'Coming soon',
-                                                                  style:
-                                                                      TextStyle(
-                                                                    color: Color(
-                                                                        0xFF1F0A68),
-                                                                    fontSize:
-                                                                        20,
-                                                                    fontFamily:
-                                                                        'Inter',
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w600,
-                                                                    height: 0,
-                                                                  ),
-                                                                ),
+                                                              Text(
+                                                                  "Slots : ${counsellorSessionProvider.details.sessions![index].sessionSlots}"),
+                                                              SizedBox(
+                                                                height: 5,
                                                               ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    Positioned(
-                                                      left: 19.01,
-                                                      top: 43,
-                                                      child: SizedBox(
-                                                        width: 67.77,
-                                                        height: 16,
-                                                        child: Text(
-                                                          selectedDate,
-                                                          textAlign:
-                                                              TextAlign.center,
-                                                          style:
-                                                              const TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 12,
-                                                            fontFamily: 'Inter',
-                                                            fontWeight:
-                                                                FontWeight.w400,
-                                                            height: 0,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ),
+                                                              Text(
+                                                                  "Duration : ${counsellorSessionProvider.details.sessions![index].sessionDuration}"),
+                                                              SizedBox(
+                                                                height: 5,
+                                                              ),
+                                                              Text(
+                                                                  "Session Status : ${counsellorSessionProvider.details.sessions![index].sessionStatus}"),
+                                                            ],
+                                                          )
+                                                        : const SizedBox()
                                                   ],
                                                 ),
-                                              ),
-                                            ],
-                                          ),
-                                        )
-                                      ],
+                                                Container(
+                                                  width: 96,
+                                                  height: 38,
+                                                  decoration: ShapeDecoration(
+                                                    color:
+                                                        const Color(0xFF1F0A68),
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      side: const BorderSide(
+                                                          width: 1),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10),
+                                                    ),
+                                                  ),
+                                                  child: const Center(
+                                                    child: Text(
+                                                      'Book',
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      style: TextStyle(
+                                                        color: Colors.white,
+                                                        fontSize: 18,
+                                                        fontFamily: 'Inter',
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                        height: 0,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ),
                                     ),
                                   );
+
+                                  // return Container(
+                                  //   // group193fip (I2510:2510;2510:2244)
+                                  //   margin: EdgeInsets.fromLTRB(
+                                  //       10 * fem, 0 * fem, 10 * fem, 0 * fem),
+                                  //   padding: EdgeInsets.fromLTRB(
+                                  //       5 * fem, 0.5 * fem, 5 * fem, 16 * fem),
+                                  //   width: double.infinity,
+
+                                  //   child: Column(
+                                  //     crossAxisAlignment:
+                                  //         CrossAxisAlignment.start,
+                                  //     children: [
+                                  //       Container(
+                                  //         width: 350,
+                                  //         height: 130,
+                                  //         decoration: ShapeDecoration(
+                                  //           color: Colors.white,
+                                  //           shape: RoundedRectangleBorder(
+                                  //             borderRadius:
+                                  //                 BorderRadius.circular(20),
+                                  //           ),
+                                  //           shadows: const [
+                                  //             BoxShadow(
+                                  //               color: Color(0x3F000000),
+                                  //               blurRadius: 5,
+                                  //               offset: Offset(0, 0),
+                                  //               spreadRadius: 0,
+                                  //             )
+                                  //           ],
+                                  //         ),
+                                  //         child: Row(
+                                  //           mainAxisSize: MainAxisSize.min,
+                                  //           mainAxisAlignment:
+                                  //               MainAxisAlignment.center,
+                                  //           crossAxisAlignment:
+                                  //               CrossAxisAlignment.center,
+                                  //           children: [
+                                  //             Container(
+                                  //               width: 330,
+                                  //               height: 150,
+                                  //               child: Stack(
+                                  //                 children: [
+                                  //                   Positioned(
+                                  //                     left: 0,
+                                  //                     top: 0,
+                                  //                     child: Container(
+                                  //                       width: 350,
+                                  //                       height: 131,
+                                  //                     ),
+                                  //                   ),
+                                  //                   Positioned(
+                                  //                     left: 230,
+                                  //                     top: 70,
+                                  //                     child: Container(
+                                  //                       width: 96,
+                                  //                       height: 38,
+                                  //                       child: Stack(
+                                  //                         children: [
+                                  //                           Positioned(
+                                  //                             left: 0,
+                                  //                             top: 0,
+                                  //                             child: Container(
+                                  //                               width: 96,
+                                  //                               height: 38,
+                                  //                               decoration:
+                                  //                                   ShapeDecoration(
+                                  //                                 color: const Color(
+                                  //                                     0xFF1F0A68),
+                                  //                                 shape:
+                                  //                                     RoundedRectangleBorder(
+                                  //                                   side: const BorderSide(
+                                  //                                       width:
+                                  //                                           1),
+                                  //                                   borderRadius:
+                                  //                                       BorderRadius.circular(
+                                  //                                           10),
+                                  //                                 ),
+                                  //                               ),
+                                  //                             ),
+                                  //                           ),
+                                  //                           const Positioned(
+                                  //                             left: 24,
+                                  //                             top: 7,
+                                  //                             child: Text(
+                                  //                               'Book',
+                                  //                               textAlign:
+                                  //                                   TextAlign
+                                  //                                       .center,
+                                  //                               style:
+                                  //                                   TextStyle(
+                                  //                                 color: Colors
+                                  //                                     .white,
+                                  //                                 fontSize: 18,
+                                  //                                 fontFamily:
+                                  //                                     'Inter',
+                                  //                                 fontWeight:
+                                  //                                     FontWeight
+                                  //                                         .w600,
+                                  //                                 height: 0,
+                                  //                               ),
+                                  //                             ),
+                                  //                           ),
+                                  //                         ],
+                                  //                       ),
+                                  //                     ),
+                                  //                   ),
+                                  //                   const Positioned(
+                                  //                     left: 19.01,
+                                  //                     top: 63,
+                                  //                     child: SizedBox(
+                                  //                       width: 174.98,
+                                  //                       child: Text(
+                                  //                         '2:00 PM - 03:00 PM',
+                                  //                         style: TextStyle(
+                                  //                           color: Colors.black,
+                                  //                           fontSize: 12,
+                                  //                           fontFamily: 'Inter',
+                                  //                           fontWeight:
+                                  //                               FontWeight.w400,
+                                  //                           height: 0,
+                                  //                         ),
+                                  //                       ),
+                                  //                     ),
+                                  //                   ),
+                                  //                   //updated
+                                  //                   Positioned(
+                                  //                     left: 19.01,
+                                  //                     top: 81,
+                                  //                     child: SizedBox(
+                                  //                       width: 78.89,
+                                  //                       child: Text(
+                                  //                         'Price - ${counsellorSessionProvider.details.sessions![index].sessionPrice} /-',
+                                  //                         textAlign:
+                                  //                             TextAlign.center,
+                                  //                         style:
+                                  //                             const TextStyle(
+                                  //                           color: Colors.black,
+                                  //                           fontSize: 12,
+                                  //                           fontFamily: 'Inter',
+                                  //                           fontWeight:
+                                  //                               FontWeight.w500,
+                                  //                           height: 0,
+                                  //                         ),
+                                  //                       ),
+                                  //                     ),
+                                  //                   ),
+                                  //                   Positioned(
+                                  //                     left: 18,
+                                  //                     top: 98,
+                                  //                     child: SizedBox(
+                                  //                       width: 97,
+                                  //                       height: 17,
+                                  //                       child: Stack(
+                                  //                         children: [
+                                  //                           Positioned(
+                                  //                             left: 80,
+                                  //                             top: 17,
+                                  //                             child: Transform(
+                                  //                               transform: Matrix4
+                                  //                                   .identity()
+                                  //                                 ..translate(
+                                  //                                     0.0, 0.0)
+                                  //                                 ..rotateZ(
+                                  //                                     -1.57),
+                                  //                               child:
+                                  //                                   Container(
+                                  //                                 width: 17,
+                                  //                                 height: 17,
+                                  //                                 decoration:
+                                  //                                     const BoxDecoration(
+                                  //                                   image:
+                                  //                                       DecorationImage(
+                                  //                                     image: AssetImage(
+                                  //                                         'assets/page-1/images/arrow-down-2.png'),
+                                  //                                     fit: BoxFit
+                                  //                                         .fill,
+                                  //                                   ),
+                                  //                                 ),
+                                  //                               ),
+                                  //                             ),
+                                  //                           ),
+                                  //                           Positioned(
+                                  //                             left: 0,
+                                  //                             top: 1,
+                                  //                             child: SizedBox(
+                                  //                               width: 150,
+                                  //                               child:
+                                  //                                   GestureDetector(
+                                  //                                 onTap: () {
+                                  //                                   isExpanded =
+                                  //                                       !isExpanded;
+                                  //                                 },
+                                  //                                 child: Column(
+                                  //                                   crossAxisAlignment:
+                                  //                                       CrossAxisAlignment
+                                  //                                           .start,
+                                  //                                   children: [
+                                  //                                     Text(
+                                  //                                       'View Details',
+                                  //                                       textAlign:
+                                  //                                           TextAlign.left,
+                                  //                                       style:
+                                  //                                           TextStyle(
+                                  //                                         color:
+                                  //                                             Colors.black,
+                                  //                                         fontSize:
+                                  //                                             12,
+                                  //                                         fontFamily:
+                                  //                                             'Inter',
+                                  //                                         fontWeight:
+                                  //                                             FontWeight.w800,
+                                  //                                         height:
+                                  //                                             0,
+                                  //                                       ),
+                                  //                                     ),
+                                  //                                   ],
+                                  //                                 ),
+                                  //                               ),
+                                  //                             ),
+                                  //                           ),
+                                  //                         ],
+                                  //                       ),
+                                  //                     ),
+                                  //                   ),
+                                  //                   Positioned(
+                                  //                     left: 19.01,
+                                  //                     top: 15,
+                                  //                     child: Container(
+                                  //                       width: 352.99,
+                                  //                       height: 24,
+                                  //                       child: Stack(
+                                  //                         children: [
+                                  //                           Positioned(
+                                  //                             left: 260.47,
+                                  //                             top: 3,
+                                  //                             child: Container(
+                                  //                               width: 45.51,
+                                  //                               height: 19,
+                                  //                               child: Stack(
+                                  //                                 children: [
+                                  //                                   Positioned(
+                                  //                                     left: 0,
+                                  //                                     top: 0,
+                                  //                                     child:
+                                  //             Container(
+                                  //           width:
+                                  //               45.51,
+                                  //           height:
+                                  //               19,
+                                  //           decoration:
+                                  //               ShapeDecoration(
+                                  //             color:
+                                  //                 const Color(0xFFB1A0EA),
+                                  //             shape:
+                                  //                 RoundedRectangleBorder(
+                                  //               borderRadius:
+                                  //                   BorderRadius.circular(99),
+                                  //             ),
+                                  //           ),
+                                  //         ),
+                                  //       ),
+                                  //       Positioned(
+                                  //         left: 5,
+                                  //         top: 2,
+                                  //         child:
+                                  //             Text(
+                                  //           '${counsellorSessionProvider.details.sessions![index].sessionAvailableSlots}/${counsellorSessionProvider.details.sessions![index].sessionSlots}',
+                                  //           style:
+                                  //               const TextStyle(
+                                  //             color:
+                                  //                 Colors.white,
+                                  //             fontSize:
+                                  //                 13,
+                                  //             fontFamily:
+                                  //                 'Inter',
+                                  //             fontWeight:
+                                  //                 FontWeight.w500,
+                                  //             height:
+                                  //                 0,
+                                  //           ),
+                                  //         ),
+                                  //       ),
+                                  //     ],
+                                  //   ),
+                                  // ),
+                                  // ),
+                                  //                           const Positioned(
+                                  //                             left: 0,
+                                  //                             top: 0,
+                                  //                             child: SizedBox(
+                                  //                               width: 198.24,
+                                  //                               child: Text(
+                                  //                                 'Coming soon',
+                                  //                                 style:
+                                  //                                     TextStyle(
+                                  //                                   color: Color(
+                                  //                                       0xFF1F0A68),
+                                  //                                   fontSize:
+                                  //                                       20,
+                                  //                                   fontFamily:
+                                  //                                       'Inter',
+                                  //                                   fontWeight:
+                                  //                                       FontWeight
+                                  //                                           .w600,
+                                  //                                   height: 0,
+                                  //                                 ),
+                                  //                               ),
+                                  //                             ),
+                                  //                           ),
+                                  //                         ],
+                                  //                       ),
+                                  //                     ),
+                                  //                   ),
+                                  //                   Positioned(
+                                  //                     left: 19.01,
+                                  //                     top: 43,
+                                  //                     child: SizedBox(
+                                  //                       width: 67.77,
+                                  //                       height: 16,
+                                  //                       child: Text(
+                                  //                         selectedDate,
+                                  //                         textAlign:
+                                  //                             TextAlign.center,
+                                  //                         style:
+                                  //                             const TextStyle(
+                                  //                           color: Colors.black,
+                                  //                           fontSize: 12,
+                                  //                           fontFamily: 'Inter',
+                                  //                           fontWeight:
+                                  //                               FontWeight.w400,
+                                  //                           height: 0,
+                                  //                         ),
+                                  //                       ),
+                                  //                     ),
+                                  //                   ),
+                                  //                 ],
+                                  //               ),
+                                  //             ),
+                                  //           ],
+                                  //         ),
+                                  //       )
+                                  //     ],
+                                  //   ),
+                                  // );
                                 }),
                   ),
                 ],
@@ -599,3 +862,9 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
     return true;
   }
 }
+
+List<String> sampleViewDetails = [
+  "\u2022 name:",
+  "\u2022 slots:",
+  "\u2022 duration:",
+];

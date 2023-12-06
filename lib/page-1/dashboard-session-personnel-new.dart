@@ -3,6 +3,7 @@ import 'package:jiffy/jiffy.dart';
 import 'package:myapp/page-1/homepagecontainer_2.dart';
 import 'package:myapp/utils.dart';
 import 'package:provider/provider.dart';
+import 'package:readmore/readmore.dart';
 
 import '../other/counsellor_details_provider.dart';
 import 'counsellor_select_listview_offline.dart';
@@ -21,13 +22,14 @@ class Counseling_Session_Personnel extends StatefulWidget {
 
 class _Counseling_Session_PersonnelState
     extends State<Counseling_Session_Personnel> {
+  int selectedIndex = 0;
   SessionDate sessionDate = SessionDate();
   String selectedDate = Jiffy.now().format(pattern: "dd/M/yyyy");
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    sessionDate.getDates();
+    sessionDate.getDates(selectedIndex);
     fetchDataFromApi();
   }
 
@@ -99,7 +101,7 @@ class _Counseling_Session_PersonnelState
                                                     .format(
                                                         pattern: "dd/M/yyyy");
                                                 console.log(date);
-
+                                                selectedIndex = index;
                                                 context
                                                     .read<
                                                         CounsellorDetailsProvider>()
@@ -178,7 +180,15 @@ class _Counseling_Session_PersonnelState
                                                         Center(
                                                           // noslotskrc (2620:3576)
                                                           child: Text(
-                                                            'No slots',
+                                                            index ==
+                                                                    selectedIndex
+                                                                ? counsellorSessionProvider.details.totalAvailableSlots ==
+                                                                            0 ||
+                                                                        counsellorSessionProvider.details.totalAvailableSlots ==
+                                                                            null
+                                                                    ? "No Slots"
+                                                                    : "${counsellorSessionProvider.details.totalAvailableSlots!} Slots"
+                                                                : "No Slots",
                                                             textAlign: TextAlign
                                                                 .center,
                                                             style:
@@ -194,8 +204,18 @@ class _Counseling_Session_PersonnelState
                                                                   fem,
                                                               letterSpacing:
                                                                   0.59375 * fem,
-                                                              color: const Color(
-                                                                  0xff8d8888),
+                                                              color: index ==
+                                                                      selectedIndex
+                                                                  ? counsellorSessionProvider.details.totalAvailableSlots ==
+                                                                              null ||
+                                                                          counsellorSessionProvider.details.totalAvailableSlots ==
+                                                                              0
+                                                                      ? Colors
+                                                                          .red
+                                                                      : Colors
+                                                                          .green
+                                                                  : const Color(
+                                                                      0xff8d8888),
                                                             ),
                                                           ),
                                                         ),
@@ -440,25 +460,28 @@ class _Counseling_Session_PersonnelState
                                                               top: 1,
                                                               child: SizedBox(
                                                                 width: 75.86,
-                                                                child: Text(
-                                                                  'View Details',
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                  style:
-                                                                      TextStyle(
-                                                                    color: Colors
-                                                                        .black,
-                                                                    fontSize:
-                                                                        12,
-                                                                    fontFamily:
-                                                                        'Inter',
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w800,
-                                                                    height: 0,
-                                                                  ),
-                                                                ),
+                                                                child:
+                                                                    ReadMoreText(
+                                                                        "\u2022"),
+                                                                // child: Text(
+                                                                //   'View Details',
+                                                                //   textAlign:
+                                                                //       TextAlign
+                                                                //           .center,
+                                                                //   style:
+                                                                //       TextStyle(
+                                                                //     color: Colors
+                                                                //         .black,
+                                                                //     fontSize:
+                                                                //         12,
+                                                                //     fontFamily:
+                                                                //         'Inter',
+                                                                //     fontWeight:
+                                                                //         FontWeight
+                                                                //             .w800,
+                                                                //     height: 0,
+                                                                //   ),
+                                                                // ),
                                                               ),
                                                             ),
                                                           ],

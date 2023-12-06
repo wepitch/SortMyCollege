@@ -37,7 +37,7 @@ class _CounsellorFeedPageState extends State<CounsellorFeedPage>
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () {
-        return _onBackPressed(context, widget.id);
+        return _onBackPressed(context, widget.id, widget.name);
       },
       child: Scaffold(
         appBar: AppBar(
@@ -81,8 +81,10 @@ class _CounsellorFeedPageState extends State<CounsellorFeedPage>
                       Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                              builder: (context) =>
-                                  CounsellorDetialsPage(id: widget.id)));
+                              builder: (context) => CounsellorDetialsPage(
+                                    id: widget.id,
+                                    name: widget.name,
+                                  )));
                     }
                   },
                   tabs: [
@@ -297,8 +299,14 @@ List<CounsellorPostModel> dummyData = [
           "https://media.istockphoto.com/photos/confident-teenage-girl-standing-with-arms-crossed-picture-id638756224"),
 ];
 
-Future<bool> _onBackPressed(BuildContext context, String id) async {
-  Navigator.pushReplacement(context,
-      MaterialPageRoute(builder: (context) => CounsellorDetialsPage(id: id)));
+Future<bool> _onBackPressed(
+    BuildContext context, String id, String name) async {
+  Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+          builder: (context) => CounsellorDetialsPage(
+                id: id,
+                name: name,
+              )));
   return true;
 }

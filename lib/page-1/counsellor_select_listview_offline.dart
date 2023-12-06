@@ -160,12 +160,11 @@ class _CounsellorListPage_offlineState
                               width: double.infinity,
                               child: GestureDetector(
                                 onTap: () {
-                                  Navigator.pushAndRemoveUntil(
+                                  Navigator.push(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              Filter_Course()),
-                                      (route) => false);
+                                              Filter_Course()));
                                 },
                                 child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -863,8 +862,9 @@ class _CounsellorListPage_offlineState
                                                                                                         child: GestureDetector(
                                                                                                           onTap: () {
                                                                                                             String id = listController.cousnellorlist_data[index].id;
+                                                                                                            String name = listController.cousnellorlist_data[index].name;
                                                                                                             print(id);
-                                                                                                            onTap_goto_detailPage(context, id);
+                                                                                                            onTap_goto_detailPage(context, id, name);
                                                                                                           },
                                                                                                           child: const Text(
                                                                                                             'Visit Profile',
@@ -1223,9 +1223,11 @@ class _CounsellorListPage_offlineState
             builder: (context) => CounsellingSessionPage(name: name, id: id)));
   }
 
-  void onTap_goto_detailPage(BuildContext, String id) {
-    Navigator.push(context,
-        MaterialPageRoute(builder: (context) => CounsellorDetialsPage(id: id)));
+  void onTap_goto_detailPage(BuildContext, String id, String name) {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => CounsellorDetialsPage(id: id, name: name)));
   }
 
   Future<bool> _onBackPressed() async {
