@@ -699,6 +699,7 @@ class _CounsellorListPage_offlineState
                                                                                               ),
                                                                                               Container(
                                                                                                 margin: const EdgeInsets.fromLTRB(0, 5, 0, 0),
+
                                                                                                 // group38MUV (730:32)
                                                                                                 width: 17.42 * fem,
                                                                                                 height: 18.86 * fem,

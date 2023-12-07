@@ -7,6 +7,7 @@ import 'package:myapp/page-1/counsellor_select_listview_offline.dart';
 import 'package:myapp/page-1/webinar-detail-second-full-view.dart';
 import 'package:myapp/page-1/webinar.dart';
 import 'package:myapp/page-1/homepage.dart';
+import 'package:myapp/page-1/webinar_page.dart';
 import 'package:myapp/utils.dart';
 import 'package:myapp/page-1/news.dart';
 import 'package:myapp/page-1/profile.dart';
@@ -28,15 +29,15 @@ class HomePageContainer extends StatefulWidget {
 class _HomePageContainerState extends State<HomePageContainer> {
   int selectedIndex = 0;
 
-  Widget _home = HomePage();
+  final Widget _home = const HomePage();
 
-  Widget _webnar = Webnar();
+  final Widget _webnar = const WebinarPage();
 
-  Widget _booking = BookingPage();
+  final Widget _booking = const BookingPage();
 
-  Widget _news = News();
+  final Widget _news = News();
 
-  Widget _profile = Profile();
+  final Widget _profile = Profile();
 
   @override
   Widget build(BuildContext context) {
