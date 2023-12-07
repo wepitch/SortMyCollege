@@ -9,6 +9,7 @@ import 'package:myapp/other/dependency_injection.dart';
 import 'package:myapp/page-1/homepagecontainer.dart';
 import 'package:myapp/page-1/counsellor_details_page.dart';
 import 'package:myapp/page-1/splash-screen.dart';
+import 'package:myapp/page-1/splash_screen_2.dart';
 import 'package:myapp/utils.dart';
 import 'package:myapp/page-1/filter_degree.dart';
 import 'package:myapp/page-1/assets.dart';
@@ -110,7 +111,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.grey,
         ),
         home: Scaffold(
-          body: SplashScreen(),
+          body: SplashScreen2(),
         ),
         builder: EasyLoading.init());
   }

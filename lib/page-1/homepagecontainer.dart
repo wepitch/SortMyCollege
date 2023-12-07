@@ -34,9 +34,9 @@ class _HomePageContainerState extends State<HomePageContainer> {
 
   Widget _booking = BookingPage();
 
-  Widget _news = News();
+  /*Widget _news = News();
 
-  Widget _profile = Profile();
+  Widget _profile = Profile();*/
 
   @override
   Widget build(BuildContext context) {
@@ -97,21 +97,23 @@ class _HomePageContainerState extends State<HomePageContainer> {
   void onTapHandler(int index) {
     setState(() {
       selectedIndex = index;
+
     });
   }
 
   Widget getBody() {
+
     if (selectedIndex == 0) {
       return _home;
     } else if (this.selectedIndex == 1) {
       return _webnar;
     } else if (this.selectedIndex == 2) {
       return this._booking;
-    } else if (this.selectedIndex == 3) {
+    } /*else if (this.selectedIndex == 3) {
       return this._news;
     } else if (this.selectedIndex == 4) {
       return this._profile;
-    } else {
+    } */else {
       return this._home;
     }
   }
