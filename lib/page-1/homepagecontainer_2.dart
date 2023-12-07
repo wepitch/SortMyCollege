@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
+import 'package:myapp/page-1/booking_page.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/page-1/profile.dart';
@@ -30,11 +31,11 @@ class _HomePageContainer_2State extends State<HomePageContainer_2> {
 
   Widget _webnar = Webnar();
 
-  Widget _feed = ExplorerFeed();
+  Widget _booking = BookingPage();
 
-  Widget _news = News();
+  /*Widget _news = News();
 
-  Widget _profile = Profile();
+  Widget _profile = Profile();*/
 
 
 
@@ -109,21 +110,19 @@ class _HomePageContainer_2State extends State<HomePageContainer_2> {
     } else if(this.selectedIndex==1) {
       return _webnar;
     }else if(this.selectedIndex==2) {
-      return this._feed;
+      return this._booking;
     }
-    else if(this.selectedIndex==3) {
+    /*else if(this.selectedIndex==3) {
       return this._news;
     }
     else if(this.selectedIndex==4) {
       return this._profile;
-    }
+    }*/
 
     else {
       return this._home;
     }
   }
-
-
 
   void onTapgotocounsellor(BuildContext context) {
     Navigator.push(context, MaterialPageRoute(builder: (context) => CounsellorListPage_offline()));

@@ -159,13 +159,13 @@ class _CounsellorListPage_offlineState
                                   10 * fem, 15 * fem, 1.84 * fem, 6.69 * fem),
                               width: double.infinity,
                               child: GestureDetector(
-                                onTap: () {
+                                /*onTap: () {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
                                               Filter_Course()));
-                                },
+                                },*/
                                 child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
