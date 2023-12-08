@@ -139,7 +139,7 @@ Widget customButton(
         child: Text(
           title,
           style: SafeGoogleFont("Inter",
-              fontSize: 15, fontWeight: FontWeight.w600),
+              fontSize: 16, fontWeight: FontWeight.w500),
         )),
   );
 }

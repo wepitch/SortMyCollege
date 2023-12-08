@@ -129,7 +129,7 @@ class CustomWebinarCard extends StatelessWidget {
                       child: Image.asset(
                         "assets/page-1/images/group-38-oFX.png",
                         width: 17,
-                        height: 19,
+                        height: 17,
                         color: Colors.white,
                       ),
                     ),
@@ -189,7 +189,7 @@ Widget customRegisterNowBtn(
     required bool isRegisterNow}) {
   return SizedBox(
     height: 42,
-    width: 260,
+    width: 240,
     child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(

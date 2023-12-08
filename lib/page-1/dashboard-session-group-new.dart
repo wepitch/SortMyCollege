@@ -14,8 +14,10 @@ import 'dart:developer' as console show log;
 class Counseling_Session_group extends StatefulWidget {
   const Counseling_Session_group(
       {super.key, required this.name, required this.id});
+
   final String name;
   final String id;
+
   @override
   State<Counseling_Session_group> createState() =>
       _Counseling_Session_groupState();
@@ -26,6 +28,7 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
   SessionDate sessionDate = SessionDate();
   int selectedIndex = 0;
   String selectedDate = Jiffy.now().format(pattern: "dd/M/yyyy");
+
   @override
   void initState() {
     // TODO: implement initState
@@ -35,7 +38,7 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
   }
 
   void fetchDataFromApi() {
-    var date = Jiffy.now().format(pattern: "yyyy-MM-dd");
+    var date = Jiffy.now().format(pattern: "yyyy-M-d");
     context.read<CounsellorDetailsProvider>().fetchCounsellor_session(
         id: widget.id, date: date, sessionType: "Group");
   }
@@ -94,11 +97,9 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                                       sessionDate
                                                           .dates[index].date,
                                                       pattern: "d MMM yyyy")
-                                                  .format(
-                                                      pattern: "yyyy-M-d");
+                                                  .format(pattern: "yyyy-M-d");
                                               selectedDate = Jiffy.parse(date)
-                                                  .format(
-                                                      pattern: "dd/M/yyyy");
+                                                  .format(pattern: "dd/M/yyyy");
                                               console.log(date);
                                               selectedIndex = index;
                                               context
@@ -121,8 +122,7 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                                 border: Border.all(
                                                     color: const Color(
                                                         0xff1f0a68)),
-                                                color:
-                                                    const Color(0xffffffff),
+                                                color: const Color(0xffffffff),
                                               ),
                                               child: SizedBox(
                                                 // group310VQt (2620:3574)
@@ -146,9 +146,8 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                                                   0 * fem),
                                                           child: Text(
                                                             '${index == 0 ? "Today" : index == 1 ? "Tomorrow" : sessionDate.dates[index].day}, ${sessionDate.dates[index].formattedDate}',
-                                                            textAlign:
-                                                                TextAlign
-                                                                    .center,
+                                                            textAlign: TextAlign
+                                                                .center,
                                                             style:
                                                                 SafeGoogleFont(
                                                               'Inter',
@@ -161,8 +160,7 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                                                   ffem /
                                                                   fem,
                                                               letterSpacing:
-                                                                  0.59375 *
-                                                                      fem,
+                                                                  0.59375 * fem,
                                                               color: sessionDate
                                                                           .dates[
                                                                               index]
@@ -178,25 +176,25 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                                       Center(
                                                         // noslotskrc (2620:3576)
                                                         child: Text(
-                                                          index ==
-                                                                  selectedIndex
-                                                              ? counsellorSessionProvider.details.totalAvailableSlots ==
+                                                          index == selectedIndex
+                                                              ? counsellorSessionProvider
+                                                                              .details
+                                                                              .totalAvailableSlots ==
                                                                           0 ||
-                                                                      counsellorSessionProvider.details.totalAvailableSlots ==
+                                                                      counsellorSessionProvider
+                                                                              .details
+                                                                              .totalAvailableSlots ==
                                                                           null
                                                                   ? "No Slots"
                                                                   : "${counsellorSessionProvider.details.totalAvailableSlots!} Slots"
                                                               : "No Slots",
-                                                          textAlign: TextAlign
-                                                              .center,
-                                                          style:
-                                                              SafeGoogleFont(
+                                                          textAlign:
+                                                              TextAlign.center,
+                                                          style: SafeGoogleFont(
                                                             'Inter',
-                                                            fontSize:
-                                                                12 * ffem,
+                                                            fontSize: 12 * ffem,
                                                             fontWeight:
-                                                                FontWeight
-                                                                    .w700,
+                                                                FontWeight.w700,
                                                             height: 1.2125 *
                                                                 ffem /
                                                                 fem,
@@ -208,8 +206,7 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                                                             null ||
                                                                         counsellorSessionProvider.details.totalAvailableSlots ==
                                                                             0
-                                                                    ? Colors
-                                                                        .red
+                                                                    ? Colors.red
                                                                     : Colors
                                                                         .green
                                                                 : const Color(
@@ -260,7 +257,10 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                 Expanded(
                   child: counsellorSessionProvider.details.sessions == null
                       ? const Center(
-                          child: CircularProgressIndicator(),
+                          child: /*CircularProgressIndicator(
+                                 valueColor:AlwaysStoppedAnimation<Color>(Colors.red)
+                              )*/
+                              Text("No Sessions Available") ,
                         )
                       : counsellorSessionProvider.details.sessions!.isEmpty
                           ? const Center(
@@ -286,8 +286,7 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                         children: [
                                           Row(
                                             mainAxisAlignment:
-                                                MainAxisAlignment
-                                                    .spaceBetween,
+                                                MainAxisAlignment.spaceBetween,
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.end,
                                             children: [
@@ -307,8 +306,7 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                                 decoration: ShapeDecoration(
                                                   color:
                                                       const Color(0xFFB1A0EA),
-                                                  shape:
-                                                      RoundedRectangleBorder(
+                                                  shape: RoundedRectangleBorder(
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             99),
@@ -335,8 +333,7 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                           ),
                                           Row(
                                             mainAxisAlignment:
-                                                MainAxisAlignment
-                                                    .spaceBetween,
+                                                MainAxisAlignment.spaceBetween,
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.end,
                                             children: [
@@ -348,8 +345,7 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                                 children: [
                                                   Text(
                                                     selectedDate,
-                                                    textAlign:
-                                                        TextAlign.center,
+                                                    textAlign: TextAlign.center,
                                                     style: const TextStyle(
                                                       color: Colors.black,
                                                       fontSize: 12,
@@ -378,8 +374,7 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                                   ),
                                                   Text(
                                                     'Price - ${counsellorSessionProvider.details.sessions![index].sessionPrice} /-',
-                                                    textAlign:
-                                                        TextAlign.center,
+                                                    textAlign: TextAlign.center,
                                                     style: const TextStyle(
                                                       color: Colors.black,
                                                       fontSize: 12,
@@ -394,8 +389,7 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                                   ),
                                                   GestureDetector(
                                                     onTap: () {
-                                                      isExpanded =
-                                                          !isExpanded;
+                                                      isExpanded = !isExpanded;
                                                       setState(() {});
                                                     },
                                                     child: const Row(
@@ -405,17 +399,14 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                                       children: [
                                                         Text(
                                                           'View Details',
-                                                          textAlign: TextAlign
-                                                              .center,
+                                                          textAlign:
+                                                              TextAlign.center,
                                                           style: TextStyle(
-                                                            color:
-                                                                Colors.black,
+                                                            color: Colors.black,
                                                             fontSize: 12,
-                                                            fontFamily:
-                                                                'Inter',
+                                                            fontFamily: 'Inter',
                                                             fontWeight:
-                                                                FontWeight
-                                                                    .w800,
+                                                                FontWeight.w800,
                                                             height: 0,
                                                           ),
                                                         ),
@@ -467,8 +458,7 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                                 decoration: ShapeDecoration(
                                                   color:
                                                       const Color(0xFF1F0A68),
-                                                  shape:
-                                                      RoundedRectangleBorder(
+                                                  shape: RoundedRectangleBorder(
                                                     side: const BorderSide(
                                                         width: 1),
                                                     borderRadius:
@@ -479,8 +469,7 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                                 child: const Center(
                                                   child: Text(
                                                     'Book',
-                                                    textAlign:
-                                                        TextAlign.center,
+                                                    textAlign: TextAlign.center,
                                                     style: TextStyle(
                                                       color: Colors.white,
                                                       fontSize: 18,
@@ -849,6 +838,13 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
               ],
             ),
           );
+  }
+
+  callme() async {
+    await Future.delayed(Duration(seconds: 3));
+    CircularProgressIndicator(
+        valueColor:AlwaysStoppedAnimation<Color>(Colors.red)
+    );
   }
 
   Future<bool> _onBackPressed() async {
