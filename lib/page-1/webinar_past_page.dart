@@ -54,7 +54,7 @@ class CustomWebinarCard extends StatelessWidget {
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Container(
           height: 190,
-          width: 390,
+          // width: 390,
           decoration: BoxDecoration(
               color: Colors.red,
               borderRadius: BorderRadius.circular(10),
