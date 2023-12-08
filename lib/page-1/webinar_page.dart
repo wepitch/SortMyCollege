@@ -9,6 +9,8 @@ import 'homepagecontainer.dart';
 class WebinarPage extends StatefulWidget {
   const WebinarPage({super.key});
 
+
+
   @override
   State<WebinarPage> createState() => _WebinarPageState();
 }
@@ -22,7 +24,6 @@ class _WebinarPageState extends State<WebinarPage> {
     super.initState();
     pageController = PageController(initialPage: selectedIndex);
   }
-
   int selectedIndex = 1;
   @override
   Widget build(BuildContext context) {
@@ -83,6 +84,7 @@ class _WebinarPageState extends State<WebinarPage> {
                     },
                     title: "Past",
                     isPressed: selectedIndex == 0),
+
                 customButton(
                     onPressed: () {
                       setState(() {
@@ -99,7 +101,7 @@ class _WebinarPageState extends State<WebinarPage> {
                       });
                       pageController.jumpToPage(selectedIndex);
                     },
-                    title: "Upcoming",
+                    title: "Coming",
                     isPressed: selectedIndex == 2),
               ],
             ),
@@ -139,7 +141,7 @@ Widget customButton(
         child: Text(
           title,
           style: SafeGoogleFont("Inter",
-              fontSize: 16, fontWeight: FontWeight.w500),
+              fontSize: 14, fontWeight: FontWeight.w500),
         )),
   );
 }

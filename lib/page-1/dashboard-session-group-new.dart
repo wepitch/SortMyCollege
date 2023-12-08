@@ -260,7 +260,7 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                           child: /*CircularProgressIndicator(
                                  valueColor:AlwaysStoppedAnimation<Color>(Colors.red)
                               )*/
-                              Text("No Sessions Available") ,
+                              Text("No Sessions Available"),
                         )
                       : counsellorSessionProvider.details.sessions!.isEmpty
                           ? const Center(
@@ -838,13 +838,6 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
               ],
             ),
           );
-  }
-
-  callme() async {
-    await Future.delayed(Duration(seconds: 3));
-    CircularProgressIndicator(
-        valueColor:AlwaysStoppedAnimation<Color>(Colors.red)
-    );
   }
 
   Future<bool> _onBackPressed() async {

@@ -46,8 +46,6 @@ class ApiService {
       console.log(response.body.toString());
       return [];
     }
-    print("======");
-    print("********");
   }
 
   static Future<ResponseModel> call_otp1() async {
