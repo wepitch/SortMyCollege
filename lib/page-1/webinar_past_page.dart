@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/page-1/webinar_details_page.dart';
 import 'package:myapp/utils.dart';
 
 class WebinarPastPage extends StatelessWidget {
@@ -135,7 +136,14 @@ class CustomWebinarCard extends StatelessWidget {
                     ),
                   ),
                   customRegisterNowBtn(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const WebinarDetailsPage(),
+                          ),
+                        );
+                      },
                       title: btnTitle,
                       isRegisterNow: isRegisterNow)
                 ],
