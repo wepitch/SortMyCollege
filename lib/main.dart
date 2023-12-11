@@ -8,6 +8,7 @@ import 'package:myapp/other/counsellor_details_provider.dart';
 import 'package:myapp/other/dependency_injection.dart';
 import 'package:myapp/page-1/homepagecontainer.dart';
 import 'package:myapp/page-1/counsellor_details_page.dart';
+import 'package:myapp/page-1/sign-up.dart';
 import 'package:myapp/page-1/splash-screen.dart';
 import 'package:myapp/page-1/splash_screen_2.dart';
 import 'package:myapp/utils.dart';
@@ -17,6 +18,7 @@ import 'package:myapp/page-1/dashboard-session-group-new.dart';
 import 'package:myapp/page-1/filter_1.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 // import 'package:myapp/page-1/student-community-NJD.dart';
 // import 'package:myapp/page-1/courses.dart';
 // import 'package:myapp/page-1/detailed-cb.dart';
@@ -101,6 +103,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
@@ -110,7 +113,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.grey,
         ),
-        home: Scaffold(
+        home: const Scaffold(
           body: SplashScreen2(),
         ),
         builder: EasyLoading.init());

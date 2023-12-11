@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/otp_text_field.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../other/api_service.dart';
 import '../other/constants.dart';
@@ -18,13 +19,11 @@ class Otp extends StatefulWidget {
 
   @override
   State<Otp> createState() => _OtpState();
-
 }
 
 class _OtpState extends State<Otp> {
   OtpFieldController otpController = OtpFieldController();
-  String otp="";
-
+  String otp = "";
 
   @override
   void initState() {
@@ -42,7 +41,7 @@ class _OtpState extends State<Otp> {
       child: Container(
         // otpJzM (437:59)
         width: double.infinity,
-        decoration: const BoxDecoration (
+        decoration: const BoxDecoration(
           color: Color(0xffffffff),
         ),
         child: Column(
@@ -50,13 +49,14 @@ class _OtpState extends State<Otp> {
           children: [
             Container(
               // autogrouph5gdFPo (AXy9yMRHTTsPGC8fBth5GD)
-              padding: EdgeInsets.fromLTRB(64*fem, 144*fem, 72*fem, 10*fem),
+              padding:
+                  EdgeInsets.fromLTRB(64 * fem, 144 * fem, 72 * fem, 10 * fem),
               width: double.infinity,
-              decoration: BoxDecoration (
+              decoration: BoxDecoration(
                 color: const Color(0xffffffff),
-                borderRadius: BorderRadius.only (
-                  topLeft: Radius.circular(50*fem),
-                  topRight: Radius.circular(50*fem),
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(50 * fem),
+                  topRight: Radius.circular(50 * fem),
                 ),
               ),
               child: Column(
@@ -64,9 +64,10 @@ class _OtpState extends State<Otp> {
                 children: [
                   Container(
                     // sortmycollegelogo1XcD (1061:4)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 24*fem),
-                    width: 294*fem,
-                    height: 80*fem,
+                    margin: EdgeInsets.fromLTRB(
+                        0 * fem, 0 * fem, 0 * fem, 24 * fem),
+                    width: 294 * fem,
+                    height: 80 * fem,
                     child: Image.asset(
                       'assets/page-1/images/sortmycollege-logo-1-5V3.png',
                       fit: BoxFit.cover,
@@ -74,16 +75,17 @@ class _OtpState extends State<Otp> {
                   ),
                   Container(
                     // sortyourentirecollegejourneyqc (1061:5)
-                    margin: EdgeInsets.fromLTRB(22*fem, 0*fem, 0*fem, 0*fem),
+                    margin: EdgeInsets.fromLTRB(
+                        22 * fem, 0 * fem, 0 * fem, 0 * fem),
                     child: Text(
                       'Sort Your Entire College Journey!',
                       textAlign: TextAlign.center,
-                      style: SafeGoogleFont (
+                      style: SafeGoogleFont(
                         'Roboto',
-                        fontSize: 16*ffem,
+                        fontSize: 16 * ffem,
                         fontWeight: FontWeight.w700,
-                        height: 1.1725*ffem/fem,
-                        color: Color(0xff1f0a68),
+                        height: 1.1725 * ffem / fem,
+                        color: const Color(0xff1f0a68),
                       ),
                     ),
                   ),
@@ -92,14 +94,16 @@ class _OtpState extends State<Otp> {
             ),
             Container(
               // autogroupmhnhjyB (AXyAHLuJkakqRNK8bRMHNH)
-              padding: EdgeInsets.fromLTRB(73*fem, 149*fem, 47*fem, 235*fem),
+              padding:
+                  EdgeInsets.fromLTRB(73 * fem, 149 * fem, 47 * fem, 235 * fem),
               width: double.infinity,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
                     // autogroupo1ffTPP (AXyA5BauKawAo6JVoyo1ff)
-                    margin: EdgeInsets.fromLTRB(15*fem, 0*fem, 44*fem, 40*fem),
+                    margin: EdgeInsets.fromLTRB(
+                        15 * fem, 0 * fem, 44 * fem, 40 * fem),
                     width: double.infinity,
                     child: OTPTextField(
                         controller: otpController,
@@ -109,60 +113,60 @@ class _OtpState extends State<Otp> {
                         fieldWidth: 40,
                         //fieldStyle: FieldStyle.box,
                         outlineBorderRadius: 15,
-                        style: TextStyle(fontSize: 17),
+                        style: const TextStyle(fontSize: 17),
                         onChanged: (pin) {
                           print("Changed: " + pin);
-
                         },
                         onCompleted: (pin) {
                           print("Completed: " + pin);
-                          otp=pin;
+                          otp = pin;
                         }),
                   ),
                   Container(
                     // didntreceiveanotpresendotpX1s (437:94)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 27*fem, 15*fem),
+                    margin: EdgeInsets.fromLTRB(
+                        0 * fem, 0 * fem, 27 * fem, 15 * fem),
                     child: RichText(
                       textAlign: TextAlign.center,
                       text: TextSpan(
-                        style: SafeGoogleFont (
+                        style: SafeGoogleFont(
                           'Inter',
-                          fontSize: 15*ffem,
+                          fontSize: 15 * ffem,
                           fontWeight: FontWeight.w400,
-                          height: 1.2102272034*ffem/fem,
-                          color: Color(0xff000000),
+                          height: 1.2102272034 * ffem / fem,
+                          color: const Color(0xff000000),
                         ),
                         children: [
                           TextSpan(
                             text: 'Did’t receive an OTP? ',
-                            style: SafeGoogleFont (
+                            style: SafeGoogleFont(
                               'Roboto',
-                              fontSize: 15*ffem,
+                              fontSize: 15 * ffem,
                               fontWeight: FontWeight.w400,
-                              height: 1.1725*ffem/fem,
-                              color: Color(0xff000000),
+                              height: 1.1725 * ffem / fem,
+                              color: const Color(0xff000000),
                             ),
                           ),
                           TextSpan(
                             text: 'Resend OTP',
-                            style: SafeGoogleFont (
+                            style: SafeGoogleFont(
                               'Roboto',
-                              fontSize: 15*ffem,
+                              fontSize: 15 * ffem,
                               fontWeight: FontWeight.w600,
-                              height: 1.1725*ffem/fem,
+                              height: 1.1725 * ffem / fem,
                               decoration: TextDecoration.underline,
-                              color: Color(0xff000000),
-                              decorationColor: Color(0xff000000),
+                              color: const Color(0xff000000),
+                              decorationColor: const Color(0xff000000),
                             ),
                           ),
                           TextSpan(
                             text: ' ',
-                            style: SafeGoogleFont (
+                            style: SafeGoogleFont(
                               'Roboto',
-                              fontSize: 15*ffem,
+                              fontSize: 15 * ffem,
                               fontWeight: FontWeight.w600,
-                              height: 1.1725*ffem/fem,
-                              color: Color(0xff000000),
+                              height: 1.1725 * ffem / fem,
+                              color: const Color(0xff000000),
                             ),
                           ),
                         ],
@@ -171,62 +175,70 @@ class _OtpState extends State<Otp> {
                   ),
                   Container(
                     // wrongnumberBPF (437:95)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 28*fem, 50*fem),
+                    margin: EdgeInsets.fromLTRB(
+                        0 * fem, 0 * fem, 28 * fem, 50 * fem),
                     child: Text(
-                      'Wrong Number',
+                      // 'Wrong Number' changed for testing purposes
+                      "Wrong Email",
                       textAlign: TextAlign.center,
-                      style: SafeGoogleFont (
+                      style: SafeGoogleFont(
                         'Roboto',
-                        fontSize: 15*ffem,
+                        fontSize: 15 * ffem,
                         fontWeight: FontWeight.w600,
-                        height: 1.1725*ffem/fem,
+                        height: 1.1725 * ffem / fem,
                         decoration: TextDecoration.underline,
-                        color: Color(0xff000000),
-                        decorationColor: Color(0xff000000),
+                        color: const Color(0xff000000),
+                        decorationColor: const Color(0xff000000),
                       ),
                     ),
                   ),
                   Container(
                     // autogroupuwzkHhB (AXyABr4U2J9nG7vbfWUwZK)
                     width: double.infinity,
-                    height: 45*fem,
-                    decoration: BoxDecoration (
-                      color: Color(0xff1f0a68),
-                      borderRadius: BorderRadius.circular(10*fem),
+                    height: 45 * fem,
+                    decoration: BoxDecoration(
+                      color: const Color(0xff1f0a68),
+                      borderRadius: BorderRadius.circular(10 * fem),
                     ),
                     child: Center(
                       child: GestureDetector(
                         onTap: () {
-                           if(otp.isEmpty)
-                            {
-                              EasyLoading.showToast(AppConstants.otperror,
-                                  toastPosition: EasyLoadingToastPosition.bottom);
-                            }
-                           else{
+                          if (otp.isEmpty) {
+                            EasyLoading.showToast(AppConstants.otperror,
+                                toastPosition: EasyLoadingToastPosition.bottom);
+                          } else {
+                            ApiService()
+                                .verify_otp_2(
+                                    otp: otp.toString().trim(),
+                                    email: widget.email)
+                                .then((value) async {
+                              if (value["message"] ==
+                                  "OTP verified successfully") {
+                                EasyLoading.showToast(value["message"],
+                                    toastPosition:
+                                        EasyLoadingToastPosition.bottom);
+                                SharedPreferences prefs =
+                                    await SharedPreferences.getInstance();
+                                prefs.setString("token", value["token"]);
 
-                             ApiService().verify_otp_2(otp: otp.trim(), email:widget.email).then((
-                                 value) async{
-                               if(value["message"] == "Email sent successfully")
-                               {
-                                 onTapGettingstarted(context);
-                               }
-                               else{
-                                 EasyLoading.showToast("error",
-                                     toastPosition: EasyLoadingToastPosition.bottom);
-                               }
-                             });
-                             onTapGettingstarted(context);
-                           }
-                          },
+                                onTapGettingstarted(context);
+                              } else {
+                                EasyLoading.showToast(value["error"],
+                                    toastPosition:
+                                        EasyLoadingToastPosition.bottom);
+                              }
+                            });
+                          }
+                        },
                         child: Text(
                           'Submit OTP',
                           textAlign: TextAlign.center,
-                          style: SafeGoogleFont (
+                          style: SafeGoogleFont(
                             'Roboto',
-                            fontSize: 20*ffem,
+                            fontSize: 20 * ffem,
                             fontWeight: FontWeight.w400,
-                            height: 1.1725*ffem/fem,
-                            color: Color(0xffffffff),
+                            height: 1.1725 * ffem / fem,
+                            color: const Color(0xffffffff),
                           ),
                         ),
                       ),
@@ -238,11 +250,12 @@ class _OtpState extends State<Otp> {
           ],
         ),
       ),
-          );
+    );
   }
 
   void onTapGettingstarted(BuildContext context) {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => HomePageContainer()));
+    Navigator.pushReplacement(context,
+        MaterialPageRoute(builder: (context) => const HomePageContainer()));
   }
 
   void configLoading() {

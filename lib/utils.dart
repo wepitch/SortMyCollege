@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:jiffy/jiffy.dart';
+import 'dart:developer' as console show log;
 
 class MyCustomScrollBehavior extends MaterialScrollBehavior {
   @override
@@ -97,25 +98,22 @@ class SessionDate {
   }
 
   final List<DateModel> dates = [
-    DateModel(
-        index: 0,
-        day: todayDay,
-        formattedDate: todayDate,
-        date: "$todayDate $year")
+    DateModel(day: todayDay, formattedDate: todayDate, date: "$todayDate $year")
   ];
 
-  void getDates(index) {
+  void getDates() {
     for (int i = 1; i <= 7; i++) {
-      String todayNum = todayDate[0];
-      String formattedDate = todayDate.replaceFirst(
-          todayDate[0], (int.parse(todayNum) + (i)).toString());
+      String todayNum = Jiffy.now().format(pattern: "d");
+
+      String formattedDate = todayDate.replaceAll(
+          todayNum.toString(), (int.parse(todayNum) + i).toString());
       String day = Jiffy.parse("$formattedDate $year", pattern: "d MMM yyyy")
           .format(pattern: 'EEEE')
           .toString()
           .substring(0, 3);
+      console.log(formattedDate);
 
       dates.add(DateModel(
-          index: index,
           day: day,
           formattedDate: formattedDate,
           date: "$formattedDate $year"));
@@ -127,9 +125,8 @@ class DateModel {
   final String date;
   final String formattedDate;
   final String day;
-  final int index;
+
   DateModel({
-    required this.index,
     required this.day,
     required this.formattedDate,
     required this.date,

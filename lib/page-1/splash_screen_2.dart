@@ -6,6 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:myapp/page-1/counsellor_select_listview_offline.dart';
 import 'package:myapp/page-1/edulevel.dart';
+import 'package:myapp/page-1/homepagecontainer.dart';
+import 'package:myapp/page-1/sign-up.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../utils.dart';
 import 'package:lottie/lottie.dart';
@@ -68,7 +71,7 @@ class _SplashScreen2State extends State<SplashScreen2> {
               itemBuilder: (context, index, realIndex) {
                 var textImage = sliderTextImages[index];
                 return Container(
-                  padding: EdgeInsets.all(5),
+                  padding: const EdgeInsets.all(5),
                   // makingastudentslifesimple27K (1012:217)
                   margin: const EdgeInsets.symmetric(horizontal: 46),
                   // height: 50,
@@ -165,7 +168,7 @@ class _SplashScreen2State extends State<SplashScreen2> {
                   });
                 },
               )),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Row(
@@ -293,9 +296,18 @@ class _SplashScreen2State extends State<SplashScreen2> {
   }
 }
 
-void onTapGettingstarted(BuildContext context) {
+void onTapGettingstarted(BuildContext context) async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  var token = prefs.getString("token");
+
   Navigator.pushReplacement(
-      context, MaterialPageRoute(builder: (context) => const EducationLevel()));
+      context,
+      MaterialPageRoute(
+          builder: (context) =>
+              token == null ? Signup() : const HomePageContainer()));
+
+  // Navigator.pushReplacement(
+  //     context, MaterialPageRoute(builder: (context) => const EducationLevel()));
 }
 
 List<String> sliderTextImages = [

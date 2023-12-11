@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 
 class AppConstants {
-  static String baseUrl = 'http://13.127.104.198:9000';
+  static String baseUrl = 'https://server.sortmycollege.com';
   static String counsellorlistEndpoint = '/counsellor/';
   static String sendotpRequest = '/user/auth/sendOTPEmail';
   static String verifyotpRequest = '/user/auth/verifyOTPEmail';

@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:developer';
 
+import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 
 import '../model/counsellor_data.dart';
@@ -92,9 +93,14 @@ class ApiService {
       headers: headers,
       body: jsonEncode(body),
     );
-    data = json.decode(response.body);
-    print(data);
-    return data;
+
+    print(response.body.toString());
+    if (response.statusCode == 200) {
+      data = jsonDecode(response.body.toString());
+      return data;
+    } else {
+      return {};
+    }
   }
 
   Future call_otp(String email) async {
@@ -115,11 +121,11 @@ class ApiService {
   }
 
   static Future<CounsellorSessionDetails> getCounsellor_sessions(
-      {required String date,
-      required String sessionType,
-      required String id}) async {
+      {String? date, String? sessionType, required String id}) async {
+    var params = "?session_date=$date&session_type=$sessionType";
+
     var url = Uri.parse(
-        "https://server.sortmycollege.com/counsellor/$id/sessions?session_date=$date&session_type=$sessionType");
+        "https://server.sortmycollege.com/counsellor/$id/sessions${date != null ? params : ''}");
 
     var response = await http.get(
       url,
@@ -135,5 +141,25 @@ class ApiService {
     } else {
       return CounsellorSessionDetails();
     }
+  }
+
+  static Future<Map<String, dynamic>> callVerifyOtp(String email) async {
+    final body = jsonEncode({"email": email});
+    final headers = {
+      'Content-Type': 'application/json',
+    };
+
+    final url = Uri.parse("${AppConstants.baseUrl}/user/auth/sendOTPEmail");
+    final response = await http.post(
+      url,
+      headers: headers,
+      body: body,
+    );
+
+    if (response.statusCode == 200) {
+      var data = jsonDecode(response.body.toString());
+      return data;
+    }
+    return {};
   }
 }

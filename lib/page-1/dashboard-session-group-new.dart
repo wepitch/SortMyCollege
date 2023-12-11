@@ -26,14 +26,14 @@ class Counseling_Session_group extends StatefulWidget {
 class _Counseling_Session_groupState extends State<Counseling_Session_group> {
   bool isExpanded = false;
   SessionDate sessionDate = SessionDate();
-  int selectedIndex = 0;
-  String selectedDate = Jiffy.now().format(pattern: "dd/M/yyyy");
+  String selectedDate = Jiffy.now().format(pattern: "d MMM");
+  String selectedSessionDate = Jiffy.now().format(pattern: "dd/M/yyyy");
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    sessionDate.getDates(selectedIndex);
+    sessionDate.getDates();
     fetchDataFromApi();
   }
 
@@ -98,10 +98,12 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                                           .dates[index].date,
                                                       pattern: "d MMM yyyy")
                                                   .format(pattern: "yyyy-M-d");
-                                              selectedDate = Jiffy.parse(date)
-                                                  .format(pattern: "dd/M/yyyy");
+                                              selectedSessionDate =
+                                                  Jiffy.parse(date).format(
+                                                      pattern: "dd/M/yyyy");
                                               console.log(date);
-                                              selectedIndex = index;
+                                              selectedDate = sessionDate
+                                                  .dates[index].formattedDate;
                                               context
                                                   .read<
                                                       CounsellorDetailsProvider>()
@@ -176,7 +178,11 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                                       Center(
                                                         // noslotskrc (2620:3576)
                                                         child: Text(
-                                                          index == selectedIndex
+                                                          sessionDate
+                                                                      .dates[
+                                                                          index]
+                                                                      .formattedDate ==
+                                                                  selectedDate
                                                               ? counsellorSessionProvider
                                                                               .details
                                                                               .totalAvailableSlots ==
@@ -200,8 +206,11 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                                                 fem,
                                                             letterSpacing:
                                                                 0.59375 * fem,
-                                                            color: index ==
-                                                                    selectedIndex
+                                                            color: sessionDate
+                                                                        .dates[
+                                                                            index]
+                                                                        .formattedDate ==
+                                                                    selectedDate
                                                                 ? counsellorSessionProvider.details.totalAvailableSlots ==
                                                                             null ||
                                                                         counsellorSessionProvider.details.totalAvailableSlots ==
@@ -260,7 +269,7 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                           child: /*CircularProgressIndicator(
                                  valueColor:AlwaysStoppedAnimation<Color>(Colors.red)
                               )*/
-                              Text("No Sessions Available") ,
+                              Text("No Sessions Available"),
                         )
                       : counsellorSessionProvider.details.sessions!.isEmpty
                           ? const Center(
@@ -344,7 +353,7 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                                     CrossAxisAlignment.start,
                                                 children: [
                                                   Text(
-                                                    selectedDate,
+                                                    selectedSessionDate,
                                                     textAlign: TextAlign.center,
                                                     style: const TextStyle(
                                                       color: Colors.black,
@@ -843,8 +852,7 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
   callme() async {
     await Future.delayed(Duration(seconds: 3));
     CircularProgressIndicator(
-        valueColor:AlwaysStoppedAnimation<Color>(Colors.red)
-    );
+        valueColor: AlwaysStoppedAnimation<Color>(Colors.red));
   }
 
   Future<bool> _onBackPressed() async {

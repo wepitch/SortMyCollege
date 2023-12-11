@@ -55,6 +55,7 @@ dependencies:
   connectivity_plus: ^5.0.2
   google_sign_in: ^6.1.6
   jiffy: ^6.2.1
+  shared_preferences: ^2.2.2
 
 dev_dependencies:
   flutter_test:

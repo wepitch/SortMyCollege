@@ -8,6 +8,7 @@ import 'api_service.dart';
 class CounsellorDetailsProvider extends ChangeNotifier {
   List<CounsellorDetail> cousnellorlist_detail = [];
 
+  CounsellorSessionDetails allDetails = CounsellorSessionDetails();
   CounsellorSessionDetails details = CounsellorSessionDetails();
   bool isLoading = true;
 
@@ -25,14 +26,17 @@ class CounsellorDetailsProvider extends ChangeNotifier {
   }
 
   void fetchCounsellor_session(
-      {required String id,
-      required String date,
-      required String sessionType}) async {
+      {required String id, String? date, String? sessionType}) async {
     try {
       isLoading = true;
-      var counsellor = await ApiService.getCounsellor_sessions(
-          date: date, sessionType: sessionType, id: id);
-      details = counsellor;
+      if (date != null) {
+        var counsellor = await ApiService.getCounsellor_sessions(
+            date: date, sessionType: sessionType, id: id);
+        details = counsellor;
+      } else {
+        var counsellor = await ApiService.getCounsellor_sessions(id: id);
+        allDetails = counsellor;
+      }
     } finally {
       isLoading = false;
     }
