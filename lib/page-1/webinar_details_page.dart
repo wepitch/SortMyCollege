@@ -76,26 +76,28 @@ class WebinarDetailsPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(11, 20, 15, 15),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "Learn more about CUET and IPMAT",
-                        style: SafeGoogleFont("Inter",
-                            fontSize: 17,
-                            fontWeight: FontWeight.w600,
-                            color: const Color(0xff414040)),
-                      ),
-                      Text(
-                        "60 min",
-                        style: SafeGoogleFont("Inter",
-                            fontSize: 12,
-                            fontWeight: FontWeight.w500,
-                            color: fontColor),
-                      )
-                    ],
+                  padding: const EdgeInsets.fromLTRB(11, 20, 12, 15),
+                  child: Expanded(
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Learn more about CUET and IPMAT",
+                          style: SafeGoogleFont("Inter",
+                              fontSize: 15,
+                              fontWeight: FontWeight.w600,
+                              color: const Color(0xff414040)),
+                        ),
+                        Text(
+                          "60 min",
+                          style: SafeGoogleFont("Inter",
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
+                              color: fontColor),
+                        )
+                      ],
+                    ),
                   ),
                 ),
                 Padding(
@@ -132,10 +134,10 @@ class WebinarDetailsPage extends StatelessWidget {
                         width: 5,
                       ),
                       Text(
-                        "02:00 PM Onwards\n15th Sep",
+                        "02:00 PM Onwards \n 15th Sep",
                         style: SafeGoogleFont(
                           "Inter",
-                          fontSize: 14,
+                          fontSize: 13,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
