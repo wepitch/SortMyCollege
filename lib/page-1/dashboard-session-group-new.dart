@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:jiffy/jiffy.dart';
+import 'package:myapp/other/api_service.dart';
 import 'package:myapp/page-1/homepagecontainer_2.dart';
 import 'package:myapp/utils.dart';
 
 import 'package:provider/provider.dart';
 import 'package:readmore/readmore.dart';
 
+import '../model/counsellor_sessions.dart';
 import '../other/counsellor_details_provider.dart';
 import 'counsellor_select_listview_offline.dart';
 import 'dashboard-session-personnel-new.dart';
@@ -34,7 +37,24 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
     // TODO: implement initState
     super.initState();
     sessionDate.getDates();
+    configLoading();
     fetchDataFromApi();
+    context
+        .read<CounsellorDetailsProvider>()
+        .fetchCounsellor_session(id: widget.id);
+  }
+
+  void configLoading() {
+    EasyLoading.instance
+      ..indicatorType = EasyLoadingIndicatorType.fadingCircle
+      ..displayDuration = const Duration(milliseconds: 1000)
+      ..loadingStyle = EasyLoadingStyle.dark
+      ..indicatorSize = 45.0
+      ..maskType = EasyLoadingMaskType.none
+      ..radius = 10.0
+      ..maskColor = Colors.black.withOpacity(0.5)
+      ..userInteractions = false
+      ..dismissOnTap = false;
   }
 
   void fetchDataFromApi() {
@@ -111,6 +131,11 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                                       id: widget.id,
                                                       date: date,
                                                       sessionType: "Group");
+                                              context
+                                                  .read<
+                                                      CounsellorDetailsProvider>()
+                                                  .fetchCounsellor_session(
+                                                      id: widget.id);
                                             },
                                             child: Container(
                                               padding: EdgeInsets.fromLTRB(
@@ -178,49 +203,56 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                                       Center(
                                                         // noslotskrc (2620:3576)
                                                         child: Text(
-                                                          sessionDate
+                                                          isDateIsSame(
+                                                                  sessionDate
                                                                       .dates[
                                                                           index]
-                                                                      .formattedDate ==
-                                                                  selectedDate
-                                                              ? counsellorSessionProvider
-                                                                              .details
-                                                                              .totalAvailableSlots ==
-                                                                          0 ||
-                                                                      counsellorSessionProvider
-                                                                              .details
-                                                                              .totalAvailableSlots ==
-                                                                          null
+                                                                      .formattedDate,
+                                                                  counsellorSessionProvider
+                                                                          .allDetails
+                                                                          .sessions ??
+                                                                      [])
+                                                              ? slotCount(
+                                                                          sessionDate
+                                                                              .dates[
+                                                                                  index]
+                                                                              .formattedDate,
+                                                                          counsellorSessionProvider.allDetails.sessions ??
+                                                                              []) ==
+                                                                      ""
                                                                   ? "No Slots"
-                                                                  : "${counsellorSessionProvider.details.totalAvailableSlots!} Slots"
+                                                                  : "${slotCount(sessionDate.dates[index].formattedDate, counsellorSessionProvider.allDetails.sessions ?? [])} Slots"
                                                               : "No Slots",
                                                           textAlign:
                                                               TextAlign.center,
                                                           style: SafeGoogleFont(
-                                                            'Inter',
-                                                            fontSize: 12 * ffem,
-                                                            fontWeight:
-                                                                FontWeight.w700,
-                                                            height: 1.2125 *
-                                                                ffem /
-                                                                fem,
-                                                            letterSpacing:
-                                                                0.59375 * fem,
-                                                            color: sessionDate
-                                                                        .dates[
-                                                                            index]
-                                                                        .formattedDate ==
-                                                                    selectedDate
-                                                                ? counsellorSessionProvider.details.totalAvailableSlots ==
-                                                                            null ||
-                                                                        counsellorSessionProvider.details.totalAvailableSlots ==
-                                                                            0
-                                                                    ? Colors.red
-                                                                    : Colors
-                                                                        .green
-                                                                : const Color(
-                                                                    0xff8d8888),
-                                                          ),
+                                                              'Inter',
+                                                              fontSize:
+                                                                  12 * ffem,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w700,
+                                                              height: 1.2125 *
+                                                                  ffem /
+                                                                  fem,
+                                                              letterSpacing:
+                                                                  0.59375 * fem,
+                                                              color: isDateIsSame(
+                                                                      sessionDate
+                                                                          .dates[
+                                                                              index]
+                                                                          .formattedDate,
+                                                                      counsellorSessionProvider
+                                                                              .allDetails
+                                                                              .sessions ??
+                                                                          [])
+                                                                  ? slotCount(sessionDate.dates[index].formattedDate, counsellorSessionProvider.allDetails.sessions ?? []) ==
+                                                                          ""
+                                                                      ? Colors
+                                                                          .red
+                                                                      : Colors
+                                                                          .green
+                                                                  : Colors.red),
                                                         ),
                                                       ),
                                                     ],
@@ -461,31 +493,81 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                                       : const SizedBox()
                                                 ],
                                               ),
-                                              Container(
-                                                width: 96,
-                                                height: 38,
-                                                decoration: ShapeDecoration(
-                                                  color:
-                                                      const Color(0xFF1F0A68),
-                                                  shape: RoundedRectangleBorder(
-                                                    side: const BorderSide(
-                                                        width: 1),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            10),
+                                              GestureDetector(
+                                                onTap: () {
+                                                  ApiService.sessionBooked(
+                                                          counsellorSessionProvider
+                                                              .details
+                                                              .sessions![index]
+                                                              .id!)
+                                                      .then((value) {
+                                                    if (value["message"] ==
+                                                        "Counseling session booked successfully") {
+                                                      EasyLoading.showToast(
+                                                          value["message"],
+                                                          toastPosition:
+                                                              EasyLoadingToastPosition
+                                                                  .bottom);
+                                                      context
+                                                          .read<
+                                                              CounsellorDetailsProvider>()
+                                                          .fetchCounsellor_session(
+                                                              id: widget.id);
+                                                      var date = Jiffy.parse(
+                                                              counsellorSessionProvider
+                                                                  .details
+                                                                  .sessions![
+                                                                      index]
+                                                                  .sessionDate!)
+                                                          .format(
+                                                              pattern:
+                                                                  "yyyy-M-d");
+                                                      context
+                                                          .read<
+                                                              CounsellorDetailsProvider>()
+                                                          .fetchCounsellor_session(
+                                                              id: widget.id,
+                                                              sessionType:
+                                                                  "Group",
+                                                              date: date);
+                                                      setState(() {});
+                                                    } else {
+                                                      EasyLoading.showToast(
+                                                          "error",
+                                                          toastPosition:
+                                                              EasyLoadingToastPosition
+                                                                  .bottom);
+                                                    }
+                                                  });
+                                                },
+                                                child: Container(
+                                                  width: 96,
+                                                  height: 38,
+                                                  decoration: ShapeDecoration(
+                                                    color:
+                                                        const Color(0xFF1F0A68),
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      side: const BorderSide(
+                                                          width: 1),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10),
+                                                    ),
                                                   ),
-                                                ),
-                                                child: const Center(
-                                                  child: Text(
-                                                    'Book',
-                                                    textAlign: TextAlign.center,
-                                                    style: TextStyle(
-                                                      color: Colors.white,
-                                                      fontSize: 18,
-                                                      fontFamily: 'Inter',
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      height: 0,
+                                                  child: const Center(
+                                                    child: Text(
+                                                      'Book',
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      style: TextStyle(
+                                                        color: Colors.white,
+                                                        fontSize: 18,
+                                                        fontFamily: 'Inter',
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                        height: 0,
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
@@ -869,3 +951,30 @@ List<String> sampleViewDetails = [
   "\u2022 slots:",
   "\u2022 duration:",
 ];
+
+bool isDateIsSame(String date, List<Sessions> sessions) {
+  for (final element in sessions) {
+    var apiDate = Jiffy.parse(element.sessionDate!).format(pattern: "d MMM");
+    if (date.contains(apiDate)) {
+      console.log("yess");
+      return true;
+    }
+  }
+  console.log("nope");
+
+  return false;
+}
+
+String slotCount(String date, List<Sessions> sessions) {
+  for (final element in sessions) {
+    var apiDate = Jiffy.parse(element.sessionDate!).format(pattern: "d MMM");
+
+    if (element.sessionType == "Group") {
+      if (date.contains(apiDate)) {
+        return element.sessionAvailableSlots.toString();
+      }
+    }
+  }
+
+  return "";
+}

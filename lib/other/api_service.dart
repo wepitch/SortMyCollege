@@ -3,6 +3,7 @@ import 'dart:developer';
 
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../model/counsellor_data.dart';
 import '../model/counsellor_detail.dart';
@@ -159,5 +160,26 @@ class ApiService {
       return data;
     }
     return {};
+  }
+
+  static Future<Map<String, dynamic>> sessionBooked(String sessionId) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    final token = prefs.getString("token").toString();
+    final url = Uri.parse(
+        "${AppConstants.baseUrl}/counsellor/sessions/$sessionId/book");
+    final headers = {
+      "Authorization": token,
+    };
+    final response = await http.put(
+      url,
+      headers: headers,
+    );
+
+    if (response.statusCode == 201) {
+      final data = jsonDecode(response.body.toString());
+      return data;
+    } else {
+      return {};
+    }
   }
 }

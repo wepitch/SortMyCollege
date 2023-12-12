@@ -106,7 +106,7 @@ class SessionDate {
       String todayNum = Jiffy.now().format(pattern: "d");
 
       String formattedDate = todayDate.replaceAll(
-          todayNum.toString(), (int.parse(todayNum) + i).toString());
+          todayNum.toString(), (int.parse(todayNum) - i).toString());
       String day = Jiffy.parse("$formattedDate $year", pattern: "d MMM yyyy")
           .format(pattern: 'EEEE')
           .toString()

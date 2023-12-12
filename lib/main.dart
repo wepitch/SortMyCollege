@@ -96,8 +96,12 @@ import 'package:shared_preferences/shared_preferences.dart';
 // import 'package:myapp/page-1/share.dart';
 
 void main() {
-  runApp(ChangeNotifierProvider(
-      create: (context) => CounsellorDetailsProvider(), child: const MyApp()));
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => CounsellorDetailsProvider(),
+      child: const MyApp(),
+    ),
+  );
   DependencyInjection.init();
 }
 
