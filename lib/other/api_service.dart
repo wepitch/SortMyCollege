@@ -3,6 +3,7 @@ import 'dart:developer';
 
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
+import 'package:myapp/model/booking_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../model/counsellor_data.dart';
@@ -181,5 +182,23 @@ class ApiService {
     } else {
       return {};
     }
+  }
+
+  static Future<List<BookingModel>> getUserBooking() async {
+    final url = Uri.parse("${AppConstants.baseUrl}/user/booking");
+    final headers = {"Content-Type": "application/json"};
+    final response = await http.get(url, headers: headers);
+
+    if (response.statusCode == 200) {
+      List data = jsonDecode(response.body.toString());
+      List<BookingModel> bookingDetails = [];
+      for (final element in data) {
+        bookingDetails.add(BookingModel.fromJson(element));
+      }
+
+      return bookingDetails;
+    }
+
+    return [];
   }
 }

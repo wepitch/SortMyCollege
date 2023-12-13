@@ -56,6 +56,9 @@ dependencies:
   google_sign_in: ^6.1.6
   jiffy: ^6.2.1
   shared_preferences: ^2.2.2
+  url_launcher: ^6.0.0
+  share_plus: ^7.2.1
+  
 
 dev_dependencies:
   flutter_test:

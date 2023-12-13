@@ -6,6 +6,7 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/other/counsellor_details_provider.dart';
 import 'package:myapp/other/dependency_injection.dart';
+import 'package:myapp/other/user_booking_provider.dart';
 import 'package:myapp/page-1/homepagecontainer.dart';
 import 'package:myapp/page-1/counsellor_details_page.dart';
 import 'package:myapp/page-1/sign-up.dart';
@@ -97,8 +98,15 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => CounsellorDetailsProvider(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => CounsellorDetailsProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => UserBookingProvider(),
+        ),
+      ],
       child: const MyApp(),
     ),
   );

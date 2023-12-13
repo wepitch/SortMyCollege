@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:jiffy/jiffy.dart';
+import 'package:myapp/model/booking_model.dart';
 import 'package:myapp/other/constants.dart';
+import 'package:share_plus/share_plus.dart';
+import 'package:url_launcher/link.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 import '../utils.dart';
 
@@ -8,10 +14,15 @@ class BookingConfirmationPage extends StatelessWidget {
       {super.key,
       required this.isUpcoming,
       required this.isConfirmed,
-      required this.time});
+      required this.time,
+      required this.bookingData,
+      required this.counsellorDetails});
   final bool isUpcoming;
   final String time;
   final bool isConfirmed;
+
+  final BookingData bookingData;
+  final BookedEntity counsellorDetails;
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +71,7 @@ class BookingConfirmationPage extends StatelessWidget {
                     height: 11,
                   ),
                   Image.asset(
-                    "${AppConstants.imagePath}${isConfirmed ? "booking-confirm.png" : "booking-cancel.png"}",
+                    "${AppConstants.imagePath}${bookingData.sessionStatus == "Available" || bookingData.sessionStatus == "Booked" ? "booking-confirm.png" : "booking-cancel.png"}",
                     height: 105,
                     width: 105,
                   ),
@@ -94,7 +105,7 @@ class BookingConfirmationPage extends StatelessWidget {
                             Text(
                               isUpcoming
                                   ? "Meeting starts at"
-                                  : "Session starts in",
+                                  : "Session starts at",
                               style: SafeGoogleFont(
                                 "Inter",
                                 fontSize: 12,
@@ -117,7 +128,7 @@ class BookingConfirmationPage extends StatelessWidget {
                                 : Row(
                                     children: [
                                       Text(
-                                        time,
+                                        bookingData.sessionTime ?? time,
                                         style: SafeGoogleFont(
                                           "Inter",
                                           fontSize: 18,
@@ -127,14 +138,14 @@ class BookingConfirmationPage extends StatelessWidget {
                                       const SizedBox(
                                         width: 2,
                                       ),
-                                      Text(
-                                        "m",
-                                        style: SafeGoogleFont(
-                                          "Inter",
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.w600,
-                                        ),
-                                      )
+                                      // Text(
+                                      //   "m",
+                                      //   style: SafeGoogleFont(
+                                      //     "Inter",
+                                      //     fontSize: 12,
+                                      //     fontWeight: FontWeight.w600,
+                                      //   ),
+                                      // )
                                     ],
                                   ),
                           ],
@@ -143,7 +154,9 @@ class BookingConfirmationPage extends StatelessWidget {
                           children: [
                             customButton(
                                 context: context,
-                                onPressed: () {},
+                                onPressed: () {
+                                  _launchURL(bookingData.sessionLink!, context);
+                                },
                                 title: "JOIN NOW",
                                 isActive: isUpcoming),
                             const SizedBox(
@@ -180,10 +193,11 @@ class BookingConfirmationPage extends StatelessWidget {
                     ),
                     child: Row(
                       children: [
-                        const CircleAvatar(
+                        CircleAvatar(
                           radius: 30,
-                          backgroundImage: NetworkImage(
-                              "https://i.pinimg.com/originals/97/31/02/9731022f0be7c965e880505461643850.jpg"),
+                          backgroundImage: NetworkImage(counsellorDetails
+                                  .profilePic ??
+                              "https://media.gettyimages.com/id/1334712074/vector/coming-soon-message.jpg?s=612x612&w=0&k=20&c=0GbpL-k_lXkXC4LidDMCFGN_Wo8a107e5JzTwYteXaw="),
                         ),
                         const SizedBox(
                           width: 8,
@@ -192,7 +206,7 @@ class BookingConfirmationPage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "Sandeep Mehra",
+                              counsellorDetails.name ?? "N/A",
                               style: SafeGoogleFont("Inter",
                                   fontWeight: FontWeight.bold,
                                   fontSize: 17,
@@ -253,7 +267,7 @@ class BookingConfirmationPage extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          " : 65462556654654659879856",
+                          " : ${bookingData.id}",
                           style: SafeGoogleFont(
                             "Inter",
                             fontSize: 14,
@@ -275,7 +289,7 @@ class BookingConfirmationPage extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          " : Personal Session",
+                          " : ${bookingData.sessionType} Session",
                           style: SafeGoogleFont(
                             "Inter",
                             fontSize: 14,
@@ -297,7 +311,7 @@ class BookingConfirmationPage extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          " : 12/08/2023",
+                          " : ${Jiffy.parse(bookingData.sessionDate!).format(pattern: 'dd/MM/yyyy')}",
                           style: SafeGoogleFont(
                             "Inter",
                             fontSize: 14,
@@ -319,7 +333,7 @@ class BookingConfirmationPage extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          " : 2:00 PM - 03:00 PM",
+                          " : ${bookingData.sessionTime}",
                           style: SafeGoogleFont(
                             "Inter",
                             fontSize: 14,
@@ -341,7 +355,7 @@ class BookingConfirmationPage extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          " : 500/-",
+                          " : ${bookingData.sessionFee}/-",
                           style: SafeGoogleFont(
                             "Inter",
                             fontSize: 14,
@@ -363,7 +377,7 @@ class BookingConfirmationPage extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          " : Available",
+                          " : ${bookingData.sessionStatus}",
                           style: SafeGoogleFont(
                             "Inter",
                             fontSize: 14,
@@ -385,7 +399,7 @@ class BookingConfirmationPage extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          " : 4/5",
+                          " : ${bookingData.sessionAvailableSlots}/${bookingData.sessionSlots}",
                           style: SafeGoogleFont(
                             "Inter",
                             fontSize: 14,
@@ -407,7 +421,7 @@ class BookingConfirmationPage extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          " : Booked",
+                          " : ${Jiffy.parse(bookingData.createdAt!).format(pattern: 'dd/MM/yyyy')}",
                           style: SafeGoogleFont(
                             "Inter",
                             fontSize: 14,
@@ -429,7 +443,7 @@ class BookingConfirmationPage extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          " : Booked",
+                          " : ${Jiffy.parse(bookingData.updatedAt!).format(pattern: 'dd/MM/yyyy')}",
                           style: SafeGoogleFont(
                             "Inter",
                             fontSize: 14,
@@ -482,7 +496,8 @@ Widget customButton(
       child: OutlinedButton(
           onPressed: onPressed,
           style: OutlinedButton.styleFrom(
-              foregroundColor: isActive ? Color(0xff9C9A9A) : Colors.white,
+              foregroundColor:
+                  isActive ? const Color(0xff9C9A9A) : Colors.white,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
@@ -496,4 +511,11 @@ Widget customButton(
               fontWeight: FontWeight.w600,
             ),
           )));
+}
+
+void _launchURL(String url, BuildContext context) async {
+  var uri = Uri.parse(url);
+  if (!await canLaunchUrl(uri)) {
+    await launchUrl(uri);
+  }
 }

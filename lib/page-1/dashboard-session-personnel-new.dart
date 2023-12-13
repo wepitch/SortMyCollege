@@ -463,7 +463,7 @@ class _Counseling_Session_PersonnelState
                                                       ],
                                                     ),
                                                   ),
-                                                  SizedBox(
+                                                  const SizedBox(
                                                     height: 5,
                                                   ),
                                                   isExpanded
@@ -474,17 +474,17 @@ class _Counseling_Session_PersonnelState
                                                           children: [
                                                             Text(
                                                                 "Name : ${widget.name}"),
-                                                            SizedBox(
+                                                            const SizedBox(
                                                               height: 5,
                                                             ),
                                                             Text(
                                                                 "Slots : ${counsellorSessionProvider.details.sessions![index].sessionSlots}"),
-                                                            SizedBox(
+                                                            const SizedBox(
                                                               height: 5,
                                                             ),
                                                             Text(
                                                                 "Duration : ${counsellorSessionProvider.details.sessions![index].sessionDuration}"),
-                                                            SizedBox(
+                                                            const SizedBox(
                                                               height: 5,
                                                             ),
                                                             Text(
@@ -933,8 +933,8 @@ class _Counseling_Session_PersonnelState
   }
 
   callme() async {
-    await Future.delayed(Duration(seconds: 3));
-    CircularProgressIndicator(
+    await Future.delayed(const Duration(seconds: 3));
+    const CircularProgressIndicator(
         valueColor: AlwaysStoppedAnimation<Color>(Colors.red));
   }
 
