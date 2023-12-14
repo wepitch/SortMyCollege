@@ -495,6 +495,9 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                               ),
                                               GestureDetector(
                                                 onTap: () {
+                                                  EasyLoading.show(
+                                                      status: "Loading...",
+                                                      dismissOnTap: false);
                                                   ApiService.sessionBooked(
                                                           counsellorSessionProvider
                                                               .details
@@ -533,7 +536,7 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                                       setState(() {});
                                                     } else {
                                                       EasyLoading.showToast(
-                                                          "error",
+                                                          value["error"],
                                                           toastPosition:
                                                               EasyLoadingToastPosition
                                                                   .bottom);

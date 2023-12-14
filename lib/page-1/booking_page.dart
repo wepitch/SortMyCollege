@@ -130,6 +130,7 @@ class _BookingPageState extends State<BookingPage> {
                   controller: _controller,
                   onPageChanged: (value) {
                     selectedIndex = value;
+
                     setState(() {});
                   },
                   children: const [

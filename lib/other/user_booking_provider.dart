@@ -6,10 +6,12 @@ class UserBookingProvider extends ChangeNotifier {
   List<BookingModel> userBooking = [];
   bool isLoading = false;
 
-  void fetchUserBookings() async {
+  void fetchUserBookings(
+      {required bool past, required bool today, required bool upcoming}) async {
     isLoading = true;
     try {
-      userBooking = await ApiService.getUserBooking();
+      userBooking = await ApiService.getUserBooking(
+          today: today, past: past, upcoming: upcoming);
     } finally {
       isLoading = false;
     }

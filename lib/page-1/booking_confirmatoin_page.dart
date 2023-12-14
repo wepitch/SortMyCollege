@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:jiffy/jiffy.dart';
 import 'package:myapp/model/booking_model.dart';
 import 'package:myapp/other/constants.dart';
@@ -9,14 +10,16 @@ import 'package:url_launcher/url_launcher_string.dart';
 
 import '../utils.dart';
 
-class BookingConfirmationPage extends StatelessWidget {
+class BookingConfirmationPage extends StatefulWidget {
   const BookingConfirmationPage(
       {super.key,
       required this.isUpcoming,
       required this.isConfirmed,
       required this.time,
       required this.bookingData,
-      required this.counsellorDetails});
+      required this.counsellorDetails,
+      required this.remainingTime});
+  final Duration remainingTime;
   final bool isUpcoming;
   final String time;
   final bool isConfirmed;
@@ -25,7 +28,15 @@ class BookingConfirmationPage extends StatelessWidget {
   final BookedEntity counsellorDetails;
 
   @override
+  State<BookingConfirmationPage> createState() =>
+      _BookingConfirmationPageState();
+}
+
+class _BookingConfirmationPageState extends State<BookingConfirmationPage> {
+  bool isExpired = false;
+  @override
   Widget build(BuildContext context) {
+    isExpired = widget.remainingTime.inMinutes < 0;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xff1F0A68),
@@ -71,7 +82,7 @@ class BookingConfirmationPage extends StatelessWidget {
                     height: 11,
                   ),
                   Image.asset(
-                    "${AppConstants.imagePath}${bookingData.sessionStatus == "Available" || bookingData.sessionStatus == "Booked" ? "booking-confirm.png" : "booking-cancel.png"}",
+                    "${AppConstants.imagePath}${widget.bookingData.sessionStatus == "Available" || widget.bookingData.sessionStatus == "Booked" ? "booking-confirm.png" : "booking-cancel.png"}",
                     height: 105,
                     width: 105,
                   ),
@@ -79,7 +90,9 @@ class BookingConfirmationPage extends StatelessWidget {
                     height: 20,
                   ),
                   Text(
-                    isConfirmed ? "BOOKING CONFIRMED" : "BOOKING CANCELED",
+                    widget.isConfirmed
+                        ? "BOOKING CONFIRMED"
+                        : "BOOKING CANCELED",
                     style: SafeGoogleFont("Inter", fontSize: 14),
                   ),
                   const SizedBox(
@@ -103,24 +116,24 @@ class BookingConfirmationPage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              isUpcoming
+                              widget.isUpcoming
                                   ? "Meeting starts at"
-                                  : "Session starts at",
+                                  : "Session starts in",
                               style: SafeGoogleFont(
                                 "Inter",
                                 fontSize: 12,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
-                            isUpcoming
+                            widget.isUpcoming
                                 ? Text(
-                                    "$time pm",
+                                    "${widget.time} pm",
                                     style: SafeGoogleFont(
                                       "Inter",
                                       fontSize: 18,
                                       fontWeight: FontWeight.w600,
                                       decorationColor: Colors.red,
-                                      decoration: isConfirmed
+                                      decoration: widget.isConfirmed
                                           ? TextDecoration.none
                                           : TextDecoration.lineThrough,
                                     ),
@@ -128,7 +141,8 @@ class BookingConfirmationPage extends StatelessWidget {
                                 : Row(
                                     children: [
                                       Text(
-                                        bookingData.sessionTime ?? time,
+                                        "${widget.remainingTime.inHours < 0 ? "" : widget.remainingTime.inHours}:${widget.remainingTime.inMinutes.remainder(60) < 0 ? '0' : widget.remainingTime.inMinutes.remainder(60)}" ??
+                                            widget.time,
                                         style: SafeGoogleFont(
                                           "Inter",
                                           fontSize: 18,
@@ -138,14 +152,14 @@ class BookingConfirmationPage extends StatelessWidget {
                                       const SizedBox(
                                         width: 2,
                                       ),
-                                      // Text(
-                                      //   "m",
-                                      //   style: SafeGoogleFont(
-                                      //     "Inter",
-                                      //     fontSize: 12,
-                                      //     fontWeight: FontWeight.w600,
-                                      //   ),
-                                      // )
+                                      Text(
+                                        "min",
+                                        style: SafeGoogleFont(
+                                          "Inter",
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      )
                                     ],
                                   ),
                           ],
@@ -155,14 +169,17 @@ class BookingConfirmationPage extends StatelessWidget {
                             customButton(
                                 context: context,
                                 onPressed: () {
-                                  _launchURL(bookingData.sessionLink!, context);
+                                  if (!(widget.remainingTime.inMinutes < 0)) {
+                                    _launchURL(widget.bookingData.sessionLink!,
+                                        context);
+                                  }
                                 },
                                 title: "JOIN NOW",
-                                isActive: isUpcoming),
+                                isActive: isExpired),
                             const SizedBox(
                               height: 4,
                             ),
-                            isUpcoming
+                            widget.isUpcoming
                                 ? const SizedBox()
                                 : Text(
                                     "Host has joined",
@@ -195,8 +212,8 @@ class BookingConfirmationPage extends StatelessWidget {
                       children: [
                         CircleAvatar(
                           radius: 30,
-                          backgroundImage: NetworkImage(counsellorDetails
-                                  .profilePic ??
+                          backgroundImage: NetworkImage(widget
+                                  .counsellorDetails.profilePic ??
                               "https://media.gettyimages.com/id/1334712074/vector/coming-soon-message.jpg?s=612x612&w=0&k=20&c=0GbpL-k_lXkXC4LidDMCFGN_Wo8a107e5JzTwYteXaw="),
                         ),
                         const SizedBox(
@@ -206,7 +223,7 @@ class BookingConfirmationPage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              counsellorDetails.name ?? "N/A",
+                              widget.counsellorDetails.name ?? "N/A",
                               style: SafeGoogleFont("Inter",
                                   fontWeight: FontWeight.bold,
                                   fontSize: 17,
@@ -267,7 +284,7 @@ class BookingConfirmationPage extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          " : ${bookingData.id}",
+                          " : ${widget.bookingData.id}",
                           style: SafeGoogleFont(
                             "Inter",
                             fontSize: 14,
@@ -289,7 +306,7 @@ class BookingConfirmationPage extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          " : ${bookingData.sessionType} Session",
+                          " : ${widget.bookingData.sessionType} Session",
                           style: SafeGoogleFont(
                             "Inter",
                             fontSize: 14,
@@ -311,7 +328,7 @@ class BookingConfirmationPage extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          " : ${Jiffy.parse(bookingData.sessionDate!).format(pattern: 'dd/MM/yyyy')}",
+                          " : ${Jiffy.parse(widget.bookingData.sessionDate!).format(pattern: 'dd/MM/yyyy')}",
                           style: SafeGoogleFont(
                             "Inter",
                             fontSize: 14,
@@ -333,7 +350,7 @@ class BookingConfirmationPage extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          " : ${bookingData.sessionTime}",
+                          " : ${widget.bookingData.sessionTime}",
                           style: SafeGoogleFont(
                             "Inter",
                             fontSize: 14,
@@ -355,7 +372,7 @@ class BookingConfirmationPage extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          " : ${bookingData.sessionFee}/-",
+                          " : ${widget.bookingData.sessionFee}/-",
                           style: SafeGoogleFont(
                             "Inter",
                             fontSize: 14,
@@ -377,7 +394,7 @@ class BookingConfirmationPage extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          " : ${bookingData.sessionStatus}",
+                          " : ${widget.bookingData.sessionStatus}",
                           style: SafeGoogleFont(
                             "Inter",
                             fontSize: 14,
@@ -399,7 +416,7 @@ class BookingConfirmationPage extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          " : ${bookingData.sessionAvailableSlots}/${bookingData.sessionSlots}",
+                          " : ${widget.bookingData.sessionAvailableSlots}/${widget.bookingData.sessionSlots}",
                           style: SafeGoogleFont(
                             "Inter",
                             fontSize: 14,
@@ -421,7 +438,7 @@ class BookingConfirmationPage extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          " : ${Jiffy.parse(bookingData.createdAt!).format(pattern: 'dd/MM/yyyy')}",
+                          " : ${Jiffy.parse(widget.bookingData.createdAt!).format(pattern: 'dd/MM/yyyy')}",
                           style: SafeGoogleFont(
                             "Inter",
                             fontSize: 14,
@@ -443,7 +460,7 @@ class BookingConfirmationPage extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          " : ${Jiffy.parse(bookingData.updatedAt!).format(pattern: 'dd/MM/yyyy')}",
+                          " : ${Jiffy.parse(widget.bookingData.updatedAt!).format(pattern: 'dd/MM/yyyy')}",
                           style: SafeGoogleFont(
                             "Inter",
                             fontSize: 14,
@@ -514,8 +531,16 @@ Widget customButton(
 }
 
 void _launchURL(String url, BuildContext context) async {
+  EasyLoading.show(status: "Loading...", dismissOnTap: false);
   var uri = Uri.parse(url);
   if (!await canLaunchUrl(uri)) {
-    await launchUrl(uri);
+    await launchUrl(uri).then((value) {
+      if (value) {
+        EasyLoading.dismiss();
+      } else {
+        EasyLoading.showToast("Unable to Open..",
+            toastPosition: EasyLoadingToastPosition.bottom);
+      }
+    });
   }
 }

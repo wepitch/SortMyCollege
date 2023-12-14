@@ -184,8 +184,12 @@ class ApiService {
     }
   }
 
-  static Future<List<BookingModel>> getUserBooking() async {
-    final url = Uri.parse("${AppConstants.baseUrl}/user/booking");
+  static Future<List<BookingModel>> getUserBooking(
+      {required bool past, required bool today, required bool upcoming}) async {
+    final url = today
+        ? Uri.parse("${AppConstants.baseUrl}/user/booking")
+        : Uri.parse(
+            "${AppConstants.baseUrl}/user/booking?past=$past&today=$today&upcoming=$upcoming");
     final headers = {"Content-Type": "application/json"};
     final response = await http.get(url, headers: headers);
 

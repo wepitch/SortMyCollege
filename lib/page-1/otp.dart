@@ -192,44 +192,43 @@ class _OtpState extends State<Otp> {
                       ),
                     ),
                   ),
-                  Container(
-                    // autogroupuwzkHhB (AXyABr4U2J9nG7vbfWUwZK)
-                    width: double.infinity,
-                    height: 45 * fem,
-                    decoration: BoxDecoration(
-                      color: const Color(0xff1f0a68),
-                      borderRadius: BorderRadius.circular(10 * fem),
-                    ),
-                    child: Center(
-                      child: GestureDetector(
-                        onTap: () {
-                          if (otp.isEmpty) {
-                            EasyLoading.showToast(AppConstants.otperror,
-                                toastPosition: EasyLoadingToastPosition.bottom);
-                          } else {
-                            ApiService()
-                                .verify_otp_2(
-                                    otp: otp.toString().trim(),
-                                    email: widget.email)
-                                .then((value) async {
-                              if (value["message"] ==
-                                  "OTP verified successfully") {
-                                EasyLoading.showToast(value["message"],
-                                    toastPosition:
-                                        EasyLoadingToastPosition.bottom);
-                                SharedPreferences prefs =
-                                    await SharedPreferences.getInstance();
-                                prefs.setString("token", value["token"]);
+                  GestureDetector(
+                    onTap: () async {
+                      if (otp.isEmpty) {
+                        EasyLoading.showToast(AppConstants.otperror,
+                            toastPosition: EasyLoadingToastPosition.bottom);
+                      } else {
+                        await EasyLoading.show(
+                            status: "Loading...", dismissOnTap: false);
 
-                                onTapGettingstarted(context);
-                              } else {
-                                EasyLoading.showToast(value["error"],
-                                    toastPosition:
-                                        EasyLoadingToastPosition.bottom);
-                              }
-                            });
+                        ApiService()
+                            .verify_otp_2(
+                                otp: otp.toString().trim(), email: widget.email)
+                            .then((value) async {
+                          if (value["message"] == "OTP verified successfully") {
+                            EasyLoading.showToast(value["message"],
+                                toastPosition: EasyLoadingToastPosition.bottom);
+                            SharedPreferences prefs =
+                                await SharedPreferences.getInstance();
+                            prefs.setString("token", value["token"]);
+
+                            onTapGettingstarted(context);
+                          } else {
+                            EasyLoading.showToast(value["error"],
+                                toastPosition: EasyLoadingToastPosition.bottom);
                           }
-                        },
+                        });
+                      }
+                    },
+                    child: Container(
+                      // autogroupuwzkHhB (AXyABr4U2J9nG7vbfWUwZK)
+                      width: double.infinity,
+                      height: 45 * fem,
+                      decoration: BoxDecoration(
+                        color: const Color(0xff1f0a68),
+                        borderRadius: BorderRadius.circular(10 * fem),
+                      ),
+                      child: Center(
                         child: Text(
                           'Submit OTP',
                           textAlign: TextAlign.center,

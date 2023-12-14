@@ -48,9 +48,7 @@ class _CounsellorListPage_offlineState
   }
 
   Future<void> _refresh() {
-    return Future.delayed(const Duration(seconds: 4), () {
-      ApiService.getCounsellor_Data();
-    });
+    return ApiService.getCounsellor_Data();
   }
 
   int selectedIndex = 0;

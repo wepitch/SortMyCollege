@@ -25,6 +25,27 @@ class _Signup extends State<Signup> {
     configLoading();
   }
 
+  bool isLoading = false;
+  void onTapGettingstarted(BuildContext context, String email) async {
+    await EasyLoading.show(
+      status: "Loading...",
+      dismissOnTap: false,
+    );
+    ApiService.callVerifyOtp(email).then((value) {
+      print(value);
+
+      if (value["message"] == "Email sent successfully") {
+        EasyLoading.showToast(value["message"],
+            toastPosition: EasyLoadingToastPosition.bottom);
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => Otp(email)));
+      } else {
+        EasyLoading.showToast(value["error"],
+            toastPosition: EasyLoadingToastPosition.bottom);
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 430;
@@ -171,25 +192,25 @@ class _Signup extends State<Signup> {
                         ),
                       ),
                     ),
-                    Container(
-                      // autogroupbjvs8AD (AXy8Fjcc4e4weRaT58bjVs)
-                      margin: EdgeInsets.fromLTRB(
-                          0 * fem, 0 * fem, 0 * fem, 20 * fem),
-                      width: double.infinity,
-                      height: 45 * fem,
-                      decoration: BoxDecoration(
-                        border: Border.all(color: const Color(0xff000000)),
-                        color: const Color(0xff1f0a68),
-                        borderRadius: BorderRadius.circular(10 * fem),
-                      ),
-                      child: Center(
-                        child: GestureDetector(
-                          onTap: () {
-                            if (check_val()) {
-                              onTapGettingstarted(
-                                  context, phonecontroller.text.toString());
-                            }
-                          },
+                    GestureDetector(
+                      onTap: () {
+                        if (check_val()) {
+                          onTapGettingstarted(
+                              context, phonecontroller.text.toString());
+                        }
+                      },
+                      child: Container(
+                        // autogroupbjvs8AD (AXy8Fjcc4e4weRaT58bjVs)p
+                        margin: EdgeInsets.fromLTRB(
+                            0 * fem, 0 * fem, 0 * fem, 20 * fem),
+                        width: double.infinity,
+                        height: 45 * fem,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: const Color(0xff000000)),
+                          color: const Color(0xff1f0a68),
+                          borderRadius: BorderRadius.circular(10 * fem),
+                        ),
+                        child: Center(
                           child: Text(
                             'Generate OTP',
                             textAlign: TextAlign.center,
@@ -417,22 +438,6 @@ class _Signup extends State<Signup> {
         ),
       ),
     );
-  }
-
-  void onTapGettingstarted(BuildContext context, String email) {
-    ApiService.callVerifyOtp(email).then((value) {
-      print(value);
-
-      if (value["message"] == "Email sent successfully") {
-        EasyLoading.showToast(value["message"],
-            toastPosition: EasyLoadingToastPosition.bottom);
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => Otp(email)));
-      } else {
-        EasyLoading.showToast("error",
-            toastPosition: EasyLoadingToastPosition.bottom);
-      }
-    });
   }
 
   void onTapGettingstarted_login(BuildContext context) {
