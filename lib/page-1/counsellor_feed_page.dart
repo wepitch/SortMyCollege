@@ -283,20 +283,20 @@ Widget counsellorFeedPost(
 List<CounsellorPostModel> dummyData = [
   CounsellorPostModel(
       name: "Anshika Mehra",
-      role: "Web designer",
-      postTitle: "Should I go to HR college or Jai Hind College ?",
+      role: "N/A",
+      postTitle: "Coming Soon",
       profilePic:
-          "https://i0.wp.com/www.torontophotographerz.com/wp-content/uploads/2017/06/Linkedin-portraits-2.jpg?fit=800%2C1200&ssl=1",
+          "https://media.gettyimages.com/id/1334712074/vector/coming-soon-message.jpg?s=612x612&w=0&k=20&c=0GbpL-k_lXkXC4LidDMCFGN_Wo8a107e5JzTwYteXaw=",
       postPic:
-          "https://media.istockphoto.com/photos/confident-teenage-girl-standing-with-arms-crossed-picture-id638756224"),
+          "https://media.gettyimages.com/id/1334712074/vector/coming-soon-message.jpg?s=612x612&w=0&k=20&c=0GbpL-k_lXkXC4LidDMCFGN_Wo8a107e5JzTwYteXaw="),
   CounsellorPostModel(
       name: "Anshika Mehra",
-      role: "Web designer",
-      postTitle: "Should I go to HR college or Jai Hind College ?",
+      role: "N/A",
+      postTitle: "Cooming Soon",
       profilePic:
-          "https://i0.wp.com/www.torontophotographerz.com/wp-content/uploads/2017/06/Linkedin-portraits-2.jpg?fit=800%2C1200&ssl=1",
+          "https://media.gettyimages.com/id/1334712074/vector/coming-soon-message.jpg?s=612x612&w=0&k=20&c=0GbpL-k_lXkXC4LidDMCFGN_Wo8a107e5JzTwYteXaw=",
       postPic:
-          "https://media.istockphoto.com/photos/confident-teenage-girl-standing-with-arms-crossed-picture-id638756224"),
+          "https://media.gettyimages.com/id/1334712074/vector/coming-soon-message.jpg?s=612x612&w=0&k=20&c=0GbpL-k_lXkXC4LidDMCFGN_Wo8a107e5JzTwYteXaw="),
 ];
 
 Future<bool> _onBackPressed(

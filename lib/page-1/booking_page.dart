@@ -127,6 +127,7 @@ class _BookingPageState extends State<BookingPage> {
               ),
               Expanded(
                 child: PageView(
+                  physics: const NeverScrollableScrollPhysics(),
                   controller: _controller,
                   onPageChanged: (value) {
                     selectedIndex = value;

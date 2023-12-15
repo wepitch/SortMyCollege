@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:developer';
 
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:myapp/model/booking_model.dart';
@@ -29,24 +30,57 @@ class ApiService {
     var url = Uri.parse("https://server.sortmycollege.com/counsellor/");
     final response =
         await http.get(url, headers: {"Content-Type": "application/json"});
-    var data = json.decode(response.body.toString());
+    var data = jsonDecode(response.body.toString());
+    console.log("Counsellor List : ${response.body}");
+    if (response.statusCode == 200) {
+      return List<CounsellorData>.from(
+          data.map((x) => CounsellorData.fromJson(x)));
+    }
+    if (response.body.contains("html")) {
+      return [
+        CounsellorData(
+            id: "0",
+            name: "none",
+            profilePic: "",
+            averageRating: 1,
+            experienceInYears: 2,
+            totalSessions: 3,
+            rewardPoints: 4,
+            reviews: 5)
+      ];
+    }
+
+    return [];
     // print(data);
-    return List<CounsellorData>.from(
-        data.map((x) => CounsellorData.fromJson(x)));
   }
 
   static Future<List<CounsellorDetail>> getCounsellor_Detail(String id) async {
     var url = Uri.parse("https://server.sortmycollege.com/counsellor/$id");
     final response =
         await http.get(url, headers: {"Content-Type": "application/json"});
+    console.log("Counsellor Detail page : ${response.body}");
     if (response.statusCode == 200) {
       var data = json.decode(response.body.toString());
 
-      console.log(data.toString());
       return List<CounsellorDetail>.from(
           data.map((x) => CounsellorDetail.fromJson(x)));
+    }
+    if (response.body.contains("html")) {
+      return [
+        CounsellorDetail(
+            howIWillHelpYou: [],
+            qualifications: [],
+            id: id,
+            name: "none",
+            email: "",
+            coverImage: "",
+            averageRating: 1,
+            followersCount: 1,
+            experienceInYears: 1,
+            totalSessionsAttended: 1,
+            gender: "")
+      ];
     } else {
-      console.log(response.body.toString());
       return [];
     }
   }
@@ -74,9 +108,14 @@ class ApiService {
       headers: headers,
       body: jsonEncode(body),
     );
-    data = json.decode(response.body);
-    //print(data);
-    return data;
+
+    console.log(response.body.toString());
+    if (response.statusCode == 200 || response.statusCode == 500) {
+      data = jsonDecode(response.body.toString());
+      return data;
+    } else if (response.body.contains("html")) {
+      return {"error": "something went wrong!"};
+    } else {}
   }
 
   Future verify_otp_2({otp, email}) async {
@@ -94,13 +133,13 @@ class ApiService {
       body: jsonEncode(body),
     );
 
-    print(response.body.toString());
-    if (response.statusCode == 200) {
+    console.log("Verfiying Otp : ${response.body}");
+    if (response.statusCode == 200 || response.statusCode == 401) {
       data = jsonDecode(response.body.toString());
       return data;
-    } else {
-      return {};
-    }
+    } else if (response.body.contains("html")) {
+      return {"error": "something went wrong!"};
+    } else {}
   }
 
   Future call_otp(String email) async {
@@ -156,9 +195,14 @@ class ApiService {
       body: body,
     );
 
-    if (response.statusCode == 200) {
+    console.log("Generating Otp  : ${response.body}");
+    if (response.statusCode == 200 || response.statusCode == 500) {
       var data = jsonDecode(response.body.toString());
+
       return data;
+    }
+    if (response.body.contains("html")) {
+      return {"error": "Something went wrong!"};
     }
     return {};
   }
@@ -176,12 +220,15 @@ class ApiService {
       headers: headers,
     );
 
+    console.log("Booling Session : ${response.body}");
     if (response.statusCode == 201) {
       final data = jsonDecode(response.body.toString());
       return data;
-    } else {
-      return {};
     }
+    if (response.body.contains("html")) {
+      return {"error": "Something went wrong!"};
+    }
+    return {};
   }
 
   static Future<List<BookingModel>> getUserBooking(
@@ -193,6 +240,8 @@ class ApiService {
     final headers = {"Content-Type": "application/json"};
     final response = await http.get(url, headers: headers);
 
+    console.log("gettingAllBookings : ${response.body}");
+
     if (response.statusCode == 200) {
       List data = jsonDecode(response.body.toString());
       List<BookingModel> bookingDetails = [];
@@ -201,6 +250,8 @@ class ApiService {
       }
 
       return bookingDetails;
+    } else if (response.body.contains("html")) {
+      return [BookingModel()];
     }
 
     return [];

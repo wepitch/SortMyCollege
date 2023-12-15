@@ -62,231 +62,246 @@ class _BookingTodayState extends State<BookingToday> {
                   style: SafeGoogleFont("Inter"),
                 ),
               )
-            : RefreshIndicator(
-                onRefresh: _refresh,
-                child: ListView.builder(
-                    itemCount: userBookings.length,
-                    itemBuilder: (context, index) {
-                      var details = userBookings[index];
-                      apiTime = parseTiming(details.bookingData!.sessionTime!);
-                      Duration remainingTime = apiTime.difference(todayTime);
-                      return Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 16),
-                        child: Container(
-                          margin: const EdgeInsets.only(bottom: 15),
-                          child: Stack(
-                            // fit: StackFit.expand,
-                            alignment: Alignment.bottomCenter,
-                            children: [
-                              Card(
-                                // semanticContainer: false,
-                                margin: const EdgeInsets.only(top: 5),
-                                elevation: 5,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(15)),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(12.0),
-                                  child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.end,
-                                      children: [
-                                        Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Row(
-                                              children: [
-                                                CircleAvatar(
-                                                  radius: 30,
-                                                  backgroundImage: NetworkImage(
-                                                      details.bookedEntity
-                                                              ?.profilePic ??
-                                                          "https://media.gettyimages.com/id/1334712074/vector/coming-soon-message.jpg?s=612x612&w=0&k=20&c=0GbpL-k_lXkXC4LidDMCFGN_Wo8a107e5JzTwYteXaw="),
-                                                ),
-                                                const SizedBox(
-                                                  width: 7,
-                                                ),
-                                                Column(
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
-                                                  children: [
-                                                    Text(
-                                                      details.bookedEntity
-                                                              ?.name ??
-                                                          "Coming",
-                                                      style: SafeGoogleFont(
-                                                        "Inter",
-                                                        fontSize: 18,
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                      ),
-                                                    ),
-                                                    Text(
-                                                      "designer at wepitch",
-                                                      // textAlign: TextAlign.left,
-
-                                                      style: SafeGoogleFont(
-                                                        "Inter",
-                                                        color: const Color(
-                                                            0xff747474),
-                                                        fontSize: 14,
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                )
-                                              ],
-                                            ),
-                                          ],
-                                        ),
-                                        Row(
+            : userBookings.length == 1
+                ? const Center(
+                    child: Text("Something went wrong!"),
+                  )
+                : RefreshIndicator(
+                    onRefresh: _refresh,
+                    child: ListView.builder(
+                        itemCount: userBookings.length,
+                        itemBuilder: (context, index) {
+                          var details = userBookings[index];
+                          apiTime =
+                              parseTiming(details.bookingData!.sessionTime!);
+                          Duration remainingTime =
+                              apiTime.difference(todayTime);
+                          return Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 16),
+                            child: Container(
+                              margin: const EdgeInsets.only(bottom: 15),
+                              child: Stack(
+                                // fit: StackFit.expand,
+                                alignment: Alignment.bottomCenter,
+                                children: [
+                                  Card(
+                                    // semanticContainer: false,
+                                    margin: const EdgeInsets.only(top: 5),
+                                    elevation: 5,
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(15)),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(12.0),
+                                      child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
                                           crossAxisAlignment:
                                               CrossAxisAlignment.end,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
                                           children: [
                                             Column(
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: [
-                                                Text(
-                                                  "Session starts in",
-                                                  style: SafeGoogleFont("Inter",
-                                                      fontSize: 12,
-                                                      color: Colors.black,
-                                                      fontWeight:
-                                                          FontWeight.bold),
+                                                Row(
+                                                  children: [
+                                                    CircleAvatar(
+                                                      radius: 30,
+                                                      backgroundImage:
+                                                          NetworkImage(details
+                                                                  .bookedEntity
+                                                                  ?.profilePic ??
+                                                              "https://media.gettyimages.com/id/1334712074/vector/coming-soon-message.jpg?s=612x612&w=0&k=20&c=0GbpL-k_lXkXC4LidDMCFGN_Wo8a107e5JzTwYteXaw="),
+                                                    ),
+                                                    const SizedBox(
+                                                      width: 7,
+                                                    ),
+                                                    Column(
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
+                                                      children: [
+                                                        Text(
+                                                          details.bookedEntity
+                                                                  ?.name ??
+                                                              "Coming",
+                                                          style: SafeGoogleFont(
+                                                            "Inter",
+                                                            fontSize: 18,
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                          ),
+                                                        ),
+                                                        Text(
+                                                          details.bookedEntity!
+                                                              .qualifications![2],
+                                                          // textAlign: TextAlign.left,
+
+                                                          style: SafeGoogleFont(
+                                                            "Inter",
+                                                            color: const Color(
+                                                                0xff747474),
+                                                            fontSize: 14,
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    )
+                                                  ],
                                                 ),
-                                                RichText(
-                                                  text: TextSpan(
-                                                    children: <TextSpan>[
-                                                      TextSpan(
-                                                          text:
-                                                              "${remainingTime.inHours < 0 ? "" : remainingTime.inHours}:${remainingTime.inMinutes.remainder(60) < 0 ? '0' : remainingTime.inMinutes.remainder(60)}",
-                                                          style: SafeGoogleFont(
-                                                              "Inter",
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w600,
-                                                              fontSize: 20,
-                                                              color: Colors
-                                                                  .black)),
-                                                      TextSpan(
-                                                          text: "min",
-                                                          style: SafeGoogleFont(
-                                                              "Inter",
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w600,
-                                                              fontSize: 14,
-                                                              color:
-                                                                  Colors.black))
-                                                    ],
-                                                  ),
-                                                )
                                               ],
                                             ),
-                                            const Spacer(),
-                                            Column(
+                                            Row(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.end,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
                                               children: [
-                                                Text(
-                                                  "${details.bookingData?.sessionType ?? "N/A"} Session",
-                                                  style: SafeGoogleFont("Inter",
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      fontSize: 14,
-                                                      color: const Color(
-                                                          0xff1F0A68)),
+                                                Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Text(
+                                                      "Session starts in",
+                                                      style: SafeGoogleFont(
+                                                          "Inter",
+                                                          fontSize: 12,
+                                                          color: Colors.black,
+                                                          fontWeight:
+                                                              FontWeight.bold),
+                                                    ),
+                                                    RichText(
+                                                      text: TextSpan(
+                                                        children: <TextSpan>[
+                                                          TextSpan(
+                                                              text:
+                                                                  "${remainingTime.inHours < 0 ? "" : remainingTime.inHours}:${remainingTime.inMinutes.remainder(60) < 0 ? '0' : remainingTime.inMinutes.remainder(60)}",
+                                                              style: SafeGoogleFont(
+                                                                  "Inter",
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  fontSize: 20,
+                                                                  color: Colors
+                                                                      .black)),
+                                                          TextSpan(
+                                                              text: "min",
+                                                              style: SafeGoogleFont(
+                                                                  "Inter",
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  fontSize: 14,
+                                                                  color: Colors
+                                                                      .black))
+                                                        ],
+                                                      ),
+                                                    )
+                                                  ],
                                                 ),
-                                                const SizedBox(
-                                                  height: 5,
-                                                ),
-                                                SizedBox(
-                                                  width: 137,
-                                                  height: 24,
-                                                  child: GestureDetector(
-                                                    onTap: () {
-                                                      Navigator.push(
-                                                          context,
-                                                          MaterialPageRoute(
-                                                              builder: (context) => BookingConfirmationPage(
-                                                                  remainingTime:
-                                                                      remainingTime,
-                                                                  isUpcoming:
-                                                                      false,
-                                                                  bookingData: details
-                                                                          .bookingData ??
-                                                                      BookingData(),
-                                                                  counsellorDetails:
-                                                                      details.bookedEntity ??
-                                                                          BookedEntity(),
-                                                                  isConfirmed:
-                                                                      true,
-                                                                  time:
-                                                                      "25:15")));
-                                                    },
-                                                    child: Container(
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          border: Border.all(),
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(20),
-                                                        ),
-                                                        child: Center(
-                                                            child: Text(
-                                                          "View details",
-                                                          style: SafeGoogleFont(
-                                                              "Inter",
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w600,
-                                                              fontSize: 12,
-                                                              color:
-                                                                  Colors.black),
-                                                        ))),
-                                                  ),
-                                                ),
+                                                const Spacer(),
+                                                Column(
+                                                  children: [
+                                                    Text(
+                                                      "${details.bookingData?.sessionType ?? "N/A"} Session",
+                                                      style: SafeGoogleFont(
+                                                          "Inter",
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                          fontSize: 14,
+                                                          color: const Color(
+                                                              0xff1F0A68)),
+                                                    ),
+                                                    const SizedBox(
+                                                      height: 5,
+                                                    ),
+                                                    SizedBox(
+                                                      width: 137,
+                                                      height: 24,
+                                                      child: GestureDetector(
+                                                        onTap: () {
+                                                          Navigator.push(
+                                                              context,
+                                                              MaterialPageRoute(
+                                                                  builder: (context) => BookingConfirmationPage(
+                                                                      remainingTime:
+                                                                          remainingTime,
+                                                                      isUpcoming:
+                                                                          false,
+                                                                      bookingData: details
+                                                                              .bookingData ??
+                                                                          BookingData(),
+                                                                      counsellorDetails:
+                                                                          details.bookedEntity ??
+                                                                              BookedEntity(),
+                                                                      isConfirmed:
+                                                                          true,
+                                                                      time:
+                                                                          "25:15")));
+                                                        },
+                                                        child: Container(
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              border:
+                                                                  Border.all(),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          20),
+                                                            ),
+                                                            child: Center(
+                                                                child: Text(
+                                                              "View details",
+                                                              style: SafeGoogleFont(
+                                                                  "Inter",
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  fontSize: 12,
+                                                                  color: Colors
+                                                                      .black),
+                                                            ))),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                )
                                               ],
                                             )
-                                          ],
-                                        )
-                                      ]),
-                                ),
-                              ),
-                              Positioned(
-                                top: 0,
-                                left: 7,
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      border: Border.all(
-                                        color: Colors.black54,
-                                      ),
-                                      borderRadius: BorderRadius.circular(10)),
-                                  width: 58,
-                                  height: 17,
-                                  child: Center(
-                                    child: Text(
-                                      "Counsellor",
-                                      style: SafeGoogleFont(
-                                        "Inter",
-                                        fontSize: 8,
-                                        fontWeight: FontWeight.w600,
+                                          ]),
+                                    ),
+                                  ),
+                                  Positioned(
+                                    top: 0,
+                                    left: 7,
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          border: Border.all(
+                                            color: Colors.black54,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10)),
+                                      width: 58,
+                                      height: 17,
+                                      child: Center(
+                                        child: Text(
+                                          "Counsellor",
+                                          style: SafeGoogleFont(
+                                            "Inter",
+                                            fontSize: 8,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
+                                ],
                               ),
-                            ],
-                          ),
-                        ),
-                      );
-                    }),
-              );
+                            ),
+                          );
+                        }),
+                  );
 
     return ListView(
       children: [

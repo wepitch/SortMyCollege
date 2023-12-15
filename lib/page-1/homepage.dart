@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/page-1/webinar-detail-second-full-view.dart';
@@ -330,101 +331,112 @@ class _HomePageState extends State<HomePage> {
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
-                                Container(
-                                  // frame2xt9 (993:183)
-                                  margin: EdgeInsets.fromLTRB(
-                                      0 * fem, 0 * fem, 23 * fem, 0 * fem),
-                                  padding: EdgeInsets.fromLTRB(
-                                      15 * fem, 4 * fem, 9 * fem, 6 * fem),
-                                  width: 110 * fem,
-                                  height: 113 * fem,
-                                  clipBehavior: Clip.antiAlias,
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(5),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        offset: const Offset(0, 4),
-                                        blurRadius: 4,
-                                        color: Colors.black.withOpacity(0.1),
-                                      ),
-                                    ],
-                                  ),
+                                GestureDetector(
+                                  onTap: () {
+                                    EasyLoading.showToast("Coming Soon..",
+                                        toastPosition:
+                                            EasyLoadingToastPosition.bottom);
+                                  },
+                                  child: Container(
+                                    // frame2xt9 (993:183)
+                                    margin: EdgeInsets.fromLTRB(
+                                        0 * fem, 0 * fem, 23 * fem, 0 * fem),
+                                    padding: EdgeInsets.fromLTRB(
+                                        15 * fem, 4 * fem, 9 * fem, 6 * fem),
+                                    width: 110 * fem,
+                                    height: 113 * fem,
+                                    clipBehavior: Clip.antiAlias,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(5),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          offset: const Offset(0, 4),
+                                          blurRadius: 4,
+                                          color: Colors.black.withOpacity(0.1),
+                                        ),
+                                      ],
+                                    ),
 
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Expanded(
-                                        child: Container(
-                                          // autogroupdj6r2ND (AXyFQCNg83Pn2mHvneDj6R)
-                                          margin: EdgeInsets.fromLTRB(0 * fem,
-                                              0 * fem, 0 * fem, 7 * fem),
-                                          width: double.infinity,
-                                          height: 62 * fem,
-                                          child: Stack(
-                                            children: [
-                                              Positioned(
-                                                // d05dc9b4dd6d9b6203372a5fa3d872 (925:4)
-                                                left: 2 * fem,
-                                                top: 7 * fem,
-                                                child: Align(
-                                                  child: SizedBox(
-                                                    width: 72 * fem,
-                                                    height: 55 * fem,
-                                                    child: TextButton(
-                                                      onPressed: () {},
-                                                      style:
-                                                          TextButton.styleFrom(
-                                                        padding:
-                                                            EdgeInsets.zero,
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Expanded(
+                                          child: Container(
+                                            // autogroupdj6r2ND (AXyFQCNg83Pn2mHvneDj6R)
+                                            margin: EdgeInsets.fromLTRB(0 * fem,
+                                                0 * fem, 0 * fem, 7 * fem),
+                                            width: double.infinity,
+                                            height: 62 * fem,
+                                            child: Stack(
+                                              children: [
+                                                Positioned(
+                                                  // d05dc9b4dd6d9b6203372a5fa3d872 (925:4)
+                                                  left: 2 * fem,
+                                                  top: 7 * fem,
+                                                  child: Align(
+                                                    child: SizedBox(
+                                                      width: 72 * fem,
+                                                      height: 55 * fem,
+                                                      child: TextButton(
+                                                        onPressed: () {},
+                                                        style: TextButton
+                                                            .styleFrom(
+                                                          padding:
+                                                              EdgeInsets.zero,
+                                                        ),
+                                                        child: Container(),
                                                       ),
-                                                      child: Container(),
                                                     ),
                                                   ),
                                                 ),
-                                              ),
-                                              Positioned(
-                                                // untitleddesign6132R (1189:124)
-                                                left: 0 * fem,
-                                                top: 0 * fem,
-                                                child: Align(
-                                                  child: SizedBox(
-                                                    width: 86 * fem,
-                                                    height: 60 * fem,
-                                                    child: Image.asset(
-                                                      'assets/page-1/images/untitled-design-6-1.png',
-                                                      fit: BoxFit.cover,
+                                                Positioned(
+                                                  // untitleddesign6132R (1189:124)
+                                                  left: 0 * fem,
+                                                  top: 0 * fem,
+                                                  child: Align(
+                                                    child: SizedBox(
+                                                      width: 86 * fem,
+                                                      height: 60 * fem,
+                                                      child: Image.asset(
+                                                        'assets/page-1/images/untitled-design-6-1.png',
+                                                        fit: BoxFit.cover,
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
-                                              ),
-                                            ],
+                                              ],
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                      Container(
-                                        // entrancepreparationYjs (993:185)
-                                        margin: EdgeInsets.fromLTRB(
-                                            0 * fem, 0 * fem, 7 * fem, 0 * fem),
-                                        child: Text(
-                                          'Entrance \nPreparation',
-                                          textAlign: TextAlign.center,
-                                          style: SafeGoogleFont(
-                                            'Inter',
-                                            fontSize: 13 * ffem,
-                                            fontWeight: FontWeight.w700,
-                                            height: 1.2125 * ffem / fem,
-                                            color: const Color(0xff000000),
+                                        Container(
+                                          // entrancepreparationYjs (993:185)
+                                          margin: EdgeInsets.fromLTRB(0 * fem,
+                                              0 * fem, 7 * fem, 0 * fem),
+                                          child: Text(
+                                            'Entrance \nPreparation',
+                                            textAlign: TextAlign.center,
+                                            style: SafeGoogleFont(
+                                              'Inter',
+                                              fontSize: 13 * ffem,
+                                              fontWeight: FontWeight.w700,
+                                              height: 1.2125 * ffem / fem,
+                                              color: const Color(0xff000000),
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                 ),
                                 TextButton(
                                   // frame7dmK (993:211)
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    EasyLoading.showToast("Coming Soon..",
+                                        toastPosition:
+                                            EasyLoadingToastPosition.bottom);
+                                  },
                                   style: TextButton.styleFrom(
                                     padding: EdgeInsets.zero,
                                   ),
@@ -496,7 +508,11 @@ class _HomePageState extends State<HomePage> {
                         children: [
                           TextButton(
                             // frame5kN5 (993:194)
-                            onPressed: () {},
+                            onPressed: () {
+                              EasyLoading.showToast("Coming Soon..",
+                                  toastPosition:
+                                      EasyLoadingToastPosition.bottom);
+                            },
                             style: TextButton.styleFrom(
                               padding: EdgeInsets.zero,
                             ),
@@ -581,7 +597,11 @@ class _HomePageState extends State<HomePage> {
                                   margin: EdgeInsets.fromLTRB(
                                       0 * fem, 0 * fem, 25 * fem, 0 * fem),
                                   child: TextButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      EasyLoading.showToast("Coming Soon..",
+                                          toastPosition:
+                                              EasyLoadingToastPosition.bottom);
+                                    },
                                     style: TextButton.styleFrom(
                                       padding: EdgeInsets.zero,
                                     ),
