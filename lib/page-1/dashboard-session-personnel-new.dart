@@ -415,7 +415,7 @@ class _Counseling_Session_PersonnelState
                                                     height: 5,
                                                   ),
                                                   Text(
-                                                    'Price - ${counsellorSessionProvider.details.sessions![index].sessionPrice} /-',
+                                                    'Price - ${counsellorSessionProvider.details.sessions?[index].sessionPrice ?? "0"} /-',
                                                     textAlign: TextAlign.center,
                                                     style: const TextStyle(
                                                       color: Colors.black,
@@ -472,25 +472,24 @@ class _Counseling_Session_PersonnelState
                                                               CrossAxisAlignment
                                                                   .start,
                                                           children: [
-                                                            Text(
-                                                                "Name : ${widget.name}"),
-                                                            const SizedBox(
-                                                              height: 5,
-                                                            ),
-                                                            Text(
-                                                                "Slots : ${counsellorSessionProvider.details.sessions![index].sessionSlots}"),
-                                                            const SizedBox(
-                                                              height: 5,
-                                                            ),
-                                                            Text(
-                                                                "Duration : ${counsellorSessionProvider.details.sessions![index].sessionDuration}"),
-                                                            const SizedBox(
-                                                              height: 5,
-                                                            ),
-                                                            Text(
-                                                                "Session Status : ${counsellorSessionProvider.details.sessions![index].sessionStatus}"),
-                                                          ],
-                                                        )
+                                                              Text(
+                                                                  "Name : ${widget.name}"),
+                                                              const SizedBox(
+                                                                height: 5,
+                                                              ),
+                                                              Text(
+                                                                  "Slots : ${counsellorSessionProvider.details.sessions?[index].sessionSlots ?? "0"}"),
+                                                              const SizedBox(
+                                                                height: 5,
+                                                              ),
+                                                              Text(
+                                                                  "Duration : ${counsellorSessionProvider.details.sessions?[index].sessionDuration ?? "0"}"),
+                                                              const SizedBox(
+                                                                height: 5,
+                                                              ),
+                                                              Text(
+                                                                  "Session Status : ${counsellorSessionProvider.details.sessions?[index].sessionStatus ?? "N/A"}"),
+                                                            ])
                                                       : const SizedBox()
                                                 ],
                                               ),

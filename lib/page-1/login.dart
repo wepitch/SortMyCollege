@@ -5,6 +5,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:myapp/page-1/sign-up.dart';
 import 'package:myapp/utils.dart';
 
 import '../model/response_model.dart';
@@ -308,30 +309,28 @@ class _Login extends State<Login> {
                   SizedBox(
                     height: 11,
                   ),
-                  RichText(
-                    // donthaveanaccountsignupigR (437:120)
-                    textAlign: TextAlign.center,
-                    text: TextSpan(
-                      style: SafeGoogleFont(
-                        'Inter',
-                        fontSize: 15 * ffem,
-                        fontWeight: FontWeight.w400,
-                        height: 1.5303726196 * ffem / fem,
-                        color: const Color(0xff000000),
-                      ),
-                      children: [
-                        TextSpan(
-                          text: 'Don’t have an account? ',
-                          style: SafeGoogleFont(
-                            'Roboto',
-                            fontSize: 15 * ffem,
-                            fontWeight: FontWeight.w400,
-                            height: 1.4826653059 * ffem / fem,
-                            color: const Color(0xff000000),
-                          ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Don’t have an account? ',
+                        style: SafeGoogleFont(
+                          'Roboto',
+                          fontSize: 15 * ffem,
+                          fontWeight: FontWeight.w400,
+                          height: 1.4826653059 * ffem / fem,
+                          color: const Color(0xff000000),
                         ),
-                        TextSpan(
-                          text: 'Sign up',
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Signup()));
+                        },
+                        child: Text(
+                          'Sign up',
                           style: SafeGoogleFont(
                             'Roboto',
                             fontSize: 17 * ffem,
@@ -340,8 +339,8 @@ class _Login extends State<Login> {
                             color: const Color(0xff000000),
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ],
               ),

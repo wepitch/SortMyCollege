@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:intl/intl.dart';
 import 'package:myapp/page-1/homepagecontainer.dart';
 import 'package:myapp/page-1/selectdob.dart';
 import 'package:myapp/page-1/selectgender.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../utils.dart';
 
@@ -84,11 +86,20 @@ class _SelectDobState extends State<SelectDob> {
               ),
               const Spacer(),
               nextButton(
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => HomePageContainer()));
+                  onPressed: () async {
+                    if (date == "DD/MM/YYYY") {
+                      EasyLoading.showToast("Please Select the date...",
+                          toastPosition: EasyLoadingToastPosition.bottom);
+                    } else {
+                      var prefs = await SharedPreferences.getInstance();
+                      prefs.setString("date", date);
+
+                      if (!mounted) return;
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => HomePageContainer()));
+                    }
                   },
                   title: "Next")
             ],

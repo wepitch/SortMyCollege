@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/page-1/selectdob.dart';
 import 'package:myapp/page-1/selectgender.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../utils.dart';
 
@@ -13,6 +14,8 @@ class SelectGender extends StatefulWidget {
 
 class _SelectGenderState extends State<SelectGender> {
   int selectedIndex = 0;
+  static List<String> list = ["Male", "Female", "Others"];
+  String selectedOption = list[0];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,38 +63,35 @@ class _SelectGenderState extends State<SelectGender> {
                 ),
               ),
               const SizedBox(
-                height: 50,
+                height: 20,
               ),
-              customButton(
-                onPressed: () {
-                  setState(() {
-                    selectedIndex = 0;
-                  });
-                },
-                title: "Male",
-                isActive: selectedIndex == 0,
-              ),
-              customButton(
-                onPressed: () {
-                  setState(() {
-                    selectedIndex = 1;
-                  });
-                },
-                title: "Female",
-                isActive: selectedIndex == 1,
-              ),
-              customButton(
-                onPressed: () {
-                  setState(() {
-                    selectedIndex = 2;
-                  });
-                },
-                title: "Others",
-                isActive: selectedIndex == 2,
+              SizedBox(
+                // color: Colors.red,
+                height: 350,
+                width: 270,
+                child: ListView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: list.length,
+                    itemBuilder: (context, index) {
+                      String title = list[index];
+                      return customButton(
+                        onPressed: () {
+                          setState(() {
+                            selectedIndex = index;
+                            selectedOption = title;
+                          });
+                        },
+                        title: title,
+                        isActive: selectedIndex == index,
+                      );
+                    }),
               ),
               const Spacer(),
               nextButton(
-                  onPressed: () {
+                  onPressed: () async {
+                    var prefs = await SharedPreferences.getInstance();
+                    prefs.setString("gender", selectedOption);
+                    if (!mounted) return;
                     Navigator.pushReplacement(context,
                         MaterialPageRoute(builder: (context) => SelectDob()));
                   },

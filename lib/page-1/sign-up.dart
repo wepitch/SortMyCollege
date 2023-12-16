@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/other/api_service.dart';
 import 'package:myapp/utils.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../other/constants.dart';
 import 'login.dart';
 import 'otp.dart';
@@ -31,13 +32,17 @@ class _Signup extends State<Signup> {
       status: "Loading...",
       dismissOnTap: false,
     );
-    ApiService.callVerifyOtp(email).then((value) {
+
+    ApiService.callVerifyOtp(email).then((value) async {
       print(value);
 
       if (value["message"] == "Email sent successfully") {
         EasyLoading.showToast(value["message"],
             toastPosition: EasyLoadingToastPosition.bottom);
-        Navigator.push(
+        SharedPreferences prefs = await SharedPreferences.getInstance();
+        prefs.setString("name", _nameController.text.toString());
+        if (!mounted) return;
+        Navigator.pushReplacement(
             context, MaterialPageRoute(builder: (context) => Otp(email)));
       } else {
         EasyLoading.showToast(value["error"],
@@ -441,8 +446,8 @@ class _Signup extends State<Signup> {
   }
 
   void onTapGettingstarted_login(BuildContext context) {
-    Navigator.pushAndRemoveUntil(context,
-        MaterialPageRoute(builder: (context) => Login()), (route) => false);
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => Login()));
   }
 
   bool validateMobile(String value) {

@@ -414,7 +414,7 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                                     height: 5,
                                                   ),
                                                   Text(
-                                                    'Price - ${counsellorSessionProvider.details.sessions![index].sessionPrice} /-',
+                                                    'Price - ${counsellorSessionProvider.details.sessions?[index].sessionPrice ?? "0"} /-',
                                                     textAlign: TextAlign.center,
                                                     style: const TextStyle(
                                                       color: Colors.black,
@@ -473,21 +473,21 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group> {
                                                           children: [
                                                             Text(
                                                                 "Name : ${widget.name}"),
-                                                            SizedBox(
+                                                            const SizedBox(
                                                               height: 5,
                                                             ),
                                                             Text(
-                                                                "Slots : ${counsellorSessionProvider.details.sessions![index].sessionSlots}"),
-                                                            SizedBox(
+                                                                "Slots : ${counsellorSessionProvider.details.sessions?[index].sessionSlots ?? "0"}"),
+                                                            const SizedBox(
                                                               height: 5,
                                                             ),
                                                             Text(
-                                                                "Duration : ${counsellorSessionProvider.details.sessions![index].sessionDuration}"),
-                                                            SizedBox(
+                                                                "Duration : ${counsellorSessionProvider.details.sessions?[index].sessionDuration ?? "0"}"),
+                                                            const SizedBox(
                                                               height: 5,
                                                             ),
                                                             Text(
-                                                                "Session Status : ${counsellorSessionProvider.details.sessions![index].sessionStatus}"),
+                                                                "Session Status : ${counsellorSessionProvider.details.sessions?[index].sessionStatus ?? "N/A"}"),
                                                           ],
                                                         )
                                                       : const SizedBox()

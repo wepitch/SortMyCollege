@@ -36,7 +36,9 @@ class _BookingConfirmationPageState extends State<BookingConfirmationPage> {
   bool isExpired = false;
   @override
   Widget build(BuildContext context) {
-    isExpired = widget.remainingTime.inMinutes < 0;
+    isExpired = (widget.remainingTime.inMinutes +
+            (widget.bookingData.sessionDuration ?? 0)) <
+        0;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xff1F0A68),
@@ -169,7 +171,10 @@ class _BookingConfirmationPageState extends State<BookingConfirmationPage> {
                             customButton(
                                 context: context,
                                 onPressed: () {
-                                  if (!(widget.remainingTime.inMinutes < 0)) {
+                                  if (!((widget.remainingTime.inMinutes +
+                                          (widget.bookingData.sessionDuration ??
+                                              0)) <
+                                      0)) {
                                     _launchURL(widget.bookingData.sessionLink!,
                                         context);
                                   }
@@ -230,7 +235,8 @@ class _BookingConfirmationPageState extends State<BookingConfirmationPage> {
                                   height: 1),
                             ),
                             Text(
-                              "Designer at SMC",
+                              widget.counsellorDetails.qualifications?[2] ??
+                                  "N/A".toString(),
                               style: SafeGoogleFont(
                                 "Inter",
                                 fontSize: 13,

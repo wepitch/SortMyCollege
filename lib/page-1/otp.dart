@@ -1,8 +1,12 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/page-1/edulevel.dart';
+import 'package:myapp/page-1/sign-up.dart';
 import 'package:myapp/utils.dart';
 import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/otp_text_field.dart';
@@ -16,19 +20,40 @@ import 'login.dart';
 class Otp extends StatefulWidget {
   var email;
   Otp(this.email, {super.key});
-
   @override
   State<Otp> createState() => _OtpState();
 }
 
 class _OtpState extends State<Otp> {
   OtpFieldController otpController = OtpFieldController();
-  String otp = "";
 
+  String otp = "";
+  Duration duration = const Duration(minutes: 2);
+  Timer? timer;
+  bool isResendOtpEnabled = false;
   @override
   void initState() {
     super.initState();
     configLoading();
+    startTimer();
+  }
+
+  void addTime() {
+    const subSeconds = 1;
+
+    setState(() {
+      if (duration.inMinutes == 0 && duration.inSeconds == 0) {
+        isResendOtpEnabled = true;
+        timer!.cancel();
+      } else {
+        final seconds = duration.inSeconds - subSeconds;
+        duration = Duration(seconds: seconds);
+      }
+    });
+  }
+
+  void startTimer() {
+    timer = Timer.periodic(const Duration(seconds: 1), (timer) => addTime());
   }
 
   @override
@@ -41,16 +66,21 @@ class _OtpState extends State<Otp> {
       child: Container(
         // otpJzM (437:59)
         width: double.infinity,
+        height: double.infinity,
         decoration: const BoxDecoration(
           color: Color(0xffffffff),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            SizedBox(
+              height: 100,
+            ),
             Container(
               // autogrouph5gdFPo (AXy9yMRHTTsPGC8fBth5GD)
-              padding:
-                  EdgeInsets.fromLTRB(64 * fem, 144 * fem, 72 * fem, 10 * fem),
+              // padding: EdgeInsets.fromLTRB(
+              //     64 * fem, 144 * fem, 72 * fem, 10 * fem),
               width: double.infinity,
               decoration: BoxDecoration(
                 color: const Color(0xffffffff),
@@ -103,7 +133,7 @@ class _OtpState extends State<Otp> {
                   Container(
                     // autogroupo1ffTPP (AXyA5BauKawAo6JVoyo1ff)
                     margin: EdgeInsets.fromLTRB(
-                        15 * fem, 0 * fem, 44 * fem, 40 * fem),
+                        15 * fem, 0 * fem, 44 * fem, 20 * fem),
                     width: double.infinity,
                     child: OTPTextField(
                         controller: otpController,
@@ -122,73 +152,95 @@ class _OtpState extends State<Otp> {
                           otp = pin;
                         }),
                   ),
+                  Text(
+                      "${duration.inMinutes.remainder(60).toString().padLeft(2, '0')}:${duration.inSeconds.remainder(60).toString().padLeft(2, '0')}"),
+                  const SizedBox(
+                    height: 5,
+                  ),
                   Container(
                     // didntreceiveanotpresendotpX1s (437:94)
                     margin: EdgeInsets.fromLTRB(
                         0 * fem, 0 * fem, 27 * fem, 15 * fem),
-                    child: RichText(
-                      textAlign: TextAlign.center,
-                      text: TextSpan(
-                        style: SafeGoogleFont(
-                          'Inter',
-                          fontSize: 15 * ffem,
-                          fontWeight: FontWeight.w400,
-                          height: 1.2102272034 * ffem / fem,
-                          color: const Color(0xff000000),
-                        ),
-                        children: [
-                          TextSpan(
-                            text: 'Did’t receive an OTP? ',
-                            style: SafeGoogleFont(
-                              'Roboto',
-                              fontSize: 15 * ffem,
-                              fontWeight: FontWeight.w400,
-                              height: 1.1725 * ffem / fem,
-                              color: const Color(0xff000000),
-                            ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Did’t receive an OTP? ',
+                          style: SafeGoogleFont(
+                            'Roboto',
+                            fontSize: 15 * ffem,
+                            fontWeight: FontWeight.w400,
+                            height: 1.1725 * ffem / fem,
+                            color: const Color(0xff000000),
                           ),
-                          TextSpan(
-                            text: 'Resend OTP',
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            if (isResendOtpEnabled) {
+                              EasyLoading.show(status: "Loading...");
+                              ApiService.callVerifyOtp(widget.email)
+                                  .then((value) {
+                                if (value["message"] ==
+                                    "Email sent successfully") {
+                                  duration = const Duration(minutes: 2);
+
+                                  setState(() {
+                                    isResendOtpEnabled = false;
+                                  });
+                                  startTimer();
+                                  EasyLoading.showToast(value["message"],
+                                      toastPosition:
+                                          EasyLoadingToastPosition.bottom);
+                                } else {
+                                  EasyLoading.showToast(value["error"],
+                                      toastPosition:
+                                          EasyLoadingToastPosition.bottom);
+                                }
+                              });
+                            } else {}
+                          },
+                          child: Text(
+                            'Resend OTP',
                             style: SafeGoogleFont(
                               'Roboto',
                               fontSize: 15 * ffem,
                               fontWeight: FontWeight.w600,
                               height: 1.1725 * ffem / fem,
-                              decoration: TextDecoration.underline,
-                              color: const Color(0xff000000),
+                              decoration: isResendOtpEnabled
+                                  ? TextDecoration.underline
+                                  : TextDecoration.none,
+                              color: isResendOtpEnabled
+                                  ? const Color(0xff000000)
+                                  : Colors.grey,
                               decorationColor: const Color(0xff000000),
                             ),
                           ),
-                          TextSpan(
-                            text: ' ',
-                            style: SafeGoogleFont(
-                              'Roboto',
-                              fontSize: 15 * ffem,
-                              fontWeight: FontWeight.w600,
-                              height: 1.1725 * ffem / fem,
-                              color: const Color(0xff000000),
-                            ),
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
                   Container(
                     // wrongnumberBPF (437:95)
                     margin: EdgeInsets.fromLTRB(
                         0 * fem, 0 * fem, 28 * fem, 50 * fem),
-                    child: Text(
-                      // 'Wrong Number' changed for testing purposes
-                      "Wrong Email",
-                      textAlign: TextAlign.center,
-                      style: SafeGoogleFont(
-                        'Roboto',
-                        fontSize: 15 * ffem,
-                        fontWeight: FontWeight.w600,
-                        height: 1.1725 * ffem / fem,
-                        decoration: TextDecoration.underline,
-                        color: const Color(0xff000000),
-                        decorationColor: const Color(0xff000000),
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.pushReplacement(context,
+                            MaterialPageRoute(builder: (context) => Signup()));
+                      },
+                      child: Text(
+                        // 'Wrong Number' changed for testing purposes
+                        "Wrong Email",
+                        textAlign: TextAlign.center,
+                        style: SafeGoogleFont(
+                          'Roboto',
+                          fontSize: 15 * ffem,
+                          fontWeight: FontWeight.w600,
+                          height: 1.1725 * ffem / fem,
+                          decoration: TextDecoration.underline,
+                          color: const Color(0xff000000),
+                          decorationColor: const Color(0xff000000),
+                        ),
                       ),
                     ),
                   ),
@@ -254,7 +306,7 @@ class _OtpState extends State<Otp> {
 
   void onTapGettingstarted(BuildContext context) {
     Navigator.pushReplacement(context,
-        MaterialPageRoute(builder: (context) => const HomePageContainer()));
+        MaterialPageRoute(builder: (context) => const EducationLevel()));
   }
 
   void configLoading() {

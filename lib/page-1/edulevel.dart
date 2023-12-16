@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/page-1/selectgender.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../utils.dart';
 
@@ -12,6 +13,12 @@ class EducationLevel extends StatefulWidget {
 
 class _EducationLevelState extends State<EducationLevel> {
   int selectedIndex = 0;
+  static List<String> list = [
+    "I'm in School",
+    "I'm in College",
+    "I Graduated",
+  ];
+  String selectedOption = list[0];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,42 +66,40 @@ class _EducationLevelState extends State<EducationLevel> {
                 ),
               ),
               const SizedBox(
-                height: 50,
+                height: 20,
               ),
-              customButton(
-                onPressed: () {
-                  setState(() {
-                    selectedIndex = 0;
-                  });
-                },
-                title: "I'm in School",
-                isActive: selectedIndex == 0,
-              ),
-              customButton(
-                onPressed: () {
-                  setState(() {
-                    selectedIndex = 1;
-                  });
-                },
-                title: "I'm in College",
-                isActive: selectedIndex == 1,
-              ),
-              customButton(
-                onPressed: () {
-                  setState(() {
-                    selectedIndex = 2;
-                  });
-                },
-                title: "I Graduated",
-                isActive: selectedIndex == 2,
+              SizedBox(
+                // color: Colors.red,
+                height: 350,
+                width: 270,
+                child: ListView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: list.length,
+                    itemBuilder: (context, index) {
+                      String title = list[index];
+                      return customButton(
+                        onPressed: () {
+                          setState(() {
+                            selectedIndex = index;
+                            selectedOption = title;
+                          });
+                        },
+                        title: title,
+                        isActive: selectedIndex == index,
+                      );
+                    }),
               ),
               const Spacer(),
               nextButton(
-                  onPressed: () {
+                  onPressed: () async {
+                    SharedPreferences prefs =
+                        await SharedPreferences.getInstance();
+                    prefs.setString("edu_level", selectedOption);
+                    if (!mounted) return;
                     Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => SelectGender()));
+                            builder: (context) => const SelectGender()));
                   },
                   title: "Next")
             ],

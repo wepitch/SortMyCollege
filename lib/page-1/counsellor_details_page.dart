@@ -2345,7 +2345,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                                                                                 // onwardsTfE (2936:456)
                                                                                 margin: EdgeInsets.fromLTRB(0 * fem, 4 * fem, 0 * fem, 0 * fem),
                                                                                 child: Text(
-                                                                                  'Onwards',
+                                                                                  ' Onwards',
                                                                                   style: SafeGoogleFont(
                                                                                     'Inter',
                                                                                     fontSize: 12 * ffem,
@@ -2608,7 +2608,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                                                                               // onwards5Va (2936:494)
                                                                               margin: EdgeInsets.fromLTRB(0 * fem, 4 * fem, 0 * fem, 0 * fem),
                                                                               child: Text(
-                                                                                'Onwards',
+                                                                                ' Onwards',
                                                                                 style: SafeGoogleFont(
                                                                                   'Inter',
                                                                                   fontSize: 12 * ffem,

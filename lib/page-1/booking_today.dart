@@ -176,7 +176,7 @@ class _BookingTodayState extends State<BookingToday> {
                                                         children: <TextSpan>[
                                                           TextSpan(
                                                               text:
-                                                                  "${remainingTime.inHours < 0 ? "" : remainingTime.inHours}:${remainingTime.inMinutes.remainder(60) < 0 ? '0' : remainingTime.inMinutes.remainder(60)}",
+                                                                  "${remainingTime.inHours < 0 ? "" : remainingTime.inHours}${remainingTime.inMinutes.remainder(60) < 0 ? '0' : ": ${remainingTime.inMinutes.remainder(60)}"}",
                                                               style: SafeGoogleFont(
                                                                   "Inter",
                                                                   fontWeight:

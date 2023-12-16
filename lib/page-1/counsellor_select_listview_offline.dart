@@ -48,8 +48,14 @@ class _CounsellorListPage_offlineState
   }
 
   Future<void> _refresh() {
-    setState(() {});
-    return ApiService.getCounsellor_Data();
+    return Future.delayed(const Duration(seconds: 1), () {
+      ApiService.getCounsellor_Data().then((value) {
+        if (value.isNotEmpty) {
+          setState(() {});
+        }
+        setState(() {});
+      });
+    });
   }
 
   int selectedIndex = 0;
@@ -832,44 +838,44 @@ class _CounsellorListPage_offlineState
                                                                                                     child: Stack(
                                                                                                       children: [
                                                                                                         Positioned(
-                                                                                                          child: Container(
-                                                                                                            width: 130.85,
-                                                                                                            height: 25.09,
-                                                                                                            decoration: ShapeDecoration(
-                                                                                                              color: Colors.white,
-                                                                                                              shape: RoundedRectangleBorder(
-                                                                                                                side: BorderSide(
-                                                                                                                  width: 0.50,
-                                                                                                                  color: Colors.black.withOpacity(0.7400000095367432),
+                                                                                                          child: GestureDetector(
+                                                                                                            onTap: () {
+                                                                                                              String id = listController.cousnellorlist_data[index].id;
+                                                                                                              String name = listController.cousnellorlist_data[index].name;
+
+                                                                                                              onTap_goto_detailPage(context, id, name);
+                                                                                                            },
+                                                                                                            child: Container(
+                                                                                                              width: 130.85,
+                                                                                                              height: 25.09,
+                                                                                                              decoration: ShapeDecoration(
+                                                                                                                color: Colors.white,
+                                                                                                                shape: RoundedRectangleBorder(
+                                                                                                                  side: BorderSide(
+                                                                                                                    width: 0.50,
+                                                                                                                    color: Colors.black.withOpacity(0.7400000095367432),
+                                                                                                                  ),
+                                                                                                                  borderRadius: BorderRadius.circular(16),
                                                                                                                 ),
-                                                                                                                borderRadius: BorderRadius.circular(16),
                                                                                                               ),
                                                                                                             ),
                                                                                                           ),
                                                                                                         ),
-                                                                                                        Positioned(
+                                                                                                        const Positioned(
                                                                                                           left: 5.45,
                                                                                                           top: 15.23,
                                                                                                           child: SizedBox(
                                                                                                             width: 123.01,
                                                                                                             height: 16.05,
-                                                                                                            child: GestureDetector(
-                                                                                                              onTap: () {
-                                                                                                                String id = listController.cousnellorlist_data[index].id;
-                                                                                                                String name = listController.cousnellorlist_data[index].name;
-                                                                                                                print(id);
-                                                                                                                onTap_goto_detailPage(context, id, name);
-                                                                                                              },
-                                                                                                              child: const Text(
-                                                                                                                'Visit Profile',
-                                                                                                                textAlign: TextAlign.center,
-                                                                                                                style: TextStyle(
-                                                                                                                  color: Color(0xFF262626),
-                                                                                                                  fontSize: 14,
-                                                                                                                  fontFamily: 'Inter',
-                                                                                                                  fontWeight: FontWeight.w700,
-                                                                                                                  height: 0.07,
-                                                                                                                ),
+                                                                                                            child: Text(
+                                                                                                              'Visit Profile',
+                                                                                                              textAlign: TextAlign.center,
+                                                                                                              style: TextStyle(
+                                                                                                                color: Color(0xFF262626),
+                                                                                                                fontSize: 14,
+                                                                                                                fontFamily: 'Inter',
+                                                                                                                fontWeight: FontWeight.w700,
+                                                                                                                height: 0.07,
                                                                                                               ),
                                                                                                             ),
                                                                                                           ),

@@ -8,6 +8,7 @@ import 'package:myapp/page-1/webinar.dart';
 import 'package:myapp/page-1/homepagecontainer_2.dart';
 import 'package:myapp/utils.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'counsellor-select-new.dart';
 import 'counsellor_select_listview_offline.dart';
 import 'counselor-dashboard-new-full-view.dart';
@@ -24,6 +25,20 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  String name = "";
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    setName();
+  }
+
+  void setName() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    name = prefs.getString("name") ?? "N/A";
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 430;
@@ -101,7 +116,7 @@ class _HomePageState extends State<HomePage> {
                                               ),
                                             ),
                                             TextSpan(
-                                              text: 'Daksh',
+                                              text: name,
                                               style: SafeGoogleFont(
                                                 'Inter',
                                                 fontSize: 21 * ffem,
