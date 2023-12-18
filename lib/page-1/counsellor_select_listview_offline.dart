@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:myapp/other/counsellor_details_provider.dart';
 import 'package:myapp/page-1/dashboard_session_page.dart';
@@ -52,6 +53,10 @@ class _CounsellorListPage_offlineState
       ApiService.getCounsellor_Data().then((value) {
         if (value.isNotEmpty) {
           setState(() {});
+        }
+        if (value[0].name == "none") {
+          EasyLoading.showToast("404 Page Not Found",
+              toastPosition: EasyLoadingToastPosition.bottom);
         }
         setState(() {});
       });

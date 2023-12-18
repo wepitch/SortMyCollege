@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:jiffy/jiffy.dart';
 import 'package:myapp/model/booking_model.dart';
 import 'package:myapp/other/user_booking_provider.dart';
@@ -48,30 +49,36 @@ class _BookingTodayState extends State<BookingToday> {
 
   @override
   Widget build(BuildContext context) {
-    var userBookings = context.watch<UserBookingProvider>().userBooking;
+    var userBookings = context.watch<UserBookingProvider>();
     bool isLoading = context.watch<UserBookingProvider>().isLoading;
 
     String time = "25:15";
     var mWidth = MediaQuery.sizeOf(context).width;
     return isLoading
         ? const Center(child: CircularProgressIndicator())
-        : userBookings.isEmpty
+        : userBookings.userBooking.isEmpty
             ? Center(
                 child: Text(
                   "No Bookings...",
                   style: SafeGoogleFont("Inter"),
                 ),
               )
-            : userBookings.length == 1
-                ? const Center(
-                    child: Text("Something went wrong!"),
-                  )
+            : userBookings.userBooking[0].v == -1
+                ? Builder(builder: (context) {
+                    EasyLoading.showToast(
+                      "404 Page Not Found!",
+                      toastPosition: EasyLoadingToastPosition.bottom,
+                    );
+                    return const Center(
+                      child: Text("Something went wrong!"),
+                    );
+                  })
                 : RefreshIndicator(
                     onRefresh: _refresh,
                     child: ListView.builder(
-                        itemCount: userBookings.length,
+                        itemCount: userBookings.userBooking.length,
                         itemBuilder: (context, index) {
-                          var details = userBookings[index];
+                          var details = userBookings.userBooking[index];
                           apiTime =
                               parseTiming(details.bookingData!.sessionTime!);
                           Duration remainingTime =

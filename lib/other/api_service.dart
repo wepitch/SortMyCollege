@@ -30,13 +30,14 @@ class ApiService {
     var url = Uri.parse("https://server.sortmycollege.com/counsellor/");
     final response =
         await http.get(url, headers: {"Content-Type": "application/json"});
-    var data = jsonDecode(response.body.toString());
+    var data;
     console.log("Counsellor List : ${response.body}");
     if (response.statusCode == 200) {
+      data = jsonDecode(response.body.toString());
       return List<CounsellorData>.from(
           data.map((x) => CounsellorData.fromJson(x)));
     }
-    if (response.body.contains("html")) {
+    if (response.statusCode == 404) {
       return [
         CounsellorData(
             id: "0",
@@ -59,6 +60,7 @@ class ApiService {
     final response =
         await http.get(url, headers: {"Content-Type": "application/json"});
     console.log("Counsellor Detail page : ${response.body}");
+    console.log(response.statusCode.toString());
     if (response.statusCode == 200) {
       var data = json.decode(response.body.toString());
 
@@ -137,9 +139,10 @@ class ApiService {
     if (response.statusCode == 200 || response.statusCode == 401) {
       data = jsonDecode(response.body.toString());
       return data;
-    } else if (response.body.contains("html")) {
+    }
+    if (response.statusCode == 404) {
       return {"error": "something went wrong!"};
-    } else {}
+    }
   }
 
   Future call_otp(String email) async {
@@ -173,10 +176,15 @@ class ApiService {
       },
     );
     var data;
+
+    console.log(response.body.toString());
     if (response.statusCode == 200) {
       data = jsonDecode(response.body.toString());
       console.log(data.toString());
       return CounsellorSessionDetails.fromJson(data);
+    }
+    if (response.statusCode == 404) {
+      return CounsellorSessionDetails(totalAvailableSlots: -1);
     } else {
       return CounsellorSessionDetails();
     }
@@ -201,7 +209,7 @@ class ApiService {
 
       return data;
     }
-    if (response.body.contains("html")) {
+    if (response.statusCode == 404) {
       return {"error": "Something went wrong!"};
     }
     return {};
@@ -225,7 +233,7 @@ class ApiService {
       final data = jsonDecode(response.body.toString());
       return data;
     }
-    if (response.body.contains("html")) {
+    if (response.statusCode == 404) {
       return {"error": "Something went wrong!"};
     }
     return {};
@@ -250,8 +258,8 @@ class ApiService {
       }
 
       return bookingDetails;
-    } else if (response.body.contains("html")) {
-      return [BookingModel()];
+    } else if (response.statusCode == 404) {
+      return [BookingModel(v: -1)];
     }
 
     return [];

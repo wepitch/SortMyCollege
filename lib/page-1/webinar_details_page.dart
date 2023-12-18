@@ -6,7 +6,6 @@ class WebinarDetailsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var mHeight = MediaQuery.sizeOf(context).height;
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(

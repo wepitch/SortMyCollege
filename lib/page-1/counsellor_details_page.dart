@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'dart:ui';
@@ -47,9 +48,19 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
       body: counsellorDetailController.isLoading
           ? const Center(child: CircularProgressIndicator())
           : counsellorDetailController.cousnellorlist_detail[0].name == "none"
-              ? Center(
-                  child: Text("Something went wrong!"),
-                )
+              ? Builder(builder: (context) {
+                  if (counsellorDetailController
+                          .cousnellorlist_detail[0].name ==
+                      "none") {
+                    EasyLoading.showToast(
+                      "404 Page Not Found",
+                      toastPosition: EasyLoadingToastPosition.bottom,
+                    );
+                  }
+                  return Center(
+                    child: Text("Something went wrong!"),
+                  );
+                })
               : Container(
                   width: double.infinity,
                   decoration: const BoxDecoration(

@@ -44,6 +44,11 @@ class _Signup extends State<Signup> {
         if (!mounted) return;
         Navigator.pushReplacement(
             context, MaterialPageRoute(builder: (context) => Otp(email)));
+      } else if (value["error"] == "Something went wrong!") {
+        EasyLoading.showToast(
+          "404 Page Not Found!",
+          toastPosition: EasyLoadingToastPosition.bottom,
+        );
       } else {
         EasyLoading.showToast(value["error"],
             toastPosition: EasyLoadingToastPosition.bottom);

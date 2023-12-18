@@ -191,6 +191,13 @@ class _OtpState extends State<Otp> {
                                   EasyLoading.showToast(value["message"],
                                       toastPosition:
                                           EasyLoadingToastPosition.bottom);
+                                } else if (value["error"] ==
+                                    "Something went wrong!") {
+                                  EasyLoading.showToast(
+                                    "404 Page Not Found!",
+                                    toastPosition:
+                                        EasyLoadingToastPosition.bottom,
+                                  );
                                 } else {
                                   EasyLoading.showToast(value["error"],
                                       toastPosition:
@@ -263,6 +270,7 @@ class _OtpState extends State<Otp> {
                             SharedPreferences prefs =
                                 await SharedPreferences.getInstance();
                             prefs.setString("token", value["token"]);
+                            prefs.setString("email", widget.email);
 
                             onTapGettingstarted(context);
                           } else {

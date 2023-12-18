@@ -4,6 +4,7 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/page-1/booking_page.dart';
 import 'package:myapp/page-1/counsellor_select_listview_offline.dart';
+import 'package:myapp/page-1/profile_page.dart';
 import 'package:myapp/page-1/webinar-detail-second-full-view.dart';
 import 'package:myapp/page-1/webinar.dart';
 import 'package:myapp/page-1/homepage.dart';
@@ -37,7 +38,7 @@ class _HomePageContainerState extends State<HomePageContainer> {
 
   final Widget _news = News();
 
-  final Widget _profile = Profile();
+  final Widget _profile = ProfilePage();
 
   /*Widget _news = News();
 
@@ -114,10 +115,10 @@ class _HomePageContainerState extends State<HomePageContainer> {
       return this._booking;
     } /*else if (this.selectedIndex == 3) {
       return this._news;
-    } else if (this.selectedIndex == 4) {
-      return this._profile;
     } */
-    else {
+    else if (this.selectedIndex == 4) {
+      return this._profile;
+    } else {
       return this._home;
     }
   }

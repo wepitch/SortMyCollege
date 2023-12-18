@@ -98,7 +98,11 @@ class SessionDate {
   }
 
   final List<DateModel> dates = [
-    DateModel(day: todayDay, formattedDate: todayDate, date: "$todayDate $year")
+    DateModel(
+        index: 0,
+        day: todayDay,
+        formattedDate: todayDate,
+        date: "$todayDate $year")
   ];
 
   void getDates() {
@@ -114,6 +118,7 @@ class SessionDate {
       console.log(formattedDate);
 
       dates.add(DateModel(
+          index: i,
           day: day,
           formattedDate: formattedDate,
           date: "$formattedDate $year"));
@@ -122,11 +127,13 @@ class SessionDate {
 }
 
 class DateModel {
+  final int index;
   final String date;
   final String formattedDate;
   final String day;
 
   DateModel({
+    required this.index,
     required this.day,
     required this.formattedDate,
     required this.date,
