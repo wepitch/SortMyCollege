@@ -1,27 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:myapp/other/counsellor_details_provider.dart';
-import 'package:myapp/page-1/counsellor_details_page2.dart';
-import 'package:myapp/page-1/selectdob.dart';
-import 'package:myapp/page-1/selectgender.dart';
+// import 'package:myapp/page-1/counsellor_details_page2.dart';
 import 'package:myapp/page-1/splash_screen_2.dart';
-import 'package:myapp/page-1/welcome-screen.dart';
+// import 'package:myapp/page-1/welcome-screen.dart';
 import 'package:myapp/utils.dart';
-import 'package:provider/provider.dart';
-
-import 'counsellor_select_listview_offline.dart';
-import 'edulevel.dart';
-import 'homepagecontainer.dart';
 
 class SplashScreen extends StatelessWidget {
+  const SplashScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 430;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return Container(
+    return SizedBox(
       width: double.infinity,
       child: Container(
         // splashscreen1pV (437:5)

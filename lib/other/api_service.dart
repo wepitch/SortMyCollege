@@ -1,8 +1,5 @@
 import 'dart:convert';
-import 'dart:developer';
 
-import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:myapp/model/booking_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -21,7 +18,7 @@ class ApiService {
     var url = Uri.parse("http://13.127.234.0:9000/counsellor/");
     final response =
         await http.get(url, headers: {"Content-Type": "application/json"});
-    var data = json.decode(response.body);
+    // var data = json.decode(response.body);
     return List<CounsellorModel>.from(
         json.decode(response.body).map((x) => CounsellorModel.fromJson(x)));
   }
@@ -146,7 +143,7 @@ class ApiService {
   }
 
   Future call_otp(String email) async {
-    var data;
+    // var data;
     var headers = {'Content-Type': 'application/json'};
     var request = http.Request(
         'POST', Uri.parse('http://13.127.234.0:9000/user/auth/sendOTPEmail'));

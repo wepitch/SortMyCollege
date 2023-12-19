@@ -3,7 +3,6 @@ import 'package:myapp/page-1/dashboard-session-group-new.dart';
 import 'package:myapp/page-1/homepagecontainer_2.dart';
 import 'package:myapp/utils.dart';
 
-import 'counsellor_select_listview_offline.dart';
 import 'dashboard-session-personnel-new.dart';
 
 class CounsellingSessionPage extends StatefulWidget {
@@ -36,9 +35,9 @@ class _CounsellingSessionPageState extends State<CounsellingSessionPage> {
 
   @override
   Widget build(BuildContext context) {
-    double baseWidth = 430;
-    double fem = MediaQuery.of(context).size.width / baseWidth;
-    double ffem = fem * 0.97;
+    // double baseWidth = 430;
+    // double fem = MediaQuery.of(context).size.width / baseWidth;
+    // double ffem = fem * 0.97;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xff1F0A68),
@@ -50,7 +49,7 @@ class _CounsellingSessionPageState extends State<CounsellingSessionPage> {
               Navigator.pop(context);
             },
             child: Image.asset(
-              'assets/page-1/images/back-rNM.png',
+              'assets/page-1/images/back.png',
             ),
           ),
         ),

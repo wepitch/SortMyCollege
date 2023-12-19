@@ -4,9 +4,12 @@
 
 import 'dart:convert';
 
-List<CounsellorModel> counsellorModelFromJson(String str) => List<CounsellorModel>.from(json.decode(str).map((x) => CounsellorModel.fromJson(x)));
+List<CounsellorModel> counsellorModelFromJson(String str) =>
+    List<CounsellorModel>.from(
+        json.decode(str).map((x) => CounsellorModel.fromJson(x)));
 
-String counsellorModelToJson(List<CounsellorModel> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+String counsellorModelToJson(List<CounsellorModel> data) =>
+    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class CounsellorModel {
   PersonalInfo personalInfo;
@@ -53,51 +56,58 @@ class CounsellorModel {
     required this.clientTestimonials,
   });
 
-  factory CounsellorModel.fromJson(Map<String, dynamic> json) => CounsellorModel(
-    personalInfo: PersonalInfo.fromJson(json["personal_info"]),
-    sessions: List<String>.from(json["sessions"].map((x) => x)),
-    howWillIHelp: List<String>.from(json["how_will_i_help"].map((x) => x)),
-    followers: List<String>.from(json["followers"].map((x) => x)),
-    locationsFocused: List<String>.from(json["locations_focused"].map((x) => x)),
-    coursesFocused: List<String>.from(json["courses_focused"].map((x) => x)),
-    id: json["_id"],
-    email: json["email"],
-    qualifications: List<String>.from(json["qualifications"].map((x) => x)),
-    specializations: List<String>.from(json["specializations"].map((x) => x)),
-    languagesSpoken: List<String>.from(json["languages_spoken"].map((x) => x)),
-    clientFocus: List<String>.from(json["client_focus"].map((x) => x)),
-    workExperience: json["work_experience"],
-    totalAppointedSessions: json["total_appointed_sessions"],
-    rewardPoints: json["reward_points"],
-    degreeFocused: json["degree_focused"],
-    createdAt: DateTime.parse(json["createdAt"]),
-    updatedAt: DateTime.parse(json["updatedAt"]),
-    v: json["__v"],
-    clientTestimonials: List<String>.from(json["client_testimonials"].map((x) => x)),
-  );
+  factory CounsellorModel.fromJson(Map<String, dynamic> json) =>
+      CounsellorModel(
+        personalInfo: PersonalInfo.fromJson(json["personal_info"]),
+        sessions: List<String>.from(json["sessions"].map((x) => x)),
+        howWillIHelp: List<String>.from(json["how_will_i_help"].map((x) => x)),
+        followers: List<String>.from(json["followers"].map((x) => x)),
+        locationsFocused:
+            List<String>.from(json["locations_focused"].map((x) => x)),
+        coursesFocused:
+            List<String>.from(json["courses_focused"].map((x) => x)),
+        id: json["_id"],
+        email: json["email"],
+        qualifications: List<String>.from(json["qualifications"].map((x) => x)),
+        specializations:
+            List<String>.from(json["specializations"].map((x) => x)),
+        languagesSpoken:
+            List<String>.from(json["languages_spoken"].map((x) => x)),
+        clientFocus: List<String>.from(json["client_focus"].map((x) => x)),
+        workExperience: json["work_experience"],
+        totalAppointedSessions: json["total_appointed_sessions"],
+        rewardPoints: json["reward_points"],
+        degreeFocused: json["degree_focused"],
+        createdAt: DateTime.parse(json["createdAt"]),
+        updatedAt: DateTime.parse(json["updatedAt"]),
+        v: json["__v"],
+        clientTestimonials:
+            List<String>.from(json["client_testimonials"].map((x) => x)),
+      );
 
   Map<String, dynamic> toJson() => {
-    "personal_info": personalInfo.toJson(),
-    "sessions": List<dynamic>.from(sessions.map((x) => x)),
-    "how_will_i_help": List<dynamic>.from(howWillIHelp.map((x) => x)),
-    "followers": List<dynamic>.from(followers.map((x) => x)),
-    "locations_focused": List<dynamic>.from(locationsFocused.map((x) => x)),
-    "courses_focused": List<dynamic>.from(coursesFocused.map((x) => x)),
-    "_id": id,
-    "email": email,
-    "qualifications": List<dynamic>.from(qualifications.map((x) => x)),
-    "specializations": List<dynamic>.from(specializations.map((x) => x)),
-    "languages_spoken": List<dynamic>.from(languagesSpoken.map((x) => x)),
-    "client_focus": List<dynamic>.from(clientFocus.map((x) => x)),
-    "work_experience": workExperience,
-    "total_appointed_sessions": totalAppointedSessions,
-    "reward_points": rewardPoints,
-    "degree_focused": degreeFocused,
-    "createdAt": createdAt.toIso8601String(),
-    "updatedAt": updatedAt.toIso8601String(),
-    "__v": v,
-    "client_testimonials": List<dynamic>.from(clientTestimonials.map((x) => x)),
-  };
+        "personal_info": personalInfo.toJson(),
+        "sessions": List<dynamic>.from(sessions.map((x) => x)),
+        "how_will_i_help": List<dynamic>.from(howWillIHelp.map((x) => x)),
+        "followers": List<dynamic>.from(followers.map((x) => x)),
+        "locations_focused": List<dynamic>.from(locationsFocused.map((x) => x)),
+        "courses_focused": List<dynamic>.from(coursesFocused.map((x) => x)),
+        "_id": id,
+        "email": email,
+        "qualifications": List<dynamic>.from(qualifications.map((x) => x)),
+        "specializations": List<dynamic>.from(specializations.map((x) => x)),
+        "languages_spoken": List<dynamic>.from(languagesSpoken.map((x) => x)),
+        "client_focus": List<dynamic>.from(clientFocus.map((x) => x)),
+        "work_experience": workExperience,
+        "total_appointed_sessions": totalAppointedSessions,
+        "reward_points": rewardPoints,
+        "degree_focused": degreeFocused,
+        "createdAt": createdAt.toIso8601String(),
+        "updatedAt": updatedAt.toIso8601String(),
+        "__v": v,
+        "client_testimonials":
+            List<dynamic>.from(clientTestimonials.map((x) => x)),
+      };
 }
 
 class PersonalInfo {
@@ -114,18 +124,18 @@ class PersonalInfo {
   });
 
   factory PersonalInfo.fromJson(Map<String, dynamic> json) => PersonalInfo(
-    location: Location.fromJson(json["location"]),
-    name: json["name"],
-    profilePic: json["profile_pic"],
-    gender: json["gender"],
-  );
+        location: Location.fromJson(json["location"]),
+        name: json["name"],
+        profilePic: json["profile_pic"],
+        gender: json["gender"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "location": location.toJson(),
-    "name": name,
-    "profile_pic": profilePic,
-    "gender": gender,
-  };
+        "location": location.toJson(),
+        "name": name,
+        "profile_pic": profilePic,
+        "gender": gender,
+      };
 }
 
 class Location {
@@ -140,14 +150,14 @@ class Location {
   });
 
   factory Location.fromJson(Map<String, dynamic> json) => Location(
-    city: json["city"],
-    state: json["state"],
-    country: json["country"],
-  );
+        city: json["city"],
+        state: json["state"],
+        country: json["country"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "city": city,
-    "state": state,
-    "country": country,
-  };
+        "city": city,
+        "state": state,
+        "country": country,
+      };
 }

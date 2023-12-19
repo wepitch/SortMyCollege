@@ -9,8 +9,6 @@ import 'homepagecontainer.dart';
 class WebinarPage extends StatefulWidget {
   const WebinarPage({super.key});
 
-
-
   @override
   State<WebinarPage> createState() => _WebinarPageState();
 }
@@ -24,6 +22,7 @@ class _WebinarPageState extends State<WebinarPage> {
     super.initState();
     pageController = PageController(initialPage: selectedIndex);
   }
+
   int selectedIndex = 1;
   @override
   Widget build(BuildContext context) {
@@ -41,7 +40,7 @@ class _WebinarPageState extends State<WebinarPage> {
                       builder: (context) => const HomePageContainer()));
             },
             child: Image.asset(
-              'assets/page-1/images/back-rNM.png',
+              'assets/page-1/images/back.png',
             ),
           ),
         ),
@@ -84,7 +83,6 @@ class _WebinarPageState extends State<WebinarPage> {
                     },
                     title: "Past",
                     isPressed: selectedIndex == 0),
-
                 customButton(
                     onPressed: () {
                       setState(() {

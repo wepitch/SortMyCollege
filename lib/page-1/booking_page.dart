@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:myapp/page-1/booking_past.dart';
 import 'package:myapp/page-1/booking_today.dart';
 import 'package:myapp/page-1/booking_upcoming.dart';
-import 'package:myapp/page-1/homepage.dart';
 import 'package:myapp/page-1/homepagecontainer.dart';
 import 'package:myapp/utils.dart';
 
@@ -32,9 +31,9 @@ class _BookingPageState extends State<BookingPage> {
 
   @override
   Widget build(BuildContext context) {
-    double baseWidth = 430;
-    double fem = MediaQuery.of(context).size.width;
-    double ffem = fem * 0.97;
+    // double baseWidth = 430;
+    // double fem = MediaQuery.of(context).size.width;
+    // double ffem = fem * 0.97;
     return Scaffold(
         appBar: AppBar(
           backgroundColor: const Color(0xff1F0A68),
@@ -49,7 +48,7 @@ class _BookingPageState extends State<BookingPage> {
                         builder: (context) => const HomePageContainer()));
               },
               child: Image.asset(
-                'assets/page-1/images/back-rNM.png',
+                'assets/page-1/images/back.png',
               ),
             ),
           ),
@@ -158,7 +157,7 @@ class CustomTab extends StatelessWidget {
   final VoidCallback onPressed;
   @override
   Widget build(BuildContext context) {
-    var mHeight = MediaQuery.sizeOf(context).height;
+    // var mHeight = MediaQuery.sizeOf(context).height;
     var mWidth = MediaQuery.sizeOf(context).width;
     return SizedBox(
       height: 60,

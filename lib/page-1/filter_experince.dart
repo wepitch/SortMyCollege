@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 
 import 'filter_pricerange.dart';
 import 'filter_location.dart';
 import 'filter_course.dart';
-import 'filter_experince.dart';
-import 'package:myapp/page-1/counsellor_select_listview_offline.dart';
 
 import 'homepagecontainer_2.dart';
 
 class Filter_Experince extends StatefulWidget {
+  const Filter_Experince({super.key});
+
   @override
   State<Filter_Experince> createState() => _Filter_ExperinceState();
 }
@@ -25,27 +22,27 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
     double ffem = fem * 0.97;
     return WillPopScope(
       onWillPop: _onBackPressed,
-      child: Container(
+      child: SizedBox(
         width: double.infinity,
         child: Container(
           // iphone1415promax1GWc (2471:996)
           width: double.infinity,
           height: 932 * fem,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Color(0xffffffff),
           ),
           child: Container(
             // epfeedCv4 (2454:162)
             width: double.infinity,
             height: double.infinity,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Color(0xffffffff),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Expanded(
-                  child: Container(
+                  child: SizedBox(
                     // rectangle2518oi (2471:989)
                     width: double.infinity,
                     child: Center(
@@ -55,15 +52,15 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                         height: 87 * fem,
                         child: Container(
                           decoration: BoxDecoration(
-                            border: Border.all(color: Color(0x23000000)),
-                            color: Color(0xffffffff),
+                            border: Border.all(color: const Color(0x23000000)),
+                            color: const Color(0xffffffff),
                           ),
                         ),
                       ),
                     ),
                   ),
                 ),
-                Container(
+                SizedBox(
                   // autogroupvbc4RXv (ob7554dV9qgW5kfXkVBC4)
                   width: double.infinity,
                   height: 795 * fem,
@@ -101,7 +98,7 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                   fontSize: 14 * ffem,
                                   fontWeight: FontWeight.w400,
                                   height: 1.2125 * ffem / fem,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                               ),
                             ),
@@ -114,7 +111,7 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                 fontSize: 14 * ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.2125 * ffem / fem,
-                                color: Color(0xfc1f0a68),
+                                color: const Color(0xfc1f0a68),
                               ),
                             ),
                           ],
@@ -137,7 +134,7 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                   0 * fem, 0 * fem, 0 * fem, 400 * fem),
                               width: 159 * fem,
                               height: double.infinity,
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 color: Color(0xfff5f5f5),
                               ),
                               child: Column(
@@ -149,9 +146,9 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                         10 * fem, 21 * fem, 10 * fem, 17 * fem),
                                     width: double.infinity,
                                     decoration: BoxDecoration(
-                                      border:
-                                          Border.all(color: Color(0x1c000000)),
-                                      color: Color(0xfff5f5f5),
+                                      border: Border.all(
+                                          color: const Color(0x1c000000)),
+                                      color: const Color(0xfff5f5f5),
                                     ),
                                     child: Text(
                                       'Degree',
@@ -161,7 +158,7 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                         fontSize: 14 * ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.2125 * ffem / fem,
-                                        color: Color(0xff575454),
+                                        color: const Color(0xff575454),
                                       ),
                                     ),
                                   ),
@@ -185,8 +182,8 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                         height: 59 * fem,
                                         decoration: BoxDecoration(
                                           border: Border.all(
-                                              color: Color(0x1c000000)),
-                                          color: Color(0xfff5f5f5),
+                                              color: const Color(0x1c000000)),
+                                          color: const Color(0xfff5f5f5),
                                         ),
                                         child: Center(
                                           child: Text(
@@ -197,7 +194,7 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                               fontSize: 14 * ffem,
                                               fontWeight: FontWeight.w400,
                                               height: 1.2125 * ffem / fem,
-                                              color: Color(0xff575454),
+                                              color: const Color(0xff575454),
                                             ),
                                           ),
                                         ),
@@ -216,7 +213,7 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    Filter_Course()),
+                                                    const Filter_Course()),
                                             (route) => false);
                                       },
                                       child: Container(
@@ -225,8 +222,8 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                         width: double.infinity,
                                         decoration: BoxDecoration(
                                           border: Border.all(
-                                              color: Color(0x1c000000)),
-                                          color: Color(0xfff5f5f5),
+                                              color: const Color(0x1c000000)),
+                                          color: const Color(0xfff5f5f5),
                                         ),
                                         child: Text(
                                           'Courses Focused',
@@ -236,7 +233,7 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                             fontSize: 14 * ffem,
                                             fontWeight: FontWeight.w400,
                                             height: 1.2125 * ffem / fem,
-                                            color: Color(0xff575454),
+                                            color: const Color(0xff575454),
                                           ),
                                         ),
                                       ),
@@ -263,8 +260,8 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                         width: double.infinity,
                                         decoration: BoxDecoration(
                                           border: Border.all(
-                                              color: Color(0x1c000000)),
-                                          color: Color(0xfff5f5f5),
+                                              color: const Color(0x1c000000)),
+                                          color: const Color(0xfff5f5f5),
                                         ),
                                         child: Text(
                                           'Price Range',
@@ -274,7 +271,7 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                             fontSize: 14 * ffem,
                                             fontWeight: FontWeight.w400,
                                             height: 1.2125 * ffem / fem,
-                                            color: Color(0xff575454),
+                                            color: const Color(0xff575454),
                                           ),
                                         ),
                                       ),
@@ -296,8 +293,8 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                         width: double.infinity,
                                         decoration: BoxDecoration(
                                           border: Border.all(
-                                              color: Color(0x1c000000)),
-                                          color: Color(0xffffffff),
+                                              color: const Color(0x1c000000)),
+                                          color: const Color(0xffffffff),
                                         ),
                                         child: Text(
                                           'Experience',
@@ -307,7 +304,7 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                             fontSize: 14 * ffem,
                                             fontWeight: FontWeight.w400,
                                             height: 1.2125 * ffem / fem,
-                                            color: Color(0xff575454),
+                                            color: const Color(0xff575454),
                                           ),
                                         ),
                                       ),
@@ -328,7 +325,7 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                     // slideryesoDz (2510:410)
                                     left: 0 * fem,
                                     top: 4.9523925781 * fem,
-                                    child: Container(
+                                    child: SizedBox(
                                       width: 208 * fem,
                                       height: 60 * fem,
                                       child: Column(
@@ -359,8 +356,8 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                                                   .circular(
                                                                       100 *
                                                                           fem),
-                                                          color:
-                                                              Color(0x33b1a0eb),
+                                                          color: const Color(
+                                                              0x33b1a0eb),
                                                         ),
                                                       ),
                                                     ),
@@ -376,7 +373,7 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                                       height: 4 * fem,
                                                       child: Container(
                                                         decoration:
-                                                            BoxDecoration(
+                                                            const BoxDecoration(
                                                           color:
                                                               Color(0xff1f0a68),
                                                         ),
@@ -399,11 +396,11 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                                               BorderRadius
                                                                   .circular(
                                                                       8 * fem),
-                                                          color:
-                                                              Color(0xffffffff),
+                                                          color: const Color(
+                                                              0xffffffff),
                                                           boxShadow: [
                                                             BoxShadow(
-                                                              color: Color(
+                                                              color: const Color(
                                                                   0x3f000000),
                                                               offset: Offset(
                                                                   0 * fem,
@@ -420,7 +417,7 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                               ],
                                             ),
                                           ),
-                                          Container(
+                                          SizedBox(
                                             // stepsscaledwN8 (I2510:410;2465:869)
                                             width: double.infinity,
                                             height: 16 * fem,
@@ -442,7 +439,8 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                                       0 * fem),
                                                   height: double.infinity,
                                                   decoration: BoxDecoration(
-                                                    color: Color(0x33000000),
+                                                    color:
+                                                        const Color(0x33000000),
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             1 * fem),
@@ -456,7 +454,8 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                                           FontWeight.w400,
                                                       height:
                                                           1.2125 * ffem / fem,
-                                                      color: Color(0xff000000),
+                                                      color: const Color(
+                                                          0xff000000),
                                                     ),
                                                   ),
                                                 ),
@@ -470,7 +469,8 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                                   width: 4 * fem,
                                                   height: double.infinity,
                                                   decoration: BoxDecoration(
-                                                    color: Color(0x33000000),
+                                                    color:
+                                                        const Color(0x33000000),
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             1 * fem),
@@ -490,7 +490,8 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                                       0 * fem),
                                                   height: double.infinity,
                                                   decoration: BoxDecoration(
-                                                    color: Color(0x33000000),
+                                                    color:
+                                                        const Color(0x33000000),
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             1 * fem),
@@ -507,8 +508,8 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                                             FontWeight.w400,
                                                         height:
                                                             1.2125 * ffem / fem,
-                                                        color:
-                                                            Color(0xff000000),
+                                                        color: const Color(
+                                                            0xff000000),
                                                       ),
                                                     ),
                                                   ),
@@ -523,7 +524,8 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                                   width: 6 * fem,
                                                   height: double.infinity,
                                                   decoration: BoxDecoration(
-                                                    color: Color(0x33000000),
+                                                    color:
+                                                        const Color(0x33000000),
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             1 * fem),
@@ -543,7 +545,8 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                                       0 * fem),
                                                   height: double.infinity,
                                                   decoration: BoxDecoration(
-                                                    color: Color(0x33000000),
+                                                    color:
+                                                        const Color(0x33000000),
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             1 * fem),
@@ -560,8 +563,8 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                                             FontWeight.w400,
                                                         height:
                                                             1.2125 * ffem / fem,
-                                                        color:
-                                                            Color(0xff000000),
+                                                        color: const Color(
+                                                            0xff000000),
                                                       ),
                                                     ),
                                                   ),
@@ -576,7 +579,8 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                                   width: 5 * fem,
                                                   height: double.infinity,
                                                   decoration: BoxDecoration(
-                                                    color: Color(0x33000000),
+                                                    color:
+                                                        const Color(0x33000000),
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             1 * fem),
@@ -596,7 +600,8 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                                       0 * fem),
                                                   height: double.infinity,
                                                   decoration: BoxDecoration(
-                                                    color: Color(0x33000000),
+                                                    color:
+                                                        const Color(0x33000000),
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             1 * fem),
@@ -613,8 +618,8 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                                             FontWeight.w400,
                                                         height:
                                                             1.2125 * ffem / fem,
-                                                        color:
-                                                            Color(0xff000000),
+                                                        color: const Color(
+                                                            0xff000000),
                                                       ),
                                                     ),
                                                   ),
@@ -629,7 +634,8 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                                   width: 5 * fem,
                                                   height: double.infinity,
                                                   decoration: BoxDecoration(
-                                                    color: Color(0x33000000),
+                                                    color:
+                                                        const Color(0x33000000),
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             1 * fem),
@@ -649,7 +655,8 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                                       0 * fem),
                                                   height: double.infinity,
                                                   decoration: BoxDecoration(
-                                                    color: Color(0x33000000),
+                                                    color:
+                                                        const Color(0x33000000),
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             1 * fem),
@@ -666,8 +673,8 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                                             FontWeight.w400,
                                                         height:
                                                             1.2125 * ffem / fem,
-                                                        color:
-                                                            Color(0xff000000),
+                                                        color: const Color(
+                                                            0xff000000),
                                                       ),
                                                     ),
                                                   ),
@@ -682,7 +689,8 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                                   width: 5 * fem,
                                                   height: double.infinity,
                                                   decoration: BoxDecoration(
-                                                    color: Color(0x33000000),
+                                                    color:
+                                                        const Color(0x33000000),
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             1 * fem),
@@ -697,7 +705,8 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                                       0 * fem),
                                                   height: double.infinity,
                                                   decoration: BoxDecoration(
-                                                    color: Color(0x33000000),
+                                                    color:
+                                                        const Color(0x33000000),
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             1 * fem),
@@ -714,8 +723,8 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                                             FontWeight.w400,
                                                         height:
                                                             1.2125 * ffem / fem,
-                                                        color:
-                                                            Color(0xff000000),
+                                                        color: const Color(
+                                                            0xff000000),
                                                       ),
                                                     ),
                                                   ),
@@ -775,7 +784,8 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                                           FontWeight.w400,
                                                       height:
                                                           1.2125 * ffem / fem,
-                                                      color: Color(0xffffffff),
+                                                      color: const Color(
+                                                          0xffffffff),
                                                     ),
                                                   ),
                                                 ),
@@ -795,7 +805,7 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                     ],
                   ),
                 ),
-                Container(
+                SizedBox(
                   // autogroup1gwcqct (ob6uABUiYdStxGLg11gWC)
                   width: double.infinity,
                   height: 50 * fem,
@@ -812,8 +822,8 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                           width: 215 * fem,
                           height: double.infinity,
                           decoration: BoxDecoration(
-                            border: Border.all(color: Color(0x23000000)),
-                            color: Color(0xffffffff),
+                            border: Border.all(color: const Color(0x23000000)),
+                            color: const Color(0xffffffff),
                           ),
                           child: Center(
                             child: Text(
@@ -824,7 +834,7 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                 fontSize: 15 * ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.2125 * ffem / fem,
-                                color: Color(0xff7f7e85),
+                                color: const Color(0xff7f7e85),
                               ),
                             ),
                           ),
@@ -840,8 +850,8 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                           width: 215 * fem,
                           height: double.infinity,
                           decoration: BoxDecoration(
-                            border: Border.all(color: Color(0x38000000)),
-                            color: Color(0xffb1a0ea),
+                            border: Border.all(color: const Color(0x38000000)),
+                            color: const Color(0xffb1a0ea),
                           ),
                           child: Center(
                             child: Text(
@@ -852,7 +862,7 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
                                 fontSize: 15 * ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.2125 * ffem / fem,
-                                color: Color(0xffffffff),
+                                color: const Color(0xffffffff),
                               ),
                             ),
                           ),
@@ -872,7 +882,7 @@ class _Filter_ExperinceState extends State<Filter_Experince> {
   Future<bool> _onBackPressed() async {
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => HomePageContainer_2()),
+      MaterialPageRoute(builder: (context) => const HomePageContainer_2()),
     );
     return true;
   }

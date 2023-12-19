@@ -123,7 +123,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                                                 width: 20.27 * fem,
                                                 height: 20 * fem,
                                                 child: Image.asset(
-                                                  'assets/page-1/images/back-Zpm.png',
+                                                  'assets/page-1/images/back.png',
                                                   width: 11.27 * fem,
                                                   height: 20 * fem,
                                                 ),

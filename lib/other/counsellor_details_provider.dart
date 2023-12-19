@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/model/counsellor_detail.dart';
 import 'package:myapp/model/counsellor_sessions.dart';
-import 'dart:developer' as console show log;
 
 import 'api_service.dart';
 

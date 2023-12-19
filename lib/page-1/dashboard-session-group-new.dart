@@ -6,12 +6,9 @@ import 'package:myapp/page-1/homepagecontainer_2.dart';
 import 'package:myapp/utils.dart';
 
 import 'package:provider/provider.dart';
-import 'package:readmore/readmore.dart';
 
 import '../model/counsellor_sessions.dart';
 import '../other/counsellor_details_provider.dart';
-import 'counsellor_select_listview_offline.dart';
-import 'dashboard-session-personnel-new.dart';
 import 'dart:developer' as console show log;
 
 class Counseling_Session_group extends StatefulWidget {
@@ -254,7 +251,7 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group>
                               toastPosition: EasyLoadingToastPosition.bottom,
                             );
                           }
-                          return Center(
+                          return const Center(
                             child: Text("Something went wrong!"),
                           );
                         })
@@ -437,7 +434,7 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group>
                                                           ],
                                                         ),
                                                       ),
-                                                      SizedBox(
+                                                      const SizedBox(
                                                         height: 5,
                                                       ),
                                                       isExpanded
@@ -914,8 +911,8 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group>
   }
 
   callme() async {
-    await Future.delayed(Duration(seconds: 3));
-    CircularProgressIndicator(
+    await Future.delayed(const Duration(seconds: 3));
+    const CircularProgressIndicator(
         valueColor: AlwaysStoppedAnimation<Color>(Colors.red));
   }
 

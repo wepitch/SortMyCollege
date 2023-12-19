@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 import 'filter_pricerange.dart';
 import 'filter_degree.dart';
 import 'filter_location.dart';
 import 'filter_experince.dart';
-import 'package:myapp/page-1/counsellor_select_listview_offline.dart';
-
-import 'homepagecontainer_2.dart';
 
 class Filter_Course extends StatefulWidget {
+  const Filter_Course({super.key});
+
   @override
   State<Filter_Course> createState() => _Filter_CourseState();
 }
@@ -28,21 +24,21 @@ class _Filter_CourseState extends State<Filter_Course> {
         // iphone1415promax3YSU (2471:1048)
         width: double.infinity,
         height: 932 * fem,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Color(0xffffffff),
         ),
         child: Container(
           // epfeedHQ4 (2459:443)
           width: double.infinity,
           height: double.infinity,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Color(0xffffffff),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Expanded(
-                child: Container(
+                child: SizedBox(
                   // rectangle251p96 (2471:991)
                   width: double.infinity,
                   child: Center(
@@ -52,15 +48,15 @@ class _Filter_CourseState extends State<Filter_Course> {
                       height: 87 * fem,
                       child: Container(
                         decoration: BoxDecoration(
-                          border: Border.all(color: Color(0x23000000)),
-                          color: Color(0xffffffff),
+                          border: Border.all(color: const Color(0x23000000)),
+                          color: const Color(0xffffffff),
                         ),
                       ),
                     ),
                   ),
                 ),
               ),
-              Container(
+              SizedBox(
                 // autogroupdr9eiEU (obEQwfMRRT3AyyLiodr9e)
                 width: double.infinity,
                 height: 795 * fem,
@@ -98,7 +94,7 @@ class _Filter_CourseState extends State<Filter_Course> {
                                 fontSize: 14 * ffem,
                                 fontWeight: FontWeight.w400,
                                 height: 1.2125 * ffem / fem,
-                                color: Color(0xff000000),
+                                color: const Color(0xff000000),
                               ),
                             ),
                           ),
@@ -111,7 +107,7 @@ class _Filter_CourseState extends State<Filter_Course> {
                               fontSize: 14 * ffem,
                               fontWeight: FontWeight.w700,
                               height: 1.2125 * ffem / fem,
-                              color: Color(0xfc1f0a68),
+                              color: const Color(0xfc1f0a68),
                             ),
                           ),
                         ],
@@ -134,7 +130,7 @@ class _Filter_CourseState extends State<Filter_Course> {
                                 0 * fem, 0 * fem, 0 * fem, 400 * fem),
                             width: 159 * fem,
                             height: double.infinity,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               color: Color(0xfff5f5f5),
                             ),
                             child: Column(
@@ -160,8 +156,8 @@ class _Filter_CourseState extends State<Filter_Course> {
                                       width: double.infinity,
                                       decoration: BoxDecoration(
                                         border: Border.all(
-                                            color: Color(0x1c000000)),
-                                        color: Color(0xfff2f2f2),
+                                            color: const Color(0x1c000000)),
+                                        color: const Color(0xfff2f2f2),
                                       ),
                                       child: Text(
                                         'Degree',
@@ -171,7 +167,7 @@ class _Filter_CourseState extends State<Filter_Course> {
                                           fontSize: 14 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.2125 * ffem / fem,
-                                          color: Color(0xff575454),
+                                          color: const Color(0xff575454),
                                         ),
                                       ),
                                     ),
@@ -197,8 +193,8 @@ class _Filter_CourseState extends State<Filter_Course> {
                                       height: 59 * fem,
                                       decoration: BoxDecoration(
                                         border: Border.all(
-                                            color: Color(0x1c000000)),
-                                        color: Color(0xfff2f2f2),
+                                            color: const Color(0x1c000000)),
+                                        color: const Color(0xfff2f2f2),
                                       ),
                                       child: Center(
                                         child: Text(
@@ -209,7 +205,7 @@ class _Filter_CourseState extends State<Filter_Course> {
                                             fontSize: 14 * ffem,
                                             fontWeight: FontWeight.w400,
                                             height: 1.2125 * ffem / fem,
-                                            color: Color(0xff575454),
+                                            color: const Color(0xff575454),
                                           ),
                                         ),
                                       ),
@@ -226,9 +222,9 @@ class _Filter_CourseState extends State<Filter_Course> {
                                         10 * fem, 21 * fem, 10 * fem, 21 * fem),
                                     width: double.infinity,
                                     decoration: BoxDecoration(
-                                      border:
-                                          Border.all(color: Color(0x1c000000)),
-                                      color: Color(0xffffffff),
+                                      border: Border.all(
+                                          color: const Color(0x1c000000)),
+                                      color: const Color(0xffffffff),
                                     ),
                                     child: Text(
                                       'Courses Focused',
@@ -238,7 +234,7 @@ class _Filter_CourseState extends State<Filter_Course> {
                                         fontSize: 14 * ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.2125 * ffem / fem,
-                                        color: Color(0xff575454),
+                                        color: const Color(0xff575454),
                                       ),
                                     ),
                                   ),
@@ -264,8 +260,8 @@ class _Filter_CourseState extends State<Filter_Course> {
                                       width: double.infinity,
                                       decoration: BoxDecoration(
                                         border: Border.all(
-                                            color: Color(0x1c000000)),
-                                        color: Color(0xfff5f5f5),
+                                            color: const Color(0x1c000000)),
+                                        color: const Color(0xfff5f5f5),
                                       ),
                                       child: Text(
                                         'Price Range',
@@ -275,7 +271,7 @@ class _Filter_CourseState extends State<Filter_Course> {
                                           fontSize: 14 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.2125 * ffem / fem,
-                                          color: Color(0xff575454),
+                                          color: const Color(0xff575454),
                                         ),
                                       ),
                                     ),
@@ -296,9 +292,9 @@ class _Filter_CourseState extends State<Filter_Course> {
                                         11 * fem, 21 * fem, 11 * fem, 21 * fem),
                                     width: double.infinity,
                                     decoration: BoxDecoration(
-                                      border:
-                                          Border.all(color: Color(0x1c000000)),
-                                      color: Color(0xfff5f5f5),
+                                      border: Border.all(
+                                          color: const Color(0x1c000000)),
+                                      color: const Color(0xfff5f5f5),
                                     ),
                                     child: Text(
                                       'Experience',
@@ -308,7 +304,7 @@ class _Filter_CourseState extends State<Filter_Course> {
                                         fontSize: 14 * ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.2125 * ffem / fem,
-                                        color: Color(0xff575454),
+                                        color: const Color(0xff575454),
                                       ),
                                     ),
                                   ),
@@ -316,7 +312,7 @@ class _Filter_CourseState extends State<Filter_Course> {
                               ],
                             ),
                           ),
-                          Container(
+                          SizedBox(
                             // autogroupucmvwqJ (obCs55SEHdTyX1ochuCmv)
                             width: 236 * fem,
                             child: Column(
@@ -328,9 +324,9 @@ class _Filter_CourseState extends State<Filter_Course> {
                                       6 * fem, 22 * fem, 134 * fem, 21 * fem),
                                   width: double.infinity,
                                   decoration: BoxDecoration(
-                                    border:
-                                        Border.all(color: Color(0x1c000000)),
-                                    color: Color(0xffffffff),
+                                    border: Border.all(
+                                        color: const Color(0x1c000000)),
+                                    color: const Color(0xffffffff),
                                   ),
                                   child: Row(
                                     crossAxisAlignment:
@@ -359,7 +355,7 @@ class _Filter_CourseState extends State<Filter_Course> {
                                             fontSize: 12 * ffem,
                                             fontWeight: FontWeight.w400,
                                             height: 1.2125 * ffem / fem,
-                                            color: Color(0xff575454),
+                                            color: const Color(0xff575454),
                                           ),
                                         ),
                                       ),
@@ -372,7 +368,7 @@ class _Filter_CourseState extends State<Filter_Course> {
                                   style: TextButton.styleFrom(
                                     padding: EdgeInsets.zero,
                                   ),
-                                  child: Container(
+                                  child: SizedBox(
                                     width: double.infinity,
                                     height: 59 * fem,
                                     child: Container(
@@ -383,10 +379,10 @@ class _Filter_CourseState extends State<Filter_Course> {
                                       height: double.infinity,
                                       decoration: BoxDecoration(
                                         border: Border.all(
-                                            color: Color(0x1c000000)),
-                                        color: Color(0xffffffff),
+                                            color: const Color(0x1c000000)),
+                                        color: const Color(0xffffffff),
                                       ),
-                                      child: Container(
+                                      child: SizedBox(
                                         // group1706VE (I2471:1042;2471:1018)
                                         width: 88.5 * fem,
                                         height: double.infinity,
@@ -423,7 +419,8 @@ class _Filter_CourseState extends State<Filter_Course> {
                                                   fontSize: 12 * ffem,
                                                   fontWeight: FontWeight.w400,
                                                   height: 1.2125 * ffem / fem,
-                                                  color: Color(0xff575454),
+                                                  color:
+                                                      const Color(0xff575454),
                                                 ),
                                               ),
                                             ),
@@ -439,9 +436,9 @@ class _Filter_CourseState extends State<Filter_Course> {
                                       5 * fem, 22 * fem, 111 * fem, 20 * fem),
                                   width: double.infinity,
                                   decoration: BoxDecoration(
-                                    border:
-                                        Border.all(color: Color(0x1c000000)),
-                                    color: Color(0xffffffff),
+                                    border: Border.all(
+                                        color: const Color(0x1c000000)),
+                                    color: const Color(0xffffffff),
                                   ),
                                   child: Row(
                                     crossAxisAlignment:
@@ -470,7 +467,7 @@ class _Filter_CourseState extends State<Filter_Course> {
                                             fontSize: 12 * ffem,
                                             fontWeight: FontWeight.w700,
                                             height: 1.2125 * ffem / fem,
-                                            color: Color(0xff1f0a68),
+                                            color: const Color(0xff1f0a68),
                                           ),
                                         ),
                                       ),
@@ -483,9 +480,9 @@ class _Filter_CourseState extends State<Filter_Course> {
                                       6 * fem, 22 * fem, 185 * fem, 21 * fem),
                                   width: double.infinity,
                                   decoration: BoxDecoration(
-                                    border:
-                                        Border.all(color: Color(0x1c000000)),
-                                    color: Color(0xffffffff),
+                                    border: Border.all(
+                                        color: const Color(0x1c000000)),
+                                    color: const Color(0xffffffff),
                                   ),
                                   child: Row(
                                     crossAxisAlignment:
@@ -514,7 +511,7 @@ class _Filter_CourseState extends State<Filter_Course> {
                                             fontSize: 12 * ffem,
                                             fontWeight: FontWeight.w400,
                                             height: 1.2125 * ffem / fem,
-                                            color: Color(0xff575454),
+                                            color: const Color(0xff575454),
                                           ),
                                         ),
                                       ),
@@ -527,9 +524,9 @@ class _Filter_CourseState extends State<Filter_Course> {
                                       6 * fem, 22 * fem, 152 * fem, 21 * fem),
                                   width: double.infinity,
                                   decoration: BoxDecoration(
-                                    border:
-                                        Border.all(color: Color(0x1c000000)),
-                                    color: Color(0xffffffff),
+                                    border: Border.all(
+                                        color: const Color(0x1c000000)),
+                                    color: const Color(0xffffffff),
                                   ),
                                   child: Row(
                                     crossAxisAlignment:
@@ -558,7 +555,7 @@ class _Filter_CourseState extends State<Filter_Course> {
                                             fontSize: 12 * ffem,
                                             fontWeight: FontWeight.w400,
                                             height: 1.2125 * ffem / fem,
-                                            color: Color(0xff575454),
+                                            color: const Color(0xff575454),
                                           ),
                                         ),
                                       ),
@@ -571,9 +568,9 @@ class _Filter_CourseState extends State<Filter_Course> {
                                       5 * fem, 22 * fem, 104 * fem, 20 * fem),
                                   width: double.infinity,
                                   decoration: BoxDecoration(
-                                    border:
-                                        Border.all(color: Color(0x1c000000)),
-                                    color: Color(0xffffffff),
+                                    border: Border.all(
+                                        color: const Color(0x1c000000)),
+                                    color: const Color(0xffffffff),
                                   ),
                                   child: Row(
                                     crossAxisAlignment:
@@ -602,7 +599,7 @@ class _Filter_CourseState extends State<Filter_Course> {
                                             fontSize: 12 * ffem,
                                             fontWeight: FontWeight.w700,
                                             height: 1.2125 * ffem / fem,
-                                            color: Color(0xff1f0a68),
+                                            color: const Color(0xff1f0a68),
                                           ),
                                         ),
                                       ),
@@ -615,9 +612,9 @@ class _Filter_CourseState extends State<Filter_Course> {
                                       6 * fem, 22 * fem, 139 * fem, 21 * fem),
                                   width: double.infinity,
                                   decoration: BoxDecoration(
-                                    border:
-                                        Border.all(color: Color(0x1c000000)),
-                                    color: Color(0xffffffff),
+                                    border: Border.all(
+                                        color: const Color(0x1c000000)),
+                                    color: const Color(0xffffffff),
                                   ),
                                   child: Row(
                                     crossAxisAlignment:
@@ -646,7 +643,7 @@ class _Filter_CourseState extends State<Filter_Course> {
                                             fontSize: 12 * ffem,
                                             fontWeight: FontWeight.w400,
                                             height: 1.2125 * ffem / fem,
-                                            color: Color(0xff575454),
+                                            color: const Color(0xff575454),
                                           ),
                                         ),
                                       ),
@@ -659,9 +656,9 @@ class _Filter_CourseState extends State<Filter_Course> {
                                       6 * fem, 22 * fem, 164 * fem, 21 * fem),
                                   width: double.infinity,
                                   decoration: BoxDecoration(
-                                    border:
-                                        Border.all(color: Color(0x1c000000)),
-                                    color: Color(0xffffffff),
+                                    border: Border.all(
+                                        color: const Color(0x1c000000)),
+                                    color: const Color(0xffffffff),
                                   ),
                                   child: Row(
                                     crossAxisAlignment:
@@ -690,7 +687,7 @@ class _Filter_CourseState extends State<Filter_Course> {
                                             fontSize: 12 * ffem,
                                             fontWeight: FontWeight.w400,
                                             height: 1.2125 * ffem / fem,
-                                            color: Color(0xff575454),
+                                            color: const Color(0xff575454),
                                           ),
                                         ),
                                       ),
@@ -703,9 +700,9 @@ class _Filter_CourseState extends State<Filter_Course> {
                                       6 * fem, 22 * fem, 147 * fem, 21 * fem),
                                   width: double.infinity,
                                   decoration: BoxDecoration(
-                                    border:
-                                        Border.all(color: Color(0x1c000000)),
-                                    color: Color(0xffffffff),
+                                    border: Border.all(
+                                        color: const Color(0x1c000000)),
+                                    color: const Color(0xffffffff),
                                   ),
                                   child: Row(
                                     crossAxisAlignment:
@@ -734,7 +731,7 @@ class _Filter_CourseState extends State<Filter_Course> {
                                             fontSize: 12 * ffem,
                                             fontWeight: FontWeight.w400,
                                             height: 1.2125 * ffem / fem,
-                                            color: Color(0xff575454),
+                                            color: const Color(0xff575454),
                                           ),
                                         ),
                                       ),
@@ -750,7 +747,7 @@ class _Filter_CourseState extends State<Filter_Course> {
                   ],
                 ),
               ),
-              Container(
+              SizedBox(
                 // autogroup2pmrwX6 (obEBHPStAZ5sGwqKa2Pmr)
                 width: double.infinity,
                 height: 50 * fem,
@@ -767,8 +764,8 @@ class _Filter_CourseState extends State<Filter_Course> {
                         width: 215 * fem,
                         height: double.infinity,
                         decoration: BoxDecoration(
-                          border: Border.all(color: Color(0x23000000)),
-                          color: Color(0xffffffff),
+                          border: Border.all(color: const Color(0x23000000)),
+                          color: const Color(0xffffffff),
                         ),
                         child: Center(
                           child: Text(
@@ -779,7 +776,7 @@ class _Filter_CourseState extends State<Filter_Course> {
                               fontSize: 15 * ffem,
                               fontWeight: FontWeight.w700,
                               height: 1.2125 * ffem / fem,
-                              color: Color(0xff7f7e85),
+                              color: const Color(0xff7f7e85),
                             ),
                           ),
                         ),
@@ -795,8 +792,8 @@ class _Filter_CourseState extends State<Filter_Course> {
                         width: 215 * fem,
                         height: double.infinity,
                         decoration: BoxDecoration(
-                          border: Border.all(color: Color(0x38000000)),
-                          color: Color(0xffb1a0ea),
+                          border: Border.all(color: const Color(0x38000000)),
+                          color: const Color(0xffb1a0ea),
                         ),
                         child: Center(
                           child: Text(
@@ -807,7 +804,7 @@ class _Filter_CourseState extends State<Filter_Course> {
                               fontSize: 15 * ffem,
                               fontWeight: FontWeight.w700,
                               height: 1.2125 * ffem / fem,
-                              color: Color(0xffffffff),
+                              color: const Color(0xffffffff),
                             ),
                           ),
                         ),

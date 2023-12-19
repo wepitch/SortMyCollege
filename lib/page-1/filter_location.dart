@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 
 import 'filter_pricerange.dart';
 import 'filter_degree.dart';
 import 'filter_course.dart';
 import 'filter_experince.dart';
-import 'package:myapp/page-1/counsellor_select_listview_offline.dart';
 
 import 'homepagecontainer_2.dart';
 
 class Filter_Location extends StatefulWidget {
+  const Filter_Location({super.key});
+
   @override
   State<Filter_Location> createState() => _Filter_LocationState();
 }
@@ -43,7 +41,7 @@ class _Filter_LocationState extends State<Filter_Location> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Expanded(
-                child: Container(
+                child: SizedBox(
                   // rectangle251UsS (2471:990)
                   width: double.infinity,
                   child: Center(
@@ -61,7 +59,7 @@ class _Filter_LocationState extends State<Filter_Location> {
                   ),
                 ),
               ),
-              Container(
+              SizedBox(
                 // autogroupnuy6z56 (obA99caCFBB2kmDH4nUy6)
                 width: double.infinity,
                 height: 795 * fem,
@@ -154,7 +152,7 @@ class _Filter_LocationState extends State<Filter_Location> {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    Filter_Degree()),
+                                                    const Filter_Degree()),
                                             (route) => false);
                                       },
                                       child: Container(
@@ -215,7 +213,7 @@ class _Filter_LocationState extends State<Filter_Location> {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    Filter_Course()),
+                                                    const Filter_Course()),
                                             (route) => false);
                                       },
                                       child: Container(
@@ -285,7 +283,7 @@ class _Filter_LocationState extends State<Filter_Location> {
                                           context,
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  Filter_Experince()),
+                                                  const Filter_Experince()),
                                           (route) => false);
                                     },
                                     child: Container(
@@ -315,7 +313,7 @@ class _Filter_LocationState extends State<Filter_Location> {
                               ),
                             ),
                           ),
-                          Container(
+                          SizedBox(
                             // autogroupr1pnQM6 (ob8y1uS4svmh3XL7yr1PN)
                             width: 236 * fem,
                             child: Column(
@@ -468,7 +466,7 @@ class _Filter_LocationState extends State<Filter_Location> {
                   ],
                 ),
               ),
-              Container(
+              SizedBox(
                 // autogrouptymsAuv (ob9z53NGE7mMkj9ektymS)
                 width: double.infinity,
                 height: 50 * fem,

@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/other/api_service.dart';
 import 'package:myapp/utils.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -12,6 +9,8 @@ import 'otp.dart';
 import 'package:flutter/services.dart';
 
 class Signup extends StatefulWidget {
+  const Signup({super.key});
+
   @override
   _Signup createState() => _Signup();
 }
@@ -182,7 +181,7 @@ class _Signup extends State<Signup> {
                           controller: phonecontroller,
                           keyboardType: TextInputType.emailAddress,
                           // keyboardType: TextInputType.phone, changed for testing purpose
-                          inputFormatters: [
+                          inputFormatters: const [
                             // LengthLimitingTextInputFormatter(10),changed for testing purpose
                           ],
                           decoration: const InputDecoration(
@@ -402,7 +401,7 @@ class _Signup extends State<Signup> {
                               color: const Color(0xffffffff),
                               borderRadius: BorderRadius.circular(10 * fem),
                             ),
-                            child: Container(
+                            child: SizedBox(
                               // group46c9 (437:43)
                               width: double.infinity,
                               height: double.infinity,
@@ -452,12 +451,12 @@ class _Signup extends State<Signup> {
 
   void onTapGettingstarted_login(BuildContext context) {
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => Login()));
+        context, MaterialPageRoute(builder: (context) => const Login()));
   }
 
   bool validateMobile(String value) {
     String patttern = r'(^(?:[+0]9)?[0-9]{10,12}$)';
-    RegExp regExp = new RegExp(patttern);
+    RegExp regExp = RegExp(patttern);
     if (!regExp.hasMatch(value)) {
       return true;
     }

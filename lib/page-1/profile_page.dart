@@ -56,7 +56,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       builder: (context) => const HomePageContainer()));
             },
             child: Image.asset(
-              'assets/page-1/images/back-rNM.png',
+              'assets/page-1/images/back.png',
             ),
           ),
         ),
@@ -76,7 +76,7 @@ class _ProfilePageState extends State<ProfilePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            CircleAvatar(
+            const CircleAvatar(
               radius: 70,
               backgroundImage: NetworkImage(
                   "https://media.gettyimages.com/id/1334712074/vector/coming-soon-message.jpg?s=612x612&w=0&k=20&c=0GbpL-k_lXkXC4LidDMCFGN_Wo8a107e5JzTwYteXaw="),
@@ -109,7 +109,7 @@ class _ProfilePageState extends State<ProfilePage> {
           borderRadius: BorderRadius.circular(10),
           boxShadow: [
             BoxShadow(
-                offset: Offset(0, 5),
+                offset: const Offset(0, 5),
                 color: const Color(0xff1F0A68).withOpacity(.2),
                 spreadRadius: 2,
                 blurRadius: 10)

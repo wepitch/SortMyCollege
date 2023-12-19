@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/page-1/selectdob.dart';
-import 'package:myapp/page-1/selectgender.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../utils.dart';
@@ -92,8 +91,10 @@ class _SelectGenderState extends State<SelectGender> {
                     var prefs = await SharedPreferences.getInstance();
                     prefs.setString("gender", selectedOption);
                     if (!mounted) return;
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => SelectDob()));
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SelectDob()));
                   },
                   title: "Next")
             ],

@@ -1,19 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 
-import 'filter_pricerange.dart';
 import 'filter_pricerange.dart';
 import 'filter_location.dart';
 import 'filter_course.dart';
 import 'filter_experince.dart';
-import 'package:myapp/page-1/counsellor_select_listview_offline.dart';
 
 import 'homepagecontainer_2.dart';
 
 class Filter_Degree extends StatefulWidget {
+  const Filter_Degree({super.key});
+
   @override
   State<Filter_Degree> createState() => _Filter_DegreeState();
 }
@@ -26,7 +23,7 @@ class _Filter_DegreeState extends State<Filter_Degree> {
     double ffem = fem * 0.97;
     return WillPopScope(
       onWillPop: _onBackPressed,
-      child: Container(
+      child: SizedBox(
         width: double.infinity,
         child: Container(
           // iphone1415promax1GWc (2471:996)
@@ -46,7 +43,7 @@ class _Filter_DegreeState extends State<Filter_Degree> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Expanded(
-                  child: Container(
+                  child: SizedBox(
                     // rectangle2518oi (2471:989)
                     width: double.infinity,
                     child: Center(
@@ -64,7 +61,7 @@ class _Filter_DegreeState extends State<Filter_Degree> {
                     ),
                   ),
                 ),
-                Container(
+                SizedBox(
                   // autogroupvbc4RXv (ob7554dV9qgW5kfXkVBC4)
                   width: double.infinity,
                   height: 795 * fem,
@@ -217,7 +214,7 @@ class _Filter_DegreeState extends State<Filter_Degree> {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    Filter_Course()),
+                                                    const Filter_Course()),
                                             (route) => false);
                                       },
                                       child: Container(
@@ -322,7 +319,7 @@ class _Filter_DegreeState extends State<Filter_Degree> {
                                 ],
                               ),
                             ),
-                            Container(
+                            SizedBox(
                               // autogroup6qv4Qs2 (ob6N1QiavY8zYjKQW6Qv4)
                               width: 236 * fem,
                               child: Column(
@@ -406,7 +403,7 @@ class _Filter_DegreeState extends State<Filter_Degree> {
                                             style: TextButton.styleFrom(
                                               padding: EdgeInsets.zero,
                                             ),
-                                            child: Container(
+                                            child: SizedBox(
                                               width: 84 * fem,
                                               height: 15 * fem,
                                               child: Center(
@@ -438,7 +435,7 @@ class _Filter_DegreeState extends State<Filter_Degree> {
                     ],
                   ),
                 ),
-                Container(
+                SizedBox(
                   // autogroup1gwcqct (ob6uABUiYdStxGLg11gWC)
                   width: double.infinity,
                   height: 50 * fem,

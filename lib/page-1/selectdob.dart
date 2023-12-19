@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:intl/intl.dart';
 import 'package:myapp/page-1/homepagecontainer.dart';
-import 'package:myapp/page-1/selectdob.dart';
-import 'package:myapp/page-1/selectgender.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../utils.dart';
@@ -70,7 +68,7 @@ class _SelectDobState extends State<SelectDob> {
                 onPressed: () {
                   var now = DateTime.now();
                   var firstDate = DateTime(1999);
-                  var lastDate = DateTime(2010);
+                  // var lastDate = DateTime(2010);
 
                   showDatePicker(
                           context: context,
@@ -98,7 +96,7 @@ class _SelectDobState extends State<SelectDob> {
                       Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => HomePageContainer()));
+                              builder: (context) => const HomePageContainer()));
                     }
                   },
                   title: "Next")

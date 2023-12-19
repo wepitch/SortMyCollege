@@ -13,8 +13,8 @@ import '../other/api_service.dart';
 import '../other/constants.dart';
 
 class Otp extends StatefulWidget {
-  var email;
-  Otp(this.email, {super.key});
+  final String email;
+  const Otp(this.email, {super.key});
   @override
   State<Otp> createState() => _OtpState();
 }
@@ -323,11 +323,5 @@ class _OtpState extends State<Otp> {
       ..maskColor = Colors.black.withOpacity(0.5)
       ..userInteractions = false
       ..dismissOnTap = false;
-  }
-
-  @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    throw UnimplementedError();
   }
 }

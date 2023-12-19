@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/model/counsellor_feed_model.dart';
 import 'package:myapp/other/constants.dart';
 import 'package:myapp/page-1/counsellor_details_page.dart';
@@ -50,7 +49,7 @@ class _CounsellorFeedPageState extends State<CounsellorFeedPage>
                 Navigator.pop(context);
               },
               child: Image.asset(
-                'assets/page-1/images/back-rNM.png',
+                'assets/page-1/images/back.png',
               ),
             ),
           ),
@@ -228,7 +227,7 @@ Widget counsellorFeedPost(
                       borderRadius: BorderRadius.circular(21)),
                   child: Center(
                     child: Image.asset(
-                      "${AppConstants.imagePath}like-xzD.png",
+                      "${AppConstants.imagePath}like-ufw.png",
                       height: 18,
                       width: 18,
                       color: Colors.black,

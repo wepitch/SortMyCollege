@@ -1,39 +1,23 @@
-import 'dart:convert';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
-import 'package:myapp/other/counsellor_details_provider.dart';
 import 'package:myapp/page-1/dashboard_session_page.dart';
-import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
-import 'package:animated_text_kit/animated_text_kit.dart';
-import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:myapp/page-1/filter_course.dart';
 import 'package:myapp/utils.dart';
 
-import '../model/cousnellor_list_model.dart';
 import '../other/api_service.dart';
-import 'counselor-detailed-full-view.dart';
-import 'counselor-detailed-select-full-view.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
-import 'dart:developer';
-import 'package:flutter/gestures.dart';
-import 'package:http/http.dart' as http;
+// import 'counselor-detailed-full-view.dart';
+// import 'counselor-detailed-select-full-view.dart';
 
-import '../model/dummy_list_model.dart';
 import '../other/listcontroler.dart';
 import 'package:get/get.dart';
 
-import 'dashboard-session-group-new.dart';
 import 'counsellor_details_page.dart';
-import 'package:myapp/page-1/filter_degree.dart';
 
 import 'homepagecontainer.dart';
-import 'homepagecontainer_2.dart';
 
 class CounsellorListPage_offline extends StatefulWidget {
+  const CounsellorListPage_offline({super.key});
+
   @override
   State<CounsellorListPage_offline> createState() =>
       _CounsellorListPage_offlineState();
@@ -118,7 +102,7 @@ class _CounsellorListPage_offlineState
                                   width: 11.01 * fem,
                                   height: 20 * fem,
                                   child: Image.asset(
-                                    'assets/page-1/images/back-94d.png',
+                                    'assets/page-1/images/back.png',
                                     width: 11.01 * fem,
                                     height: 20 * fem,
                                   ),
@@ -147,7 +131,7 @@ class _CounsellorListPage_offlineState
                               width: 70.39 * fem,
                               height: 25 * fem,
                               child: Image.asset(
-                                'assets/page-1/images/layer-2-VHs.png',
+                                'assets/page-1/images/layer-3.png',
                                 width: 26.39 * fem,
                                 height: 25 * fem,
                               ),
@@ -550,7 +534,7 @@ class _CounsellorListPage_offlineState
                                                                       left: 10 *
                                                                           fem,
                                                                       child:
-                                                                          Container(
+                                                                          SizedBox(
                                                                         width: 370 *
                                                                             fem,
                                                                         height: 320.1 *
@@ -627,7 +611,7 @@ class _CounsellorListPage_offlineState
                                                                               ),
                                                                             ),
                                                                             Positioned(
-                                                                              child: Container(
+                                                                              child: SizedBox(
                                                                                 width: 370 * fem,
                                                                                 height: 270.1 * fem,
                                                                                 child: Stack(
@@ -653,7 +637,7 @@ class _CounsellorListPage_offlineState
                                                                                       // group22y4d (730:31)
                                                                                       left: 11.2578125 * fem,
                                                                                       top: 0 * fem,
-                                                                                      child: Container(
+                                                                                      child: SizedBox(
                                                                                         width: 355.39 * fem,
                                                                                         height: 200.43 * fem,
                                                                                         child: Column(
@@ -677,7 +661,7 @@ class _CounsellorListPage_offlineState
                                                                                                           // anshikamehrausP (730:37)
                                                                                                           margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 4.25 * fem),
                                                                                                           child: Text(
-                                                                                                            "${listController.cousnellorlist_data?[index].name} ",
+                                                                                                            "${listController.cousnellorlist_data[index].name} ",
                                                                                                             style: SafeGoogleFont(
                                                                                                               'Inter',
                                                                                                               fontSize: 22 * ffem,
@@ -758,13 +742,13 @@ class _CounsellorListPage_offlineState
                                                                                                     width: 10 * fem,
                                                                                                     height: 10 * fem,
                                                                                                     child: Image.asset(
-                                                                                                      'assets/page-1/images/star-rSu.png',
+                                                                                                      'assets/page-1/images/star.png',
                                                                                                       fit: BoxFit.cover,
                                                                                                     ),
                                                                                                   ),
                                                                                                   Text(
                                                                                                     // 9W9 (730:71)
-                                                                                                    '${listController.cousnellorlist_data?[index].averageRating}',
+                                                                                                    '${listController.cousnellorlist_data[index].averageRating}',
                                                                                                     textAlign: TextAlign.center,
                                                                                                     style: SafeGoogleFont(
                                                                                                       'Inter',
@@ -899,7 +883,7 @@ class _CounsellorListPage_offlineState
                                                                                       // group127Yc9 (730:56)
                                                                                       left: 15.095703125 * fem,
                                                                                       top: 170.1729736328 * fem,
-                                                                                      child: Container(
+                                                                                      child: SizedBox(
                                                                                         width: 330.19 * fem,
                                                                                         height: 41.88 * fem,
                                                                                         child: Row(
@@ -930,7 +914,7 @@ class _CounsellorListPage_offlineState
                                                                                                     // yrsthw (730:61)
                                                                                                     margin: EdgeInsets.fromLTRB(0 * fem, 3 * fem, 1.34 * fem, 0 * fem),
                                                                                                     child: Text(
-                                                                                                      "${listController.cousnellorlist_data?[index].experienceInYears}"
+                                                                                                      "${listController.cousnellorlist_data[index].experienceInYears}"
                                                                                                       " year",
                                                                                                       style: SafeGoogleFont(
                                                                                                         'Inter',
@@ -986,7 +970,7 @@ class _CounsellorListPage_offlineState
                                                                                                     // JfB (730:62)
                                                                                                     margin: EdgeInsets.fromLTRB(2.42 * fem, 3 * fem, 0 * fem, 0 * fem),
                                                                                                     child: Text(
-                                                                                                      '${listController.cousnellorlist_data?[index].totalSessions}',
+                                                                                                      '${listController.cousnellorlist_data[index].totalSessions}',
                                                                                                       style: SafeGoogleFont(
                                                                                                         'Inter',
                                                                                                         fontSize: 13 * ffem,
@@ -1041,7 +1025,7 @@ class _CounsellorListPage_offlineState
                                                                                                     // sVK (730:63)
                                                                                                     margin: EdgeInsets.fromLTRB(0 * fem, 3 * fem, 3.09 * fem, 0 * fem),
                                                                                                     child: Text(
-                                                                                                      " ${listController.cousnellorlist_data?[index].rewardPoints} +",
+                                                                                                      " ${listController.cousnellorlist_data[index].rewardPoints} +",
                                                                                                       style: SafeGoogleFont(
                                                                                                         'Inter',
                                                                                                         fontSize: 13 * ffem,
@@ -1095,7 +1079,7 @@ class _CounsellorListPage_offlineState
                                                                                                     // kfT7 (730:64)
                                                                                                     margin: EdgeInsets.fromLTRB(0 * fem, 3 * fem, 4.34 * fem, 0 * fem),
                                                                                                     child: Text(
-                                                                                                      '${listController.cousnellorlist_data?[index].averageRating} K',
+                                                                                                      '${listController.cousnellorlist_data[index].averageRating} K',
                                                                                                       style: SafeGoogleFont(
                                                                                                         'Inter',
                                                                                                         fontSize: 13 * ffem,

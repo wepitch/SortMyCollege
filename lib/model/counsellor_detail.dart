@@ -4,8 +4,6 @@
 
 import 'dart:convert';
 
-import 'package:myapp/model/cousnellor_list_model.dart';
-
 CounsellorDetail counsellorDetailFromJson(String str) =>
     CounsellorDetail.fromJson(json.decode(str));
 

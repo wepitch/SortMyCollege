@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 
-import 'filter_pricerange.dart';
 import 'filter_location.dart';
 import 'filter_course.dart';
 import 'filter_experince.dart';
-import 'package:myapp/page-1/counsellor_select_listview_offline.dart';
 
 import 'homepagecontainer_2.dart';
 
 class Filter_PriceRange extends StatefulWidget {
+  const Filter_PriceRange({super.key});
+
   @override
   State<Filter_PriceRange> createState() => _Filter_PriceRangeState();
 }
@@ -25,27 +22,27 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
     double ffem = fem * 0.97;
     return WillPopScope(
       onWillPop: _onBackPressed,
-      child: Container(
+      child: SizedBox(
         width: double.infinity,
         child: Container(
           // iphone1415promax1GWc (2471:996)
           width: double.infinity,
           height: 932 * fem,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Color(0xffffffff),
           ),
           child: Container(
             // epfeedCv4 (2454:162)
             width: double.infinity,
             height: double.infinity,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Color(0xffffffff),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Expanded(
-                  child: Container(
+                  child: SizedBox(
                     // rectangle2518oi (2471:989)
                     width: double.infinity,
                     child: Center(
@@ -55,15 +52,15 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                         height: 87 * fem,
                         child: Container(
                           decoration: BoxDecoration(
-                            border: Border.all(color: Color(0x23000000)),
-                            color: Color(0xffffffff),
+                            border: Border.all(color: const Color(0x23000000)),
+                            color: const Color(0xffffffff),
                           ),
                         ),
                       ),
                     ),
                   ),
                 ),
-                Container(
+                SizedBox(
                   // autogroupvbc4RXv (ob7554dV9qgW5kfXkVBC4)
                   width: double.infinity,
                   height: 795 * fem,
@@ -101,7 +98,7 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                   fontSize: 14 * ffem,
                                   fontWeight: FontWeight.w400,
                                   height: 1.2125 * ffem / fem,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                               ),
                             ),
@@ -114,7 +111,7 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                 fontSize: 14 * ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.2125 * ffem / fem,
-                                color: Color(0xfc1f0a68),
+                                color: const Color(0xfc1f0a68),
                               ),
                             ),
                           ],
@@ -137,7 +134,7 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                   0 * fem, 0 * fem, 0 * fem, 400 * fem),
                               width: 159 * fem,
                               height: double.infinity,
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 color: Color(0xfff5f5f5),
                               ),
                               child: Column(
@@ -149,9 +146,9 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                         10 * fem, 21 * fem, 10 * fem, 17 * fem),
                                     width: double.infinity,
                                     decoration: BoxDecoration(
-                                      border:
-                                          Border.all(color: Color(0x1c000000)),
-                                      color: Color(0xfff5f5f5),
+                                      border: Border.all(
+                                          color: const Color(0x1c000000)),
+                                      color: const Color(0xfff5f5f5),
                                     ),
                                     child: Text(
                                       'Degree',
@@ -161,7 +158,7 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                         fontSize: 14 * ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.2125 * ffem / fem,
-                                        color: Color(0xff575454),
+                                        color: const Color(0xff575454),
                                       ),
                                     ),
                                   ),
@@ -177,7 +174,7 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    Filter_Location()),
+                                                    const Filter_Location()),
                                             (route) => false);
                                       },
                                       child: Container(
@@ -185,8 +182,8 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                         height: 59 * fem,
                                         decoration: BoxDecoration(
                                           border: Border.all(
-                                              color: Color(0x1c000000)),
-                                          color: Color(0xfff5f5f5),
+                                              color: const Color(0x1c000000)),
+                                          color: const Color(0xfff5f5f5),
                                         ),
                                         child: Center(
                                           child: Text(
@@ -197,7 +194,7 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                               fontSize: 14 * ffem,
                                               fontWeight: FontWeight.w400,
                                               height: 1.2125 * ffem / fem,
-                                              color: Color(0xff575454),
+                                              color: const Color(0xff575454),
                                             ),
                                           ),
                                         ),
@@ -216,7 +213,7 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    Filter_Course()),
+                                                    const Filter_Course()),
                                             (route) => false);
                                       },
                                       child: Container(
@@ -225,8 +222,8 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                         width: double.infinity,
                                         decoration: BoxDecoration(
                                           border: Border.all(
-                                              color: Color(0x1c000000)),
-                                          color: Color(0xfff5f5f5),
+                                              color: const Color(0x1c000000)),
+                                          color: const Color(0xfff5f5f5),
                                         ),
                                         child: Text(
                                           'Courses Focused',
@@ -236,7 +233,7 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                             fontSize: 14 * ffem,
                                             fontWeight: FontWeight.w400,
                                             height: 1.2125 * ffem / fem,
-                                            color: Color(0xff575454),
+                                            color: const Color(0xff575454),
                                           ),
                                         ),
                                       ),
@@ -258,8 +255,8 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                         width: double.infinity,
                                         decoration: BoxDecoration(
                                           border: Border.all(
-                                              color: Color(0x1c000000)),
-                                          color: Color(0xffffffff),
+                                              color: const Color(0x1c000000)),
+                                          color: const Color(0xffffffff),
                                         ),
                                         child: Text(
                                           'Price Range',
@@ -269,7 +266,7 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                             fontSize: 14 * ffem,
                                             fontWeight: FontWeight.w400,
                                             height: 1.2125 * ffem / fem,
-                                            color: Color(0xff575454),
+                                            color: const Color(0xff575454),
                                           ),
                                         ),
                                       ),
@@ -287,7 +284,7 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    Filter_Experince()),
+                                                    const Filter_Experince()),
                                             (route) => false);
                                       },
                                       child: Container(
@@ -296,8 +293,8 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                         width: double.infinity,
                                         decoration: BoxDecoration(
                                           border: Border.all(
-                                              color: Color(0x1c000000)),
-                                          color: Color(0xfff5f5f5),
+                                              color: const Color(0x1c000000)),
+                                          color: const Color(0xfff5f5f5),
                                         ),
                                         child: Text(
                                           'Experience',
@@ -307,7 +304,7 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                             fontSize: 14 * ffem,
                                             fontWeight: FontWeight.w400,
                                             height: 1.2125 * ffem / fem,
-                                            color: Color(0xff575454),
+                                            color: const Color(0xff575454),
                                           ),
                                         ),
                                       ),
@@ -345,7 +342,8 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           100 * fem),
-                                                  color: Color(0x33b1a0eb),
+                                                  color:
+                                                      const Color(0x33b1a0eb),
                                                 ),
                                               ),
                                             ),
@@ -359,7 +357,7 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                             width: 157 * fem,
                                             height: 39 * fem,
                                             decoration: BoxDecoration(
-                                              color: Color(0xff1f0a68),
+                                              color: const Color(0xff1f0a68),
                                               borderRadius:
                                                   BorderRadius.circular(
                                                       100 * fem),
@@ -452,7 +450,7 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                                                         height: 1.2125 *
                                                                             ffem /
                                                                             fem,
-                                                                        color: Color(
+                                                                        color: const Color(
                                                                             0xffffffff),
                                                                       ),
                                                                     ),
@@ -480,13 +478,13 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                                                   .circular(
                                                                       6 * fem),
                                                           border: Border.all(
-                                                              color: Color(
+                                                              color: const Color(
                                                                   0x19000000)),
-                                                          color:
-                                                              Color(0xffffffff),
+                                                          color: const Color(
+                                                              0xffffffff),
                                                           boxShadow: [
                                                             BoxShadow(
-                                                              color: Color(
+                                                              color: const Color(
                                                                   0x19000000),
                                                               offset: Offset(
                                                                   0 * fem,
@@ -500,7 +498,7 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                                     ],
                                                   ),
                                                 ),
-                                                Container(
+                                                SizedBox(
                                                   // knobmaxYqW (I2926:378;2465:855)
                                                   width: 39 * fem,
                                                   height: double.infinity,
@@ -579,7 +577,7 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                                                         height: 1.2125 *
                                                                             ffem /
                                                                             fem,
-                                                                        color: Color(
+                                                                        color: const Color(
                                                                             0xffffffff),
                                                                       ),
                                                                     ),
@@ -607,13 +605,13 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                                                   .circular(
                                                                       6 * fem),
                                                           border: Border.all(
-                                                              color: Color(
+                                                              color: const Color(
                                                                   0x19000000)),
-                                                          color:
-                                                              Color(0xffffffff),
+                                                          color: const Color(
+                                                              0xffffffff),
                                                           boxShadow: [
                                                             BoxShadow(
-                                                              color: Color(
+                                                              color: const Color(
                                                                   0x19000000),
                                                               offset: Offset(
                                                                   0 * fem,
@@ -634,7 +632,7 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                       ],
                                     ),
                                   ),
-                                  Container(
+                                  SizedBox(
                                     // stepsscaledLet (I2926:378;2465:869)
                                     width: double.infinity,
                                     height: 16 * fem,
@@ -650,7 +648,7 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                               6 * fem, 0 * fem, 0 * fem),
                                           height: double.infinity,
                                           decoration: BoxDecoration(
-                                            color: Color(0x33000000),
+                                            color: const Color(0x33000000),
                                             borderRadius:
                                                 BorderRadius.circular(1 * fem),
                                           ),
@@ -661,7 +659,7 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                               fontSize: 8 * ffem,
                                               fontWeight: FontWeight.w400,
                                               height: 1.2125 * ffem / fem,
-                                              color: Color(0xff000000),
+                                              color: const Color(0xff000000),
                                             ),
                                           ),
                                         ),
@@ -672,7 +670,7 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                           width: 4 * fem,
                                           height: double.infinity,
                                           decoration: BoxDecoration(
-                                            color: Color(0x33000000),
+                                            color: const Color(0x33000000),
                                             borderRadius:
                                                 BorderRadius.circular(1 * fem),
                                           ),
@@ -685,7 +683,7 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                               6 * fem, 0 * fem, 0 * fem),
                                           height: double.infinity,
                                           decoration: BoxDecoration(
-                                            color: Color(0x33000000),
+                                            color: const Color(0x33000000),
                                             borderRadius:
                                                 BorderRadius.circular(1 * fem),
                                           ),
@@ -698,7 +696,7 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                                 fontSize: 8 * ffem,
                                                 fontWeight: FontWeight.w400,
                                                 height: 1.2125 * ffem / fem,
-                                                color: Color(0xff000000),
+                                                color: const Color(0xff000000),
                                               ),
                                             ),
                                           ),
@@ -710,7 +708,7 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                           width: 6 * fem,
                                           height: double.infinity,
                                           decoration: BoxDecoration(
-                                            color: Color(0x33000000),
+                                            color: const Color(0x33000000),
                                             borderRadius:
                                                 BorderRadius.circular(1 * fem),
                                           ),
@@ -723,7 +721,7 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                               6 * fem, 0 * fem, 0 * fem),
                                           height: double.infinity,
                                           decoration: BoxDecoration(
-                                            color: Color(0x33000000),
+                                            color: const Color(0x33000000),
                                             borderRadius:
                                                 BorderRadius.circular(1 * fem),
                                           ),
@@ -736,7 +734,7 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                                 fontSize: 8 * ffem,
                                                 fontWeight: FontWeight.w400,
                                                 height: 1.2125 * ffem / fem,
-                                                color: Color(0xff000000),
+                                                color: const Color(0xff000000),
                                               ),
                                             ),
                                           ),
@@ -748,7 +746,7 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                           width: 5 * fem,
                                           height: double.infinity,
                                           decoration: BoxDecoration(
-                                            color: Color(0x33000000),
+                                            color: const Color(0x33000000),
                                             borderRadius:
                                                 BorderRadius.circular(1 * fem),
                                           ),
@@ -761,7 +759,7 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                               6 * fem, 0 * fem, 0 * fem),
                                           height: double.infinity,
                                           decoration: BoxDecoration(
-                                            color: Color(0x33000000),
+                                            color: const Color(0x33000000),
                                             borderRadius:
                                                 BorderRadius.circular(1 * fem),
                                           ),
@@ -774,7 +772,7 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                                 fontSize: 8 * ffem,
                                                 fontWeight: FontWeight.w400,
                                                 height: 1.2125 * ffem / fem,
-                                                color: Color(0xff000000),
+                                                color: const Color(0xff000000),
                                               ),
                                             ),
                                           ),
@@ -786,7 +784,7 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                           width: 5 * fem,
                                           height: double.infinity,
                                           decoration: BoxDecoration(
-                                            color: Color(0x33000000),
+                                            color: const Color(0x33000000),
                                             borderRadius:
                                                 BorderRadius.circular(1 * fem),
                                           ),
@@ -799,7 +797,7 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                               6 * fem, 0 * fem, 0 * fem),
                                           height: double.infinity,
                                           decoration: BoxDecoration(
-                                            color: Color(0x33000000),
+                                            color: const Color(0x33000000),
                                             borderRadius:
                                                 BorderRadius.circular(1 * fem),
                                           ),
@@ -812,7 +810,7 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                                 fontSize: 8 * ffem,
                                                 fontWeight: FontWeight.w400,
                                                 height: 1.2125 * ffem / fem,
-                                                color: Color(0xff000000),
+                                                color: const Color(0xff000000),
                                               ),
                                             ),
                                           ),
@@ -824,7 +822,7 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                           width: 5 * fem,
                                           height: double.infinity,
                                           decoration: BoxDecoration(
-                                            color: Color(0x33000000),
+                                            color: const Color(0x33000000),
                                             borderRadius:
                                                 BorderRadius.circular(1 * fem),
                                           ),
@@ -835,7 +833,7 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                               6 * fem, 0 * fem, 0 * fem),
                                           height: double.infinity,
                                           decoration: BoxDecoration(
-                                            color: Color(0x33000000),
+                                            color: const Color(0x33000000),
                                             borderRadius:
                                                 BorderRadius.circular(1 * fem),
                                           ),
@@ -848,7 +846,7 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                                 fontSize: 8 * ffem,
                                                 fontWeight: FontWeight.w400,
                                                 height: 1.2125 * ffem / fem,
-                                                color: Color(0xff000000),
+                                                color: const Color(0xff000000),
                                               ),
                                             ),
                                           ),
@@ -865,7 +863,7 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                     ],
                   ),
                 ),
-                Container(
+                SizedBox(
                   // autogroup1gwcqct (ob6uABUiYdStxGLg11gWC)
                   width: double.infinity,
                   height: 50 * fem,
@@ -882,8 +880,8 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                           width: 215 * fem,
                           height: double.infinity,
                           decoration: BoxDecoration(
-                            border: Border.all(color: Color(0x23000000)),
-                            color: Color(0xffffffff),
+                            border: Border.all(color: const Color(0x23000000)),
+                            color: const Color(0xffffffff),
                           ),
                           child: Center(
                             child: Text(
@@ -894,7 +892,7 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                 fontSize: 15 * ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.2125 * ffem / fem,
-                                color: Color(0xff7f7e85),
+                                color: const Color(0xff7f7e85),
                               ),
                             ),
                           ),
@@ -910,8 +908,8 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                           width: 215 * fem,
                           height: double.infinity,
                           decoration: BoxDecoration(
-                            border: Border.all(color: Color(0x38000000)),
-                            color: Color(0xffb1a0ea),
+                            border: Border.all(color: const Color(0x38000000)),
+                            color: const Color(0xffb1a0ea),
                           ),
                           child: Center(
                             child: Text(
@@ -922,7 +920,7 @@ class _Filter_PriceRangeState extends State<Filter_PriceRange> {
                                 fontSize: 15 * ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.2125 * ffem / fem,
-                                color: Color(0xffffffff),
+                                color: const Color(0xffffffff),
                               ),
                             ),
                           ),

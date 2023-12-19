@@ -1,24 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/page-1/booking_page.dart';
 import 'package:myapp/page-1/counsellor_select_listview_offline.dart';
 import 'package:myapp/page-1/profile_page.dart';
-import 'package:myapp/page-1/webinar-detail-second-full-view.dart';
-import 'package:myapp/page-1/webinar.dart';
+// import 'package:myapp/page-1/webinar-detail-second-full-view.dart';
+// import 'package:myapp/page-1/webinar.dart';
 import 'package:myapp/page-1/homepage.dart';
 import 'package:myapp/page-1/webinar_page.dart';
-import 'package:myapp/utils.dart';
-import 'package:myapp/page-1/news.dart';
-import 'package:myapp/page-1/profile.dart';
+// import 'package:myapp/page-1/news.dart';
+// import 'package:myapp/page-1/profile.dart';
 
-import 'counsellor-select-new.dart';
-import 'counselor-dashboard-new-full-view.dart';
-import 'counselor-detailed-full-view.dart';
-import 'counselor-detailed-select-full-view.dart';
-import 'counselor-full-view.dart';
-import 'explore-first-feed.dart';
+// import 'counsellor-select-new.dart';
+// import 'counselor-dashboard-new-full-view.dart';
+// import 'counselor-detailed-full-view.dart';
+// import 'counselor-detailed-select-full-view.dart';
+// import 'counselor-full-view.dart';
+// import 'explore-first-feed.dart';
 
 class HomePageContainer extends StatefulWidget {
   const HomePageContainer({super.key});
@@ -36,9 +32,9 @@ class _HomePageContainerState extends State<HomePageContainer> {
 
   final Widget _booking = const BookingPage();
 
-  final Widget _news = News();
+  // final Widget _news = News();
 
-  final Widget _profile = ProfilePage();
+  final Widget _profile = const ProfilePage();
 
   /*Widget _news = News();
 
@@ -46,9 +42,9 @@ class _HomePageContainerState extends State<HomePageContainer> {
 
   @override
   Widget build(BuildContext context) {
-    double baseWidth = 430;
-    double fem = MediaQuery.of(context).size.width / baseWidth;
-    double ffem = fem * 0.97;
+    // double baseWidth = 430;
+    // double fem = MediaQuery.of(context).size.width / baseWidth;
+    // double ffem = fem * 0.97;
     return Scaffold(
       body: getBody(),
       bottomNavigationBar: BottomNavigationBar(
@@ -65,7 +61,7 @@ class _HomePageContainerState extends State<HomePageContainer> {
           BottomNavigationBarItem(
             label: "Home",
             icon: ImageIcon(
-              AssetImage("assets/page-1/images/home-1-pSd.png"),
+              AssetImage("assets/page-1/images/home.png"),
             ),
           ),
           BottomNavigationBarItem(
@@ -109,31 +105,34 @@ class _HomePageContainerState extends State<HomePageContainer> {
   Widget getBody() {
     if (selectedIndex == 0) {
       return _home;
-    } else if (this.selectedIndex == 1) {
+    } else if (selectedIndex == 1) {
       return _webnar;
-    } else if (this.selectedIndex == 2) {
-      return this._booking;
+    } else if (selectedIndex == 2) {
+      return _booking;
     } /*else if (this.selectedIndex == 3) {
       return this._news;
     } */
-    else if (this.selectedIndex == 4) {
-      return this._profile;
+    else if (selectedIndex == 4) {
+      return _profile;
     } else {
-      return this._home;
+      return _home;
     }
   }
 
   void onTapgotocounsellor(BuildContext context) {
-    Navigator.push(context,
-        MaterialPageRoute(builder: (context) => CounsellorListPage_offline()));
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => const CounsellorListPage_offline()));
   }
 
   void onTapGettingstarted2(BuildContext context) {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => Webnar()));
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const WebinarPage()));
   }
 
   void onTapGettingstarted3(BuildContext context) {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const ExplorerFeed()));
+    // Navigator.push(
+    //     context, MaterialPageRoute(builder: (context) => const ExplorerFeed()));
   }
 }

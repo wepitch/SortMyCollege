@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:jiffy/jiffy.dart';
 import 'package:myapp/model/booking_model.dart';
 import 'package:myapp/other/user_booking_provider.dart';
 import 'package:myapp/page-1/booking_confirmatoin_page.dart';
@@ -52,8 +51,8 @@ class _BookingTodayState extends State<BookingToday> {
     var userBookings = context.watch<UserBookingProvider>();
     bool isLoading = context.watch<UserBookingProvider>().isLoading;
 
-    String time = "25:15";
-    var mWidth = MediaQuery.sizeOf(context).width;
+    // String time = "25:15";
+    // var mWidth = MediaQuery.sizeOf(context).width;
     return isLoading
         ? const Center(child: CircularProgressIndicator())
         : userBookings.userBooking.isEmpty
@@ -310,459 +309,459 @@ class _BookingTodayState extends State<BookingToday> {
                         }),
                   );
 
-    return ListView(
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Container(
-            margin: const EdgeInsets.only(bottom: 15),
-            child: Stack(
-              // fit: StackFit.expand,
-              alignment: Alignment.bottomCenter,
-              children: [
-                Card(
-                  // semanticContainer: false,
-                  margin: const EdgeInsets.only(top: 5),
-                  elevation: 5,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15)),
-                  child: Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                children: [
-                                  Image.asset(
-                                    "assets/page-1/images/profile_booking.png",
-                                    width: mWidth * 0.15,
-                                    height: 60,
-                                  ),
-                                  const SizedBox(
-                                    width: 7,
-                                  ),
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        "Sandeep Mehra",
-                                        style: SafeGoogleFont(
-                                          "Inter",
-                                          fontSize: mWidth * 0.045,
-                                          fontWeight: FontWeight.w600,
-                                        ),
-                                      ),
-                                      Text(
-                                        "designer at wepitch",
-                                        // textAlign: TextAlign.left,
+    //      return ListView(
+    //   children: [
+    //     Padding(
+    //       padding: const EdgeInsets.symmetric(horizontal: 16),
+    //       child: Container(
+    //         margin: const EdgeInsets.only(bottom: 15),
+    //         child: Stack(
+    //           // fit: StackFit.expand,
+    //           alignment: Alignment.bottomCenter,
+    //           children: [
+    //             Card(
+    //               // semanticContainer: false,
+    //               margin: const EdgeInsets.only(top: 5),
+    //               elevation: 5,
+    //               shape: RoundedRectangleBorder(
+    //                   borderRadius: BorderRadius.circular(15)),
+    //               child: Padding(
+    //                 padding: const EdgeInsets.all(12.0),
+    //                 child: Column(
+    //                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    //                     crossAxisAlignment: CrossAxisAlignment.end,
+    //                     children: [
+    //                       Column(
+    //                         crossAxisAlignment: CrossAxisAlignment.start,
+    //                         children: [
+    //                           Row(
+    //                             children: [
+    //                               Image.asset(
+    //                                 "assets/page-1/images/profile_booking.png",
+    //                                 width: mWidth * 0.15,
+    //                                 height: 60,
+    //                               ),
+    //                               const SizedBox(
+    //                                 width: 7,
+    //                               ),
+    //                               Column(
+    //                                 crossAxisAlignment:
+    //                                     CrossAxisAlignment.start,
+    //                                 children: [
+    //                                   Text(
+    //                                     "Sandeep Mehra",
+    //                                     style: SafeGoogleFont(
+    //                                       "Inter",
+    //                                       fontSize: mWidth * 0.045,
+    //                                       fontWeight: FontWeight.w600,
+    //                                     ),
+    //                                   ),
+    //                                   Text(
+    //                                     "designer at wepitch",
+    //                                     // textAlign: TextAlign.left,
 
-                                        style: SafeGoogleFont(
-                                          "Inter",
-                                          color: const Color(0xff747474),
-                                          fontSize: mWidth * 0.035,
-                                          fontWeight: FontWeight.w600,
-                                        ),
-                                      ),
-                                    ],
-                                  )
-                                ],
-                              ),
-                            ],
-                          ),
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "Session starts in",
-                                    style: SafeGoogleFont("Inter",
-                                        fontSize: 12,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  RichText(
-                                      text: TextSpan(children: <TextSpan>[
-                                    TextSpan(
-                                        text: time,
-                                        style: SafeGoogleFont("Inter",
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: 20,
-                                            color: Colors.black)),
-                                    TextSpan(
-                                        text: "m",
-                                        style: SafeGoogleFont("Inter",
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: 14,
-                                            color: Colors.black))
-                                  ]))
-                                ],
-                              ),
-                              const Spacer(),
-                              Column(
-                                children: [
-                                  Text(
-                                    "Personal Session",
-                                    style: SafeGoogleFont("Inter",
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: mWidth * 0.038,
-                                        color: const Color(0xff1F0A68)),
-                                  ),
-                                  const SizedBox(
-                                    height: 5,
-                                  ),
-                                  SizedBox(
-                                    width: mWidth * 0.34,
-                                    height: 24,
-                                    child: GestureDetector(
-                                      onTap: () {
-                                        // Navigator.push(
-                                        //     context,
-                                        //     MaterialPageRoute(
-                                        //         builder: (context) =>
-                                        //             const BookingConfirmationPage(
-                                        //                 isUpcoming: false,
-                                        //                 isConfirmed: true,
-                                        //                 time: "25:15")));
-                                      },
-                                      child: Container(
-                                          decoration: BoxDecoration(
-                                            border: Border.all(),
-                                            borderRadius:
-                                                BorderRadius.circular(20),
-                                          ),
-                                          child: Center(
-                                              child: Text(
-                                            "View details",
-                                            style: SafeGoogleFont("Inter",
-                                                fontWeight: FontWeight.w600,
-                                                fontSize: mWidth * 0.032,
-                                                color: Colors.black),
-                                          ))),
-                                    ),
-                                  ),
-                                ],
-                              )
-                            ],
-                          )
-                        ]),
-                  ),
-                ),
-                Positioned(
-                  top: 0,
-                  left: 7,
-                  child: Container(
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        border: Border.all(
-                          color: Colors.black54,
-                        ),
-                        borderRadius: BorderRadius.circular(10)),
-                    width: 58,
-                    height: 17,
-                    child: Center(
-                      child: Text(
-                        "Counsellor",
-                        style: SafeGoogleFont(
-                          "Inter",
-                          fontSize: 8,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Container(
-            margin: const EdgeInsets.only(bottom: 15),
-            child: Stack(
-              // fit: StackFit.expand,
-              alignment: Alignment.bottomCenter,
-              children: [
-                Card(
-                  // semanticContainer: false,
-                  margin: const EdgeInsets.only(top: 5),
-                  elevation: 5,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15)),
-                  child: Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                children: [
-                                  Image.asset(
-                                    "assets/page-1/images/profile_booking.png",
-                                    width: mWidth * 0.15,
-                                    height: 60,
-                                  ),
-                                  const SizedBox(
-                                    width: 7,
-                                  ),
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        "Sandeep Mehra",
-                                        style: SafeGoogleFont(
-                                          "Inter",
-                                          fontSize: mWidth * 0.045,
-                                          fontWeight: FontWeight.w600,
-                                        ),
-                                      ),
-                                      Text(
-                                        "designer at wepitch",
-                                        // textAlign: TextAlign.left,
+    //                                     style: SafeGoogleFont(
+    //                                       "Inter",
+    //                                       color: const Color(0xff747474),
+    //                                       fontSize: mWidth * 0.035,
+    //                                       fontWeight: FontWeight.w600,
+    //                                     ),
+    //                                   ),
+    //                                 ],
+    //                               )
+    //                             ],
+    //                           ),
+    //                         ],
+    //                       ),
+    //                       Row(
+    //                         crossAxisAlignment: CrossAxisAlignment.end,
+    //                         mainAxisAlignment: MainAxisAlignment.start,
+    //                         children: [
+    //                           Column(
+    //                             crossAxisAlignment: CrossAxisAlignment.start,
+    //                             children: [
+    //                               Text(
+    //                                 "Session starts in",
+    //                                 style: SafeGoogleFont("Inter",
+    //                                     fontSize: 12,
+    //                                     color: Colors.black,
+    //                                     fontWeight: FontWeight.bold),
+    //                               ),
+    //                               RichText(
+    //                                   text: TextSpan(children: <TextSpan>[
+    //                                 TextSpan(
+    //                                     text: time,
+    //                                     style: SafeGoogleFont("Inter",
+    //                                         fontWeight: FontWeight.w600,
+    //                                         fontSize: 20,
+    //                                         color: Colors.black)),
+    //                                 TextSpan(
+    //                                     text: "m",
+    //                                     style: SafeGoogleFont("Inter",
+    //                                         fontWeight: FontWeight.w600,
+    //                                         fontSize: 14,
+    //                                         color: Colors.black))
+    //                               ]))
+    //                             ],
+    //                           ),
+    //                           const Spacer(),
+    //                           Column(
+    //                             children: [
+    //                               Text(
+    //                                 "Personal Session",
+    //                                 style: SafeGoogleFont("Inter",
+    //                                     fontWeight: FontWeight.w600,
+    //                                     fontSize: mWidth * 0.038,
+    //                                     color: const Color(0xff1F0A68)),
+    //                               ),
+    //                               const SizedBox(
+    //                                 height: 5,
+    //                               ),
+    //                               SizedBox(
+    //                                 width: mWidth * 0.34,
+    //                                 height: 24,
+    //                                 child: GestureDetector(
+    //                                   onTap: () {
+    //                                     // Navigator.push(
+    //                                     //     context,
+    //                                     //     MaterialPageRoute(
+    //                                     //         builder: (context) =>
+    //                                     //             const BookingConfirmationPage(
+    //                                     //                 isUpcoming: false,
+    //                                     //                 isConfirmed: true,
+    //                                     //                 time: "25:15")));
+    //                                   },
+    //                                   child: Container(
+    //                                       decoration: BoxDecoration(
+    //                                         border: Border.all(),
+    //                                         borderRadius:
+    //                                             BorderRadius.circular(20),
+    //                                  ),
+    //                                       child: Center(
+    //                                           child: Text(
+    //                                         "View details",
+    //                                         style: SafeGoogleFont("Inter",
+    //                                             fontWeight: FontWeight.w600,
+    //                                             fontSize: mWidth * 0.032,
+    //                                             color: Colors.black),
+    //                                       ))),
+    //                                 ),
+    //                               ),
+    //                             ],
+    //                           )
+    //                         ],
+    //                       )
+    //                     ]),
+    //               ),
+    //             ),
+    //             Positioned(
+    //               top: 0,
+    //               left: 7,
+    //               child: Container(
+    //                 decoration: BoxDecoration(
+    //                     color: Colors.white,
+    //                     border: Border.all(
+    //                       color: Colors.black54,
+    //                     ),
+    //                     borderRadius: BorderRadius.circular(10)),
+    //                 width: 58,
+    //                 height: 17,
+    //                 child: Center(
+    //                   child: Text(
+    //                     "Counsellor",
+    //                     style: SafeGoogleFont(
+    //                       "Inter",
+    //                       fontSize: 8,
+    //                       fontWeight: FontWeight.w600,
+    //                     ),
+    //                   ),
+    //                 ),
+    //               ),
+    //             ),
+    //           ],
+    //         ),
+    //       ),
+    //     ),
+    //     Padding(
+    //       padding: const EdgeInsets.symmetric(horizontal: 16),
+    //       child: Container(
+    //         margin: const EdgeInsets.only(bottom: 15),
+    //         child: Stack(
+    //           // fit: StackFit.expand,
+    //           alignment: Alignment.bottomCenter,
+    //           children: [
+    //             Card(
+    //               // semanticContainer: false,
+    //               margin: const EdgeInsets.only(top: 5),
+    //               elevation: 5,
+    //               shape: RoundedRectangleBorder(
+    //                   borderRadius: BorderRadius.circular(15)),
+    //               child: Padding(
+    //                 padding: const EdgeInsets.all(12.0),
+    //                 child: Column(
+    //                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    //                     crossAxisAlignment: CrossAxisAlignment.end,
+    //                     children: [
+    //                       Column(
+    //                         crossAxisAlignment: CrossAxisAlignment.start,
+    //                         children: [
+    //                           Row(
+    //                             children: [
+    //                               Image.asset(
+    //                                 "assets/page-1/images/profile_booking.png",
+    //                                 width: mWidth * 0.15,
+    //                                 height: 60,
+    //                               ),
+    //                               const SizedBox(
+    //                                 width: 7,
+    //                               ),
+    //                               Column(
+    //                                 crossAxisAlignment:
+    //                                     CrossAxisAlignment.start,
+    //                                 children: [
+    //                                   Text(
+    //                                     "Sandeep Mehra",
+    //                                     style: SafeGoogleFont(
+    //                                       "Inter",
+    //                                       fontSize: mWidth * 0.045,
+    //                                       fontWeight: FontWeight.w600,
+    //                                     ),
+    //                                   ),
+    //                                   Text(
+    //                                     "designer at wepitch",
+    //                                     // textAlign: TextAlign.left,
 
-                                        style: SafeGoogleFont(
-                                          "Inter",
-                                          color: const Color(0xff747474),
-                                          fontSize: mWidth * 0.035,
-                                          fontWeight: FontWeight.w600,
-                                        ),
-                                      ),
-                                    ],
-                                  )
-                                ],
-                              ),
-                            ],
-                          ),
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              const Spacer(),
-                              Column(
-                                children: [
-                                  Text(
-                                    "Group Session",
-                                    style: SafeGoogleFont("Inter",
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: mWidth * 0.038,
-                                        color: const Color(0xff1F0A68)),
-                                  ),
-                                  const SizedBox(
-                                    height: 5,
-                                  ),
-                                  SizedBox(
-                                    width: mWidth * 0.34,
-                                    height: 24,
-                                    child: GestureDetector(
-                                      onTap: () {
-                                        // Navigator.push(
-                                        //     context,
-                                        //     MaterialPageRoute(
-                                        //         builder: (context) =>
-                                        //             const BookingConfirmationPage(
-                                        //                 isUpcoming: false,
-                                        //                 isConfirmed: true,
-                                        //                 time: "25:15")));
-                                      },
-                                      child: Container(
-                                          decoration: BoxDecoration(
-                                            border: Border.all(),
-                                            borderRadius:
-                                                BorderRadius.circular(20),
-                                          ),
-                                          child: Center(
-                                              child: Text(
-                                            "View details",
-                                            style: SafeGoogleFont("Inter",
-                                                fontWeight: FontWeight.w600,
-                                                fontSize: mWidth * 0.032,
-                                                color: Colors.black),
-                                          ))),
-                                    ),
-                                  ),
-                                ],
-                              )
-                            ],
-                          )
-                        ]),
-                  ),
-                ),
-                Positioned(
-                  top: 0,
-                  left: 7,
-                  child: Container(
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        border: Border.all(
-                          color: Colors.black54,
-                        ),
-                        borderRadius: BorderRadius.circular(10)),
-                    width: 58,
-                    height: 17,
-                    child: Center(
-                      child: Text(
-                        "Counsellor",
-                        style: SafeGoogleFont(
-                          "Inter",
-                          fontSize: 8,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Container(
-            margin: const EdgeInsets.only(bottom: 15),
-            child: Stack(
-              // fit: StackFit.expand,
-              alignment: Alignment.bottomCenter,
-              children: [
-                Card(
-                  // semanticContainer: false,
-                  margin: const EdgeInsets.only(top: 5),
-                  elevation: 5,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15)),
-                  child: Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                children: [
-                                  Image.asset(
-                                    "assets/page-1/images/profile_booking.png",
-                                    width: mWidth * 0.15,
-                                    height: 60,
-                                  ),
-                                  const SizedBox(
-                                    width: 7,
-                                  ),
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        "Sandeep Mehra",
-                                        style: SafeGoogleFont(
-                                          "Inter",
-                                          fontSize: mWidth * 0.045,
-                                          fontWeight: FontWeight.w600,
-                                        ),
-                                      ),
-                                      Text(
-                                        "designer at wepitch",
-                                        // textAlign: TextAlign.left,
+    //                                     style: SafeGoogleFont(
+    //                                       "Inter",
+    //                                       color: const Color(0xff747474),
+    //                                       fontSize: mWidth * 0.035,
+    //                                       fontWeight: FontWeight.w600,
+    //                                     ),
+    //                                   ),
+    //                                 ],
+    //                               )
+    //                             ],
+    //                           ),
+    //                         ],
+    //                       ),
+    //                       Row(
+    //                         crossAxisAlignment: CrossAxisAlignment.end,
+    //                         mainAxisAlignment: MainAxisAlignment.start,
+    //                         children: [
+    //                           const Spacer(),
+    //                           Column(
+    //                             children: [
+    //                               Text(
+    //                                 "Group Session",
+    //                                 style: SafeGoogleFont("Inter",
+    //                                     fontWeight: FontWeight.w600,
+    //                                     fontSize: mWidth * 0.038,
+    //                                     color: const Color(0xff1F0A68)),
+    //                               ),
+    //                               const SizedBox(
+    //                                 height: 5,
+    //                               ),
+    //                               SizedBox(
+    //                                 width: mWidth * 0.34,
+    //                                 height: 24,
+    //                                 child: GestureDetector(
+    //                                   onTap: () {
+    //                                     // Navigator.push(
+    //                                     //     context,
+    //                                     //     MaterialPageRoute(
+    //                                     //         builder: (context) =>
+    //                                     //             const BookingConfirmationPage(
+    //                                     //                 isUpcoming: false,
+    //                                     //                 isConfirmed: true,
+    //                                     //                 time: "25:15")));
+    //                                   },
+    //                                   child: Container(
+    //                                       decoration: BoxDecoration(
+    //                                         border: Border.all(),
+    //                                         borderRadius:
+    //                                             BorderRadius.circular(20),
+    //                                       ),
+    //                                       child: Center(
+    //                                           child: Text(
+    //                                         "View details",
+    //                                         style: SafeGoogleFont("Inter",
+    //                                             fontWeight: FontWeight.w600,
+    //                                             fontSize: mWidth * 0.032,
+    //                                             color: Colors.black),
+    //                                       ))),
+    //                                 ),
+    //                               ),
+    //                             ],
+    //                           )
+    //                         ],
+    //                       )
+    //                     ]),
+    //               ),
+    //             ),
+    //             Positioned(
+    //               top: 0,
+    //               left: 7,
+    //               child: Container(
+    //                 decoration: BoxDecoration(
+    //                     color: Colors.white,
+    //                     border: Border.all(
+    //                       color: Colors.black54,
+    //                     ),
+    //                     borderRadius: BorderRadius.circular(10)),
+    //                 width: 58,
+    //                 height: 17,
+    //                 child: Center(
+    //                   child: Text(
+    //                     "Counsellor",
+    //                     style: SafeGoogleFont(
+    //                       "Inter",
+    //                       fontSize: 8,
+    //                       fontWeight: FontWeight.w600,
+    //                     ),
+    //                   ),
+    //                 ),
+    //               ),
+    //             ),
+    //           ],
+    //         ),
+    //       ),
+    //     ),
+    //     Padding(
+    //       padding: const EdgeInsets.symmetric(horizontal: 16),
+    //       child: Container(
+    //         margin: const EdgeInsets.only(bottom: 15),
+    //         child: Stack(
+    //           // fit: StackFit.expand,
+    //           alignment: Alignment.bottomCenter,
+    //           children: [
+    //             Card(
+    //               // semanticContainer: false,
+    //               margin: const EdgeInsets.only(top: 5),
+    //               elevation: 5,
+    //               shape: RoundedRectangleBorder(
+    //                   borderRadius: BorderRadius.circular(15)),
+    //               child: Padding(
+    //                 padding: const EdgeInsets.all(12.0),
+    //                 child: Column(
+    //                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    //                     crossAxisAlignment: CrossAxisAlignment.end,
+    //                     children: [
+    //                       Column(
+    //                         crossAxisAlignment: CrossAxisAlignment.start,
+    //                         children: [
+    //                           Row(
+    //                             children: [
+    //                               Image.asset(
+    //                                 "assets/page-1/images/profile_booking.png",
+    //                                 width: mWidth * 0.15,
+    //                                 height: 60,
+    //                               ),
+    //                               const SizedBox(
+    //                                 width: 7,
+    //                               ),
+    //                               Column(
+    //                                 crossAxisAlignment:
+    //                                     CrossAxisAlignment.start,
+    //                                 children: [
+    //                                   Text(
+    //                                     "Sandeep Mehra",
+    //                                     style: SafeGoogleFont(
+    //                                       "Inter",
+    //                                       fontSize: mWidth * 0.045,
+    //                                       fontWeight: FontWeight.w600,
+    //                                     ),
+    //                                   ),
+    //                                   Text(
+    //                                     "designer at wepitch",
+    //                                     // textAlign: TextAlign.left,
 
-                                        style: SafeGoogleFont(
-                                          "Inter",
-                                          color: const Color(0xff747474),
-                                          fontSize: mWidth * 0.035,
-                                          fontWeight: FontWeight.w600,
-                                        ),
-                                      ),
-                                    ],
-                                  )
-                                ],
-                              ),
-                            ],
-                          ),
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              const Spacer(),
-                              Column(
-                                children: [
-                                  SizedBox(
-                                    width: mWidth * 0.34,
-                                    height: 24,
-                                    child: GestureDetector(
-                                      onTap: () {
-                                        // Navigator.push(
-                                        //     context,
-                                        //     MaterialPageRoute(
-                                        //         builder: (context) =>
-                                        //             const BookingConfirmationPage(
-                                        //                 isUpcoming: true,
-                                        //                 isConfirmed: true,
-                                        //                 time: "10:44")));
-                                      },
-                                      child: Container(
-                                          decoration: BoxDecoration(
-                                            border: Border.all(),
-                                            borderRadius:
-                                                BorderRadius.circular(20),
-                                          ),
-                                          child: Center(
-                                              child: Text(
-                                            "View details",
-                                            style: SafeGoogleFont("Inter",
-                                                fontWeight: FontWeight.w600,
-                                                fontSize: mWidth * 0.032,
-                                                color: Colors.black),
-                                          ))),
-                                    ),
-                                  ),
-                                ],
-                              )
-                            ],
-                          )
-                        ]),
-                  ),
-                ),
-                Positioned(
-                  top: 0,
-                  left: 7,
-                  child: Container(
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        border: Border.all(
-                          color: Colors.black54,
-                        ),
-                        borderRadius: BorderRadius.circular(10)),
-                    width: 58,
-                    height: 17,
-                    child: Center(
-                      child: Text(
-                        "Counsellor",
-                        style: SafeGoogleFont(
-                          "Inter",
-                          fontSize: 8,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ],
-    );
+    //                                     style: SafeGoogleFont(
+    //                                       "Inter",
+    //                                       color: const Color(0xff747474),
+    //                                       fontSize: mWidth * 0.035,
+    //                                       fontWeight: FontWeight.w600,
+    //                                     ),
+    //                                   ),
+    //                                 ],
+    //                               )
+    //                             ],
+    //                           ),
+    //                         ],
+    //                       ),
+    //                       Row(
+    //                         crossAxisAlignment: CrossAxisAlignment.end,
+    //                         mainAxisAlignment: MainAxisAlignment.start,
+    //                         children: [
+    //                           const Spacer(),
+    //                           Column(
+    //                             children: [
+    //                               SizedBox(
+    //                                 width: mWidth * 0.34,
+    //                                 height: 24,
+    //                                 child: GestureDetector(
+    //                                   onTap: () {
+    //                                     // Navigator.push(
+    //                                     //     context,
+    //                                     //     MaterialPageRoute(
+    //                                     //         builder: (context) =>
+    //                                     //             const BookingConfirmationPage(
+    //                                     //                 isUpcoming: true,
+    //                                     //                 isConfirmed: true,
+    //                                     //                 time: "10:44")));
+    //                                   },
+    //                                   child: Container(
+    //                                       decoration: BoxDecoration(
+    //                                         border: Border.all(),
+    //                                         borderRadius:
+    //                                             BorderRadius.circular(20),
+    //                                       ),
+    //                                       child: Center(
+    //                                           child: Text(
+    //                                         "View details",
+    //                                         style: SafeGoogleFont("Inter",
+    //                                             fontWeight: FontWeight.w600,
+    //                                             fontSize: mWidth * 0.032,
+    //                                             color: Colors.black),
+    //                                       ))),
+    //                                 ),
+    //                               ),
+    //                             ],
+    //                           )
+    //                         ],
+    //                       )
+    //                     ]),
+    //               ),
+    //             ),
+    //             Positioned(
+    //               top: 0,
+    //               left: 7,
+    //               child: Container(
+    //                 decoration: BoxDecoration(
+    //                     color: Colors.white,
+    //                     border: Border.all(
+    //                       color: Colors.black54,
+    //                     ),
+    //                     borderRadius: BorderRadius.circular(10)),
+    //                 width: 58,
+    //                 height: 17,
+    //                 child: Center(
+    //                   child: Text(
+    //                     "Counsellor",
+    //                     style: SafeGoogleFont(
+    //                       "Inter",
+    //                       fontSize: 8,
+    //                       fontWeight: FontWeight.w600,
+    //                     ),
+    //                   ),
+    //                 ),
+    //               ),
+    //             ),
+    //           ],
+    //         ),
+    //       ),
+    //     ),
+    //   ],
+    // );
   }
 }
 

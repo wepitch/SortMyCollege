@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:myapp/page-1/webinar-detail-second-full-view.dart';
-import 'package:myapp/page-1/webinar.dart';
+// import 'package:myapp/page-1/webinar-detail-second-full-view.dart';
+// import 'package:myapp/page-1/webinar.dart';
 import 'package:myapp/page-1/homepagecontainer_2.dart';
+import 'package:myapp/page-1/webinar_page.dart';
 import 'package:myapp/utils.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'counsellor-select-new.dart';
-import 'counsellor_select_listview_offline.dart';
-import 'counselor-dashboard-new-full-view.dart';
-import 'counselor-detailed-full-view.dart';
-import 'counselor-detailed-select-full-view.dart';
-import 'counselor-full-view.dart';
-import 'explore-first-feed.dart';
+// import 'counsellor-select-new.dart';
+// import 'counsellor_select_listview_offline.dart';
+// import 'counselor-dashboard-new-full-view.dart';
+// import 'counselor-detailed-full-view.dart';
+// import 'counselor-detailed-select-full-view.dart';
+// import 'counselor-full-view.dart';
+// import 'explore-first-feed.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -190,7 +188,7 @@ class _HomePageState extends State<HomePage> {
                             style: TextButton.styleFrom(
                               padding: EdgeInsets.zero,
                             ),
-                            child: Container(
+                            child: SizedBox(
                               width: 30 * fem,
                               height: 25 * fem,
                               child: Image.asset(
@@ -514,7 +512,7 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                     ),
-                    Container(
+                    SizedBox(
                       // autogroup7xnyWyX (AXyFiXBUYzjxZbFhtM7Xny)
                       width: double.infinity,
                       height: 113 * fem,
@@ -856,12 +854,13 @@ class _HomePageState extends State<HomePage> {
   }
 
   void onTapGettingstarted2(BuildContext context) {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => Webnar()));
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const WebinarPage()));
   }
 
   void onTapGettingstarted3(BuildContext context) {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const ExplorerFeed()));
+    // Navigator.push(
+    //     context, MaterialPageRoute(builder: (context) => const ExplorerFeed()));
   }
 }
 

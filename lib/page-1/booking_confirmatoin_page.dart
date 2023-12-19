@@ -3,10 +3,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:jiffy/jiffy.dart';
 import 'package:myapp/model/booking_model.dart';
 import 'package:myapp/other/constants.dart';
-import 'package:share_plus/share_plus.dart';
-import 'package:url_launcher/link.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:url_launcher/url_launcher_string.dart';
 
 import '../utils.dart';
 
@@ -50,7 +47,7 @@ class _BookingConfirmationPageState extends State<BookingConfirmationPage> {
               Navigator.pop(context);
             },
             child: Image.asset(
-              'assets/page-1/images/back-rNM.png',
+              'assets/page-1/images/back.png',
             ),
           ),
         ),
@@ -143,8 +140,7 @@ class _BookingConfirmationPageState extends State<BookingConfirmationPage> {
                                 : Row(
                                     children: [
                                       Text(
-                                        "${widget.remainingTime.inHours < 0 ? "" : widget.remainingTime.inHours}:${widget.remainingTime.inMinutes.remainder(60) < 0 ? '0' : widget.remainingTime.inMinutes.remainder(60)}" ??
-                                            widget.time,
+                                        "${widget.remainingTime.inHours < 0 ? "" : widget.remainingTime.inHours}:${widget.remainingTime.inMinutes.remainder(60) < 0 ? '0' : widget.remainingTime.inMinutes.remainder(60)}",
                                         style: SafeGoogleFont(
                                           "Inter",
                                           fontSize: 18,

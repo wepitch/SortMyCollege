@@ -1,19 +1,10 @@
-import 'dart:async';
-
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:internet_connection_checker/internet_connection_checker.dart';
-import 'package:myapp/page-1/counsellor_select_listview_offline.dart';
-import 'package:myapp/page-1/edulevel.dart';
 import 'package:myapp/page-1/homepagecontainer.dart';
 import 'package:myapp/page-1/sign-up.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../utils.dart';
-import 'package:lottie/lottie.dart';
-import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:connectivity_plus/connectivity_plus.dart';
 
 import 'login.dart';
 
@@ -263,7 +254,7 @@ class _SplashScreen2State extends State<SplashScreen2> {
                 GestureDetector(
                   onTap: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Login()));
+                        MaterialPageRoute(builder: (context) => const Login()));
                   },
                   child: Text(
                     'Sign in',
@@ -304,7 +295,7 @@ void onTapGettingstarted(BuildContext context) async {
       context,
       MaterialPageRoute(
           builder: (context) =>
-              token == null ? Signup() : const HomePageContainer()));
+              token == null ? const Signup() : const HomePageContainer()));
 
   // Navigator.pushReplacement(
   //     context, MaterialPageRoute(builder: (context) => const EducationLevel()));

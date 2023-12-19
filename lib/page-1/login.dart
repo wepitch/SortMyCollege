@@ -1,32 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import 'package:myapp/page-1/sign-up.dart';
 import 'package:myapp/utils.dart';
 
-import '../model/response_model.dart';
 import '../other/api_service.dart';
 import '../other/constants.dart';
-import 'homepagecontainer.dart';
-import 'package:http/http.dart' as http;
-import 'package:email_validator/email_validator.dart';
 
 import 'otp.dart';
 
 class Login extends StatefulWidget {
+  const Login({super.key});
+
   @override
   _Login createState() => _Login();
 }
 
 class _Login extends State<Login> {
-  final _nameController = TextEditingController();
+  // final _nameController = TextEditingController();
   final phonecontroller = TextEditingController();
   final emailcontroller = TextEditingController();
-  String _errorMessage = '';
+  // final String _errorMessage = '';
 
   @override
   void initState() {
@@ -265,7 +259,7 @@ class _Login extends State<Login> {
                       color: const Color(0xff000000),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 11,
                   ),
                   Row(
@@ -306,7 +300,7 @@ class _Login extends State<Login> {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 11,
                   ),
                   Row(
@@ -362,7 +356,7 @@ class _Login extends State<Login> {
 
   bool validateMobile(String value) {
     String patttern = r'(^(?:[+0]9)?[0-9]{10,12}$)';
-    RegExp regExp = new RegExp(patttern);
+    RegExp regExp = RegExp(patttern);
     if (!regExp.hasMatch(value)) {
       return true;
     }
@@ -412,7 +406,7 @@ class _Login extends State<Login> {
     bool isvaluevalid = false;
     String p =
         r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
-    RegExp regExp = new RegExp(p);
+    RegExp regExp = RegExp(p);
     if (regExp.hasMatch(em)) {
       isvaluevalid = true;
     } else {
@@ -423,9 +417,9 @@ class _Login extends State<Login> {
     return isvaluevalid;
   }
 
-  @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    throw UnimplementedError();
-  }
+  // @override
+  // State<StatefulWidget> createState() {
+  //   // TODO: implement createState
+  //   throw UnimplementedError();
+  // }
 }

@@ -1,9 +1,7 @@
 import 'package:get/get.dart';
 import 'package:myapp/other/api_service.dart';
 
-import '../model/counsellor_data.dart';
 import '../model/counsellor_detail.dart';
-import '../model/cousnellor_list_model.dart';
 
 class CounsellorDetailController extends GetxController {
   CounsellorDetailController({required this.id});
