@@ -1,10 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/page-1/edulevel.dart';
 import 'package:myapp/page-1/sign-up.dart';
 import 'package:myapp/utils.dart';
@@ -14,8 +11,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../other/api_service.dart';
 import '../other/constants.dart';
-import 'homepagecontainer.dart';
-import 'login.dart';
 
 class Otp extends StatefulWidget {
   var email;
@@ -74,7 +69,7 @@ class _OtpState extends State<Otp> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 100,
             ),
             Container(
@@ -145,10 +140,10 @@ class _OtpState extends State<Otp> {
                         outlineBorderRadius: 15,
                         style: const TextStyle(fontSize: 17),
                         onChanged: (pin) {
-                          print("Changed: " + pin);
+                          print("Changed: $pin");
                         },
                         onCompleted: (pin) {
-                          print("Completed: " + pin);
+                          print("Completed: $pin");
                           otp = pin;
                         }),
                   ),

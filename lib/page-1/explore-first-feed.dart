@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:myapp/page-1/homepagecontainer.dart';
 import 'package:myapp/utils.dart';
 
 class ExplorerFeed extends StatelessWidget {
@@ -99,7 +95,7 @@ class ExplorerFeed extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
+            SizedBox(
               // autogroupqosoE3b (AY4X5fXvwS5bbXj9mBQoso)
               width: double.infinity,
               height: 730.03 * fem,
@@ -126,13 +122,13 @@ class ExplorerFeed extends StatelessWidget {
                     // feeded7 (510:19)
                     left: 15 * fem,
                     top: 0 * fem,
-                    child: Container(
+                    child: SizedBox(
                       width: 400 * fem,
                       height: 847.03 * fem,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Container(
+                          SizedBox(
                             // autogrouppfzhmSq (AY4XKjxotz3xsJUnn8pFzh)
                             width: double.infinity,
                             height: 533.33 * fem,
@@ -293,7 +289,7 @@ class ExplorerFeed extends StatelessWidget {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.center,
                                     children: [
-                                      Container(
+                                      SizedBox(
                                         // rectangle142dYu (510:11)
                                         width: 133.33 * fem,
                                         height: 133.33 * fem,
@@ -313,7 +309,7 @@ class ExplorerFeed extends StatelessWidget {
                                           fit: BoxFit.cover,
                                         ),
                                       ),
-                                      Container(
+                                      SizedBox(
                                         // rectangle1405vh (510:9)
                                         width: 133.33 * fem,
                                         height: 133.33 * fem,

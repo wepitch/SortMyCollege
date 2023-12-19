@@ -1,26 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:myapp/model/counsellor_detail.dart';
 import 'package:myapp/other/counsellor_details_provider.dart';
 import 'package:myapp/page-1/payment_gateaway.dart';
 import 'package:myapp/utils.dart';
 import 'package:provider/provider.dart';
 import 'package:readmore/readmore.dart';
 
-import '../other/Counsellor_Detail_Controller.dart';
-import '../other/api_service.dart';
-import '../other/listcontroler.dart';
 import 'counsellor_feed_page.dart';
 
 class CounsellorDetialsPage extends StatefulWidget {
   final String id;
   final String name;
-  const CounsellorDetialsPage({required this.id, required this.name});
+  const CounsellorDetialsPage(
+      {super.key, required this.id, required this.name});
   @override
   State<CounsellorDetialsPage> createState() => _CounsellorDetialsPageState();
 }
@@ -57,7 +49,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                       toastPosition: EasyLoadingToastPosition.bottom,
                     );
                   }
-                  return Center(
+                  return const Center(
                     child: Text("Something went wrong!"),
                   );
                 })
@@ -92,7 +84,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                               bottomLeft: Radius.circular(20 * fem),
                             ),
                           ),
-                          child: Container(
+                          child: SizedBox(
                             // frame294gBa (2608:507)
                             width: double.infinity,
                             height: double.infinity,
@@ -165,7 +157,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                                     style: TextButton.styleFrom(
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: 25 * fem,
                                       height: 24 * fem,
                                       child: Image.asset(
@@ -185,7 +177,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                               )
                             : Column(
                                 children: [
-                                  Container(
+                                  SizedBox(
                                     // frame325A8g (2958:415)
                                     width: 431 * fem,
                                     height: 420 * fem,
@@ -211,7 +203,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                                           // frame253D6x (2958:417)
                                           left: 16.25 * fem,
                                           top: 230 * fem,
-                                          child: Container(
+                                          child: SizedBox(
                                             width: 390 * fem,
                                             height: 75.83 * fem,
                                             child: Row(
@@ -254,7 +246,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                                                           ),
                                                         ),
                                                       ),
-                                                      Container(
+                                                      SizedBox(
                                                         // group32mGt (2958:420)
                                                         width: 136.91 * fem,
                                                         child: Column(
@@ -311,7 +303,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                                                                         0 * fem,
                                                                         0 * fem),
                                                                     child: Text(
-                                                                      '${counsellorDetailController.cousnellorlist_detail?[0].averageRating}',
+                                                                      '${counsellorDetailController.cousnellorlist_detail[0].averageRating}',
                                                                       style:
                                                                           SafeGoogleFont(
                                                                         'Inter',
@@ -331,7 +323,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                                                                 ],
                                                               ),
                                                             ),
-                                                            Container(
+                                                            SizedBox(
                                                               // group283sjE (2958:421)
                                                               width: double
                                                                   .infinity,
@@ -392,7 +384,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                                                     ],
                                                   ),
                                                 ),
-                                                Container(
+                                                SizedBox(
                                                   // followHHA (2958:432)
                                                   width: 190.5 * fem,
                                                   child: Column(
@@ -508,7 +500,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                                                             ),
                                                             Text(
                                                               // followingweY (2958:442)
-                                                              '${counsellorDetailController.cousnellorlist_detail?[0].followersCount}'
+                                                              '${counsellorDetailController.cousnellorlist_detail[0].followersCount}'
                                                               " Following",
                                                               style:
                                                                   SafeGoogleFont(
@@ -539,7 +531,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                                           // group228so6 (2958:443)
                                           left: 43.1260986328 * fem,
                                           top: 320.8251953125 * fem,
-                                          child: Container(
+                                          child: SizedBox(
                                             width: 342.25 * fem,
                                             height: 41.07 * fem,
                                             child: Stack(
@@ -548,7 +540,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                                                   // group127oAx (2958:444)
                                                   left: 84.0463256836 * fem,
                                                   top: 0 * fem,
-                                                  child: Container(
+                                                  child: SizedBox(
                                                     width: 189.36 * fem,
                                                     height: 41.07 * fem,
                                                     child: Row(
@@ -663,7 +655,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                                                   // frame2203Di (2958:448)
                                                   left: 0 * fem,
                                                   top: 1.9533691406 * fem,
-                                                  child: Container(
+                                                  child: SizedBox(
                                                     width: 350.25 * fem,
                                                     height: 32.95 * fem,
                                                     child: Row(
@@ -733,7 +725,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                                                                             fem,
                                                                         0 * fem),
                                                                 child: Text(
-                                                                  '${counsellorDetailController.cousnellorlist_detail?[0].experienceInYears} + yrs',
+                                                                  '${counsellorDetailController.cousnellorlist_detail[0].experienceInYears} + yrs',
                                                                   style:
                                                                       SafeGoogleFont(
                                                                     'Inter',
@@ -809,7 +801,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                                                               ),
                                                               Text(
                                                                 // bY4 (2958:458)
-                                                                '${counsellorDetailController.cousnellorlist_detail?[0].totalSessionsAttended}',
+                                                                '${counsellorDetailController.cousnellorlist_detail[0].totalSessionsAttended}',
                                                                 textAlign:
                                                                     TextAlign
                                                                         .center,
@@ -998,7 +990,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                                           // group2944Ta (2958:469)
                                           // left: 10 * fem,
                                           top: 370.4067382812 * fem,
-                                          child: Container(
+                                          child: SizedBox(
                                             width: 429.5 * fem,
                                             height: 43 * fem,
                                             child: Container(
@@ -1212,7 +1204,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.center,
                                             children: [
-                                              Container(
+                                              SizedBox(
                                                 width: 400 * fem,
                                                 child: Column(
                                                   crossAxisAlignment:
@@ -1504,7 +1496,10 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                                                                     0 * fem,
                                                                     0 * fem),
                                                             child: Text(
-                                                              '${counsellorDetailController.cousnellorlist_detail?[0].gender}',
+                                                              counsellorDetailController
+                                                                  .cousnellorlist_detail[
+                                                                      0]
+                                                                  .gender,
                                                               style:
                                                                   SafeGoogleFont(
                                                                 'Inter',
@@ -1587,7 +1582,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                                                   ],
                                                 ),
                                               ),
-                                              Container(
+                                              SizedBox(
                                                 width: 440 * fem,
                                                 child: Column(
                                                   crossAxisAlignment:
@@ -1681,7 +1676,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                                                                   left: 0 * fem,
                                                                   top: 13 * fem,
                                                                   child:
-                                                                      Container(
+                                                                      SizedBox(
                                                                     width: 448 *
                                                                         fem,
                                                                     height:
@@ -1764,13 +1759,13 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                                                                                         ),
                                                                                       ),
                                                                                     ),
-                                                                                    Container(
+                                                                                    SizedBox(
                                                                                       // group3616Lx (2958:512)
                                                                                       width: double.infinity,
                                                                                       child: Row(
                                                                                         crossAxisAlignment: CrossAxisAlignment.center,
                                                                                         children: [
-                                                                                          Container(
+                                                                                          SizedBox(
                                                                                             // streamlineinterfacefavoritesta (2958:513)
                                                                                             width: 12.97 * fem,
                                                                                             height: 12.44 * fem,
@@ -1783,7 +1778,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                                                                                           SizedBox(
                                                                                             width: 8.03 * fem,
                                                                                           ),
-                                                                                          Container(
+                                                                                          SizedBox(
                                                                                             // streamlineinterfacefavoritesta (2958:514)
                                                                                             width: 12.97 * fem,
                                                                                             height: 12.44 * fem,
@@ -1796,7 +1791,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                                                                                           SizedBox(
                                                                                             width: 8.03 * fem,
                                                                                           ),
-                                                                                          Container(
+                                                                                          SizedBox(
                                                                                             // streamlineinterfacefavoritesta (2958:515)
                                                                                             width: 12.97 * fem,
                                                                                             height: 12.44 * fem,
@@ -1809,7 +1804,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                                                                                           SizedBox(
                                                                                             width: 8.03 * fem,
                                                                                           ),
-                                                                                          Container(
+                                                                                          SizedBox(
                                                                                             // streamlineinterfacefavoritesta (2958:516)
                                                                                             width: 12.97 * fem,
                                                                                             height: 12.44 * fem,
@@ -1822,7 +1817,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                                                                                           SizedBox(
                                                                                             width: 8.03 * fem,
                                                                                           ),
-                                                                                          Container(
+                                                                                          SizedBox(
                                                                                             // streamlineinterfacefavoritesta (2958:517)
                                                                                             width: 12.97 * fem,
                                                                                             height: 12.44 * fem,
@@ -1838,7 +1833,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                                                                                   ],
                                                                                 ),
                                                                               ),
-                                                                              Container(
+                                                                              SizedBox(
                                                                                 // vectorKWY (2958:522)
                                                                                 width: 14 * fem,
                                                                                 height: 33 * fem,
@@ -1969,7 +1964,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                                                                         CrossAxisAlignment
                                                                             .center,
                                                                     children: [
-                                                                      Container(
+                                                                      SizedBox(
                                                                         // streamlineinterfacefavoritesta (2958:497)
                                                                         width: 12.97 *
                                                                             fem,
@@ -1988,7 +1983,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                                                                         width: 8.03 *
                                                                             fem,
                                                                       ),
-                                                                      Container(
+                                                                      SizedBox(
                                                                         // streamlineinterfacefavoritesta (2958:498)
                                                                         width: 12.97 *
                                                                             fem,
@@ -2007,7 +2002,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                                                                         width: 8.03 *
                                                                             fem,
                                                                       ),
-                                                                      Container(
+                                                                      SizedBox(
                                                                         // streamlineinterfacefavoritesta (2958:499)
                                                                         width: 12.97 *
                                                                             fem,
@@ -2026,7 +2021,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                                                                         width: 8.03 *
                                                                             fem,
                                                                       ),
-                                                                      Container(
+                                                                      SizedBox(
                                                                         // streamlineinterfacefavoritesta (2958:500)
                                                                         width: 12.97 *
                                                                             fem,
@@ -2045,7 +2040,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                                                                         width: 8.03 *
                                                                             fem,
                                                                       ),
-                                                                      Container(
+                                                                      SizedBox(
                                                                         // streamlineinterfacefavoritesta (2958:501)
                                                                         width: 12.97 *
                                                                             fem,
@@ -2120,7 +2115,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                                                                     ),
                                                                   ),
                                                                 ),
-                                                                Container(
+                                                                SizedBox(
                                                                   // icbaselinesend7Pn (2958:494)
                                                                   width:
                                                                       21 * fem,
@@ -2157,7 +2152,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                                       crossAxisAlignment:
                                           CrossAxisAlignment.center,
                                       children: [
-                                        Container(
+                                        SizedBox(
                                           // autogroupuuww8oz (obZ7jq9Hv3ndwJa9LuuwW)
                                           width: double.infinity,
                                           height: 113 * fem,
@@ -2180,7 +2175,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                                                         color: const Color(
                                                             0x35000000)),
                                                   ),
-                                                  child: Container(
+                                                  child: SizedBox(
                                                     // group370NiL (2936:483)
                                                     width: double.infinity,
                                                     height: double.infinity,
@@ -2318,7 +2313,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                                                                         top: 14.5 *
                                                                             fem,
                                                                         child:
-                                                                            Container(
+                                                                            SizedBox(
                                                                           width:
                                                                               115 * fem,
                                                                           height:
@@ -2445,7 +2440,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                                                         color: const Color(
                                                             0x35000000)),
                                                   ),
-                                                  child: Container(
+                                                  child: SizedBox(
                                                     // group370y1J (2936:485)
                                                     width: double.infinity,
                                                     height: double.infinity,
@@ -2584,7 +2579,7 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                                                                       top: 14.5 *
                                                                           fem,
                                                                       child:
-                                                                          Container(
+                                                                          SizedBox(
                                                                         width: 105 *
                                                                             fem,
                                                                         height: 25 *
