@@ -48,21 +48,21 @@ class _BookingTodayState extends State<BookingToday> {
 
   @override
   Widget build(BuildContext context) {
-    var userBookings = context.watch<UserBookingProvider>();
+    var userBookings = context.watch<UserBookingProvider>().userBooking;
     bool isLoading = context.watch<UserBookingProvider>().isLoading;
 
     // String time = "25:15";
     // var mWidth = MediaQuery.sizeOf(context).width;
     return isLoading
         ? const Center(child: CircularProgressIndicator())
-        : userBookings.userBooking.isEmpty
+        : userBookings.isEmpty
             ? Center(
                 child: Text(
                   "No Bookings...",
                   style: SafeGoogleFont("Inter"),
                 ),
               )
-            : userBookings.userBooking[0].v == -1
+            : userBookings[0].v == -1
                 ? Builder(builder: (context) {
                     EasyLoading.showToast(
                       "404 Page Not Found!",
@@ -75,9 +75,9 @@ class _BookingTodayState extends State<BookingToday> {
                 : RefreshIndicator(
                     onRefresh: _refresh,
                     child: ListView.builder(
-                        itemCount: userBookings.userBooking.length,
+                        itemCount: userBookings.length,
                         itemBuilder: (context, index) {
-                          var details = userBookings.userBooking[index];
+                          var details = userBookings[index];
                           apiTime =
                               parseTiming(details.bookingData!.sessionTime!);
                           Duration remainingTime =

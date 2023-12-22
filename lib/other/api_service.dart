@@ -25,8 +25,13 @@ class ApiService {
 
   static Future<List<CounsellorData>> getCounsellor_Data() async {
     var url = Uri.parse("https://server.sortmycollege.com/counsellor/");
-    final response =
-        await http.get(url, headers: {"Content-Type": "application/json"});
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    final token = prefs.getString("token").toString();
+
+    final response = await http.get(url, headers: {
+      "Content-Type": "application/json",
+      "Authorization": token,
+    });
     var data;
     console.log("Counsellor List : ${response.body}");
     if (response.statusCode == 200) {
@@ -54,8 +59,12 @@ class ApiService {
 
   static Future<List<CounsellorDetail>> getCounsellor_Detail(String id) async {
     var url = Uri.parse("https://server.sortmycollege.com/counsellor/$id");
-    final response =
-        await http.get(url, headers: {"Content-Type": "application/json"});
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    final token = prefs.getString("token").toString();
+    final response = await http.get(url, headers: {
+      "Content-Type": "application/json",
+      "Authorization": token,
+    });
     console.log("Counsellor Detail page : ${response.body}");
     console.log(response.statusCode.toString());
     if (response.statusCode == 200) {
@@ -162,15 +171,15 @@ class ApiService {
   static Future<CounsellorSessionDetails> getCounsellor_sessions(
       {String? date, String? sessionType, required String id}) async {
     var params = "?session_date=$date&session_type=$sessionType";
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    final token = prefs.getString("token").toString();
 
     var url = Uri.parse(
         "https://server.sortmycollege.com/counsellor/$id/sessions${date != null ? params : ''}");
 
     var response = await http.get(
       url,
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: {"Content-Type": "application/json", "Authorization": token},
     );
     var data;
 
@@ -238,11 +247,16 @@ class ApiService {
 
   static Future<List<BookingModel>> getUserBooking(
       {required bool past, required bool today, required bool upcoming}) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    final token = prefs.getString("token").toString();
     final url = today
         ? Uri.parse("${AppConstants.baseUrl}/user/booking")
         : Uri.parse(
             "${AppConstants.baseUrl}/user/booking?past=$past&today=$today&upcoming=$upcoming");
-    final headers = {"Content-Type": "application/json"};
+    final headers = {
+      "Content-Type": "application/json",
+      // "Authorization": token,
+    };
     final response = await http.get(url, headers: headers);
 
     console.log("gettingAllBookings : ${response.body}");
@@ -250,11 +264,12 @@ class ApiService {
     if (response.statusCode == 200) {
       List data = jsonDecode(response.body.toString());
       List<BookingModel> bookingDetails = [];
+      console.log("Yess");
       for (final element in data) {
         bookingDetails.add(BookingModel.fromJson(element));
       }
 
-      return bookingDetails;
+      return List.from(data.map((e) => BookingModel.fromJson(e)));
     } else if (response.statusCode == 404) {
       return [BookingModel(v: -1)];
     }

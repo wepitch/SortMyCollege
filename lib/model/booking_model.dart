@@ -31,19 +31,19 @@ class BookingModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> _data = <String, dynamic>{};
-    _data["_id"] = id;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data["_id"] = id;
     if (bookedEntity != null) {
-      _data["booked_entity"] = bookedEntity?.toJson();
+      data["booked_entity"] = bookedEntity?.toJson();
     }
-    _data["booking_type"] = bookingType;
+    data["booking_type"] = bookingType;
     if (bookingData != null) {
-      _data["booking_data"] = bookingData?.toJson();
+      data["booking_data"] = bookingData?.toJson();
     }
-    _data["__v"] = v;
-    _data["createdAt"] = createdAt;
-    _data["updatedAt"] = updatedAt;
-    return _data;
+    data["__v"] = v;
+    data["createdAt"] = createdAt;
+    data["updatedAt"] = updatedAt;
+    return data;
   }
 }
 
@@ -100,23 +100,23 @@ class BookingData {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> _data = <String, dynamic>{};
-    _data["_id"] = id;
-    _data["session_counsellor"] = sessionCounsellor;
-    _data["session_user"] = sessionUser;
-    _data["session_date"] = sessionDate;
-    _data["session_time"] = sessionTime;
-    _data["session_duration"] = sessionDuration;
-    _data["session_type"] = sessionType;
-    _data["session_fee"] = sessionFee;
-    _data["session_status"] = sessionStatus;
-    _data["session_slots"] = sessionSlots;
-    _data["session_link"] = sessionLink;
-    _data["createdAt"] = createdAt;
-    _data["updatedAt"] = updatedAt;
-    _data["session_available_slots"] = sessionAvailableSlots;
-    _data["__v"] = v;
-    return _data;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data["_id"] = id;
+    data["session_counsellor"] = sessionCounsellor;
+    data["session_user"] = sessionUser;
+    data["session_date"] = sessionDate;
+    data["session_time"] = sessionTime;
+    data["session_duration"] = sessionDuration;
+    data["session_type"] = sessionType;
+    data["session_fee"] = sessionFee;
+    data["session_status"] = sessionStatus;
+    data["session_slots"] = sessionSlots;
+    data["session_link"] = sessionLink;
+    data["createdAt"] = createdAt;
+    data["updatedAt"] = updatedAt;
+    data["session_available_slots"] = sessionAvailableSlots;
+    data["__v"] = v;
+    return data;
   }
 }
 
@@ -140,7 +140,7 @@ class BookedEntity {
   List<dynamic>? sessions;
   List<dynamic>? howWillIHelp;
   List<dynamic>? followers;
-  String? degreeFocused;
+  List<dynamic>? degreeFocused;
   List<String>? locationsFocused;
   List<String>? coursesFocused;
   String? approachOfCounselling;
@@ -148,7 +148,7 @@ class BookedEntity {
   int? personalSessionPrice;
   bool? verified;
   String? coverImage;
-  List<dynamic>? clientTestimonials;
+  List<ClientTestimonials>? clientTestimonials;
   String? createdAt;
   String? updatedAt;
   int? v;
@@ -211,7 +211,8 @@ class BookedEntity {
     sessions = json["sessions"] ?? [];
     howWillIHelp = json["how_will_i_help"] ?? [];
     followers = json["followers"] ?? [];
-    degreeFocused = json["degree_focused"];
+    degreeFocused = null;
+
     locationsFocused = json["locations_focused"] == null
         ? null
         : List<String>.from(json["locations_focused"]);
@@ -223,64 +224,93 @@ class BookedEntity {
     personalSessionPrice = json["personal_session_price"];
     verified = json["verified"];
     coverImage = json["cover_image"];
-    clientTestimonials = json["client_testimonials"] ?? [];
+    clientTestimonials = json["client_testimonials"] == null
+        ? null
+        : (json["client_testimonials"] as List)
+            .map((e) => ClientTestimonials.fromJson(e))
+            .toList();
     createdAt = json["createdAt"];
     updatedAt = json["updatedAt"];
     v = json["__v"];
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> _data = <String, dynamic>{};
+    final Map<String, dynamic> data = <String, dynamic>{};
     if (location != null) {
-      _data["location"] = location?.toJson();
+      data["location"] = location?.toJson();
     }
-    _data["_id"] = id;
-    _data["name"] = name;
-    _data["email"] = email;
-    _data["phone_no"] = phoneNo;
-    _data["profile_pic"] = profilePic;
-    _data["gender"] = gender;
-    _data["nationality"] = nationality;
+    data["_id"] = id;
+    data["name"] = name;
+    data["email"] = email;
+    data["phone_no"] = phoneNo;
+    data["profile_pic"] = profilePic;
+    data["gender"] = gender;
+    data["nationality"] = nationality;
     if (qualifications != null) {
-      _data["qualifications"] = qualifications;
+      data["qualifications"] = qualifications;
     }
-    _data["date_of_birth"] = dateOfBirth;
-    _data["next_session_time"] = nextSessionTime;
+    data["date_of_birth"] = dateOfBirth;
+    data["next_session_time"] = nextSessionTime;
     if (languagesSpoken != null) {
-      _data["languages_spoken"] = languagesSpoken;
+      data["languages_spoken"] = languagesSpoken;
     }
-    _data["experience_in_years"] = experienceInYears;
-    _data["total_appointed_sessions"] = totalAppointedSessions;
-    _data["reward_points"] = rewardPoints;
-    _data["average_rating"] = averageRating;
+    data["experience_in_years"] = experienceInYears;
+    data["total_appointed_sessions"] = totalAppointedSessions;
+    data["reward_points"] = rewardPoints;
+    data["average_rating"] = averageRating;
     if (sessions != null) {
-      _data["sessions"] = sessions;
+      data["sessions"] = sessions;
     }
     if (howWillIHelp != null) {
-      _data["how_will_i_help"] = howWillIHelp;
+      data["how_will_i_help"] = howWillIHelp;
     }
     if (followers != null) {
-      _data["followers"] = followers;
+      data["followers"] = followers;
     }
-    _data["degree_focused"] = degreeFocused;
+    if (degreeFocused != null) {
+      data["degree_focused"] = degreeFocused;
+    }
     if (locationsFocused != null) {
-      _data["locations_focused"] = locationsFocused;
+      data["locations_focused"] = locationsFocused;
     }
     if (coursesFocused != null) {
-      _data["courses_focused"] = coursesFocused;
+      data["courses_focused"] = coursesFocused;
     }
-    _data["approach_of_counselling"] = approachOfCounselling;
-    _data["group_session_price"] = groupSessionPrice;
-    _data["personal_session_price"] = personalSessionPrice;
-    _data["verified"] = verified;
-    _data["cover_image"] = coverImage;
+    data["approach_of_counselling"] = approachOfCounselling;
+    data["group_session_price"] = groupSessionPrice;
+    data["personal_session_price"] = personalSessionPrice;
+    data["verified"] = verified;
+    data["cover_image"] = coverImage;
     if (clientTestimonials != null) {
-      _data["client_testimonials"] = clientTestimonials;
+      data["client_testimonials"] =
+          clientTestimonials?.map((e) => e.toJson()).toList();
     }
-    _data["createdAt"] = createdAt;
-    _data["updatedAt"] = updatedAt;
-    _data["__v"] = v;
-    return _data;
+    data["createdAt"] = createdAt;
+    data["updatedAt"] = updatedAt;
+    data["__v"] = v;
+    return data;
+  }
+}
+
+class ClientTestimonials {
+  int? rating;
+  String? comment;
+  String? id;
+
+  ClientTestimonials({this.rating, this.comment, this.id});
+
+  ClientTestimonials.fromJson(Map<String, dynamic> json) {
+    rating = json["rating"];
+    comment = json["comment"];
+    id = json["_id"];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data["rating"] = rating;
+    data["comment"] = comment;
+    data["_id"] = id;
+    return data;
   }
 }
 
@@ -300,11 +330,11 @@ class Location {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> _data = <String, dynamic>{};
-    _data["pin_code"] = pinCode;
-    _data["city"] = city;
-    _data["state"] = state;
-    _data["country"] = country;
-    return _data;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data["pin_code"] = pinCode;
+    data["city"] = city;
+    data["state"] = state;
+    data["country"] = country;
+    return data;
   }
 }
