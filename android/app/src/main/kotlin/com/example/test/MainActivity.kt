@@ -1,4 +1,4 @@
-package com.smc
+package com.sortmycollege
 
 import io.flutter.embedding.android.FlutterActivity
 

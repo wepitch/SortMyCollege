@@ -1,5 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.smc">
+    package="com.sortmycollege">
    <application
         android:label="smc"
         android:name="${applicationName}"
@@ -20,6 +21,17 @@
               android:name="io.flutter.embedding.android.NormalTheme"
               android:resource="@style/NormalTheme"
               />
+<!-- 
+            <meta-data 
+            android:name="com.phonepe.android.sdk.isUAT"
+            android:value="true"/> 
+            <meta-data 
+            android:name="com.phonepe.android.sdk.isSimulator"  
+            android:value="true"/ >
+            <meta-data 
+            android:name="com.phonepe.android.sdk.MerchantId" 
+            android:value="PGTESTPAYUAT"/>    -->
+            
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -30,5 +42,12 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+        
+        
+        
+        
+        <!-- <meta-data android:name="com.phonepe.android.sdk.AppId" android:value="appId"/> -->
+    
+   
     </application>
 </manifest>

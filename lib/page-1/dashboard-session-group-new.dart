@@ -1,9 +1,12 @@
+import 'dart:convert';
+
+import 'package:crypto/crypto.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:jiffy/jiffy.dart';
-import 'package:myapp/other/api_service.dart';
 import 'package:myapp/page-1/homepagecontainer_2.dart';
 import 'package:myapp/utils.dart';
+import 'package:phonepe_payment_sdk/phonepe_payment_sdk.dart';
 
 import 'package:provider/provider.dart';
 
@@ -25,16 +28,102 @@ class Counseling_Session_group extends StatefulWidget {
 
 class _Counseling_Session_groupState extends State<Counseling_Session_group>
     with SingleTickerProviderStateMixin {
+//phone pe  members
+  String environment = "UAT_SIM";
+  String appId = "";
+  String merchantId = "PGTESTPAYUAT";
+  bool enableLogging = true;
+  String saltKey = "099eb0cd-02cf-4e2a-8aca-3e6c6aff0399";
+  String saltIndex = "1";
+  String checkSum = "";
+  String callBackUrl =
+      "https://webhook.site/a53375c1-0ed6-432e-8c25-ad324fed6c2a";
+  String body = "";
+  Object? result;
+  String apiEndPoint = "/pg/v1/pay";
+
+  //widget members
   bool isExpanded = false;
   SessionDate sessionDate = SessionDate();
   String selectedDate = Jiffy.now().format(pattern: "d MMM");
   String selectedSessionDate = Jiffy.now().format(pattern: "dd/M/yyyy");
+
+  void phonePeInit() {
+    PhonePePaymentSdk.init(environment, appId, merchantId, enableLogging)
+        .then((val) => {
+              setState(() {
+                result = 'PhonePe SDK Initialized - $val';
+              })
+            })
+        .catchError((error) {
+      handleError(error);
+      return <dynamic>{};
+    });
+  }
+
+  void startPgTransaction() {
+    try {
+      var response = PhonePePaymentSdk.startPGTransaction(
+          body, callBackUrl, checkSum, {}, apiEndPoint, "");
+      response
+          .then((val) => {
+                setState(() {
+                  if (val != null) {
+                    String status = val["status"].toString();
+                    String error = val["error"].toString();
+
+                    if (status == "SUCCESS") {
+                      result = "Success";
+                    } else {
+                      result = "Failed : $error";
+                    }
+                  }
+                })
+              })
+          .catchError((error) {
+        handleError(error);
+        return <dynamic>{};
+      });
+    } catch (error) {
+      handleError(error);
+    }
+  }
+
+  getCheckSum() {
+    var requestData = {
+      "merchantId": merchantId,
+      "merchantTransactionId": "transaction_123",
+      "merchantUserId": "90223250",
+      "amount": 1000,
+      "mobileNumber": "9999999999",
+      "callbackUrl": callBackUrl,
+      "paymentInstrument": {
+        "type": "PAY_PAGE",
+      },
+    };
+
+    String base64Body = base64.encode(utf8.encode(json.encode(requestData)));
+
+    checkSum =
+        "${sha256.convert(utf8.encode(base64Body + apiEndPoint + saltKey)).toString()}###$saltIndex";
+
+    return base64Body;
+  }
+
+  void handleError(error) {
+    setState(() {
+      result = {"error": error};
+    });
+  }
 
   late TabController tabController;
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+    phonePeInit();
+    body = getCheckSum();
+
     sessionDate.getDates();
     tabController =
         TabController(length: sessionDate.dates.length, vsync: this);
@@ -467,55 +556,57 @@ class _Counseling_Session_groupState extends State<Counseling_Session_group>
                                                   ),
                                                   GestureDetector(
                                                     onTap: () {
-                                                      EasyLoading.show(
-                                                          status: "Loading...",
-                                                          dismissOnTap: false);
-                                                      ApiService.sessionBooked(
-                                                              counsellorSessionProvider
-                                                                  .details
-                                                                  .sessions![
-                                                                      index]
-                                                                  .id!)
-                                                          .then((value) {
-                                                        if (value["message"] ==
-                                                            "Counseling session booked successfully") {
-                                                          EasyLoading.showToast(
-                                                              value["message"],
-                                                              toastPosition:
-                                                                  EasyLoadingToastPosition
-                                                                      .bottom);
-                                                          context
-                                                              .read<
-                                                                  CounsellorDetailsProvider>()
-                                                              .fetchCounsellor_session(
-                                                                  id: widget
-                                                                      .id);
-                                                          var date = Jiffy.parse(
-                                                                  counsellorSessionProvider
-                                                                      .details
-                                                                      .sessions![
-                                                                          index]
-                                                                      .sessionDate!)
-                                                              .format(
-                                                                  pattern:
-                                                                      "yyyy-M-d");
-                                                          context
-                                                              .read<
-                                                                  CounsellorDetailsProvider>()
-                                                              .fetchCounsellor_session(
-                                                                  id: widget.id,
-                                                                  sessionType:
-                                                                      "Group",
-                                                                  date: date);
-                                                          setState(() {});
-                                                        } else {
-                                                          EasyLoading.showToast(
-                                                              value["error"],
-                                                              toastPosition:
-                                                                  EasyLoadingToastPosition
-                                                                      .bottom);
-                                                        }
-                                                      });
+                                                      // EasyLoading.show(
+                                                      //     status: "Loading...",
+                                                      //     dismissOnTap: false);
+                                                      // ApiService.sessionBooked(
+                                                      //         counsellorSessionProvider
+                                                      //             .details
+                                                      //             .sessions![
+                                                      //                 index]
+                                                      //             .id!)
+                                                      //     .then((value) {
+                                                      //   if (value["message"] ==
+                                                      //       "Counseling session booked successfully") {
+                                                      //     EasyLoading.showToast(
+                                                      //         value["message"],
+                                                      //         toastPosition:
+                                                      //             EasyLoadingToastPosition
+                                                      //                 .bottom);
+                                                      //     context
+                                                      //         .read<
+                                                      //             CounsellorDetailsProvider>()
+                                                      //         .fetchCounsellor_session(
+                                                      //             id: widget
+                                                      //                 .id);
+                                                      //     var date = Jiffy.parse(
+                                                      //             counsellorSessionProvider
+                                                      //                 .details
+                                                      //                 .sessions![
+                                                      //                     index]
+                                                      //                 .sessionDate!)
+                                                      //         .format(
+                                                      //             pattern:
+                                                      //                 "yyyy-M-d");
+                                                      //     context
+                                                      //         .read<
+                                                      //             CounsellorDetailsProvider>()
+                                                      //         .fetchCounsellor_session(
+                                                      //             id: widget.id,
+                                                      //             sessionType:
+                                                      //                 "Group",
+                                                      //             date: date);
+                                                      //     setState(() {});
+                                                      //   } else {
+                                                      //     EasyLoading.showToast(
+                                                      //         value["error"],
+                                                      //         toastPosition:
+                                                      //             EasyLoadingToastPosition
+                                                      //                 .bottom);
+                                                      //   }
+                                                      // });
+
+                                                      startPgTransaction();
                                                     },
                                                     child: Container(
                                                       width: 96,

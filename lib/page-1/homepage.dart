@@ -3,11 +3,13 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 // import 'package:myapp/page-1/webinar-detail-second-full-view.dart';
 // import 'package:myapp/page-1/webinar.dart';
 import 'package:myapp/page-1/homepagecontainer_2.dart';
+import 'package:myapp/page-1/notification_page.dart';
 import 'package:myapp/page-1/webinar_page.dart';
 import 'package:myapp/page-1/webinar_past_page.dart';
 import 'package:myapp/utils.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
 // import 'counsellor-select-new.dart';
 // import 'counsellor_select_listview_offline.dart';
 // import 'counselor-dashboard-new-full-view.dart';
@@ -38,191 +40,213 @@ class _HomePageState extends State<HomePage> {
     setState(() {});
   }
 
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 430;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
     return Scaffold(
+      key: _scaffoldKey,
       backgroundColor: Colors.white,
+      drawer: Drawer(
+        width: 261,
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                height: 164,
+                width: double.infinity,
+                decoration: const BoxDecoration(
+                  color: Color(0xff1F0A68),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const SizedBox(
+                      height: 28,
+                    ),
+                    const CircleAvatar(
+                      radius: 32,
+                      backgroundImage:
+                          AssetImage("assets/page-1/images/user-1-1-J3b.png"),
+                    ),
+                    const SizedBox(
+                      height: 11,
+                    ),
+                    Text(
+                      name,
+                      style: SafeGoogleFont(
+                        "Inter",
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                child: Column(
+                  children: [
+                    ListTile(
+                      leading: Image.asset(
+                        "assets/page-1/images/drawerHomeIcon.png",
+                        height: 30,
+                      ),
+                      title: Text(
+                        "Home",
+                        style: SafeGoogleFont(
+                          "Inter",
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      shape: Border(
+                          bottom: BorderSide(
+                        color: Colors.black.withOpacity(0.09),
+                      )),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                child: Column(
+                  children: [
+                    ListTile(
+                      leading: Image.asset(
+                        "assets/page-1/images/drawerAboutUs.png",
+                        height: 30,
+                      ),
+                      title: Text(
+                        "About Us",
+                        style: SafeGoogleFont(
+                          "Inter",
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      shape: Border(
+                          bottom: BorderSide(
+                        color: Colors.black.withOpacity(0.09),
+                      )),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                child: Column(
+                  children: [
+                    ListTile(
+                      leading: Image.asset(
+                        "assets/page-1/images/drawerHelp.png",
+                        height: 30,
+                      ),
+                      title: Text(
+                        "Help?",
+                        style: SafeGoogleFont(
+                          "Inter",
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      shape: Border(
+                          bottom: BorderSide(
+                        color: Colors.black.withOpacity(0.09),
+                      )),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                child: Column(
+                  children: [
+                    ListTile(
+                      leading: Image.asset(
+                        "assets/page-1/images/drawerPhsychoTest.png",
+                        height: 30,
+                      ),
+                      title: Text(
+                        "Psycho Test",
+                        style: SafeGoogleFont(
+                          "Inter",
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      shape: Border(
+                          bottom: BorderSide(
+                        color: Colors.black.withOpacity(0.09),
+                      )),
+                    ),
+                  ],
+                ),
+              ),
+              const Spacer(),
+              Image.asset(
+                "assets/page-1/images/sortmycollege-logo-1.png",
+                height: 61,
+                width: 229,
+              ),
+              const SizedBox(
+                height: 60,
+              ),
+            ],
+          ),
+        ),
+      ),
+      appBar: AppBar(
+        backgroundColor: const Color(0xff1F0A68),
+        foregroundColor: Colors.white,
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 30, top: 18, bottom: 18),
+          child: GestureDetector(
+            onTap: () {
+              _scaffoldKey.currentState?.openDrawer();
+            },
+            child: Image.asset(
+              'assets/page-1/images/group-59.png',
+            ),
+          ),
+        ),
+        bottom: PreferredSize(
+            preferredSize: const Size(double.infinity, 25), child: Container()),
+        titleSpacing: -5,
+        shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(
+          bottom: Radius.circular(20),
+        )),
+        actions: [
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const NotificationPage(),
+                ),
+              );
+            },
+            child: Image.asset(
+              'assets/page-1/images/bell.png',
+              width: 26.16,
+              height: 25,
+            ),
+          ),
+          const SizedBox(
+            width: 30,
+          )
+        ],
+      ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              // group99QS5 (523:4)
-              padding: EdgeInsets.fromLTRB(
-                  20.5 * fem, 37.79 * fem, 30 * fem, 12.34 * fem),
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: const Color(0xff1f0a68),
-                borderRadius: BorderRadius.only(
-                  bottomRight: Radius.circular(20 * fem),
-                  bottomLeft: Radius.circular(20 * fem),
-                ),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    // autogroupjegzv33 (AXyK6vYDh3Rdd6E2jNJeGZ)
-                    margin: EdgeInsets.fromLTRB(
-                        0 * fem, 0 * fem, 0 * fem, 13 * fem),
-                    width: double.infinity,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          // autogroup7nttRkV (AXyKDkgAxfscGwjnRz7NTT)
-                          margin: EdgeInsets.fromLTRB(
-                              0 * fem, 1.89 * fem, 185 * fem, 0 * fem),
-                          width: 116.5 * fem,
-                          height: 63.32 * fem,
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                // heydakshvx9 (442:42)
-                                left: 42.8569335938 * fem,
-                                top: 0 * fem,
-                                child: Align(
-                                  child: SizedBox(
-                                    width: 63 * fem,
-                                    height: 58 * fem,
-                                    child: RichText(
-                                      text: TextSpan(
-                                        style: SafeGoogleFont(
-                                          'Inter',
-                                          fontSize: 21 * ffem,
-                                          fontWeight: FontWeight.w400,
-                                          height: 1.3752273378 * ffem / fem,
-                                          color: const Color(0xfffffcfc),
-                                        ),
-                                        children: [
-                                          TextSpan(
-                                            text: 'Hey,\n',
-                                            style: SafeGoogleFont(
-                                              'Inter',
-                                              fontSize: 21 * ffem,
-                                              fontWeight: FontWeight.w400,
-                                              height: 1.3752273378 * ffem / fem,
-                                              color: const Color(0xfffffcfc),
-                                            ),
-                                          ),
-                                          TextSpan(
-                                            text: name,
-                                            style: SafeGoogleFont(
-                                              'Inter',
-                                              fontSize: 21 * ffem,
-                                              fontWeight: FontWeight.w500,
-                                              height: 1.3752273378 * ffem / fem,
-                                              fontStyle: FontStyle.italic,
-                                              color: const Color(0xfffffcfc),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Positioned(
-                                // vectorCYH (499:126)
-                                left: 13.5 * fem,
-                                top: 5.3204345703 * fem,
-                                child: Align(
-                                  child: SizedBox(
-                                    width: 48 * fem,
-                                    height: 48 * fem,
-                                    child: Image.asset(
-                                      'assets/page-1/images/vector-S97.png',
-                                      width: 48 * fem,
-                                      height: 48 * fem,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Positioned(
-                                // group59JrD (499:135)
-                                left: 0 * fem,
-                                top: 3.9383544922 * fem,
-                                child: Align(
-                                  child: SizedBox(
-                                    width: 22.86 * fem,
-                                    height: 20 * fem,
-                                    child: Image.asset(
-                                      'assets/page-1/images/group-59.png',
-                                      width: 22.86 * fem,
-                                      height: 20 * fem,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Positioned(
-                                // vectorpZf (499:129)
-                                left: 68.5 * fem,
-                                top: 15.3204345703 * fem,
-                                child: Align(
-                                  child: SizedBox(
-                                    width: 48 * fem,
-                                    height: 48 * fem,
-                                    child: Image.asset(
-                                      'assets/page-1/images/vector-tV7.png',
-                                      width: 48 * fem,
-                                      height: 48 * fem,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        TextButton(
-                          // vector8aM (442:43)
-                          onPressed: () {},
-                          style: TextButton.styleFrom(
-                            padding: EdgeInsets.zero,
-                          ),
-                          child: SizedBox(
-                            width: 30 * fem,
-                            height: 25 * fem,
-                            child: Image.asset(
-                              'assets/page-1/images/vector-p3T.png',
-                              width: 30 * fem,
-                              height: 25 * fem,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    // autogroupxgu9eob (AXyKNAbpd21ZCeDEfwXgU9)
-                    margin: EdgeInsets.fromLTRB(
-                        24.5 * fem, 0 * fem, 15 * fem, 0 * fem),
-                    padding: EdgeInsets.fromLTRB(
-                        306 * fem, 10 * fem, 15 * fem, 10 * fem),
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: const Color(0xffffffff),
-                      borderRadius: BorderRadius.circular(10 * fem),
-                    ),
-                    child: Align(
-                      // layer2krd (442:39)
-                      alignment: Alignment.centerRight,
-                      child: SizedBox(
-                        width: 19 * fem,
-                        height: 18 * fem,
-                        child: Image.asset(
-                          'assets/page-1/images/layer-3.png',
-                          width: 19 * fem,
-                          height: 18 * fem,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
             Container(
               // autogroupwwimtT3 (AXyHNJmCtiEztNKuY5WWim)
               padding:
