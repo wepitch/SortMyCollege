@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+
 // import 'package:myapp/page-1/webinar-detail-second-full-view.dart';
 // import 'package:myapp/page-1/webinar.dart';
 import 'package:myapp/page-1/homepagecontainer_2.dart';
 import 'package:myapp/page-1/notification_page.dart';
+import 'package:myapp/page-1/profile_page.dart';
 import 'package:myapp/page-1/webinar_page.dart';
 import 'package:myapp/page-1/webinar_past_page.dart';
 import 'package:myapp/utils.dart';
@@ -27,11 +30,21 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   String name = "";
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     setName();
+    getAllInfo();
+  }
+
+  String username = "";
+
+  void getAllInfo() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    username = prefs.getString("name") ?? "N/A";
+    setState(() {});
   }
 
   void setName() async {
@@ -202,6 +215,14 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       appBar: AppBar(
+        title: Row(
+          children: [
+            const SizedBox(
+              width: 26,
+            ),
+            Text('Hey, $username '),
+          ],
+        ),
         backgroundColor: const Color(0xff1F0A68),
         foregroundColor: Colors.white,
         leading: Padding(
@@ -216,12 +237,8 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         bottom: PreferredSize(
-            preferredSize: const Size(double.infinity, 25), child: Container()),
+            preferredSize: const Size(double.infinity, 12), child: Container()),
         titleSpacing: -5,
-        shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(
-          bottom: Radius.circular(20),
-        )),
         actions: [
           GestureDetector(
             onTap: () {
@@ -234,8 +251,8 @@ class _HomePageState extends State<HomePage> {
             },
             child: Image.asset(
               'assets/page-1/images/bell.png',
-              width: 26.16,
-              height: 25,
+              width: 24.16,
+              height: 24,
             ),
           ),
           const SizedBox(
@@ -245,6 +262,7 @@ class _HomePageState extends State<HomePage> {
       ),
       body: SingleChildScrollView(
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
@@ -320,7 +338,6 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               ],
                             ),
-
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
@@ -701,7 +718,7 @@ class _HomePageState extends State<HomePage> {
                                 child: Container(
                                   padding: EdgeInsets.fromLTRB(6*fem, 6*fem, 7*fem, 13*fem),
                                   height: double.infinity,
-      
+
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.center,
                                     children: [
@@ -741,279 +758,444 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            Container(
-              color: Colors.white,
-              // autogroup2op7o2q (AXyGFfxEgcqGTznj9r2oP7)
-              width: 450 * fem,
-              height: 350 * fem,
-              child: Stack(
-                children: [
-                  Positioned(
-                    // rectangle53iQh (442:6)
-                    child: Align(
-                      child: SizedBox(
-                        width: 429.63 * fem,
-                        height: 350.66 * fem,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(15 * fem),
-                              topRight: Radius.circular(15 * fem),
-                            ),
-                            boxShadow: [
-                              BoxShadow(
-                                color: const Color(0x19000000),
-                                offset: Offset(0 * fem, -1 * fem),
-                                blurRadius: 1 * fem,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                      top: 195,
-                      child: SizedBox(
-                        height: 107,
-                        width: MediaQuery.sizeOf(context).width,
-                        child: ListView.builder(
-                            itemCount: dummyImagesSlider.length,
-                            scrollDirection: Axis.horizontal,
-                            physics: const BouncingScrollPhysics(),
-                            itemBuilder: (context, index) {
-                              var item = dummyImagesSlider[index];
-                              return Container(
-                                width: 145,
-                                height: 107,
-                                margin: const EdgeInsets.only(left: 20),
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    image: DecorationImage(
-                                        fit: BoxFit.cover,
-                                        image: NetworkImage(item))),
-                              );
-                            }),
-                      )),
-                  Positioned(
-                    // maskgroupUUy (444:85)
-                    left: 20.3735351562 * fem,
-                    top: 20.33984375 * fem,
-                    child: Align(
-                      // image slider
-                      child: Container(
-                        constraints: const BoxConstraints(
-                          maxHeight: 120,
-                          maxWidth: 390,
-                        ),
-                        // color: Colors.red,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20)),
-                        width: 390 * fem,
-                        height: 120 * fem,
-                        child: ImageSlideshow(
-                          autoPlayInterval: 6000,
-                          isLoop: true,
-                          indicatorColor: Colors.black,
-                          indicatorBackgroundColor: Colors.white,
-                          children: dummyImagesSlider
-                              .map((e) => Container(
-                                    width: 390 * fem,
-                                    height: 120 * fem,
-                                    decoration: BoxDecoration(
-                                        borderRadius: const BorderRadius.all(
-                                            Radius.circular(20)),
-                                        image: DecorationImage(
-                                          image: NetworkImage(e),
-                                          fit: BoxFit.cover,
-                                        )),
-                                  ))
-                              .toList(),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    // careerboostersU7b (444:66)
-                    left: 20.3735351562 * fem,
-                    top: 186.3397827148 * fem,
-                    child: Align(
-                      child: SizedBox(
-                        width: 118 * fem,
-                        height: 19 * fem,
-                        child: Text(
-                          'Career Boosters',
-                          style: SafeGoogleFont(
-                            'Inter',
-                            fontSize: 15 * ffem,
-                            fontWeight: FontWeight.w600,
-                            height: 1.2125 * ffem / fem,
-                            color: const Color(0xff1f0a68),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            // Container(
+            //   color: Colors.white,
+            //   // autogroup2op7o2q (AXyGFfxEgcqGTznj9r2oP7)
+            //   width: 450 * fem,
+            //   height: 166 * fem,
+            //   child: const Stack(
+            //     children: [
+            //       // Positioned(
+            //       //   // rectangle53iQh (442:6)
+            //       //   child: Align(
+            //       //     child: SizedBox(
+            //       //       width: 200.63 * fem,
+            //       //       height: 350.66 * fem,
+            //       //       child: Container(
+            //       //         decoration: BoxDecoration(
+            //       //           color: Colors.white,
+            //       //           borderRadius: BorderRadius.only(
+            //       //             topLeft: Radius.circular(15 * fem),
+            //       //             topRight: Radius.circular(15 * fem),
+            //       //           ),
+            //       //           boxShadow: [
+            //       //             BoxShadow(
+            //       //               color: const Color(0x19000000),
+            //       //               offset: Offset(0 * fem, -1 * fem),
+            //       //               blurRadius: 1 * fem,
+            //       //             ),
+            //       //           ],
+            //       //         ),
+            //       //       ),
+            //       //     ),
+            //       //   ),
+            //       // ),
+            //       // Positioned(
+            //       //     top: 120,
+            //       //     child: SizedBox(
+            //       //       height: 107,
+            //       //       width: MediaQuery.sizeOf(context).width,
+            //       //       child: ListView.builder(
+            //       //           itemCount: dummyImagesSlider.length,
+            //       //           scrollDirection: Axis.horizontal,
+            //       //           physics: const BouncingScrollPhysics(),
+            //       //           itemBuilder: (context, index) {
+            //       //             var item = dummyImagesSlider[index];
+            //       //             return Container(
+            //       //               width: 145,
+            //       //               height: 107,
+            //       //               margin: const EdgeInsets.only(left: 20),
+            //       //               decoration: BoxDecoration(
+            //       //                   borderRadius: BorderRadius.circular(10),
+            //       //                   image: DecorationImage(
+            //       //                       fit: BoxFit.cover,
+            //       //                       image: NetworkImage(item))),
+            //       //             );
+            //       //           }),
+            //       //     )),
+            //       // Positioned(
+            //       //   // maskgroupUUy (444:85)
+            //       //   left: 20.3735351562 * fem,
+            //       //   top: 20 * fem,
+            //       //   child: Align(
+            //       //     // image slider
+            //       //     child: Container(
+            //       //       constraints: const BoxConstraints(
+            //       //         maxHeight: 120,
+            //       //         maxWidth: 390,
+            //       //       ),
+            //       //       // color: Colors.red,
+            //       //       decoration: BoxDecoration(
+            //       //           borderRadius: BorderRadius.circular(20)),
+            //       //       width: 390 * fem,
+            //       //       height: 120 * fem,
+            //       //       child: ImageSlideshow(
+            //       //         autoPlayInterval: 6000,
+            //       //         isLoop: true,
+            //       //         indicatorColor: Colors.black,
+            //       //         indicatorBackgroundColor: Colors.white,
+            //       //         children: dummyImagesSlider
+            //       //             .map((e) => Container(
+            //       //                   width: 390 * fem,
+            //       //                   height: 120 * fem,
+            //       //                   decoration: BoxDecoration(
+            //       //                       borderRadius: const BorderRadius.all(
+            //       //                           Radius.circular(20)),
+            //       //                       image: DecorationImage(
+            //       //                         image: NetworkImage(e),
+            //       //                         fit: BoxFit.cover,
+            //       //                       )),
+            //       //                 ))
+            //       //             .toList(),
+            //       //       ),
+            //       //     ),
+            //       //   ),
+            //       // ),
+            //       // Positioned(
+            //       //   // careerboostersU7b (444:66)
+            //       //   left: 20.3735351562 * fem,
+            //       //   top: 186.3397827148 * fem,
+            //       //   child: Align(
+            //       //     child: SizedBox(
+            //       //       width: 118 * fem,
+            //       //       height: 19 * fem,
+            //       //       child: Text(
+            //       //         'Career Boosters',
+            //       //         style: SafeGoogleFont(
+            //       //           'Inter',
+            //       //           fontSize: 15 * ffem,
+            //       //           fontWeight: FontWeight.w600,
+            //       //           height: 1.2125 * ffem / fem,
+            //       //           color: const Color(0xff1f0a68),
+            //       //         ),
+            //       //       ),
+            //       //     ),
+            //       //   ),
+            //       // ),
+            //     ],
+            //   ),
+            // ),
             Padding(
-              padding: EdgeInsets.only(left: 20.0 * fem),
-              child: Text(
-                'Counselling',
-                style: SafeGoogleFont(
-                  'Inter',
-                  fontSize: 15 * ffem,
-                  fontWeight: FontWeight.w600,
-                  height: 1.2125 * ffem / fem,
-                  color: const Color(0xff1f0a68),
+              padding: const EdgeInsets.all(20.0),
+              child: SizedBox(
+                height: 100,
+                child: PageView(
+                  children: [
+                    imageScroll(),
+                    imageScroll1(),
+                  ],
                 ),
               ),
             ),
             const SizedBox(
-              height: 24,
+              height: 10,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: Card(
-                elevation: 8,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16)),
-                color: const Color(0xffF7F4FF),
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(12, 5, 12, 18),
-                  child: Column(
+              padding: EdgeInsets.only(left: 28.0 * fem),
+              child: Row(
+                children: [
+                  Image.asset(
+                    'assets/page-1/images/operator 1.png',
+                    height: 26,
+                    width: 26,
+                  ),
+                  const SizedBox(
+                    width: 16,
+                  ),
+                  const Text(
+                    'Popular Workshops',
+                    style: TextStyle(
+                      color: Color(0xFF1F0A68),
+                      fontSize: 18,
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.w600,
+                      height: 0,
+                    ),
+                  )
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 12,
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.28,
+              child: PageView(
+                children: [
+                  profileCard(),
+                  profileCard(),
+                  profileCard(),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 28.0 * fem),
+              child: Row(
+                children: [
+                  Image.asset(
+                    'assets/page-1/images/mobile 1.png',
+                    height: 26,
+                    width: 26,
+                  ),
+                  const SizedBox(
+                    width: 16,
+                  ),
+                  const Text(
+                    'Trending Webinar',
+                    style: TextStyle(
+                      color: Color(0xFF1F0A68),
+                      fontSize: 18,
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.w600,
+                      height: 0,
+                    ),
+                  )
+                ],
+              ),
+            ),
+            const Column(
+              children: [
+                Padding(
+                  padding:
+                      EdgeInsets.only(left: 16, right: 16, bottom: 16, top: 8),
+                  child: CustomWebinarCard(
+                      showDuration: false,
+                      title: "Learn more about CUET and IPMAT",
+                      isRegisterNow: true,
+                      btnTitle: "Register Now",
+                      time: "15 Sep @ 2:00 PM Onwards",
+                      duration: "60",
+                      participants: "Unlimited",
+                      bannerImg: "assets/page-1/images/webinarBanner.png"),
+                ),
+              ],
+            ),
+            Container(
+              height: 56,
+              decoration: const BoxDecoration(
+                color: Color(0xBAE3398C),
+              ),
+              child: const Center(
+                child: SizedBox(
+                  width: 370,
+                  height: 37,
+                  child: Text.rich(
+                    TextSpan(
+                      children: [
+                        TextSpan(
+                          text: 'Need Help? ',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.w700,
+                            height: 0,
+                          ),
+                        ),
+                        TextSpan(
+                          text: '           mail us at help@sortmycollege.com',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.w700,
+                            height: 0,
+                          ),
+                        ),
+                      ],
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget imageScroll1() {
+    return Container(
+      width: 390,
+      height: 120,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8),
+        image: DecorationImage(
+          image: AssetImage(
+              "assets/page-1/images/elearning-website-with-modish-sofware-student-study-online-internet-network 1.png"),
+          fit: BoxFit.fill,
+        ),
+      ),
+    );
+  }
+
+  Container imageScroll() {
+    return Container(
+      width: 390,
+      height: 120,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8),
+        image: DecorationImage(
+          image: AssetImage(
+              "assets/page-1/images/21da4647-c95a-44d9-b78e-40655d4946bc 1.png"),
+          fit: BoxFit.fill,
+        ),
+      ),
+    );
+  }
+
+  Padding profileCard() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+      child: Card(
+        surfaceTintColor: Colors.white,
+        elevation: 8,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        color: const Color(0xffF7F4FF),
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(12, 5, 12, 18),
+          child: Column(
+            children: [
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const CircleAvatar(
+                    radius: 45,
+                    backgroundImage: NetworkImage(
+                        "https://th.bing.com/th/id/R.0350b03b943792ab903d5784f72e165a?rik=snn4MpMRfubOxQ&riu=http%3a%2f%2fthispix.com%2fwp-content%2fuploads%2f2015%2f06%2fCopy-of-Edit-1798-1.jpg&ehk=23l8%2fpxrSUrkJ253xntAyozTzmtcMYBtQvc5KHnLk8s%3d&risl=&pid=ImgRaw&r=0"),
+                  ),
+                  const SizedBox(
+                    width: 13,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    // mainAxisAlignment: MainAxisAlignment.st,
                     children: [
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Text(
+                        'Anshika Mehra',
+                        style: TextStyle(
+                          color: Color(0xFF1F0A68),
+                          fontSize: 16,
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w600,
+                          height: 0,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 13,
+                      ),
+                      const SizedBox(
+                        width: 205.25,
+                        child: Text(
+                          'Importance of CUET',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.w600,
+                            height: 0,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 4,
+                      ),
                       Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const CircleAvatar(
-                            radius: 45,
-                            backgroundImage: NetworkImage(
-                                "https://th.bing.com/th/id/R.0350b03b943792ab903d5784f72e165a?rik=snn4MpMRfubOxQ&riu=http%3a%2f%2fthispix.com%2fwp-content%2fuploads%2f2015%2f06%2fCopy-of-Edit-1798-1.jpg&ehk=23l8%2fpxrSUrkJ253xntAyozTzmtcMYBtQvc5KHnLk8s%3d&risl=&pid=ImgRaw&r=0"),
+                          Image.asset(
+                            "assets/page-1/images/clock-circular-outline-Ra1.png",
+                            // color: Colors.black,
+                            height: 10.41,
+                            width: 11.36,
                           ),
                           const SizedBox(
-                            width: 13,
+                            width: 4,
                           ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            // mainAxisAlignment: MainAxisAlignment.st,
-                            children: [
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                "Anshika Mehra",
-                                style: SafeGoogleFont("Inter",
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.w600,
-                                    color: const Color(0xff1F0A68)),
-                              ),
-                              const SizedBox(
-                                height: 13,
-                              ),
-                              Text(
-                                "Importance of CUET",
-                                style: SafeGoogleFont(
-                                  "Inter",
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.black,
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 4,
-                              ),
-                              Row(
-                                children: [
-                                  Image.asset(
-                                    "assets/page-1/images/clock-circular-outline-Ra1.png",
-                                    // color: Colors.black,
-                                    height: 10,
-                                  ),
-                                  const SizedBox(
-                                    width: 4,
-                                  ),
-                                  Text(
-                                    "Session at 8:00pm",
-                                    style: SafeGoogleFont(
-                                      "Inter",
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w600,
-                                      color: const Color(0xff414040),
-                                    ),
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                          const Spacer(),
-                          CircleAvatar(
-                            backgroundColor: const Color(0xff7F90F7),
-                            child: Center(
-                              child: Image.asset(
-                                "assets/page-1/images/group-38-oFX.png",
-                                color: Colors.white,
-                                height: 17,
+                          const SizedBox(
+                            width: 121.13,
+                            child: Text(
+                              ' Session at 8:00pm',
+                              style: TextStyle(
+                                color: Color(0xFF414040),
+                                fontSize: 12,
+                                fontFamily: 'Inter',
+                                fontWeight: FontWeight.w500,
+                                height: 0.08,
                               ),
                             ),
-                          )
+                          ),
                         ],
                       ),
                       const SizedBox(
-                        height: 20,
-                      ),
-                      Container(
-                        height: 0.47,
-                        width: double.infinity,
-                        color: const Color(0xffAFAFAF).withOpacity(.78),
-                      ),
-                      const SizedBox(
-                        height: 9,
+                        height: 6,
                       ),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          OutlinedButton(
-                            onPressed: () {},
-                            style: OutlinedButton.styleFrom(
-                              fixedSize: const Size(147, 32),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                              foregroundColor: const Color(0xff262626),
-                              side: BorderSide(
-                                color: Colors.black.withOpacity(.74),
-                              ),
-                            ),
-                            child: Text(
-                              "Visit Profile",
-                              style: SafeGoogleFont(
-                                "Inter",
-                                fontWeight: FontWeight.bold,
-                                fontSize: 14,
+                          Container(
+                            width: 12,
+                            height: 12,
+                            decoration: const BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage(
+                                    "assets/page-1/images/Calendar.png"),
+                                fit: BoxFit.fill,
                               ),
                             ),
                           ),
-                          OutlinedButton(
-                            onPressed: () {},
-                            style: OutlinedButton.styleFrom(
-                              fixedSize: const Size(147, 32),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                              foregroundColor: const Color(0xff262626),
-                              side: BorderSide(
-                                color: Colors.black.withOpacity(.74),
+                          const SizedBox(
+                            width: 6,
+                          ),
+                          const SizedBox(
+                            width: 121.13,
+                            child: Text(
+                              '27th Dec 2023',
+                              style: TextStyle(
+                                color: Color(0xFF414040),
+                                fontSize: 12,
+                                fontFamily: 'Inter',
+                                fontWeight: FontWeight.w500,
+                                height: 0.08,
                               ),
                             ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 6,
+                      ),
+                      Row(
+                        children: [
+                          Container(
+                            width: 12,
+                            height: 12,
+                            decoration: const BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage(
+                                    "assets/page-1/images/Rupee.png"),
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 4,
+                          ),
+                          const SizedBox(
+                            width: 121.13,
                             child: Text(
-                              "Book Now",
-                              style: SafeGoogleFont(
-                                "Inter",
-                                fontWeight: FontWeight.bold,
-                                fontSize: 14,
+                              ' 10/-',
+                              style: TextStyle(
+                                color: Color(0xFF414040),
+                                fontSize: 12,
+                                fontFamily: 'Inter',
+                                fontWeight: FontWeight.w500,
+                                height: 0.08,
                               ),
                             ),
                           ),
@@ -1021,41 +1203,96 @@ class _HomePageState extends State<HomePage> {
                       )
                     ],
                   ),
-                ),
+                  const Spacer(),
+                  CircleAvatar(
+                    backgroundColor: const Color(0xff7F90F7),
+                    child: Center(
+                      child: Image.asset(
+                        "assets/page-1/images/group-38-oFX.png",
+                        color: Colors.white,
+                        height: 17,
+                      ),
+                    ),
+                  )
+                ],
               ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Padding(
-              padding: EdgeInsets.only(left: 20.0 * fem),
-              child: Text(
-                'Trending Webinar',
-                style: SafeGoogleFont(
-                  'Inter',
-                  fontSize: 15 * ffem,
-                  fontWeight: FontWeight.w600,
-                  height: 1.2125 * ffem / fem,
-                  color: const Color(0xff1f0a68),
-                ),
+              const SizedBox(
+                height: 20,
               ),
-            ),
-            const SizedBox(
-              height: 23,
-            ),
-            const Padding(
-              padding: EdgeInsets.only(top: 0, right: 16, left: 16, bottom: 10),
-              child: CustomWebinarCard(
-                  showDuration: false,
-                  title: "Learn more about CUET and IPMAT",
-                  isRegisterNow: true,
-                  btnTitle: "Register Now",
-                  time: "15 Sep @ 2:00 PM Onwards",
-                  duration: "60",
-                  participants: "Unlimited",
-                  bannerImg: "assets/page-1/images/webinarBanner.png"),
-            )
-          ],
+              Container(
+                height: 0.47,
+                width: double.infinity,
+                color: const Color(0xffAFAFAF).withOpacity(.78),
+              ),
+              const SizedBox(
+                height: 9,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                Container(
+                width: 142.14,
+                height: 40.09,
+                decoration: ShapeDecoration(
+                  color: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    side: BorderSide(
+                      width: 0.50,
+                      color: Colors.black.withOpacity(0.7400000095367432),
+                    ),
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                ),
+                child: const SizedBox(
+                  width: 119.09,
+                  height: 16.05,
+                  child: Center(
+                    child: Text(
+                      'Visit Profile',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Color(0xFF262626),
+                        fontSize: 14,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w700,
+                        height: 0.07,
+                      ),
+                    ),
+                  ),
+                ),
+
+                  ),
+                  Container(
+                    width: 142.14,
+                    height: 40.09,
+                    decoration: ShapeDecoration(
+                      color: Color(0xFFB1A0EB),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                    ),
+                    child: const SizedBox(
+                      width: 119.09,
+                      height: 16.05,
+                      child: Center(
+                        child: Text(
+                          'Book Now',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 14,
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.w700,
+                            height: 0.07,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -1082,4 +1319,7 @@ List<String> dummyImagesSlider = [
   "https://static.vecteezy.com/system/resources/previews/001/937/644/original/online-education-application-learning-worldwide-on-computer-mobile-website-background-social-distance-concept-the-classroom-training-course-library-illustration-flat-vector.jpg",
   "https://www.insidehighered.com/sites/default/server_files/media/iStock-520374378.jpg",
   "https://static.vecteezy.com/system/resources/previews/001/937/697/large_2x/online-education-application-learning-worldwide-on-computer-mobile-website-background-social-distance-concept-the-classroom-training-course-library-illustration-flat-vector.jpg",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOTciyMbprbWG5VSfWg4egySaj_arRCDzvu_FhbmUvvNBvpK2TBKmbtcSgqw&s",
+  "https://t4.ftcdn.net/jpg/06/46/86/13/240_F_646861362_vLO3dVv2dta7qS2x2sfRInk2IppVO9KC.jpg",
+  "https://t4.ftcdn.net/jpg/06/04/35/23/240_F_604352318_HlPTHiTe3P8icJVfZ6io7LAC7TjVnCjQ.jpg",
 ];
