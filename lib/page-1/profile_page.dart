@@ -73,53 +73,66 @@ class _ProfilePageState extends State<ProfilePage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            const CircleAvatar(
-              radius: 70,
-              backgroundImage: NetworkImage(
-                  "https://media.gettyimages.com/id/1334712074/vector/coming-soon-message.jpg?s=612x612&w=0&k=20&c=0GbpL-k_lXkXC4LidDMCFGN_Wo8a107e5JzTwYteXaw="),
-            ),
-            itemProfile('Name', username, CupertinoIcons.person),
-            itemProfile('Email', email, CupertinoIcons.mail),
-            itemProfile('DOB', dob, CupertinoIcons.calendar),
-            itemProfile('Gender', gender, CupertinoIcons.mail),
-            itemProfile('Edu-Level', edulevel, CupertinoIcons.book),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                      foregroundColor: Colors.white,
-                      padding: const EdgeInsets.all(15),
-                      backgroundColor: const Color(0xff1F0A68)),
-                  child: const Text('Edit Profile')),
-            )
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              const CircleAvatar(
+                radius: 70,
+                backgroundImage: NetworkImage(
+                    "https://media.gettyimages.com/id/1334712074/vector/coming-soon-message.jpg?s=612x612&w=0&k=20&c=0GbpL-k_lXkXC4LidDMCFGN_Wo8a107e5JzTwYteXaw="),
+              ),
+              itemProfile('Name', username, CupertinoIcons.person, false),
+              itemProfile('Email', email, CupertinoIcons.mail, false),
+              itemProfile('DOB', dob, CupertinoIcons.calendar, true),
+              itemProfile('Gender', gender, CupertinoIcons.person, true),
+              itemProfile('Edu-Level', edulevel, CupertinoIcons.book, true),
+              const SizedBox(
+                height: 16,
+              ),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                        foregroundColor: Colors.white,
+                        padding: const EdgeInsets.all(15),
+                        backgroundColor: const Color(0xff1F0A68)),
+                    child: const Text('Edit Profile')),
+              )
+            ],
+          ),
         ),
       ),
     );
   }
 
-  itemProfile(String title, String subtitle, IconData iconData) {
-    return Container(
-      decoration: BoxDecoration(
+  itemProfile(
+      String title, String subtitle, IconData iconData, bool showEditIcon) {
+    return Padding(
+      padding: const EdgeInsets.only(top: 8),
+      child: Container(
+        height: MediaQuery.of(context).size.height * 0.1,
+        decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
-          boxShadow: [
-            BoxShadow(
-                offset: const Offset(0, 5),
-                color: const Color(0xff1F0A68).withOpacity(.2),
-                spreadRadius: 2,
-                blurRadius: 10)
-          ]),
-      child: ListTile(
-        title: Text(title),
-        subtitle: Text(subtitle),
-        leading: Icon(iconData),
-        trailing: Icon(Icons.arrow_forward, color: Colors.grey.shade400),
-        tileColor: Colors.white,
+          // boxShadow: [
+          //   BoxShadow(
+          //       offset: const Offset(0, 5),
+          //       color: const Color(0xff1F0A68).withOpacity(.2),
+          //       spreadRadius: 2,
+          //       blurRadius: 10)
+          // ]),
+        ),
+        child: ListTile(
+          title: Text(title),
+          subtitle: Text(subtitle),
+          leading: Icon(iconData),
+          trailing: showEditIcon
+              ? Icon(Icons.edit, color: Colors.grey.shade400)
+              : null,
+          tileColor: Colors.white,
+        ),
       ),
     );
   }
