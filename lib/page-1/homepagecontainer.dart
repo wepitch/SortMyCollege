@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:myapp/page-1/booking_page.dart';
 import 'package:myapp/page-1/counsellor_select_listview_offline.dart';
 import 'package:myapp/page-1/profile_page.dart';
+
 // import 'package:myapp/page-1/webinar-detail-second-full-view.dart';
 // import 'package:myapp/page-1/webinar.dart';
 import 'package:myapp/page-1/homepage.dart';
 import 'package:myapp/page-1/webinar_page.dart';
+
 // import 'package:myapp/page-1/news.dart';
 // import 'package:myapp/page-1/profile.dart';
 
@@ -28,7 +30,7 @@ class _HomePageContainerState extends State<HomePageContainer> {
 
   final Widget _home = const HomePage();
 
-  final Widget _webnar = const WebinarPage();
+  final Widget _webNar = const WebinarPage();
 
   final Widget _booking = const BookingPage();
 
@@ -106,10 +108,11 @@ class _HomePageContainerState extends State<HomePageContainer> {
     if (selectedIndex == 0) {
       return _home;
     } else if (selectedIndex == 1) {
-      return _webnar;
+      return _webNar;
     } else if (selectedIndex == 2) {
       return _booking;
-    } /*else if (this.selectedIndex == 3) {
+    }
+    /*else if (this.selectedIndex == 3) {
       return this._news;
     } */
     else if (selectedIndex == 4) {
