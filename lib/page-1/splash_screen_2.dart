@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:myapp/page-1/homepagecontainer.dart';
 import 'package:myapp/page-1/sign-up.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 import '../utils.dart';
 
@@ -17,6 +19,7 @@ class SplashScreen2 extends StatefulWidget {
 
 class _SplashScreen2State extends State<SplashScreen2> {
   int selectIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     var mHeight = MediaQuery.sizeOf(context).height;
@@ -46,7 +49,7 @@ class _SplashScreen2State extends State<SplashScreen2> {
             // sortyourentirecollegejourneyDQ (1115:271)
             margin: EdgeInsets.fromLTRB(0, 0, 0, mHeight * 0.1),
             child: Text(
-              'Sort Your Entire College Journey!',
+              'All in one platform for student',
               textAlign: TextAlign.center,
               style: SafeGoogleFont(
                 'Roboto',
@@ -212,7 +215,7 @@ class _SplashScreen2State extends State<SplashScreen2> {
                   textAlign: TextAlign.center,
                   style: SafeGoogleFont(
                     'Roboto',
-                    fontSize: 20,
+                    fontSize: 18,
                     fontWeight: FontWeight.w500,
                     height: 1.1725,
                     color: const Color(0xffffffff),
@@ -245,7 +248,7 @@ class _SplashScreen2State extends State<SplashScreen2> {
                   'Already have an account?',
                   style: SafeGoogleFont(
                     'Roboto',
-                    fontSize: 19,
+                    fontSize: 14,
                     fontWeight: FontWeight.w400,
                     height: 1.4826653059,
                     color: Colors.black,
@@ -260,7 +263,7 @@ class _SplashScreen2State extends State<SplashScreen2> {
                     'Sign in',
                     style: SafeGoogleFont(
                       'Roboto',
-                      fontSize: 20,
+                      fontSize: 14,
                       fontWeight: FontWeight.bold,
                       height: 1.4826653059,
                       color: Colors.black,
@@ -273,14 +276,19 @@ class _SplashScreen2State extends State<SplashScreen2> {
           SizedBox(
             height: mHeight * 0.05,
           ),
-          Text(
-            "By continuing , I agree with the Terms and Conditions , Privacy Policy",
-            style: SafeGoogleFont(
-              "Roboto",
-              fontSize: 10,
-              fontWeight: FontWeight.w500,
+          GestureDetector(
+            onTap: () {
+              launchUrlString('https://sortmycollege.com/terms-and-conditions/');
+            },
+            child: Text(
+              "By continuing , I agree with the Terms and Conditions , Privacy Policy",
+              style: SafeGoogleFont(
+                "Roboto",
+                fontSize: 10,
+                fontWeight: FontWeight.w500,
+              ),
             ),
-          )
+          ),
         ],
       ),
     );
