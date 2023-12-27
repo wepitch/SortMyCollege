@@ -103,7 +103,7 @@ class _Signup extends State<Signup> {
                       margin: EdgeInsets.fromLTRB(
                           22 * fem, 0 * fem, 0 * fem, 0 * fem),
                       child: Text(
-                        'Sort Your Entire College Journey!',
+                        'All in one platform for student',
                         textAlign: TextAlign.center,
                         style: SafeGoogleFont(
                           'Roboto',
@@ -135,7 +135,7 @@ class _Signup extends State<Signup> {
                       decoration: BoxDecoration(
                         border: Border.all(color: const Color(0xff000000)),
                         color: const Color(0xfffffcfc),
-                        borderRadius: BorderRadius.circular(5 * fem),
+                        borderRadius: BorderRadius.circular(10 * fem),
                       ),
                       child: SizedBox(
                         height: 30,
@@ -225,7 +225,7 @@ class _Signup extends State<Signup> {
                             textAlign: TextAlign.center,
                             style: SafeGoogleFont(
                               'Roboto',
-                              fontSize: 20 * ffem,
+                              fontSize: 18 * ffem,
                               fontWeight: FontWeight.w400,
                               height: 1.1725 * ffem / fem,
                               color: const Color(0xffffffff),
@@ -260,7 +260,7 @@ class _Signup extends State<Signup> {
                                 text: 'Already have an account?\n',
                                 style: SafeGoogleFont(
                                   'Roboto',
-                                  fontSize: 19 * ffem,
+                                  fontSize: 17 * ffem,
                                   fontWeight: FontWeight.w400,
                                   height: 1.4826653059 * ffem / fem,
                                   color: const Color(0xff000000),
@@ -270,7 +270,7 @@ class _Signup extends State<Signup> {
                                 text: 'Sign in',
                                 style: SafeGoogleFont(
                                   'Roboto',
-                                  fontSize: 20 * ffem,
+                                  fontSize: 18 * ffem,
                                   fontWeight: FontWeight.w700,
                                   height: 1.4826653059 * ffem / fem,
                                   color: const Color(0xff000000),
@@ -319,7 +319,7 @@ class _Signup extends State<Signup> {
                             // rectangle64wJ1 (437:41)
                             margin: EdgeInsets.fromLTRB(
                                 0 * fem, 3 * fem, 0 * fem, 0 * fem),
-                            width: 70 * fem,
+                            width: 40 * fem,
                             height: 1 * fem,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10 * fem),
@@ -412,11 +412,11 @@ class _Signup extends State<Signup> {
                                     // groupedf (437:44)
                                     margin: EdgeInsets.fromLTRB(
                                         0 * fem, 0 * fem, 8.24 * fem, 0 * fem),
-                                    width: 14.82 * fem,
+                                    width: 12.82 * fem,
                                     height: 18.2 * fem,
                                     child: Image.asset(
                                       'assets/page-1/images/group.png',
-                                      width: 14.82 * fem,
+                                      width: 12.82 * fem,
                                       height: 18.2 * fem,
                                     ),
                                   ),
