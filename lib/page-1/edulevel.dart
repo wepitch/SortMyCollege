@@ -19,11 +19,12 @@ class _EducationLevelState extends State<EducationLevel> {
     "I Graduated",
   ];
   String selectedOption = list[0];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 61),
+        padding: const EdgeInsets.symmetric(vertical: 72),
         child: Center(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -46,7 +47,7 @@ class _EducationLevelState extends State<EducationLevel> {
                 // sortyourentirecollegejourneyDQ (1115:271)
                 margin: const EdgeInsets.fromLTRB(0, 0, 0, 50),
                 child: Text(
-                  'Sort Your Entire College Journey!',
+                  'All in one platform for student',
                   textAlign: TextAlign.center,
                   style: SafeGoogleFont(
                     'Roboto',
@@ -61,7 +62,7 @@ class _EducationLevelState extends State<EducationLevel> {
                 "Choose your Education Level",
                 style: SafeGoogleFont(
                   "Montserrat",
-                  fontSize: 19,
+                  fontSize: 17,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -117,8 +118,8 @@ Widget customButton(
   return Padding(
     padding: const EdgeInsets.only(bottom: 22),
     child: SizedBox(
-      height: 72,
-      width: 270,
+      height: 70,
+      width: 240,
       child: OutlinedButton(
         onPressed: onPressed,
         style: OutlinedButton.styleFrom(
@@ -132,7 +133,7 @@ Widget customButton(
           title,
           style: SafeGoogleFont(
             "Montserrat",
-            fontSize: 20,
+            fontSize: 16,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -144,7 +145,7 @@ Widget customButton(
 Widget nextButton({required VoidCallback onPressed, required String title}) {
   return SizedBox(
     height: 45,
-    width: 326,
+    width: 320,
     child: OutlinedButton(
         onPressed: onPressed,
         style: OutlinedButton.styleFrom(
@@ -157,7 +158,7 @@ Widget nextButton({required VoidCallback onPressed, required String title}) {
           title,
           style: SafeGoogleFont(
             "Roboto",
-            fontSize: 24,
+            fontSize: 20,
           ),
         )),
   );
