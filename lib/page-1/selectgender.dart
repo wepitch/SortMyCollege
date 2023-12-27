@@ -19,7 +19,7 @@ class _SelectGenderState extends State<SelectGender> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 61),
+        padding: const EdgeInsets.symmetric(vertical: 72),
         child: Center(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -42,7 +42,7 @@ class _SelectGenderState extends State<SelectGender> {
                 // sortyourentirecollegejourneyDQ (1115:271)
                 margin: const EdgeInsets.fromLTRB(0, 0, 0, 50),
                 child: Text(
-                  'Sort Your Entire College Journey!',
+                  'All in one platform for student',
                   textAlign: TextAlign.center,
                   style: SafeGoogleFont(
                     'Roboto',
@@ -57,7 +57,7 @@ class _SelectGenderState extends State<SelectGender> {
                 "Select Your Gender",
                 style: SafeGoogleFont(
                   "Montserrat",
-                  fontSize: 19,
+                  fontSize: 17,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -66,8 +66,8 @@ class _SelectGenderState extends State<SelectGender> {
               ),
               SizedBox(
                 // color: Colors.red,
-                height: 350,
-                width: 270,
+                height: 320,
+                width: 260,
                 child: ListView.builder(
                     physics: const NeverScrollableScrollPhysics(),
                     itemCount: list.length,
@@ -112,7 +112,7 @@ Widget customButton(
   return Padding(
     padding: const EdgeInsets.only(bottom: 22),
     child: SizedBox(
-      height: 72,
+      height: 70,
       width: 270,
       child: OutlinedButton(
         onPressed: onPressed,
@@ -127,7 +127,7 @@ Widget customButton(
           title,
           style: SafeGoogleFont(
             "Montserrat",
-            fontSize: 20,
+            fontSize: 17,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -152,7 +152,7 @@ Widget nextButton({required VoidCallback onPressed, required String title}) {
           title,
           style: SafeGoogleFont(
             "Roboto",
-            fontSize: 24,
+            fontSize: 18,
           ),
         )),
   );
