@@ -19,7 +19,7 @@ class _SelectDobState extends State<SelectDob> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 61),
+        padding: const EdgeInsets.symmetric(vertical: 86),
         child: Center(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -42,7 +42,7 @@ class _SelectDobState extends State<SelectDob> {
                 // sortyourentirecollegejourneyDQ (1115:271)
                 margin: const EdgeInsets.fromLTRB(0, 0, 0, 50),
                 child: Text(
-                  'Sort Your Entire College Journey!',
+                  'All in one platform for student',
                   textAlign: TextAlign.center,
                   style: SafeGoogleFont(
                     'Roboto',
@@ -57,7 +57,7 @@ class _SelectDobState extends State<SelectDob> {
                 "Date of Birth",
                 style: SafeGoogleFont(
                   "Montserrat",
-                  fontSize: 19,
+                  fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -115,8 +115,8 @@ Widget customButton({
   return Padding(
     padding: const EdgeInsets.only(bottom: 22),
     child: SizedBox(
-      height: 72,
-      width: 270,
+      height: 70,
+      width: 280,
       child: OutlinedButton(
         onPressed: onPressed,
         style: OutlinedButton.styleFrom(
@@ -129,7 +129,7 @@ Widget customButton({
           title,
           style: SafeGoogleFont(
             "Montserrat",
-            fontSize: 20,
+            fontSize: 16,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -154,7 +154,7 @@ Widget nextButton({required VoidCallback onPressed, required String title}) {
           title,
           style: SafeGoogleFont(
             "Roboto",
-            fontSize: 24,
+            fontSize: 20,
           ),
         )),
   );
