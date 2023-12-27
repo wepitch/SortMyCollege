@@ -103,7 +103,7 @@ class _OtpState extends State<Otp> {
                     margin: EdgeInsets.fromLTRB(
                         22 * fem, 0 * fem, 0 * fem, 0 * fem),
                     child: Text(
-                      'Sort Your Entire College Journey!',
+                      'All in one platform for student',
                       textAlign: TextAlign.center,
                       style: SafeGoogleFont(
                         'Roboto',
