@@ -11,8 +11,10 @@ import 'counsellor_feed_page.dart';
 class CounsellorDetialsPage extends StatefulWidget {
   final String id;
   final String name;
+
   const CounsellorDetialsPage(
       {super.key, required this.id, required this.name});
+
   @override
   State<CounsellorDetialsPage> createState() => _CounsellorDetialsPageState();
 }
@@ -79,10 +81,6 @@ class _CounsellorDetialsPageState extends State<CounsellorDetialsPage>
                           height: 82.83 * fem,
                           decoration: BoxDecoration(
                             color: const Color(0xff1f0a68),
-                            borderRadius: BorderRadius.only(
-                              bottomRight: Radius.circular(20 * fem),
-                              bottomLeft: Radius.circular(20 * fem),
-                            ),
                           ),
                           child: SizedBox(
                             // frame294gBa (2608:507)

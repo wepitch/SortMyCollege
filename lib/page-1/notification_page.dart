@@ -28,10 +28,6 @@ class NotificationPage extends StatelessWidget {
           style: SafeGoogleFont("Inter",
               fontSize: 22, fontWeight: FontWeight.w600),
         ),
-        shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(
-          bottom: Radius.circular(20),
-        )),
       ),
       body: ListView.builder(
           itemCount: dummyList.length,

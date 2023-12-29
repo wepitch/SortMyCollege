@@ -1,5 +1,10 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:myapp/page-1/edit_profile_detail_screen.dart';
+import 'package:myapp/page-1/sign-up.dart';
+import 'package:myapp/page-1/splash_screen_2.dart';
 import 'package:myapp/utils.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -66,10 +71,6 @@ class _ProfilePageState extends State<ProfilePage> {
           style: SafeGoogleFont("Inter",
               fontSize: 22, fontWeight: FontWeight.w600),
         ),
-        shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(
-          bottom: Radius.circular(20),
-        )),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
@@ -93,13 +94,19 @@ class _ProfilePageState extends State<ProfilePage> {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const EditProfileDetailScreen()));
+                    },
                     style: ElevatedButton.styleFrom(
                         foregroundColor: Colors.white,
                         padding: const EdgeInsets.all(15),
                         backgroundColor: const Color(0xff1F0A68)),
                     child: const Text('Edit Profile')),
-              )
+              ),
             ],
           ),
         ),
@@ -129,7 +136,11 @@ class _ProfilePageState extends State<ProfilePage> {
           subtitle: Text(subtitle),
           leading: Icon(iconData),
           trailing: showEditIcon
-              ? Icon(Icons.edit, color: Colors.grey.shade400)
+              ? IconButton(
+                  icon: const Icon(Icons.edit),
+                  color: Colors.grey.shade400,
+                  onPressed: () {},
+                )
               : null,
           tileColor: Colors.white,
         ),

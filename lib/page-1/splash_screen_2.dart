@@ -47,7 +47,7 @@ class _SplashScreen2State extends State<SplashScreen2> {
           ),
           Container(
             // sortyourentirecollegejourneyDQ (1115:271)
-            margin: EdgeInsets.fromLTRB(0, 0, 0, mHeight * 0.1),
+            margin: EdgeInsets.fromLTRB(0, 0, 0, mHeight * 0.04),
             child: Text(
               'All in one platform for student',
               textAlign: TextAlign.center,
@@ -60,129 +60,210 @@ class _SplashScreen2State extends State<SplashScreen2> {
               ),
             ),
           ),
-          CarouselSlider.builder(
-              itemCount: sliderTextImages.length,
-              itemBuilder: (context, index, realIndex) {
-                var textImage = sliderTextImages[index];
-                return Container(
-                  padding: const EdgeInsets.all(5),
-                  // makingastudentslifesimple27K (1012:217)
-                  margin: const EdgeInsets.symmetric(horizontal: 46),
-                  // height: 50,
-                  width: mWidth * 0.95,
-                  alignment: Alignment.center,
-
-                  decoration: BoxDecoration(
-                      border: Border.all(
-                        width: 5,
-                        color: const Color(0xff1F0A68),
-                      ),
-                      borderRadius: BorderRadius.circular(30)),
-                  child: Container(
-                    // height: mHeight * 0.1,
-                    // width: mWidth * 0.95,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        image: DecorationImage(
-                            image: AssetImage(textImage), fit: BoxFit.fill)),
+          Container(
+            width: 300,
+            height: 200,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(
+                    "assets/page-1/images/preview-32x_1595344376024-webp-2112×4000- 1.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
+          ),
+          const Text.rich(
+            TextSpan(
+              children: [
+                TextSpan(
+                  text: 'Welcome to SortMyCollege India’s First',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                    fontFamily: 'Montserrat',
+                    fontWeight: FontWeight.w500,
+                    height: 0,
                   ),
-
-                  // child: Column(
-                  //   mainAxisAlignment: MainAxisAlignment.center,
-                  //   children: [
-
-                  //     // Container(
-                  //     //   // color: Colors.red,
-                  //     //   // alignment: Alignment.bottomCenter,
-                  //     //   child: AnimatedTextKit(
-                  //     //       isRepeatingAnimation: true,
-                  //     //       repeatForever: true,
-                  //     //       stopPauseOnTap: true,
-                  //     //       animatedTexts: [
-                  //     //         TyperAnimatedText(
-                  //     //           "Making A Student's Life Simple ",
-                  //     //           // rotateOut: true,
-                  //     //           // textDirection: TextDirection.rtl,
-                  //     //           textAlign: TextAlign.center,
-                  //     //           // duration: const Duration(seconds: 1),
-                  //     //           textStyle: SafeGoogleFont(
-                  //     //             'Jost',
-                  //     //             fontSize: mHeight * 0.04,
-                  //     //             fontWeight: FontWeight.w400,
-                  //     //             height: 1.4,
-                  //     //             color: const Color(0xff1F0A68),
-                  //     //           ),
-                  //     //         ),
-                  //     //         TyperAnimatedText(
-                  //     //           "Sort Your College Life With Us",
-
-                  //     //           textAlign: TextAlign.center,
-                  //     //           // rotateOut: true,
-                  //     //           // duration: const Duration(seconds: 1),
-                  //     //           textStyle: SafeGoogleFont(
-                  //     //             'Jost',
-                  //     //             fontSize: mHeight * 0.04,
-                  //     //             fontWeight: FontWeight.w400,
-                  //     //             height: 1.4,
-                  //     //             color: const Color(0xff1F0A68),
-                  //     //           ),
-                  //     //         ),
-                  //     //       ]),
-                  //     // ),
-                  //     // Expanded(
-                  //     //   child: Container(
-                  //     //     alignment: Alignment.topCenter,
-                  //     //     // group135K6R (1012:218)
-                  //     //     margin: const EdgeInsets.fromLTRB(0, 0, 6.4, 0),
-                  //     //     width: 200.6,
-                  //     //     height: 200.01,
-
-                  //     //     child: ColorFiltered(
-                  //     //       colorFilter: const ColorFilter.mode(
-                  //     //           Color(0xff1F0A68), BlendMode.modulate),
-                  //     //       child: Lottie.asset(
-                  //     //         'assets/animations/loadingdot.json',
-                  //     //         fit: BoxFit.cover,
-                  //     //         alignment: Alignment.topCenter,
-                  //     //       ),
-                  //     //     ),
-                  //     //   ),
-                  //     // ),
-                  //   ],
-                  // ),
-                );
-              },
-              options: CarouselOptions(
-                viewportFraction: 1,
-                height: 190,
-                autoPlay: true,
-                onPageChanged: (index, reason) {
-                  setState(() {
-                    selectIndex = index;
-                  });
-                },
-              )),
+                ),
+                TextSpan(
+                  text: ' Super App',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                    fontFamily: 'Montserrat',
+                    fontWeight: FontWeight.w700,
+                    height: 0,
+                  ),
+                ),
+                TextSpan(
+                  text: ' for Students',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                    fontFamily: 'Montserrat',
+                    fontWeight: FontWeight.w500,
+                    height: 0,
+                  ),
+                ),
+              ],
+            ),
+            textAlign: TextAlign.center,
+          ),
+          // CarouselSlider.builder(
+          //     itemCount: sliderTextImages.length,
+          //     itemBuilder: (context, index, realIndex) {
+          //       var textImage = sliderTextImages[index];
+          //       return Container(
+          //         padding: const EdgeInsets.all(5),
+          //         // makingastudentslifesimple27K (1012:217)
+          //         margin: const EdgeInsets.symmetric(horizontal: 46),
+          //         // height: 50,
+          //         width: mWidth * 0.95,
+          //         alignment: Alignment.center,
+          //
+          //         decoration: BoxDecoration(
+          //             border: Border.all(
+          //               width: 5,
+          //               color: const Color(0xff1F0A68),
+          //             ),
+          //             borderRadius: BorderRadius.circular(30)),
+          //         child: Container(
+          //           // height: mHeight * 0.1,
+          //           // width: mWidth * 0.95,
+          //           decoration: BoxDecoration(
+          //               borderRadius: BorderRadius.circular(30),
+          //               image: DecorationImage(
+          //                   image: AssetImage(textImage), fit: BoxFit.fill)),
+          //         ),
+          //
+          //         // child: Column(
+          //         //   mainAxisAlignment: MainAxisAlignment.center,
+          //         //   children: [
+          //
+          //         //     // Container(
+          //         //     //   // color: Colors.red,
+          //         //     //   // alignment: Alignment.bottomCenter,
+          //         //     //   child: AnimatedTextKit(
+          //         //     //       isRepeatingAnimation: true,
+          //         //     //       repeatForever: true,
+          //         //     //       stopPauseOnTap: true,
+          //         //     //       animatedTexts: [
+          //         //     //         TyperAnimatedText(
+          //         //     //           "Making A Student's Life Simple ",
+          //         //     //           // rotateOut: true,
+          //         //     //           // textDirection: TextDirection.rtl,
+          //         //     //           textAlign: TextAlign.center,
+          //         //     //           // duration: const Duration(seconds: 1),
+          //         //     //           textStyle: SafeGoogleFont(
+          //         //     //             'Jost',
+          //         //     //             fontSize: mHeight * 0.04,
+          //         //     //             fontWeight: FontWeight.w400,
+          //         //     //             height: 1.4,
+          //         //     //             color: const Color(0xff1F0A68),
+          //         //     //           ),
+          //         //     //         ),
+          //         //     //         TyperAnimatedText(
+          //         //     //           "Sort Your College Life With Us",
+          //
+          //         //     //           textAlign: TextAlign.center,
+          //         //     //           // rotateOut: true,
+          //         //     //           // duration: const Duration(seconds: 1),
+          //         //     //           textStyle: SafeGoogleFont(
+          //         //     //             'Jost',
+          //         //     //             fontSize: mHeight * 0.04,
+          //         //     //             fontWeight: FontWeight.w400,
+          //         //     //             height: 1.4,
+          //         //     //             color: const Color(0xff1F0A68),
+          //         //     //           ),
+          //         //     //         ),
+          //         //     //       ]),
+          //         //     // ),
+          //         //     // Expanded(
+          //         //     //   child: Container(
+          //         //     //     alignment: Alignment.topCenter,
+          //         //     //     // group135K6R (1012:218)
+          //         //     //     margin: const EdgeInsets.fromLTRB(0, 0, 6.4, 0),
+          //         //     //     width: 200.6,
+          //         //     //     height: 200.01,
+          //
+          //         //     //     child: ColorFiltered(
+          //         //     //       colorFilter: const ColorFilter.mode(
+          //         //     //           Color(0xff1F0A68), BlendMode.modulate),
+          //         //     //       child: Lottie.asset(
+          //         //     //         'assets/animations/loadingdot.json',
+          //         //     //         fit: BoxFit.cover,
+          //         //     //         alignment: Alignment.topCenter,
+          //         //     //       ),
+          //         //     //     ),
+          //         //     //   ),
+          //         //     // ),
+          //         //   ],
+          //         // ),
+          //       );
+          //     },
+          //     options: CarouselOptions(
+          //       viewportFraction: 1,
+          //       height: 190,
+          //       autoPlay: true,
+          //       onPageChanged: (index, reason) {
+          //         setState(() {
+          //           selectIndex = index;
+          //         });
+          //       },
+          //     )),
           const SizedBox(
             height: 10,
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              TabPageSelectorIndicator(
-                  backgroundColor:
-                      selectIndex == 0 ? const Color(0xff1F0A68) : Colors.white,
-                  borderColor: const Color(0xff1F0A68),
-                  size: 10),
-              TabPageSelectorIndicator(
-                  backgroundColor:
-                      selectIndex == 1 ? const Color(0xff1F0A68) : Colors.white,
-                  borderColor: const Color(0xff1F0A68),
-                  size: 10),
-              TabPageSelectorIndicator(
-                  backgroundColor:
-                      selectIndex == 2 ? const Color(0xff1F0A68) : Colors.white,
-                  borderColor: const Color(0xff1F0A68),
-                  size: 10),
+              Text(
+                '.',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Color(0xFF1F0A68),
+                  fontSize: 25,
+                  fontFamily: 'Roboto',
+                  fontWeight: FontWeight.w500,
+                  height: 0,
+                ),
+              ),
+              Text(
+                '.',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Color(0xFF1F0A68),
+                  fontSize: 25,
+                  fontFamily: 'Roboto',
+                  fontWeight: FontWeight.w500,
+                  height: 0,
+                ),
+              ),
+              Text(
+                '.',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Color(0xFF1F0A68),
+                  fontSize: 25,
+                  fontFamily: 'Roboto',
+                  fontWeight: FontWeight.w500,
+                  height: 0,
+                ),
+              ),
+              // TabPageSelectorIndicator(
+              //     backgroundColor:
+              //         selectIndex == 0 ? const Color(0xff1F0A68) : Colors.white,
+              //     borderColor: const Color(0xff1F0A68),
+              //     size: 10),
+              // TabPageSelectorIndicator(
+              //     backgroundColor:
+              //         selectIndex == 1 ? const Color(0xff1F0A68) : Colors.white,
+              //     borderColor: const Color(0xff1F0A68),
+              //     size: 10),
+              // TabPageSelectorIndicator(
+              //     backgroundColor:
+              //         selectIndex == 2 ? const Color(0xff1F0A68) : Colors.white,
+              //     borderColor: const Color(0xff1F0A68),
+              //     size: 10),
             ],
           ),
           SizedBox(
@@ -278,7 +359,8 @@ class _SplashScreen2State extends State<SplashScreen2> {
           ),
           GestureDetector(
             onTap: () {
-              launchUrlString('https://sortmycollege.com/terms-and-conditions/');
+              launchUrlString(
+                  'https://sortmycollege.com/terms-and-conditions/');
             },
             child: Text(
               "By continuing , I agree with the Terms and Conditions , Privacy Policy",
@@ -308,9 +390,3 @@ void onTapGettingstarted(BuildContext context) async {
   // Navigator.pushReplacement(
   //     context, MaterialPageRoute(builder: (context) => const EducationLevel()));
 }
-
-List<String> sliderTextImages = [
-  "assets/page-1/images/splash_image1.jpg",
-  "assets/page-1/images/splash_image2.jpg",
-  "assets/page-1/images/splash_image3.jpg",
-];

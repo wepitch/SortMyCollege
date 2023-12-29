@@ -58,10 +58,6 @@ class _BookingPageState extends State<BookingPage> {
             style: SafeGoogleFont("Inter",
                 fontSize: 22, fontWeight: FontWeight.w600),
           ),
-          shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.vertical(
-            bottom: Radius.circular(20),
-          )),
           actions: [
             Image.asset(
               'assets/page-1/images/layer-3.png',

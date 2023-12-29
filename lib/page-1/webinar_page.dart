@@ -24,6 +24,7 @@ class _WebinarPageState extends State<WebinarPage> {
   }
 
   int selectedIndex = 1;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,21 +49,29 @@ class _WebinarPageState extends State<WebinarPage> {
         title: Text(
           "Webinar",
           style: SafeGoogleFont("Inter",
-              fontSize: 22, fontWeight: FontWeight.w600),
+              fontSize: 18, fontWeight: FontWeight.w600),
         ),
-        shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(
-          bottom: Radius.circular(20),
-        )),
         actions: [
-          Image.asset(
-            'assets/page-1/images/layer-3.png',
-            width: 26.16,
-            height: 25,
+          Row(
+            children: [
+              Image.asset(
+                'assets/page-1/images/layer-3.png',
+                width: 20,
+                height: 25,
+              ),
+              const SizedBox(
+                width: 14,
+              ),
+              Image.asset(
+                'assets/page-1/images/Vector.png',
+                width: 21,
+                height: 25,
+              ),
+            ],
           ),
           const SizedBox(
             width: 19,
-          )
+          ),
         ],
       ),
       body: Scaffold(

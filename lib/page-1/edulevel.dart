@@ -62,7 +62,7 @@ class _EducationLevelState extends State<EducationLevel> {
                 "Choose your Education Level",
                 style: SafeGoogleFont(
                   "Montserrat",
-                  fontSize: 17,
+                  fontSize: 15,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -71,8 +71,8 @@ class _EducationLevelState extends State<EducationLevel> {
               ),
               SizedBox(
                 // color: Colors.red,
-                height: 350,
-                width: 270,
+                height: 320,
+                width: 200,
                 child: ListView.builder(
                     physics: const NeverScrollableScrollPhysics(),
                     itemCount: list.length,
@@ -133,7 +133,7 @@ Widget customButton(
           title,
           style: SafeGoogleFont(
             "Montserrat",
-            fontSize: 16,
+            fontSize: 14,
             fontWeight: FontWeight.bold,
           ),
         ),

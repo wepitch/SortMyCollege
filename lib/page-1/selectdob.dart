@@ -116,7 +116,7 @@ Widget customButton({
     padding: const EdgeInsets.only(bottom: 22),
     child: SizedBox(
       height: 70,
-      width: 280,
+      width: 200,
       child: OutlinedButton(
         onPressed: onPressed,
         style: OutlinedButton.styleFrom(
@@ -129,7 +129,7 @@ Widget customButton({
           title,
           style: SafeGoogleFont(
             "Montserrat",
-            fontSize: 16,
+            fontSize: 14,
             fontWeight: FontWeight.bold,
           ),
         ),

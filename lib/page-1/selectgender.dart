@@ -67,7 +67,7 @@ class _SelectGenderState extends State<SelectGender> {
               SizedBox(
                 // color: Colors.red,
                 height: 320,
-                width: 260,
+                width: 200,
                 child: ListView.builder(
                     physics: const NeverScrollableScrollPhysics(),
                     itemCount: list.length,
@@ -127,7 +127,7 @@ Widget customButton(
           title,
           style: SafeGoogleFont(
             "Montserrat",
-            fontSize: 17,
+            fontSize: 14,
             fontWeight: FontWeight.bold,
           ),
         ),
