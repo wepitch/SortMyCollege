@@ -138,59 +138,59 @@ class _CounsellorListPage_offlineState
                         ],
                       ),
                     ),
-                    Container(
-                      width: double.infinity,
-                      height: 54 * fem,
-                      decoration: const BoxDecoration(color: Color(0xFFF4F4F4)),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Container(
-                            // autogroupves5oc5 (5rqLivLD15iXhdRPfAVES5)
-                            margin: EdgeInsets.fromLTRB(
-                                10 * fem, 15 * fem, 1.84 * fem, 6.69 * fem),
-                            width: double.infinity,
-                            child: GestureDetector(
-                              /*onTap: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              Filter_Course()));
-                                },*/
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Container(
-                                    // group12tdX (730:339)
-                                    margin: EdgeInsets.fromLTRB(
-                                        0 * fem, 0 * fem, 6.37 * fem, 0 * fem),
-                                    width: 14.7 * fem,
-                                    height: 14.39 * fem,
-                                    child: Image.asset(
-                                      'assets/page-1/images/filter.png',
-                                      width: 12.7 * fem,
-                                      height: 10.39 * fem,
-                                    ),
-                                  ),
-                                  Text(
-                                    // sortnD7 (730:338)
-                                    'Filter',
-                                    style: SafeGoogleFont(
-                                      'Inter',
-                                      fontSize: 14 * ffem,
-                                      fontWeight: FontWeight.w400,
-                                      height: 1.2125 * ffem / fem,
-                                      color: const Color(0xff000000),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    // Container(
+                    //   width: double.infinity,
+                    //   height: 54 * fem,
+                    //   decoration: const BoxDecoration(color: Color(0xFFF4F4F4)),
+                    //   child: Column(
+                    //     crossAxisAlignment: CrossAxisAlignment.end,
+                    //     children: [
+                    //       Container(
+                    //         // autogroupves5oc5 (5rqLivLD15iXhdRPfAVES5)
+                    //         margin: EdgeInsets.fromLTRB(
+                    //             10 * fem, 15 * fem, 1.84 * fem, 6.69 * fem),
+                    //         width: double.infinity,
+                    //         child: GestureDetector(
+                    //           /*onTap: () {
+                    //               Navigator.push(
+                    //                   context,
+                    //                   MaterialPageRoute(
+                    //                       builder: (context) =>
+                    //                           Filter_Course()));
+                    //             },*/
+                    //           child: Row(
+                    //             crossAxisAlignment: CrossAxisAlignment.center,
+                    //             children: [
+                    //               Container(
+                    //                 // group12tdX (730:339)
+                    //                 margin: EdgeInsets.fromLTRB(
+                    //                     0 * fem, 0 * fem, 6.37 * fem, 0 * fem),
+                    //                 width: 14.7 * fem,
+                    //                 height: 14.39 * fem,
+                    //                 child: Image.asset(
+                    //                   'assets/page-1/images/filter.png',
+                    //                   width: 12.7 * fem,
+                    //                   height: 10.39 * fem,
+                    //                 ),
+                    //               ),
+                    //               Text(
+                    //                 // sortnD7 (730:338)
+                    //                 'Filter',
+                    //                 style: SafeGoogleFont(
+                    //                   'Inter',
+                    //                   fontSize: 14 * ffem,
+                    //                   fontWeight: FontWeight.w400,
+                    //                   height: 1.2125 * ffem / fem,
+                    //                   color: const Color(0xff000000),
+                    //                 ),
+                    //               ),
+                    //             ],
+                    //           ),
+                    //         ),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
                     Expanded(
                       child: SizedBox(
                         // autogroup13ehpiD (5rq67B26ka2aqeMhbB13eh)

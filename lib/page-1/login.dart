@@ -71,22 +71,22 @@ class _Login extends State<Login> {
                       fit: BoxFit.cover,
                     ),
                   ),
-                  Container(
-                    // sortyourentirecollegejourneykf (1061:9)
-                    margin: EdgeInsets.fromLTRB(
-                        22 * fem, 0 * fem, 0 * fem, 0 * fem),
-                    child: Text(
-                      'Sort Your Entire College Journey!',
-                      textAlign: TextAlign.center,
-                      style: SafeGoogleFont(
-                        'Roboto',
-                        fontSize: 16 * ffem,
-                        fontWeight: FontWeight.w700,
-                        height: 1.1725 * ffem / fem,
-                        color: const Color(0xff1f0a68),
-                      ),
-                    ),
-                  ),
+                  // Container(
+                  //   // sortyourentirecollegejourneykf (1061:9)
+                  //   margin: EdgeInsets.fromLTRB(
+                  //       22 * fem, 0 * fem, 0 * fem, 0 * fem),
+                  //   child: Text(
+                  //     'Sort Your Entire College Journey!',
+                  //     textAlign: TextAlign.center,
+                  //     style: SafeGoogleFont(
+                  //       'Roboto',
+                  //       fontSize: 16 * ffem,
+                  //       fontWeight: FontWeight.w700,
+                  //       height: 1.1725 * ffem / fem,
+                  //       color: const Color(0xff1f0a68),
+                  //     ),
+                  //   ),
+                  // ),
                 ],
               ),
             ),

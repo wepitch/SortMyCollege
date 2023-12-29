@@ -49,27 +49,14 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: const Color(0xff1F0A68),
         foregroundColor: Colors.white,
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 0, top: 18, bottom: 18),
-          child: GestureDetector(
-            onTap: () {
-              Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const HomePageContainer()));
-            },
-            child: Image.asset(
-              'assets/page-1/images/back.png',
-            ),
-          ),
-        ),
-        titleSpacing: -5,
+        titleSpacing: 20,
         title: Text(
-          "My Booking",
+          "My Profile",
           style: SafeGoogleFont("Inter",
-              fontSize: 22, fontWeight: FontWeight.w600),
+              fontSize: 20, fontWeight: FontWeight.w600),
         ),
       ),
       body: Padding(
@@ -95,11 +82,11 @@ class _ProfilePageState extends State<ProfilePage> {
                 width: double.infinity,
                 child: ElevatedButton(
                     onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  const EditProfileDetailScreen()));
+                      // Navigator.push(
+                      //     context,
+                      //     MaterialPageRoute(
+                      //         builder: (context) =>
+                      //             const EditProfileDetailScreen()));
                     },
                     style: ElevatedButton.styleFrom(
                         foregroundColor: Colors.white,

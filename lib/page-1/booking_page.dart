@@ -36,36 +36,40 @@ class _BookingPageState extends State<BookingPage> {
     // double ffem = fem * 0.97;
     return Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           backgroundColor: const Color(0xff1F0A68),
           foregroundColor: Colors.white,
-          leading: Padding(
-            padding: const EdgeInsets.only(left: 0, top: 18, bottom: 18),
-            child: GestureDetector(
-              onTap: () {
-                Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const HomePageContainer()));
-              },
-              child: Image.asset(
-                'assets/page-1/images/back.png',
-              ),
+          // leading: Padding(
+          //   padding: const EdgeInsets.only(left: 0, top: 18, bottom: 18),
+          //   child: GestureDetector(
+          //     onTap: () {
+          //       Navigator.pushReplacement(
+          //           context,
+          //           MaterialPageRoute(
+          //               builder: (context) => const HomePageContainer()));
+          //     },
+          //     child: Image.asset(
+          //       'assets/page-1/images/back.png',
+          //     ),
+          //   ),
+          // ),
+          titleSpacing: -10,
+          title: Padding(
+            padding: const EdgeInsets.only(left: 40),
+            child: Text(
+              "My Booking",
+              style: SafeGoogleFont("Inter",
+                  fontSize: 20, fontWeight: FontWeight.w600),
             ),
-          ),
-          titleSpacing: -5,
-          title: Text(
-            "My Booking",
-            style: SafeGoogleFont("Inter",
-                fontSize: 22, fontWeight: FontWeight.w600),
           ),
           actions: [
             Image.asset(
               'assets/page-1/images/layer-3.png',
-              width: 26.16,
-              height: 25,
+              width: 20,
+              height: 20,
             ),
             const SizedBox(
-              width: 19,
+              width: 28,
             )
           ],
         ),

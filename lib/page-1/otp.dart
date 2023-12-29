@@ -98,22 +98,22 @@ class _OtpState extends State<Otp> {
                       fit: BoxFit.cover,
                     ),
                   ),
-                  Container(
-                    // sortyourentirecollegejourneyqc (1061:5)
-                    margin: EdgeInsets.fromLTRB(
-                        22 * fem, 0 * fem, 0 * fem, 0 * fem),
-                    child: Text(
-                      'All in one platform for student',
-                      textAlign: TextAlign.center,
-                      style: SafeGoogleFont(
-                        'Roboto',
-                        fontSize: 16 * ffem,
-                        fontWeight: FontWeight.w700,
-                        height: 1.1725 * ffem / fem,
-                        color: const Color(0xff1f0a68),
-                      ),
-                    ),
-                  ),
+                  // Container(
+                  //   // sortyourentirecollegejourneyqc (1061:5)
+                  //   margin: EdgeInsets.fromLTRB(
+                  //       22 * fem, 0 * fem, 0 * fem, 0 * fem),
+                  //   child: Text(
+                  //     'All in one platform for student',
+                  //     textAlign: TextAlign.center,
+                  //     style: SafeGoogleFont(
+                  //       'Roboto',
+                  //       fontSize: 16 * ffem,
+                  //       fontWeight: FontWeight.w700,
+                  //       height: 1.1725 * ffem / fem,
+                  //       color: const Color(0xff1f0a68),
+                  //     ),
+                  //   ),
+                  // ),
                 ],
               ),
             ),

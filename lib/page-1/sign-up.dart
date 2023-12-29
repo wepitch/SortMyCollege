@@ -98,22 +98,22 @@ class _Signup extends State<Signup> {
                         fit: BoxFit.cover,
                       ),
                     ),
-                    Container(
-                      // sortyourentirecollegejourney1Z (437:30)
-                      margin: EdgeInsets.fromLTRB(
-                          22 * fem, 0 * fem, 0 * fem, 0 * fem),
-                      child: Text(
-                        'All in one platform for student',
-                        textAlign: TextAlign.center,
-                        style: SafeGoogleFont(
-                          'Roboto',
-                          fontSize: 16 * ffem,
-                          fontWeight: FontWeight.w700,
-                          height: 1.1725 * ffem / fem,
-                          color: const Color(0xff1f0a68),
-                        ),
-                      ),
-                    ),
+                    // Container(
+                    //   // sortyourentirecollegejourney1Z (437:30)
+                    //   margin: EdgeInsets.fromLTRB(
+                    //       22 * fem, 0 * fem, 0 * fem, 0 * fem),
+                    //   child: Text(
+                    //     'All in one platform for student',
+                    //     textAlign: TextAlign.center,
+                    //     style: SafeGoogleFont(
+                    //       'Roboto',
+                    //       fontSize: 16 * ffem,
+                    //       fontWeight: FontWeight.w700,
+                    //       height: 1.1725 * ffem / fem,
+                    //       color: const Color(0xff1f0a68),
+                    //     ),
+                    //   ),
+                    // ),
                   ],
                 ),
               ),
@@ -267,7 +267,7 @@ class _Signup extends State<Signup> {
                                 ),
                               ),
                               TextSpan(
-                                text: 'Sign in',
+                                text: 'Log in',
                                 style: SafeGoogleFont(
                                   'Roboto',
                                   fontSize: 18 * ffem,
@@ -329,116 +329,116 @@ class _Signup extends State<Signup> {
                         ],
                       ),
                     ),
-                    Container(
-                      // autogroupzamprA5 (AXy8VtsgJeezWcGv1dZamP)
-                      margin: EdgeInsets.fromLTRB(
-                          13 * fem, 0 * fem, 20 * fem, 0 * fem),
-                      width: double.infinity,
-                      height: 44 * fem,
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Container(
-                            // autogroupu7mkxyo (AXy8c4N5JcBWRAE4Ktu7mK)
-                            margin: EdgeInsets.fromLTRB(
-                                0 * fem, 0 * fem, 37 * fem, 0 * fem),
-                            padding: EdgeInsets.fromLTRB(
-                                21 * fem, 13 * fem, 21 * fem, 12 * fem),
-                            width: 120 * fem,
-                            height: double.infinity,
-                            decoration: BoxDecoration(
-                              border:
-                                  Border.all(color: const Color(0xff000000)),
-                              color: const Color(0xffffffff),
-                              borderRadius: BorderRadius.circular(10 * fem),
-                            ),
-                            child: Container(
-                              // group53kM (437:48)
-                              padding: EdgeInsets.fromLTRB(
-                                  0 * fem, 0 * fem, 0.64 * fem, 0 * fem),
-                              width: double.infinity,
-                              height: double.infinity,
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: [
-                                  Container(
-                                    // googley8D (437:51)
-                                    margin: EdgeInsets.fromLTRB(
-                                        0 * fem, 0 * fem, 5 * fem, 1 * fem),
-                                    width: 18 * fem,
-                                    height: 18 * fem,
-                                    child: Image.asset(
-                                      'assets/page-1/images/google.png',
-                                      width: 18 * fem,
-                                      height: 18 * fem,
-                                    ),
-                                  ),
-                                  Container(
-                                    // googlesearchengineicon1g2d (437:49)
-                                    margin: EdgeInsets.fromLTRB(
-                                        0 * fem, 0 * fem, 0 * fem, 0.42 * fem),
-                                    width: 49.36 * fem,
-                                    height: 15.38 * fem,
-                                    child: Image.asset(
-                                      'assets/page-1/images/googlesearch-engineicon-1.png',
-                                      width: 49.36 * fem,
-                                      height: 15.38 * fem,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          Container(
-                            // autogroupsf29ynR (AXy8hohVtGdcMeT52SSf29)
-                            padding: EdgeInsets.fromLTRB(
-                                27 * fem, 12 * fem, 26.94 * fem, 11 * fem),
-                            width: 120 * fem,
-                            height: double.infinity,
-                            decoration: BoxDecoration(
-                              border:
-                                  Border.all(color: const Color(0xff000000)),
-                              color: const Color(0xffffffff),
-                              borderRadius: BorderRadius.circular(10 * fem),
-                            ),
-                            child: SizedBox(
-                              // group46c9 (437:43)
-                              width: double.infinity,
-                              height: double.infinity,
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    // groupedf (437:44)
-                                    margin: EdgeInsets.fromLTRB(
-                                        0 * fem, 0 * fem, 8.24 * fem, 0 * fem),
-                                    width: 12.82 * fem,
-                                    height: 18.2 * fem,
-                                    child: Image.asset(
-                                      'assets/page-1/images/group.png',
-                                      width: 12.82 * fem,
-                                      height: 18.2 * fem,
-                                    ),
-                                  ),
-                                  Text(
-                                    // applemCV (437:47)
-                                    'Apple',
-                                    textAlign: TextAlign.center,
-                                    style: SafeGoogleFont(
-                                      'Prompt',
-                                      fontSize: 14 * ffem,
-                                      fontWeight: FontWeight.w400,
-                                      height: 1.4818750109 * ffem / fem,
-                                      color: const Color(0xff000000),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    // Container(
+                    //   // autogroupzamprA5 (AXy8VtsgJeezWcGv1dZamP)
+                    //   margin: EdgeInsets.fromLTRB(
+                    //       13 * fem, 0 * fem, 20 * fem, 0 * fem),
+                    //   width: double.infinity,
+                    //   height: 44 * fem,
+                    //   child: Row(
+                    //     crossAxisAlignment: CrossAxisAlignment.center,
+                    //     children: [
+                    //       Container(
+                    //         // autogroupu7mkxyo (AXy8c4N5JcBWRAE4Ktu7mK)
+                    //         margin: EdgeInsets.fromLTRB(
+                    //             0 * fem, 0 * fem, 37 * fem, 0 * fem),
+                    //         padding: EdgeInsets.fromLTRB(
+                    //             21 * fem, 13 * fem, 21 * fem, 12 * fem),
+                    //         width: 120 * fem,
+                    //         height: double.infinity,
+                    //         decoration: BoxDecoration(
+                    //           border:
+                    //           Border.all(color: const Color(0xff000000)),
+                    //           color: const Color(0xffffffff),
+                    //           borderRadius: BorderRadius.circular(10 * fem),
+                    //         ),
+                    //         child: Container(
+                    //           // group53kM (437:48)
+                    //           padding: EdgeInsets.fromLTRB(
+                    //               0 * fem, 0 * fem, 0.64 * fem, 0 * fem),
+                    //           width: double.infinity,
+                    //           height: double.infinity,
+                    //           child: Row(
+                    //             crossAxisAlignment: CrossAxisAlignment.end,
+                    //             children: [
+                    //               Container(
+                    //                 // googley8D (437:51)
+                    //                 margin: EdgeInsets.fromLTRB(
+                    //                     0 * fem, 0 * fem, 5 * fem, 1 * fem),
+                    //                 width: 18 * fem,
+                    //                 height: 18 * fem,
+                    //                 child: Image.asset(
+                    //                   'assets/page-1/images/google.png',
+                    //                   width: 18 * fem,
+                    //                   height: 18 * fem,
+                    //                 ),
+                    //               ),
+                    //               Container(
+                    //                 // googlesearchengineicon1g2d (437:49)
+                    //                 margin: EdgeInsets.fromLTRB(
+                    //                     0 * fem, 0 * fem, 0 * fem, 0.42 * fem),
+                    //                 width: 49.36 * fem,
+                    //                 height: 15.38 * fem,
+                    //                 child: Image.asset(
+                    //                   'assets/page-1/images/googlesearch-engineicon-1.png',
+                    //                   width: 49.36 * fem,
+                    //                   height: 15.38 * fem,
+                    //                 ),
+                    //               ),
+                    //             ],
+                    //           ),
+                    //         ),
+                    //       ),
+                    //       Container(
+                    //         // autogroupsf29ynR (AXy8hohVtGdcMeT52SSf29)
+                    //         padding: EdgeInsets.fromLTRB(
+                    //             27 * fem, 12 * fem, 26.94 * fem, 11 * fem),
+                    //         width: 120 * fem,
+                    //         height: double.infinity,
+                    //         decoration: BoxDecoration(
+                    //           border:
+                    //           Border.all(color: const Color(0xff000000)),
+                    //           color: const Color(0xffffffff),
+                    //           borderRadius: BorderRadius.circular(10 * fem),
+                    //         ),
+                    //         child: SizedBox(
+                    //           // group46c9 (437:43)
+                    //           width: double.infinity,
+                    //           height: double.infinity,
+                    //           child: Row(
+                    //             crossAxisAlignment: CrossAxisAlignment.start,
+                    //             children: [
+                    //               Container(
+                    //                 // groupedf (437:44)
+                    //                 margin: EdgeInsets.fromLTRB(
+                    //                     0 * fem, 0 * fem, 8.24 * fem, 0 * fem),
+                    //                 width: 12.82 * fem,
+                    //                 height: 18.2 * fem,
+                    //                 child: Image.asset(
+                    //                   'assets/page-1/images/group.png',
+                    //                   width: 12.82 * fem,
+                    //                   height: 18.2 * fem,
+                    //                 ),
+                    //               ),
+                    //               Text(
+                    //                 // applemCV (437:47)
+                    //                 'Apple',
+                    //                 textAlign: TextAlign.center,
+                    //                 style: SafeGoogleFont(
+                    //                   'Prompt',
+                    //                   fontSize: 14 * ffem,
+                    //                   fontWeight: FontWeight.w400,
+                    //                   height: 1.4818750109 * ffem / fem,
+                    //                   color: const Color(0xff000000),
+                    //                 ),
+                    //               ),
+                    //             ],
+                    //           ),
+                    //         ),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
                   ],
                 ),
               ),

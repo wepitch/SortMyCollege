@@ -106,6 +106,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     const CircleAvatar(
                       radius: 32,
+                      backgroundColor: Colors.white,
                       backgroundImage:
                           AssetImage("assets/page-1/images/user-1-1-J3b.png"),
                     ),
@@ -137,7 +138,7 @@ class _HomePageState extends State<HomePage> {
                         "Home",
                         style: SafeGoogleFont(
                           "Inter",
-                          fontSize: 14,
+                          fontSize: 16,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
@@ -149,31 +150,31 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                child: Column(
-                  children: [
-                    ListTile(
-                      leading: Image.asset(
-                        "assets/page-1/images/drawerAboutUs.png",
-                        height: 20,
-                      ),
-                      title: Text(
-                        "About Us",
-                        style: SafeGoogleFont(
-                          "Inter",
-                          fontSize: 14,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      shape: Border(
-                          bottom: BorderSide(
-                        color: Colors.black.withOpacity(0.09),
-                      )),
-                    ),
-                  ],
-                ),
-              ),
+              // Padding(
+              //   padding: const EdgeInsets.symmetric(horizontal: 12.0),
+              //   child: Column(
+              //     children: [
+              //       ListTile(
+              //         leading: Image.asset(
+              //           "assets/page-1/images/drawerAboutUs.png",
+              //           height: 20,
+              //         ),
+              //         title: Text(
+              //           "About Us",
+              //           style: SafeGoogleFont(
+              //             "Inter",
+              //             fontSize: 14,
+              //             fontWeight: FontWeight.w600,
+              //           ),
+              //         ),
+              //         shape: Border(
+              //             bottom: BorderSide(
+              //           color: Colors.black.withOpacity(0.09),
+              //         )),
+              //       ),
+              //     ],
+              //   ),
+              // ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12.0),
                 child: Column(
@@ -187,7 +188,7 @@ class _HomePageState extends State<HomePage> {
                         "Help?",
                         style: SafeGoogleFont(
                           "Inter",
-                          fontSize: 14,
+                          fontSize: 16,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
@@ -209,10 +210,10 @@ class _HomePageState extends State<HomePage> {
                         height: 20,
                       ),
                       title: Text(
-                        "Psycho Test",
+                        "Psychometric Test",
                         style: SafeGoogleFont(
                           "Inter",
-                          fontSize: 14,
+                          fontSize: 16,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
@@ -228,11 +229,36 @@ class _HomePageState extends State<HomePage> {
                 padding: const EdgeInsets.symmetric(horizontal: 14.0),
                 child: GestureDetector(
                   onTap: () {
-                    _logout();
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const SplashScreen2()));
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                          title: const Text('Alert!'),
+                          content: const Text('Are you sure to logout!'),
+                          actions: [
+                            TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                child: const Text('Cancel')),
+                            TextButton(
+                              onPressed: () async {
+                                await _logout();
+
+                                if (mounted) {
+                                  Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const SplashScreen2()));
+                                }
+                              },
+                              child: const Text('Logout'),
+                            ),
+                          ],
+                        );
+                      },
+                    );
                   },
                   child: ListTile(
                     leading: const Icon(
@@ -240,10 +266,10 @@ class _HomePageState extends State<HomePage> {
                       size: 17,
                     ),
                     title: Text(
-                      "Logout",
+                      'Logout',
                       style: SafeGoogleFont(
                         "Inter",
-                        fontSize: 14,
+                        fontSize: 16,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -267,6 +293,7 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ),
+        backgroundColor: Colors.white,
       ),
       appBar: AppBar(
         title: Row(
@@ -274,7 +301,10 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(
               width: 26,
             ),
-            Text('Hey, $username '),
+            Text(
+              'Hey, $username',
+              style: const TextStyle(fontSize: 20),
+            ),
           ],
         ),
         backgroundColor: const Color(0xff1F0A68),
@@ -292,7 +322,7 @@ class _HomePageState extends State<HomePage> {
         ),
         bottom: PreferredSize(
             preferredSize: const Size(double.infinity, 12), child: Container()),
-        titleSpacing: -5,
+        titleSpacing: 1,
         actions: [
           GestureDetector(
             onTap: () {
@@ -305,13 +335,13 @@ class _HomePageState extends State<HomePage> {
             },
             child: Image.asset(
               'assets/page-1/images/bell.png',
-              width: 24.16,
-              height: 24,
+              width: 20,
+              height: 20,
             ),
           ),
           const SizedBox(
-            width: 30,
-          )
+            width: 28,
+          ),
         ],
       ),
       body: SingleChildScrollView(
@@ -327,40 +357,40 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Container(
-                    // group6p5o (453:7)
-                    margin: EdgeInsets.fromLTRB(
-                        322.84 * fem, 0 * fem, 1 * fem, 17.66 * fem),
-                    width: double.infinity,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          // groupY1o (442:47)
-                          margin: EdgeInsets.fromLTRB(
-                              0 * fem, 0.16 * fem, 7 * fem, 0 * fem),
-                          width: 13.16 * fem,
-                          height: 13.16 * fem,
-                          child: Image.asset(
-                            'assets/page-1/images/group-Qyf.png',
-                            width: 13.16 * fem,
-                            height: 13.16 * fem,
-                          ),
-                        ),
-                        Text(
-                          // filterScy (442:51)
-                          'Filter',
-                          style: SafeGoogleFont(
-                            'Inter',
-                            fontSize: 14 * ffem,
-                            fontWeight: FontWeight.w400,
-                            height: 1.2125 * ffem / fem,
-                            color: const Color(0xff000000),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                  // Container(
+                  //   // group6p5o (453:7)
+                  //   margin: EdgeInsets.fromLTRB(
+                  //       322.84 * fem, 0 * fem, 1 * fem, 17.66 * fem),
+                  //   width: double.infinity,
+                  //   child: Row(
+                  //     crossAxisAlignment: CrossAxisAlignment.center,
+                  //     children: [
+                  //       Container(
+                  //         // groupY1o (442:47)
+                  //         margin: EdgeInsets.fromLTRB(
+                  //             0 * fem, 0.16 * fem, 7 * fem, 0 * fem),
+                  //         width: 13.16 * fem,
+                  //         height: 13.16 * fem,
+                  //         child: Image.asset(
+                  //           'assets/page-1/images/group-Qyf.png',
+                  //           width: 13.16 * fem,
+                  //           height: 13.16 * fem,
+                  //         ),
+                  //       ),
+                  //       // Text(
+                  //       //   // filterScy (442:51)
+                  //       //   'Filter',
+                  //       //   style: SafeGoogleFont(
+                  //       //     'Inter',
+                  //       //     fontSize: 14 * ffem,
+                  //       //     fontWeight: FontWeight.w400,
+                  //       //     height: 1.2125 * ffem / fem,
+                  //       //     color: const Color(0xff000000),
+                  //       //   ),
+                  //       // ),
+                  //     ],
+                  //   ),
+                  // ),
                   Container(
                     // autogroupnoa9nB3 (AXyEx8HnJQq7KYRJqLNoa9)
                     margin: EdgeInsets.fromLTRB(
@@ -867,44 +897,46 @@ class _HomePageState extends State<HomePage> {
             //       //             );
             //       //           }),
             //       //     )),
-            //       // Positioned(
-            //       //   // maskgroupUUy (444:85)
-            //       //   left: 20.3735351562 * fem,
-            //       //   top: 20 * fem,
-            //       //   child: Align(
-            //       //     // image slider
-            //       //     child: Container(
-            //       //       constraints: const BoxConstraints(
-            //       //         maxHeight: 120,
-            //       //         maxWidth: 390,
-            //       //       ),
-            //       //       // color: Colors.red,
-            //       //       decoration: BoxDecoration(
-            //       //           borderRadius: BorderRadius.circular(20)),
-            //       //       width: 390 * fem,
-            //       //       height: 120 * fem,
-            //       //       child: ImageSlideshow(
-            //       //         autoPlayInterval: 6000,
-            //       //         isLoop: true,
-            //       //         indicatorColor: Colors.black,
-            //       //         indicatorBackgroundColor: Colors.white,
-            //       //         children: dummyImagesSlider
-            //       //             .map((e) => Container(
-            //       //                   width: 390 * fem,
-            //       //                   height: 120 * fem,
-            //       //                   decoration: BoxDecoration(
-            //       //                       borderRadius: const BorderRadius.all(
-            //       //                           Radius.circular(20)),
-            //       //                       image: DecorationImage(
-            //       //                         image: NetworkImage(e),
-            //       //                         fit: BoxFit.cover,
-            //       //                       )),
-            //       //                 ))
-            //       //             .toList(),
-            //       //       ),
-            //       //     ),
-            //       //   ),
-            //       // ),
+            Positioned(
+              // maskgroupUUy (444:85)
+              left: 20.3735351562 * fem,
+              top: 20 * fem,
+              child: Align(
+                // image slider
+                child: Container(
+                  constraints: const BoxConstraints(
+                    maxHeight: 120,
+                    maxWidth: 390,
+                  ),
+                  // color: Colors.red,
+                  decoration:
+                      BoxDecoration(borderRadius: BorderRadius.circular(16)),
+                  width: 390 * fem,
+                  height: 120 * fem,
+                  child: ImageSlideshow(
+                    autoPlayInterval: 6000,
+                    isLoop: true,
+                    indicatorColor: Colors.black,
+                    indicatorBackgroundColor: Colors.white,
+                    children: dummyImagesSlider
+                        .map((e) => Container(
+                              width: 390 * fem,
+                              height: 120 * fem,
+                              decoration: BoxDecoration(
+                                borderRadius:
+                                    const BorderRadius.all(Radius.circular(16)),
+                                // image: DecorationImage(
+                                //   image: ImageN(e),
+                                //   fit: BoxFit.cover,
+                                // )),
+                                image: DecorationImage(image: AssetImage(e)),
+                              ),
+                            ))
+                        .toList(),
+                  ),
+                ),
+              ),
+            ),
             //       // Positioned(
             //       //   // careerboostersU7b (444:66)
             //       //   left: 20.3735351562 * fem,
@@ -929,20 +961,20 @@ class _HomePageState extends State<HomePage> {
             //     ],
             //   ),
             // ),
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: SizedBox(
-                height: 100,
-                child: PageView(
-                  children: [
-                    imageScroll(),
-                    imageScroll1(),
-                  ],
-                ),
-              ),
-            ),
+            // Padding(
+            //   padding: const EdgeInsets.all(20.0),
+            //   child: SizedBox(
+            //     height: 100,
+            //     child: PageView(
+            //       children: [
+            //         imageScroll(),
+            //         imageScroll1(),
+            //       ],
+            //     ),
+            //   ),
+            // ),
             const SizedBox(
-              height: 10,
+              height: 20,
             ),
             Padding(
               padding: EdgeInsets.only(left: 28.0 * fem),
@@ -950,8 +982,8 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Image.asset(
                     'assets/page-1/images/operator 1.png',
-                    height: 26,
-                    width: 26,
+                    height: 20,
+                    width: 20,
                   ),
                   const SizedBox(
                     width: 16,
@@ -975,12 +1007,12 @@ class _HomePageState extends State<HomePage> {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.28,
               child: PageView(
-                controller: _pageController,
-                onPageChanged: (index) {
-                  setState(() {
-                    _currentIndex = index;
-                  });
-                },
+                // controller: _pageController,
+                // onPageChanged: (index) {
+                //   setState(() {
+                //     _currentIndex = index;
+                //   });
+                // },
                 children: [
                   profileCard(),
                   profileCard(),
@@ -997,8 +1029,8 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Image.asset(
                     'assets/page-1/images/mobile 1.png',
-                    height: 26,
-                    width: 26,
+                    height: 20,
+                    width: 20,
                   ),
                   const SizedBox(
                     width: 16,
@@ -1078,315 +1110,283 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget imageScroll1() {
-    return Container(
-      width: 390,
-      height: 120,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
-        image: DecorationImage(
-          image: AssetImage(
-              "assets/page-1/images/elearning-website-with-modish-sofware-student-study-online-internet-network 1.png"),
-          fit: BoxFit.fill,
-        ),
-      ),
-    );
-  }
-
-  Container imageScroll() {
-    return Container(
-      width: 390,
-      height: 120,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
-        image: DecorationImage(
-          image: AssetImage(
-              "assets/page-1/images/21da4647-c95a-44d9-b78e-40655d4946bc 1.png"),
-          fit: BoxFit.fill,
-        ),
-      ),
-    );
-  }
-
   Widget profileCard() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 14.0),
-      child: Row(
-        children: [
-          Expanded(
-            child: Card(
-              color: Colors.white,
-              surfaceTintColor: Colors.white,
-              elevation: 4,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16)),
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(12, 5, 12, 18),
-                child: Column(
-                  children: [
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const CircleAvatar(
-                          radius: 38,
-                          backgroundImage: AssetImage(
-                            "assets/page-1/images/Rectangle 101.png",
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 8,
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            Row(
-                              children: [
-                                const Text(
-                                  'Anshika Mehra',
-                                  style: TextStyle(
-                                    color: Color(0xFF1F0A68),
-                                    fontSize: 12,
-                                    fontFamily: 'Inter',
-                                    fontWeight: FontWeight.w600,
-                                    height: 0,
-                                  ),
-                                ),
-                                SizedBox(
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.16,
-                                ),
-                                CircleAvatar(
-                                  backgroundColor: const Color(0xff7F90F7),
-                                  child: Center(
-                                    child: Image.asset(
-                                      "assets/page-1/images/group-38-oFX.png",
-                                      color: Colors.white,
-                                      height: 14,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 2,
-                            ),
-                            const SizedBox(
-                              width: 190.25,
-                              child: Text(
-                                'Importance of CUET',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 12,
-                                  fontFamily: 'Inter',
-                                  fontWeight: FontWeight.w600,
-                                  height: 0,
-                                ),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 4,
-                            ),
-                            Row(
-                              children: [
-                                Image.asset(
-                                  "assets/page-1/images/clock-circular-outline-Ra1.png",
-                                  // color: Colors.black,
-                                  height: 12,
-                                  width: 12,
-                                ),
-                                const SizedBox(
-                                  width: 4,
-                                ),
-                                const SizedBox(
-                                  width: 121.13,
-                                  child: Text(
-                                    ' Session at 8:00pm',
-                                    style: TextStyle(
-                                      color: Color(0xFF414040),
-                                      fontSize: 12,
-                                      fontFamily: 'Inter',
-                                      fontWeight: FontWeight.w500,
-                                      height: 0.08,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 5,
-                            ),
-                            Row(
-                              children: [
-                                Container(
-                                  width: 12,
-                                  height: 12,
-                                  decoration: const BoxDecoration(
-                                    image: DecorationImage(
-                                      image: AssetImage(
-                                          "assets/page-1/images/Calendar.png"),
-                                      fit: BoxFit.fill,
-                                    ),
-                                  ),
-                                ),
-                                const SizedBox(
-                                  width: 6,
-                                ),
-                                const SizedBox(
-                                  width: 121.13,
-                                  child: Text(
-                                    '27th Dec 2023',
-                                    style: TextStyle(
-                                      color: Color(0xFF414040),
-                                      fontSize: 12,
-                                      fontFamily: 'Inter',
-                                      fontWeight: FontWeight.w500,
-                                      height: 0.08,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 5,
-                            ),
-                            Row(
-                              children: [
-                                Container(
-                                  width: 12,
-                                  height: 12,
-                                  decoration: const BoxDecoration(
-                                    image: DecorationImage(
-                                      image: AssetImage(
-                                          "assets/page-1/images/Rupee.png"),
-                                      fit: BoxFit.fill,
-                                    ),
-                                  ),
-                                ),
-                                const SizedBox(
-                                  width: 4,
-                                ),
-                                const SizedBox(
-                                  width: 121.13,
-                                  child: Text(
-                                    ' 10/-',
-                                    style: TextStyle(
-                                      color: Color(0xFF414040),
-                                      fontSize: 12,
-                                      fontFamily: 'Inter',
-                                      fontWeight: FontWeight.w500,
-                                      height: 0.08,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
-                      ],
+      child: Card(
+        color: Colors.white,
+        surfaceTintColor: Colors.white,
+        elevation: 4,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(12, 5, 12, 18),
+          child: Column(
+            children: [
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const CircleAvatar(
+                    radius: 38,
+                    backgroundImage: AssetImage(
+                      "assets/page-1/images/Rectangle 101.png",
                     ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Container(
-                      height: 0.47,
-                      width: double.infinity,
-                      color: const Color(0xffAFAFAF).withOpacity(.78),
-                    ),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.02,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Container(
-                          width: 120.14,
-                          height: 36.09,
-                          decoration: ShapeDecoration(
-                            color: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              side: BorderSide(
-                                width: 0.50,
-                                color: Colors.black
-                                    .withOpacity(0.7400000095367432),
-                              ),
-                              borderRadius: BorderRadius.circular(16),
+                  ),
+                  const SizedBox(
+                    width: 8,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        children: [
+                          const Text(
+                            'Anshika Mehra',
+                            style: TextStyle(
+                              color: Color(0xFF1F0A68),
+                              fontSize: 16,
+                              fontFamily: 'Inter',
+                              fontWeight: FontWeight.w600,
+                              height: 0,
                             ),
                           ),
-                          child: const SizedBox(
-                            width: 119.09,
-                            height: 16.05,
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width * 0.10,
+                          ),
+                          CircleAvatar(
+                            backgroundColor: const Color(0xff7F90F7),
                             child: Center(
-                              child: Text(
-                                'Visit Profile',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Color(0xFF262626),
-                                  fontSize: 14,
-                                  fontFamily: 'Inter',
-                                  fontWeight: FontWeight.w700,
-                                  height: 0.07,
-                                ),
+                              child: Image.asset(
+                                "assets/page-1/images/group-38-oFX.png",
+                                color: Colors.white,
+                                height: 14,
                               ),
                             ),
                           ),
-                        ),
-                        Container(
-                          width: 120.14,
-                          height: 36.09,
-                          decoration: ShapeDecoration(
-                            color: Color(0xFFB1A0EB),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(16),
-                            ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 2,
+                      ),
+                      const SizedBox(
+                        width: 190.25,
+                        child: Text(
+                          'Importance of CUET',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 12,
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.w600,
+                            height: 0,
                           ),
-                          child: const SizedBox(
-                            width: 119.09,
-                            height: 16.05,
-                            child: Center(
-                              child: Text(
-                                'Book Now',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 14,
-                                  fontFamily: 'Inter',
-                                  fontWeight: FontWeight.w700,
-                                  height: 0.07,
-                                ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 4,
+                      ),
+                      Row(
+                        children: [
+                          Image.asset(
+                            "assets/page-1/images/clock-circular-outline-Ra1.png",
+                            // color: Colors.black,
+                            height: 12,
+                            width: 12,
+                          ),
+                          const SizedBox(
+                            width: 4,
+                          ),
+                          const SizedBox(
+                            width: 121.13,
+                            child: Text(
+                              ' Session at 8:00pm',
+                              style: TextStyle(
+                                color: Color(0xFF414040),
+                                fontSize: 12,
+                                fontFamily: 'Inter',
+                                fontWeight: FontWeight.w500,
+                                height: 0.08,
                               ),
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      Row(
+                        children: [
+                          Container(
+                            width: 12,
+                            height: 12,
+                            decoration: const BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage(
+                                    "assets/page-1/images/Calendar.png"),
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 6,
+                          ),
+                          const SizedBox(
+                            width: 121.13,
+                            child: Text(
+                              '27th Dec 2023',
+                              style: TextStyle(
+                                color: Color(0xFF414040),
+                                fontSize: 12,
+                                fontFamily: 'Inter',
+                                fontWeight: FontWeight.w500,
+                                height: 0.08,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      Row(
+                        children: [
+                          Container(
+                            width: 12,
+                            height: 12,
+                            decoration: const BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage(
+                                    "assets/page-1/images/Rupee.png"),
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 4,
+                          ),
+                          const SizedBox(
+                            width: 121.13,
+                            child: Text(
+                              ' 10/-',
+                              style: TextStyle(
+                                color: Color(0xFF414040),
+                                fontSize: 12,
+                                fontFamily: 'Inter',
+                                fontWeight: FontWeight.w500,
+                                height: 0.08,
+                              ),
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                ],
               ),
-            ),
+              const SizedBox(
+                height: 10,
+              ),
+              Container(
+                height: 0.47,
+                width: double.infinity,
+                color: const Color(0xffAFAFAF).withOpacity(.78),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.02,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Container(
+                    width: 120.14,
+                    height: 36.09,
+                    decoration: ShapeDecoration(
+                      color: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        side: BorderSide(
+                          width: 0.50,
+                          color: Colors.black.withOpacity(0.7400000095367432),
+                        ),
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                    ),
+                    child: const SizedBox(
+                      width: 119.09,
+                      height: 16.05,
+                      child: Center(
+                        child: Text(
+                          'Visit Profile',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Color(0xFF262626),
+                            fontSize: 14,
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.w700,
+                            height: 0.07,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: 120.14,
+                    height: 36.09,
+                    decoration: ShapeDecoration(
+                      color: Color(0xFFB1A0EB),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                    ),
+                    child: const SizedBox(
+                      width: 119.09,
+                      height: 16.05,
+                      child: Center(
+                        child: Text(
+                          'Book Now',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 14,
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.w700,
+                            height: 0.07,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
           ),
-          const Icon(
-            Icons.arrow_forward_ios,
-            size: 24,
-            weight: 16,
-          ),
-        ],
+        ),
       ),
     );
   }
 
-  void _logout() async {
+  Future _logout() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.remove("token");
     if (mounted) {
-      Navigator.pushReplacement(
+      Navigator.pushAndRemoveUntil(
         context,
         MaterialPageRoute(builder: (context) => const SplashScreen2()),
+        (route) => false,
       );
     }
   }
+
+  // Future _logout() async {
+  //   SharedPreferences prefs = await SharedPreferences.getInstance();
+  //   prefs.remove("token");
+  //   if (mounted) {
+  //     Navigator.pushReplacement(
+  //       context,
+  //       MaterialPageRoute(builder: (context) => const SplashScreen2()),
+  //     );
+  //   }
+  // }
 
   void onTapgotocounsellor(BuildContext context) {
     Navigator.pushReplacement(context,
@@ -1406,10 +1406,13 @@ class _HomePageState extends State<HomePage> {
 }
 
 List<String> dummyImagesSlider = [
-  "https://static.vecteezy.com/system/resources/previews/001/937/644/original/online-education-application-learning-worldwide-on-computer-mobile-website-background-social-distance-concept-the-classroom-training-course-library-illustration-flat-vector.jpg",
-  "https://www.insidehighered.com/sites/default/server_files/media/iStock-520374378.jpg",
-  "https://static.vecteezy.com/system/resources/previews/001/937/697/large_2x/online-education-application-learning-worldwide-on-computer-mobile-website-background-social-distance-concept-the-classroom-training-course-library-illustration-flat-vector.jpg",
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOTciyMbprbWG5VSfWg4egySaj_arRCDzvu_FhbmUvvNBvpK2TBKmbtcSgqw&s",
-  "https://t4.ftcdn.net/jpg/06/46/86/13/240_F_646861362_vLO3dVv2dta7qS2x2sfRInk2IppVO9KC.jpg",
-  "https://t4.ftcdn.net/jpg/06/04/35/23/240_F_604352318_HlPTHiTe3P8icJVfZ6io7LAC7TjVnCjQ.jpg",
+  "assets/page-1/images/21da4647-c95a-44d9-b78e-40655d4946bc 1.png",
+  "assets/page-1/images/attendthebest.jpg",
+  "assets/page-1/images/bookyoursession.jpg",
 ];
+// "https://static.vecteezy.com/system/resources/previews/001/937/644/original/online-education-application-learning-worldwide-on-computer-mobile-website-background-social-distance-concept-the-classroom-training-course-library-illustration-flat-vector.jpg",
+// "https://www.insidehighered.com/sites/default/server_files/media/iStock-520374378.jpg",
+// "https://static.vecteezy.com/system/resources/previews/001/937/697/large_2x/online-education-application-learning-worldwide-on-computer-mobile-website-background-social-distance-concept-the-classroom-training-course-library-illustration-flat-vector.jpg",
+// "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOTciyMbprbWG5VSfWg4egySaj_arRCDzvu_FhbmUvvNBvpK2TBKmbtcSgqw&s",
+// "https://t4.ftcdn.net/jpg/06/46/86/13/240_F_646861362_vLO3dVv2dta7qS2x2sfRInk2IppVO9KC.jpg",
+// "https://t4.ftcdn.net/jpg/06/04/35/23/240_F_604352318_HlPTHiTe3P8icJVfZ6io7LAC7TjVnCjQ.jpg",

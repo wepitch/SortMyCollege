@@ -43,21 +43,21 @@ class _EducationLevelState extends State<EducationLevel> {
                   height: 80,
                 ),
               ),
-              Container(
-                // sortyourentirecollegejourneyDQ (1115:271)
-                margin: const EdgeInsets.fromLTRB(0, 0, 0, 50),
-                child: Text(
-                  'All in one platform for student',
-                  textAlign: TextAlign.center,
-                  style: SafeGoogleFont(
-                    'Roboto',
-                    fontSize: 15,
-                    fontWeight: FontWeight.w700,
-                    height: 1.1725,
-                    color: const Color(0xff1f0a68),
-                  ),
-                ),
-              ),
+              // Container(
+              //   // sortyourentirecollegejourneyDQ (1115:271)
+              //   margin: const EdgeInsets.fromLTRB(0, 0, 0, 50),
+              //   child: Text(
+              //     'All in one platform for student',
+              //     textAlign: TextAlign.center,
+              //     style: SafeGoogleFont(
+              //       'Roboto',
+              //       fontSize: 15,
+              //       fontWeight: FontWeight.w700,
+              //       height: 1.1725,
+              //       color: const Color(0xff1f0a68),
+              //     ),
+              //   ),
+              // ),
               Text(
                 "Choose your Education Level",
                 style: SafeGoogleFont(
@@ -133,7 +133,7 @@ Widget customButton(
           title,
           style: SafeGoogleFont(
             "Montserrat",
-            fontSize: 14,
+            fontSize: 18,
             fontWeight: FontWeight.bold,
           ),
         ),

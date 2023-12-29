@@ -29,48 +29,40 @@ class _WebinarPageState extends State<WebinarPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: const Color(0xff1F0A68),
         foregroundColor: Colors.white,
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 0, top: 18, bottom: 18),
-          child: GestureDetector(
-            onTap: () {
-              Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const HomePageContainer()));
-            },
-            child: Image.asset(
-              'assets/page-1/images/back.png',
-            ),
+        // leading: Padding(
+        //   padding: const EdgeInsets.only(left: 0, top: 18, bottom: 18),
+        //   child: GestureDetector(
+        //     onTap: () {
+        //       Navigator.pushReplacement(
+        //           context,
+        //           MaterialPageRoute(
+        //               builder: (context) => const HomePageContainer()));
+        //     },
+        //     child: Image.asset(
+        //       'assets/page-1/images/back.png',
+        //     ),
+        //   ),
+        // ),
+        titleSpacing: -10,
+        title: Padding(
+          padding: const EdgeInsets.only(left: 40),
+          child: Text(
+            "Webinar",
+            style: SafeGoogleFont("Inter",
+                fontSize: 20, fontWeight: FontWeight.w600),
           ),
-        ),
-        titleSpacing: -5,
-        title: Text(
-          "Webinar",
-          style: SafeGoogleFont("Inter",
-              fontSize: 18, fontWeight: FontWeight.w600),
         ),
         actions: [
-          Row(
-            children: [
-              Image.asset(
-                'assets/page-1/images/layer-3.png',
-                width: 20,
-                height: 25,
-              ),
-              const SizedBox(
-                width: 14,
-              ),
-              Image.asset(
-                'assets/page-1/images/Vector.png',
-                width: 21,
-                height: 25,
-              ),
-            ],
+          Image.asset(
+            'assets/page-1/images/layer-3.png',
+            width: 20,
+            height: 20,
           ),
           const SizedBox(
-            width: 19,
+            width: 28,
           ),
         ],
       ),

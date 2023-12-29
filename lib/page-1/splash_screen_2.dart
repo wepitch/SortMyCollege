@@ -42,24 +42,24 @@ class _SplashScreen2State extends State<SplashScreen2> {
             child: Image.asset(
               'assets/page-1/images/sortmycollege-logo-1.png',
               fit: BoxFit.fitWidth,
-              height: 80,
+              height: MediaQuery.of(context).size.height,
             ),
           ),
-          Container(
-            // sortyourentirecollegejourneyDQ (1115:271)
-            margin: EdgeInsets.fromLTRB(0, 0, 0, mHeight * 0.04),
-            child: Text(
-              'All in one platform for student',
-              textAlign: TextAlign.center,
-              style: SafeGoogleFont(
-                'Roboto',
-                fontSize: 16,
-                fontWeight: FontWeight.w700,
-                height: 1.1725,
-                color: const Color(0xff1f0a68),
-              ),
-            ),
-          ),
+          // Container(
+          //   // sortyourentirecollegejourneyDQ (1115:271)
+          //   margin: EdgeInsets.fromLTRB(0, 0, 0, mHeight * 0.04),
+          //   child: Text(
+          //     'All in one platform for student',
+          //     textAlign: TextAlign.center,
+          //     style: SafeGoogleFont(
+          //       'Roboto',
+          //       fontSize: 16,
+          //       fontWeight: FontWeight.w700,
+          //       height: 1.1725,
+          //       color: const Color(0xff1f0a68),
+          //     ),
+          //   ),
+          // ),
           Container(
             width: 300,
             height: 200,
@@ -85,7 +85,7 @@ class _SplashScreen2State extends State<SplashScreen2> {
                   ),
                 ),
                 TextSpan(
-                  text: ' Super App',
+                  text: 'Super App',
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 16,
@@ -95,7 +95,7 @@ class _SplashScreen2State extends State<SplashScreen2> {
                   ),
                 ),
                 TextSpan(
-                  text: ' for Students',
+                  text: 'for Students',
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 16,
